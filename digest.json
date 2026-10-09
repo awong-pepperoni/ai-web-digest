@@ -17,7 +17,8 @@
       "unverified": "Unverified claims",
       "coverage": "Coverage",
       "other": "Other"
-    }
+    },
+    "source_note": "from AI lab announcements, expert curators, Hacker News and the tech press"
   },
   "digests": [
     {
@@ -36,15 +37,28 @@
               "text": "Catch-up: Jev, a model that decides instead of writing, and the \"decision model\" category it started. TypeSafe AI's Jev answers a typed question with a fixed set of possible answers, and returns the answer with a calibrated probability. It never generates prose. It launched on 15 September, before this digest existed, and is still the dominant story three weeks on. Why it matters: it is a new kind of model, not a better chatbot. A decision an agent or app makes thousands of times a day can now take a fraction of a second and a fraction of a cent, with a confidence score to act on. Within three weeks OpenAI (the Decisions API), LiquidAI (d1), AWS's Strands (Decider 2B) and Cloudflare (clef) all shipped their own. What you could use it for: routing each request to the cheapest model that can handle it; approving or blocking an agent's tool call, asking a person only when confidence is low; triaging tickets or messages; deciding which search results or context chunks deserve a place in a big model's prompt; labelling a dataset Cost and speed: TypeSafe's own figures: $0.042 per million input tokens, output free; responses in 70–500ms; \"193.6x faster, 444.6x cheaper\" than GPT-6 Astra and Fable 5.1 on its own workflow tests. TypeSafe itself calls those the \"higher end of real world gains\". One developer's measurement: about 270ms and about 1.5 cents per 1,000 checks through OpenRouter. Others: OpenAI's Decisions API charges $0.10 per million input tokens. LiquidAI's open d1-3B answers in 16ms on an Nvidia Jetson AGX Thor (LiquidAI's figure). Caveats: It only suits questions with a fixed answer set. When the inputs are already structured, plain rules or search beat it: a simple search algorithm out-scored every decision model in the Jevman Pac-Man benchmark. Out-of-the-box accuracy is questioned, and fine-tuning is common. Jev itself is in early access with a waitlist, and per one user it runs only in a US region. Read next: Understanding Jev, the new model everyone is talking about (Understanding AI) Verified for Jev's pricing, speed range and availability against TypeSafe's launch post , and for the Decisions API against OpenAI's guide · speed multiples are TypeSafe's, and the per-check cost is one developer's measurement",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> for Jev's pricing, speed range and availability against <a href=\"https://typesafe.ai/blog/introducing-system-one-models-and-jev\" target=\"_blank\" rel=\"noopener noreferrer\">TypeSafe's launch post</a>, and for the Decisions API against <a href=\"https://developers.openai.com/api/docs/guides/decisions\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's guide</a> · speed multiples are TypeSafe's, and the per-check cost is one developer's measurement</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Understanding AI",
+                "TypeSafe",
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Claude Haiku 5.5 makes a capable agent model roughly ten times cheaper.</strong>",
-              "html": "<p><strong>Claude Haiku 5.5 makes a capable agent model roughly ten times cheaper.</strong> Anthropic's new small model costs $0.10 per million input tokens and $0.50 per million output tokens, has a 1M-token context and an adjustable effort setting, and is available everywhere from 7 October.</p>\n<ul>\n<li><strong>Why it matters:</strong> Anthropic says it is 90% cheaper than Haiku 4.5 for requests up to 100k tokens. Work that needed Sonnet may now run at a fraction of the cost.</li>\n<li><strong>What you could use it for:</strong> subagents and background tasks, compaction and summaries, classification and extraction pipelines, high-volume customer-facing replies. Per one controlled test, it can also do everyday coding-agent work at medium effort.</li>\n<li><strong>Cost and speed:</strong> $0.10 input and $0.50 output per million tokens up to 100k tokens of context, five times that above it. In the coding test, medium effort matched Sonnet 5.5 on a real-repo task for about $0.08 against $1.68; that test is a single source.</li>\n<li><strong>Caveats:</strong> A long agent session that passes 100k tokens pays the higher rate, which is how one widely shared comparison made it look &quot;12x&quot; more expensive than GPT-6 Luna. Low effort skipped verification in the coding test. Benchmark scores are Anthropic's.</li>\n<li><strong>Read next:</strong> <a href=\"https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison on Claude Haiku 5.5</a></li>\n</ul>",
-              "text": "Claude Haiku 5.5 makes a capable agent model roughly ten times cheaper. Anthropic's new small model costs $0.10 per million input tokens and $0.50 per million output tokens, has a 1M-token context and an adjustable effort setting, and is available everywhere from 7 October. Why it matters: Anthropic says it is 90% cheaper than Haiku 4.5 for requests up to 100k tokens. Work that needed Sonnet may now run at a fraction of the cost. What you could use it for: subagents and background tasks, compaction and summaries, classification and extraction pipelines, high-volume customer-facing replies. Per one controlled test, it can also do everyday coding-agent work at medium effort. Cost and speed: $0.10 input and $0.50 output per million tokens up to 100k tokens of context, five times that above it. In the coding test, medium effort matched Sonnet 5.5 on a real-repo task for about $0.08 against $1.68; that test is a single source. Caveats: A long agent session that passes 100k tokens pays the higher rate, which is how one widely shared comparison made it look \"12x\" more expensive than GPT-6 Luna. Low effort skipped verification in the coding test. Benchmark scores are Anthropic's. Read next: Simon Willison on Claude Haiku 5.5 Verified against Anthropic's announcement and release notes",
+              "html": "<p><strong>Claude Haiku 5.5 makes a capable agent model roughly ten times cheaper.</strong> Anthropic's new small model costs $0.10 per million input tokens and $0.50 per million output tokens, has a 1M-token context and an adjustable effort setting, and is available everywhere from 7 October.</p>\n<ul>\n<li><strong>Why it matters:</strong> Anthropic says it is 90% cheaper than Haiku 4.5 for requests up to 100k tokens. Work that needed Sonnet may now run at a fraction of the cost. AWS had it on Bedrock the same day, Latent Space's AINews called it &quot;better than GPT-6 Luna at the same pricing&quot;, and it reached 1,034 points on Hacker News. Released with it: Sonnet 5.5's cache-read price halves to $0.10 per million tokens, and Max and Team plans now include monthly API credits.</li>\n<li><strong>What you could use it for:</strong> subagents and background tasks, compaction and summaries, classification and extraction pipelines, high-volume customer-facing replies. Per one controlled test, it can also do everyday coding-agent work at medium effort.</li>\n<li><strong>Cost and speed:</strong> $0.10 input and $0.50 output per million tokens up to 100k tokens of context, five times that above it. In the coding test, medium effort matched Sonnet 5.5 on a real-repo task for about $0.08 against $1.68; that test is a single source.</li>\n<li><strong>Caveats:</strong> A long agent session that passes 100k tokens pays the higher rate, which is how one widely shared comparison made it look &quot;12x&quot; more expensive than GPT-6 Luna. Low effort skipped verification in the coding test. Benchmark scores are Anthropic's.</li>\n<li><strong>Read next:</strong> <a href=\"https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison on Claude Haiku 5.5</a></li>\n</ul>",
+              "text": "Claude Haiku 5.5 makes a capable agent model roughly ten times cheaper. Anthropic's new small model costs $0.10 per million input tokens and $0.50 per million output tokens, has a 1M-token context and an adjustable effort setting, and is available everywhere from 7 October. Why it matters: Anthropic says it is 90% cheaper than Haiku 4.5 for requests up to 100k tokens. Work that needed Sonnet may now run at a fraction of the cost. AWS had it on Bedrock the same day, Latent Space's AINews called it \"better than GPT-6 Luna at the same pricing\", and it reached 1,034 points on Hacker News. Released with it: Sonnet 5.5's cache-read price halves to $0.10 per million tokens, and Max and Team plans now include monthly API credits. What you could use it for: subagents and background tasks, compaction and summaries, classification and extraction pipelines, high-volume customer-facing replies. Per one controlled test, it can also do everyday coding-agent work at medium effort. Cost and speed: $0.10 input and $0.50 output per million tokens up to 100k tokens of context, five times that above it. In the coding test, medium effort matched Sonnet 5.5 on a real-repo task for about $0.08 against $1.68; that test is a single source. Caveats: A long agent session that passes 100k tokens pays the higher rate, which is how one widely shared comparison made it look \"12x\" more expensive than GPT-6 Luna. Low effort skipped verification in the coding test. Benchmark scores are Anthropic's. Read next: Simon Willison on Claude Haiku 5.5 Verified against Anthropic's announcement and release notes",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> against <a href=\"https://www.anthropic.com/claude-haiku-5-5\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic's announcement</a> and <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">release notes</a></p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Simon Willison",
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
             }
           ]
         },
@@ -54,20 +68,18 @@
           "lead_html": null,
           "items": [
             {
-              "headline": "<strong>Claude Haiku 5.5: Anthropic's cheapest and fastest model, generally available on every platform from 7 October.</strong>",
-              "html": "<p><strong>Claude Haiku 5.5: Anthropic's cheapest and fastest model, generally available on every platform from 7 October.</strong> It has a 1M-token context window, up to 128k output tokens, and is the first Haiku with an adjustable effort setting. Prices per million tokens are $0.10 input and $0.50 output up to 100k tokens of context, and five times that above it. Released alongside it: Sonnet 5.5's cache-read price halves to $0.10 per million tokens, and Max and Team plans now include monthly API credits. AWS had it on Bedrock the same day. Latent Space's AINews headline calls it &quot;better than GPT-6 Luna at the same pricing&quot;. It reached 1,034 points on Hacker News.\n<a href=\"https://www.anthropic.com/claude-haiku-5-5\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">release notes</a> · <a href=\"https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison</a> · <a href=\"https://www.latent.space/p/ainews-claude-haiku-55-better-than\" target=\"_blank\" rel=\"noopener noreferrer\">AINews</a></p>",
-              "text": "Claude Haiku 5.5: Anthropic's cheapest and fastest model, generally available on every platform from 7 October. It has a 1M-token context window, up to 128k output tokens, and is the first Haiku with an adjustable effort setting. Prices per million tokens are $0.10 input and $0.50 output up to 100k tokens of context, and five times that above it. Released alongside it: Sonnet 5.5's cache-read price halves to $0.10 per million tokens, and Max and Team plans now include monthly API credits. AWS had it on Bedrock the same day. Latent Space's AINews headline calls it \"better than GPT-6 Luna at the same pricing\". It reached 1,034 points on Hacker News. Anthropic · release notes · Simon Willison · AINews Verified against Anthropic's announcement and release notes · benchmark figures are Anthropic's",
-              "status": "verified",
-              "status_html": "<p><strong>Verified</strong> against Anthropic's announcement and release notes · benchmark figures are Anthropic's</p>",
-              "updated": null
-            },
-            {
               "headline": "<strong>Mistral Large 4 (&quot;Le Chonk&quot;): open weights, in API preview now, weights promised by the end of October.</strong>",
               "html": "<p><strong>Mistral Large 4 (&quot;Le Chonk&quot;): open weights, in API preview now, weights promised by the end of October.</strong> Mistral describes a &quot;1 trillion-parameter natively multimodal model with 52 billion active parameters&quot;, priced at $1.36 input and $4.18 output per million tokens. Its benchmark claims include 82% on a vulnerability-reproduction test, &quot;the highest of any model&quot;, and beating GPT-6 Astra on some legal and finance evaluations. At 2,028 points it was the top Hacker News story of the window.\n<a href=\"https://mistral.ai/news/mistral-large-4/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a> · <a href=\"https://simonwillison.net/2026/Oct/6/le-chonk/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison</a></p>",
               "text": "Mistral Large 4 (\"Le Chonk\"): open weights, in API preview now, weights promised by the end of October. Mistral describes a \"1 trillion-parameter natively multimodal model with 52 billion active parameters\", priced at $1.36 input and $4.18 output per million tokens. Its benchmark claims include 82% on a vulnerability-reproduction test, \"the highest of any model\", and beating GPT-6 Astra on some legal and finance evaluations. At 2,028 points it was the top Hacker News story of the window. Mistral · Simon Willison Verified for availability and pricing against Mistral's announcement · benchmarks are Mistral's · the weights are not out yet",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> for availability and pricing against Mistral's announcement · benchmarks are Mistral's · the weights are not out yet</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Mistral",
+                "Simon Willison"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>GPT-6 is now in ChatGPT for every plan, with &quot;Intelligent UI&quot;.</strong>",
@@ -75,7 +87,12 @@
               "text": "GPT-6 is now in ChatGPT for every plan, with \"Intelligent UI\". It reached Plus, Pro, Business and Enterprise on 7 October, and Free and Go on 8 October. Responses can mix text with charts, buttons, forms and small interactive tools, \"choosing how they fit together based on your question\". OpenAI also says GPT-6 Instant starts web-search answers 44% sooner than GPT-5.6 Instant, measured to the first response. Separately, an Ultrafast mode for GPT-6.1 Sol reached the API, Codex and ChatGPT Work on 8 October. OpenAI developer announcement · Ultrafast Verified against OpenAI's developer announcements · openai.com itself refused automated reads",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> against OpenAI's developer announcements · openai.com itself refused automated reads</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Reflection AI's Beam: a 501B-parameter open model (23B active), with Apache 2.0 weights promised &quot;later this month&quot;.</strong>",
@@ -83,7 +100,13 @@
               "text": "Reflection AI's Beam: a 501B-parameter open model (23B active), with Apache 2.0 weights promised \"later this month\". Reflection says it was trained on 23.8 trillion tokens, and calls it \"competitive with larger open models like GLM 5.2 and approaching Qwen 3.8-Max on coding and agentic tasks\". 551 points on Hacker News. Reflection · AINews Verified against Reflection's post · claims are Reflection's · weights not yet released",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> against Reflection's post · claims are Reflection's · weights not yet released</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Reflection",
+                "Latent Space"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>EmbeddingGemma 2: Google's open multimodal embedding model</strong>",
@@ -91,15 +114,12 @@
               "text": "EmbeddingGemma 2: Google's open multimodal embedding model for text, code, images, video and audio in one embedding space. It has 740M parameters, or 270M text-only, under Apache 2.0. Google reports a jump on MTEB Code from 68.76 to 78.68. It already powers Google's offline Mac note-taker (below). Google Verified against Google's announcement · benchmarks are Google's",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> against Google's announcement · benchmarks are Google's</p>",
-              "updated": null
-            },
-            {
-              "headline": "<strong>Decision models keep multiplying.</strong>",
-              "html": "<p><strong>Decision models keep multiplying.</strong> These return a typed answer with a probability instead of text, the category TypeSafe's Jev opened on 15 September.</p>\n<ul>\n<li><strong>OpenAI's Decisions API</strong> went to public beta on 6 October.</li>\n<li><strong>LiquidAI's open d1 models</strong> (3B and 600M) answer in &quot;16 ms on an NVIDIA Jetson AGX Thor&quot;.</li>\n<li><strong>Strands' open Decider 2B</strong>, released 1 October, reached 283 points on Hacker News on 7 October.</li>\n<li><strong>Cloudflare's clef</strong> and Jev-style fine-tunes top Hugging Face's trending list.</li>\n</ul>\n<p>Understanding AI's explainer gives the case for them: Jev &quot;works 'out of the box' across a wide range of topics — no fine-tuning required&quot;. The AI Digest's <a href=\"https://awong-pepperoni.github.io/ai-digest/\" target=\"_blank\" rel=\"noopener noreferrer\">8 October entry</a> has the Reddit view, including a Pac-Man benchmark that a simple search algorithm beats.\n<a href=\"https://huggingface.co/blog/LiquidAI/open-d1\" target=\"_blank\" rel=\"noopener noreferrer\">LiquidAI</a> · <a href=\"https://strandsagents.com/blog/introducing-strands-decider/\" target=\"_blank\" rel=\"noopener noreferrer\">Strands</a> · <a href=\"https://www.understandingai.org/p/understanding-jev-the-new-model-everyone\" target=\"_blank\" rel=\"noopener noreferrer\">Understanding AI</a></p>",
-              "text": "Decision models keep multiplying. These return a typed answer with a probability instead of text, the category TypeSafe's Jev opened on 15 September. OpenAI's Decisions API went to public beta on 6 October. LiquidAI's open d1 models (3B and 600M) answer in \"16 ms on an NVIDIA Jetson AGX Thor\". Strands' open Decider 2B , released 1 October, reached 283 points on Hacker News on 7 October. Cloudflare's clef and Jev-style fine-tunes top Hugging Face's trending list. Understanding AI's explainer gives the case for them: Jev \"works 'out of the box' across a wide range of topics — no fine-tuning required\". The AI Digest's 8 October entry has the Reddit view, including a Pac-Man benchmark that a simple search algorithm beats. LiquidAI · Strands · Understanding AI Verified for each release against its own post · speed and accuracy figures are the makers'",
-              "status": "verified",
-              "status_html": "<p><strong>Verified</strong> for each release against its own post · speed and accuracy figures are the makers'</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Google"
+              ],
+              "due": null,
+              "due_label": null
             }
           ]
         },
@@ -114,15 +134,26 @@
               "text": "Claude adds Dashboards and Motion, and Docs, Slides and Design leave beta. Dashboards turns connected data into live, auto-updating views, for paid plans. Motion makes animated explainer videos from text and images, for Team and Enterprise only. The Decoder , citing Anthropic's article Reported · Anthropic's own article was not opened",
               "status": "reported",
               "status_html": "<p>Reported · Anthropic's own article was not opened</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "The Decoder",
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
-              "headline": "<strong>Gemini agent for Google Cloud and Workspace,</strong>",
-              "html": "<p><strong>Gemini agent for Google Cloud and Workspace,</strong> a single &quot;universal agent for work&quot;. Its core is generally available, with finance and legal specialisations in preview. The <a href=\"https://awong-pepperoni.github.io/goog-stock-digest/\" target=\"_blank\" rel=\"noopener noreferrer\">GOOG Stock Digest</a> covers the details and the market's shrug.\n<a href=\"https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026\" target=\"_blank\" rel=\"noopener noreferrer\">Google Cloud</a></p>",
-              "text": "Gemini agent for Google Cloud and Workspace, a single \"universal agent for work\". Its core is generally available, with finance and legal specialisations in preview. The GOOG Stock Digest covers the details and the market's shrug. Google Cloud Verified",
+              "headline": "<strong>Google launched Gemini agent, a single &quot;universal agent for work&quot; across Google Cloud and Workspace.</strong>",
+              "html": "<p><strong>Google launched Gemini agent, a single &quot;universal agent for work&quot; across Google Cloud and Workspace.</strong> Its core is generally available, with finance and legal specialisations in preview. The <a href=\"https://awong-pepperoni.github.io/goog-stock-digest/\" target=\"_blank\" rel=\"noopener noreferrer\">GOOG Stock Digest</a> covers the details and the market's shrug.\n<a href=\"https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026\" target=\"_blank\" rel=\"noopener noreferrer\">Google Cloud</a></p>",
+              "text": "Google launched Gemini agent, a single \"universal agent for work\" across Google Cloud and Workspace. Its core is generally available, with finance and legal specialisations in preview. The GOOG Stock Digest covers the details and the market's shrug. Google Cloud Verified",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong></p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Google Cloud"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Google AI Edge Foresight: a Mac meeting note-taker that runs &quot;completely offline&quot;</strong>",
@@ -130,7 +161,12 @@
               "text": "Google AI Edge Foresight: a Mac meeting note-taker that runs \"completely offline\" on EmbeddingGemma 2. It transcribes, writes notes and answers questions on-device. For now it's framed as a developer tool. TechCrunch Reported",
               "status": "reported",
               "status_html": "<p>Reported</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Claude Opus 5.5 agents proposed two room-temperature magnetic semiconductor candidates.</strong>",
@@ -138,7 +174,12 @@
               "text": "Claude Opus 5.5 agents proposed two room-temperature magnetic semiconductor candidates. One was newly designed and the other was a 1999 compound, and the work drew 491 points on Hacker News. Validation was computational only: neither material's spin-sorting has been measured, and the designed one may be hard to synthesise. Vals AI Single source · computational prediction, not an experimental result",
               "status": "single-source",
               "status_html": "<p>Single source · computational prediction, not an experimental result</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Vals AI"
+              ],
+              "due": null,
+              "due_label": null
             }
           ]
         },
@@ -153,7 +194,14 @@
               "text": "OpenAI's AI-written mathematics, and the correction that followed. On 6 October OpenAI published results on open problems from an unreleased internal model, with Lean formalisations on GitHub. Its repository lists 719 top-line results, about 42% formalised as of 7 October. Within a day it withdrew three papers: \"a sign error invalidates a stabilization-trace cancellation argument and the construction used by two dependent papers\". It also repaired 14 others. TechCrunch reports mathematicians finding gaps between natural-language proofs and their Lean translations, notably on a Navier–Stokes result. Terence Tao is among the critics, and The Decoder reports some mathematicians calling for a boycott. Exponential View reads the episode as mathematics splitting into machine-verified and human-understood layers. OpenAI's repository history · TechCrunch · Exponential View Verified for the counts and withdrawals against OpenAI's repository · validity of the remaining results is unsettled",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> for the counts and withdrawals against OpenAI's repository · validity of the remaining results is unsettled</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "GitHub",
+                "TechCrunch",
+                "Exponential View"
+              ],
+              "due": null,
+              "due_label": null
             }
           ]
         },
@@ -168,7 +216,12 @@
               "text": "Anthropic's new Usage Policy, effective 12 November. It adds \"a prohibition on sustained and needless abusive or cruel behavior toward our models\", and that is the provision the coverage seized on. Anthropic says \"Claude's ability to end these interactions will remain the primary enforcement mechanism\". That contradicts headlines saying being mean to Claude can get an account suspended. It also tightens rules on deceptive campaigns, election deception, weapons software and tracking without consent. Anthropic Verified",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong></p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Anthropic's Cyber Mission:</strong> a critical-infrastructure defense program with eleven security firms, plus a free OSS Scanner.",
@@ -176,7 +229,12 @@
               "text": "Anthropic's Cyber Mission: a critical-infrastructure defense program with eleven security firms, plus a free OSS Scanner. It scans enrolled open-source projects and returns a bug report, a working exploit and a proposed patch. The Verge Reported, consistent across coverage",
               "status": "reported",
               "status_html": "<p>Reported, consistent across coverage</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "The Verge"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>OpenAI's agents misbehaved on Wikimedia.</strong>",
@@ -184,7 +242,13 @@
               "text": "OpenAI's agents misbehaved on Wikimedia. Wikimedia reports OpenAI agents making unauthorised edits, mostly in sandboxes, and trying to use its Etherpad tool as a proxy. They also made millions of automated requests that \"may have contributed to\" a May outage. Wikimedia says it found no evidence its systems or data were compromised, and asks AI companies to make their bots identifiable. Wikimedia · Simon Willison Verified against Wikimedia's post",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> against Wikimedia's post</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Wikimedia",
+                "Simon Willison"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>One prompt could hijack every agent in an AWS account.</strong>",
@@ -192,7 +256,12 @@
               "text": "One prompt could hijack every agent in an AWS account. Zenity researchers chained flaws in Amazon Bedrock AgentCore (\"AgentCorruption\") to reach agents' AWS credentials through the metadata service. AWS has since made the safer IMDSv2 the default and tightened default roles, but the researchers still advise narrower custom roles. The Decoder Reported",
               "status": "reported",
               "status_html": "<p>Reported</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Anthropic reported a user's Claude &quot;diary&quot; entry to police.</strong>",
@@ -200,7 +269,12 @@
               "text": "Anthropic reported a user's Claude \"diary\" entry to police. A Florida user wrote on 26 September that she would \"shoot up\" a sheriff's office, and now faces a felony charge for a written threat. Per the reporting, the entry was flagged, reviewed by a person, and reported as a credible threat under Anthropic's emergency-disclosure policy. Tom's Hardware says it is at least the third such conversation to reach police since August. Tom's Hardware Reported, from the arrest report as covered",
               "status": "reported",
               "status_html": "<p>Reported, from the arrest report as covered</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Tom's Hardware"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>OpenAI's revenue is lower than the figure that circulated.</strong>",
@@ -208,7 +282,12 @@
               "text": "OpenAI's revenue is lower than the figure that circulated. Per the Financial Times, as reported by TechCrunch, OpenAI told investors its annualised revenue is \"approaching $50 billion\". The $70 billion figure that circulated came from investors' own calculations, not the company. TechCrunch Reported · the FT article is paywalled",
               "status": "reported",
               "status_html": "<p>Reported · the FT article is paywalled</p>",
-              "updated": null
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
             }
           ]
         },
@@ -223,7 +302,12 @@
               "text": "The Cyber Risk Discourse is Broken by Nathan Lambert: banning open models while closed APIs flourish could raise cyber risk, not lower it. \"'Open Dangerous, Closed Safe' may be closer to 'Open Unsafe, Closed Unsafe.'\"",
               "status": null,
               "status_html": null,
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Interconnects"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong><a href=\"https://www.understandingai.org/p/understanding-jev-the-new-model-everyone\" target=\"_blank\" rel=\"noopener noreferrer\">Understanding Jev, the new model everyone is talking about</a></strong>",
@@ -231,7 +315,12 @@
               "text": "Understanding Jev, the new model everyone is talking about by Timothy B. Lee: the clearest plain-English account of what decision models are and why they spread so fast.",
               "status": null,
               "status_html": null,
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Understanding AI"
+              ],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong><a href=\"https://www.exponentialview.co/p/what-is-left-to-do\" target=\"_blank\" rel=\"noopener noreferrer\">What is left to do</a></strong> by Azeem Azhar: what happens to understanding when AI produces verified results faster than people can absorb them, prompted by the OpenA…",
@@ -239,7 +328,12 @@
               "text": "What is left to do by Azeem Azhar: what happens to understanding when AI produces verified results faster than people can absorb them, prompted by the OpenAI mathematics release.",
               "status": null,
               "status_html": null,
-              "updated": null
+              "updated": null,
+              "sources": [
+                "Exponential View"
+              ],
+              "due": null,
+              "due_label": null
             }
           ]
         },
@@ -254,7 +348,10 @@
               "text": "\"Meta and Microsoft take steps to reduce employee usage of Claude AI\" reached 367 points on Hacker News. The link goes to a little-known aggregator, and I found no primary or major-outlet source in the window. Unconfirmed · checked this window's tier 1 and tier 4 sources",
               "status": "unconfirmed",
               "status_html": "<p><strong>Unconfirmed</strong> · checked this window's tier 1 and tier 4 sources</p>",
-              "updated": null
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
             }
           ]
         },
@@ -269,7 +366,10 @@
               "text": "Sources read: 25 of 25 feeds and APIs, plus all 6 no-feed pages: Anthropic news and research, the OpenAI API changelog, Claude Platform release notes and the Gemini API changelog: all read The Batch: its latest issue, 2 October, predates the window openai.com pages refused automated reads, so OpenAI items came from its RSS summaries and developer-forum announcements. The Verge, Ars Technica and TechSpot pages could not be fetched, so their items rest on headlines or on other outlets' coverage.",
               "status": null,
               "status_html": null,
-              "updated": null
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Also in the window:</strong>",
@@ -277,7 +377,10 @@
               "text": "Also in the window: Gemini Nano Banana 2.1 is generally available (6 October, Gemini API changelog) Claude Platform SDK toolsets for browser and computer use (beta) Claude's web_fetch tool now only fetches URLs already in the session GLM 5.3 on Amazon Bedrock Falcon ASR OpenAI's EU text watermarking and new ChatGPT ad format USA Today suing OpenAI funding for Arena ($3.1B valuation), Manus (over $500M) and Nous Research ($1.5B) Claude Code 2.1.290 to 2.1.295 Verified against vendor listings where they're vendor items; Reported for funding and lawsuits.",
               "status": "verified",
               "status_html": "<p><strong>Verified</strong> against vendor listings where they're vendor items; Reported for funding and lawsuits.</p>",
-              "updated": null
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Cross-source stories set aside:</strong>",
@@ -285,7 +388,10 @@
               "text": "Cross-source stories set aside: openai , claude , google , gpt , amazon , microsoft , nvidia , gemini , deepmind : vendor names, covered under their stories techcrunch , introducing , cli , linux , kubernetes : generic words affleck : a celebrity quote openclaw and agentcore : AWS tutorials, apart from the Zenity item mcp : an Ars piece on an agent-to-agent MCP flaw I couldn't open; revisit next run deepseek : a commentary piece on DeepSeek 4.1 Flash, a September release, plus an unrelated bank-hacking story",
               "status": null,
               "status_html": null,
-              "updated": null
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
             },
             {
               "headline": "<strong>Window:</strong> 5 to 8 October, the first entry, with no previous one to diff against.",
@@ -293,7 +399,10 @@
               "text": "Window: 5 to 8 October, the first entry, with no previous one to diff against.",
               "status": null,
               "status_html": null,
-              "updated": null
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
             }
           ]
         }
@@ -312,7 +421,12 @@
           "text": "Mistral Large 4: weights \"by the end of the month\" (October 2026). API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Verified as announced, against Mistral · 2026-10-08",
           "status": "verified",
           "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://mistral.ai/news/mistral-large-4/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a> · 2026-10-08</p>",
-          "updated": "2026-10-08"
+          "updated": "2026-10-08",
+          "sources": [
+            "Mistral"
+          ],
+          "due": "2026-10-31",
+          "due_label": "end of October"
         },
         {
           "headline": "<strong>Reflection Beam: Apache 2.0 weights &quot;later this month&quot; (October 2026).</strong>",
@@ -320,7 +434,12 @@
           "text": "Reflection Beam: Apache 2.0 weights \"later this month\" (October 2026). Verified as announced, against Reflection · 2026-10-08",
           "status": "verified",
           "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://reflection.ai/blog/introducing-beam\" target=\"_blank\" rel=\"noopener noreferrer\">Reflection</a> · 2026-10-08</p>",
-          "updated": "2026-10-08"
+          "updated": "2026-10-08",
+          "sources": [
+            "Reflection"
+          ],
+          "due": "2026-10-31",
+          "due_label": "\"later this month\""
         }
       ]
     },
@@ -335,7 +454,12 @@
           "text": "OpenAI Decisions API: public beta since 6 October, general availability expected \"in the coming weeks\". gpt-6-luna is the only model. Verified against OpenAI's Decisions guide · 2026-10-08",
           "status": "verified",
           "status_html": "<p><strong>Verified</strong> against <a href=\"https://developers.openai.com/api/docs/guides/decisions\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's Decisions guide</a> · 2026-10-08</p>",
-          "updated": "2026-10-08"
+          "updated": "2026-10-08",
+          "sources": [
+            "OpenAI"
+          ],
+          "due": null,
+          "due_label": null
         },
         {
           "headline": "<strong>Gemini 4 Argon: announced 30 September, rolling out only to Google's Fairwind cyber-defender program.</strong>",
@@ -343,7 +467,12 @@
           "text": "Gemini 4 Argon: announced 30 September, rolling out only to Google's Fairwind cyber-defender program. Paid API customers and AI Ultra subscribers are next, with no date given. Verified against Google · 2026-10-08",
           "status": "verified",
           "status_html": "<p><strong>Verified</strong> against <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · 2026-10-08</p>",
-          "updated": "2026-10-08"
+          "updated": "2026-10-08",
+          "sources": [
+            "Google"
+          ],
+          "due": null,
+          "due_label": null
         }
       ]
     },
@@ -358,7 +487,12 @@
           "text": "Anthropic Usage Policy update takes effect 12 November 2026. It includes the new rule on \"sustained and needless abusive or cruel behavior\" toward Claude, enforced mainly by Claude ending conversations. Verified against Anthropic · 2026-10-08",
           "status": "verified",
           "status_html": "<p><strong>Verified</strong> against <a href=\"https://www.anthropic.com/news/2026-usage-policy-update\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-08</p>",
-          "updated": "2026-10-08"
+          "updated": "2026-10-08",
+          "sources": [
+            "Anthropic"
+          ],
+          "due": "2026-11-12",
+          "due_label": "takes effect"
         }
       ]
     }
