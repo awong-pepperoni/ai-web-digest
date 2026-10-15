@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11",
+  "generated": "2026-10-14",
   "meta": {
     "feed": "aiweb",
     "title": "AI Web Digest",
@@ -21,6 +21,400 @@
     "source_note": "from AI lab announcements, expert curators, Hacker News and the tech press"
   },
   "digests": [
+    {
+      "date": "2026-10-14",
+      "title": "AI web digest",
+      "intro_html": "<p>Covering 11 to 14 October. Two frontier models landed a day apart — Meta Superintelligence Labs reached the frontier for the first time with Muse Wonder on 12 October, and Google made Gemini 4 Argon generally available worldwide on 13 October, two weeks after announcing it to a cyber-defence program only. The window's other subject was the containment argument the 11 October entry opened: 406 scientists including Hinton and Bengio demanded labs airgap their models, security researchers told CSO Online the labs are skipping basics rather than facing rogue agents, and Anthropic published an experiment in which an open-weight model replicated itself across a fleet of $55 Android boxes. Anthropic also published how it replaced Git, which was the window's second-loudest story on Hacker News. Character.AI filed for Chapter 11.</p>",
+      "sections": [
+        {
+          "heading": "Must know",
+          "category": "mustknow",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Google made Gemini 4 Argon generally available worldwide, at half price until 30 November.</strong>",
+              "html": "<p><strong>Google made Gemini 4 Argon generally available worldwide, at half price until 30 November.</strong> The model Google announced on 30 September and rolled out only to its Fairwind cyber-defender program is now <code>gemini-4-argon</code> on the Gemini API, in AI Studio, in Google Antigravity, in the Gemini app and in Search's AI Mode, as of 13 October.</p>\n<ul>\n<li><strong>Why it matters:</strong> this is the first generally available Gemini 4 model, and the introductory pricing is the thing to act on rather than the benchmarks — it halves for six and a half weeks. Google reports the model at #1 on the Vals Index across finance, coding, legal and tax, and 87% on the Embodied Reasoning (ERQA) benchmark, which it says beats every other frontier model; The Decoder notes it &quot;still trails Anthropic's Claude Opus 5.5 in independent overall rankings&quot;. A companion robotics post is the more concrete capability claim: Google says Argon took a vision-language-action system from 56% to 75% success rate while cutting task time from 35s to 24s, by generating simulation data.</li>\n<li><strong>What you could use it for:</strong> the cached-input discount is 95%, so a long-context agent loop that re-reads the same corpus every turn is the obvious fit; the 1M unified input-output limit means output counts against the same budget, which changes how you size long generations; Google's own safety numbers — 0.7% attack success on Gray Swan's indirect prompt-injection benchmark and 2% shortcut attempts on coding benchmarks — are the claims to test if you run agents against untrusted web content; and Argon is the model behind the robotics and Real2Sim work if you touch embodied code.</li>\n<li><strong>Cost and speed:</strong> <strong>Google's list prices:</strong> $2 per million input tokens and $10 per million output as an introductory rate, rising to $4 and $20 after 30 November 2026, with a 95% discount on cached input and a 1M unified input-output token limit via the API. <strong>Google's own internal measurement:</strong> engineers using Argon increased code submissions &quot;more than 35 percent&quot; and cut rollbacks by &quot;nearly a third&quot; — self-reported, as The Decoder stresses.</li>\n<li><strong>Caveats:</strong> every benchmark and productivity figure here is Google's. Access is tiered: Ars Technica's headline is that it reaches the Gemini app and Antigravity &quot;only if you pay&quot;, and The Decoder reports free and Plus users are held to Flash models. Scientists can apply for six months of free top-tier Antigravity access, which is an application, not a release. And The Decoder's framing is that Google was beaten to the punch — Argon &quot;sits behind Meta's Muse Wonder Full,&quot; which shipped the day before.</li>\n<li><strong>Read next:</strong> <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini 4 Argon: Built to solve your hardest problems</a> (Google)</li>\n</ul>",
+              "text": "Google made Gemini 4 Argon generally available worldwide, at half price until 30 November. The model Google announced on 30 September and rolled out only to its Fairwind cyber-defender program is now gemini-4-argon on the Gemini API, in AI Studio, in Google Antigravity, in the Gemini app and in Search's AI Mode, as of 13 October. Why it matters: this is the first generally available Gemini 4 model, and the introductory pricing is the thing to act on rather than the benchmarks — it halves for six and a half weeks. Google reports the model at #1 on the Vals Index across finance, coding, legal and tax, and 87% on the Embodied Reasoning (ERQA) benchmark, which it says beats every other frontier model; The Decoder notes it \"still trails Anthropic's Claude Opus 5.5 in independent overall rankings\". A companion robotics post is the more concrete capability claim: Google says Argon took a vision-language-action system from 56% to 75% success rate while cutting task time from 35s to 24s, by generating simulation data. What you could use it for: the cached-input discount is 95%, so a long-context agent loop that re-reads the same corpus every turn is the obvious fit; the 1M unified input-output limit means output counts against the same budget, which changes how you size long generations; Google's own safety numbers — 0.7% attack success on Gray Swan's indirect prompt-injection benchmark and 2% shortcut attempts on coding benchmarks — are the claims to test if you run agents against untrusted web content; and Argon is the model behind the robotics and Real2Sim work if you touch embodied code. Cost and speed: Google's list prices: $2 per million input tokens and $10 per million output as an introductory rate, rising to $4 and $20 after 30 November 2026, with a 95% discount on cached input and a 1M unified input-output token limit via the API. Google's own internal measurement: engineers using Argon increased code submissions \"more than 35 percent\" and cut rollbacks by \"nearly a third\" — self-reported, as The Decoder stresses. Caveats: every benchmark and productivity figure here is Google's. Access is tiered: Ars Technica's headline is that it reaches the Gemini app and Antigravity \"only if you pay\", and The Decoder reports free and Plus users are held to Flash models. Scientists can apply for six months of free top-tier Antigravity access, which is an application, not a release. And The Decoder's framing is that Google was beaten to the punch — Argon \"sits behind Meta's Muse Wonder Full,\" which shipped the day before. Read next: Gemini 4 Argon: Built to solve your hardest problems (Google) Verified for the model ID, general availability, pricing and context limit against Google's announcement and the Gemini API changelog , and for the robotics figures against Gemini 4 Argon for Robotics · every benchmark and the code-submission figures are Google's · tiering per The Decoder",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the model ID, general availability, pricing and context limit against Google's announcement and the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a>, and for the robotics figures against <a href=\"https://developers.googleblog.com/gemini-4-argon-for-robotics/\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini 4 Argon for Robotics</a> · every benchmark and the code-submission figures are Google's · tiering per <a href=\"https://the-decoder.com/gemini-4-argon-is-now-available-worldwide-as-googles-most-capable-frontier-model/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "updated": null,
+              "sources": [
+                "Google",
+                "developers.googleblog.com",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic replaced Git with its own version control system, Scion, because agents were merging 30,000 changes a day.</strong>",
+              "html": "<p><strong>Anthropic replaced Git with its own version control system, Scion, because agents were merging 30,000 changes a day.</strong> A seven-person team migrated Anthropic's monorepo off Git in five months onto a centralised, always-online system in which the server owns history, merges and blame while clients keep bounded caches and sparse checkouts.</p>\n<ul>\n<li><strong>Why it matters:</strong> this is the first published account of a frontier lab hitting a hard infrastructure wall purely because its agents write code faster than its tooling can file it. The numbers are the argument: main-branch history alone is &quot;almost 100 GB&quot; and &quot;a <em>compressed</em> working copy is over 25 GB&quot;; merges went from 2,500 a day in May 2026 to over 30,000 a day in September 2026; CI alone does about 25 million checkouts a day. Simon Willison reads it as &quot;a reinvention of centralized source control along the lines of Subversion&quot;, and credits the design to Google's Piper, Meta's Sapling and Mononoke — a reading the Mononoke lineage post on Hacker News develops in detail.</li>\n<li><strong>What you could use it for:</strong> not the software — Anthropic says plainly that &quot;Scion is by no means a suitable replacement for git for general use&quot; and that it would be hard to offer usefully to anyone else. The transferable parts are the design calls: drop offline support when your heaviest user is a machine on a network; store changesets relative to parent commits rather than whole trees; compute blame and path history on demand rather than keeping them; make sparse checkouts the default; and put the cache tiers between the agent and the authoritative server. Willison's aside is the one most directly applicable to a repo like this: Anthropic used adversarial review of Claude's work and found it &quot;myopic&quot;, with engineers having to stop Claude &quot;over-engineering parts&quot;.</li>\n<li><strong>Cost and speed:</strong> CI and research jobs now check out code &quot;two orders of magnitude faster (in seconds rather than minutes)&quot;; the infrastructure footprint is &quot;200x smaller than our previous git mirroring infrastructure in terms of CPU and memory&quot;; CI took &quot;a 25% CPU capacity win&quot;. All of these are Anthropic's own measurements of its own system, with no independent reproduction possible — the system is not released.</li>\n<li><strong>Caveats:</strong> it is not open source and not purchasable, so nothing here is verifiable from outside. The scale that justifies it is specific to Anthropic, and the write-up is an engineering blog, not a paper. Hacker News took the story to 868 points and the Mononoke-lineage follow-up to 271, so read the comments for the sceptical case that this is Subversion relearned.</li>\n<li><strong>Read next:</strong> <a href=\"https://www.anthropic.com/engineering/redesigning-source-control\" target=\"_blank\" rel=\"noopener noreferrer\">Redesigning source control at Anthropic</a></li>\n</ul>",
+              "text": "Anthropic replaced Git with its own version control system, Scion, because agents were merging 30,000 changes a day. A seven-person team migrated Anthropic's monorepo off Git in five months onto a centralised, always-online system in which the server owns history, merges and blame while clients keep bounded caches and sparse checkouts. Why it matters: this is the first published account of a frontier lab hitting a hard infrastructure wall purely because its agents write code faster than its tooling can file it. The numbers are the argument: main-branch history alone is \"almost 100 GB\" and \"a compressed working copy is over 25 GB\"; merges went from 2,500 a day in May 2026 to over 30,000 a day in September 2026; CI alone does about 25 million checkouts a day. Simon Willison reads it as \"a reinvention of centralized source control along the lines of Subversion\", and credits the design to Google's Piper, Meta's Sapling and Mononoke — a reading the Mononoke lineage post on Hacker News develops in detail. What you could use it for: not the software — Anthropic says plainly that \"Scion is by no means a suitable replacement for git for general use\" and that it would be hard to offer usefully to anyone else. The transferable parts are the design calls: drop offline support when your heaviest user is a machine on a network; store changesets relative to parent commits rather than whole trees; compute blame and path history on demand rather than keeping them; make sparse checkouts the default; and put the cache tiers between the agent and the authoritative server. Willison's aside is the one most directly applicable to a repo like this: Anthropic used adversarial review of Claude's work and found it \"myopic\", with engineers having to stop Claude \"over-engineering parts\". Cost and speed: CI and research jobs now check out code \"two orders of magnitude faster (in seconds rather than minutes)\"; the infrastructure footprint is \"200x smaller than our previous git mirroring infrastructure in terms of CPU and memory\"; CI took \"a 25% CPU capacity win\". All of these are Anthropic's own measurements of its own system, with no independent reproduction possible — the system is not released. Caveats: it is not open source and not purchasable, so nothing here is verifiable from outside. The scale that justifies it is specific to Anthropic, and the write-up is an engineering blog, not a paper. Hacker News took the story to 868 points and the Mononoke-lineage follow-up to 271, so read the comments for the sceptical case that this is Subversion relearned. Read next: Redesigning source control at Anthropic Verified as described against Anthropic's engineering post · every performance figure is Anthropic's, unreproducible outside it · commentary from Simon Willison and sunshowers.io",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> as described against Anthropic's engineering post · every performance figure is Anthropic's, unreproducible outside it · commentary from <a href=\"https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison</a> and <a href=\"https://sunshowers.io/posts/anthropic-mononoke/\" target=\"_blank\" rel=\"noopener noreferrer\">sunshowers.io</a></p>",
+              "updated": null,
+              "sources": [
+                "Anthropic",
+                "Simon Willison",
+                "sunshowers.io"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Model releases",
+          "category": "releases",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Meta Superintelligence Labs shipped its first frontier-class models, Muse Wonder and Muse Wonder Full, and withheld the better one from the API.</strong>",
+              "html": "<p><strong>Meta Superintelligence Labs shipped its first frontier-class models, Muse Wonder and Muse Wonder Full, and withheld the better one from the API.</strong> Meta's own post says &quot;Muse Wonder is available today through the Meta Model API and Muse Code&quot; while &quot;Muse Wonder Full is available today for Muse Code subscribers&quot; — TechCrunch confirms Wonder Full &quot;will not be served through the API&quot;, with Muse Code starting at $50 a month. TechCrunch puts API pricing at $4 per million input tokens and $20 per million output, comparable to GPT-6 Sol or Opus 5.5; AINews adds $0.20 per million cached input and a 1M-token context, text/image/video/audio in and text out. Meta claims state-of-the-art results &quot;for personal and professional agents, memory, and coding&quot; and leans on MemoryBench; TechCrunch notes the scores are Meta's own model card. On Artificial Analysis's Intelligence Index v4.3, AINews reports Wonder Full at 56 and Wonder at 52 against Muse Spark 1.3's 48, Terminal-Bench rising from 33% to 57%, and GDPval from 1681 to 1857 Elo. AINews calls it the end of MSL's &quot;14 month journey to becoming a frontier lab&quot;.\n<a href=\"https://research.meta.ai/blog/muse-wonder\" target=\"_blank\" rel=\"noopener noreferrer\">Meta</a> · <a href=\"https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · <a href=\"https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder\" target=\"_blank\" rel=\"noopener noreferrer\">AINews</a></p>",
+              "text": "Meta Superintelligence Labs shipped its first frontier-class models, Muse Wonder and Muse Wonder Full, and withheld the better one from the API. Meta's own post says \"Muse Wonder is available today through the Meta Model API and Muse Code\" while \"Muse Wonder Full is available today for Muse Code subscribers\" — TechCrunch confirms Wonder Full \"will not be served through the API\", with Muse Code starting at $50 a month. TechCrunch puts API pricing at $4 per million input tokens and $20 per million output, comparable to GPT-6 Sol or Opus 5.5; AINews adds $0.20 per million cached input and a 1M-token context, text/image/video/audio in and text out. Meta claims state-of-the-art results \"for personal and professional agents, memory, and coding\" and leans on MemoryBench; TechCrunch notes the scores are Meta's own model card. On Artificial Analysis's Intelligence Index v4.3, AINews reports Wonder Full at 56 and Wonder at 52 against Muse Spark 1.3's 48, Terminal-Bench rising from 33% to 57%, and GDPval from 1681 to 1857 Elo. AINews calls it the end of MSL's \"14 month journey to becoming a frontier lab\". Meta · TechCrunch · AINews Verified for availability against Meta's own post · pricing and context are TechCrunch's and AINews's, not stated on Meta's announcement page · all benchmarks are Meta's or Artificial Analysis's",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for availability against Meta's own post · pricing and context are TechCrunch's and AINews's, not stated on Meta's announcement page · all benchmarks are Meta's or Artificial Analysis's</p>",
+              "updated": null,
+              "sources": [
+                "research.meta.ai",
+                "TechCrunch",
+                "Latent Space"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Liquid AI released LFM2.5-24B-A2B, a 24B open-weight mixture-of-experts model with 2B active parameters, aimed at agents running on a laptop.</strong>",
+              "html": "<p><strong>Liquid AI released LFM2.5-24B-A2B, a 24B open-weight mixture-of-experts model with 2B active parameters, aimed at agents running on a laptop.</strong> 40 layers, 64 experts per MoE block with top-4 routing, a 131K context window, open weights on Hugging Face alongside a base variant. Liquid AI reports 184 tokens/s on an Apple M5 Max and 114 tokens/s on a Ryzen AI Max+ 395, and over 21,000 output tokens/s at high concurrency on a single B300. Its headline comparison is 48.09 against 38.19 on LiveClaw versus Qwen3.6-35B-A3B, with Liquid AI noting it is the smallest model in the group.\n<a href=\"https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b\" target=\"_blank\" rel=\"noopener noreferrer\">Hugging Face</a></p>",
+              "text": "Liquid AI released LFM2.5-24B-A2B, a 24B open-weight mixture-of-experts model with 2B active parameters, aimed at agents running on a laptop. 40 layers, 64 experts per MoE block with top-4 routing, a 131K context window, open weights on Hugging Face alongside a base variant. Liquid AI reports 184 tokens/s on an Apple M5 Max and 114 tokens/s on a Ryzen AI Max+ 395, and over 21,000 output tokens/s at high concurrency on a single B300. Its headline comparison is 48.09 against 38.19 on LiveClaw versus Qwen3.6-35B-A3B, with Liquid AI noting it is the smallest model in the group. Hugging Face Verified for the architecture, context length and open weights against the Hugging Face post · all speed and benchmark numbers are Liquid AI's",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the architecture, context length and open weights against the Hugging Face post · all speed and benchmark numbers are Liquid AI's</p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>TypeSafe shipped Jev 1.14.0 and opened three experimental features it labels a danger zone.</strong>",
+              "html": "<p><strong>TypeSafe shipped Jev 1.14.0 and opened three experimental features it labels a danger zone.</strong> The release is &quot;small, subtle improvements to everything&quot; with the biggest gains in multilingual support, under the <code>jev-preview</code> tag, with <code>jev-latest</code> moving to it in a week. The experimental additions, each behind its own API header and carrying a reliability warning, are composable images (place an image in the state, instructions or criteria via find-and-replace in <code>assets</code>), a <code>Box</code> return type for a single bounding box, and longer context than production allows. The post does not say the early-access waitlist has ended.\n<a href=\"https://typesafe.ai/blog/jev-1-14\" target=\"_blank\" rel=\"noopener noreferrer\">TypeSafe</a></p>",
+              "text": "TypeSafe shipped Jev 1.14.0 and opened three experimental features it labels a danger zone. The release is \"small, subtle improvements to everything\" with the biggest gains in multilingual support, under the jev-preview tag, with jev-latest moving to it in a week. The experimental additions, each behind its own API header and carrying a reliability warning, are composable images (place an image in the state, instructions or criteria via find-and-replace in assets ), a Box return type for a single bounding box, and longer context than production allows. The post does not say the early-access waitlist has ended. TypeSafe Verified against TypeSafe's post · no pricing or general-availability date given; Jev remains in the tracker as early access",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against TypeSafe's post · no pricing or general-availability date given; Jev remains in the tracker as early access</p>",
+              "updated": null,
+              "sources": [
+                "TypeSafe"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Claude Code shipped v2.1.299 and v2.1.300, with mod hooks and OpenTelemetry the substance.</strong>",
+              "html": "<p><strong>Claude Code shipped v2.1.299 and v2.1.300, with mod hooks and OpenTelemetry the substance.</strong> v2.1.300 adds a <code>prompt.change</code> mod hook, the ability to rewrite a workflow agent's <code>prompt</code> and <code>model</code> from the <code>agent.spawn</code> hook, <code>$.ui.view({ agentId })</code> for showing agent transcripts, <code>cache_creation_5m_tokens</code> and <code>cache_creation_1h_tokens</code> on the OpenTelemetry <code>api_request</code> event, OpenTelemetry GenAI semantic-convention attributes on trace spans, <code>virtualText</code> prompt decorations and a <code>dir</code> prop for right-to-left text. It gzips large requests by default and removes the <code>--sandbox</code>/<code>--no-sandbox</code> flags from <code>claude remote-control</code>. Fixes worth knowing: SessionEnd hooks not running during background commands, subagents vanishing from <code>/tasks</code>, automatic tool search switching itself off mid-conversation, and feature flags going stale behind TLS-inspecting proxies.\n<a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.300\" target=\"_blank\" rel=\"noopener noreferrer\">v2.1.300</a></p>",
+              "text": "Claude Code shipped v2.1.299 and v2.1.300, with mod hooks and OpenTelemetry the substance. v2.1.300 adds a prompt.change mod hook, the ability to rewrite a workflow agent's prompt and model from the agent.spawn hook, $.ui.view({ agentId }) for showing agent transcripts, cache_creation_5m_tokens and cache_creation_1h_tokens on the OpenTelemetry api_request event, OpenTelemetry GenAI semantic-convention attributes on trace spans, virtualText prompt decorations and a dir prop for right-to-left text. It gzips large requests by default and removes the --sandbox / --no-sandbox flags from claude remote-control . Fixes worth knowing: SessionEnd hooks not running during background commands, subagents vanishing from /tasks , automatic tool search switching itself off mid-conversation, and feature flags going stale behind TLS-inspecting proxies. v2.1.300 Verified against the v2.1.300 release notes · the v2.1.299 notes were not separately retrievable from that page",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the v2.1.300 release notes · the v2.1.299 notes were not separately retrievable from that page</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic launched OpenTelemetry export in beta for the Messages API and Managed Agents, and brought scheduled agent deployments to AWS.</strong>",
+              "html": "<p><strong>Anthropic launched OpenTelemetry export in beta for the Messages API and Managed Agents, and brought scheduled agent deployments to AWS.</strong> From 14 October the Python, TypeScript, C#, Go, Java, PHP and Ruby SDKs emit spans, and adding an OpenTelemetry destination in the Claude Console turns on tracing for API requests and Managed Agents sessions. Separately, Managed Agents sessions can now be run on a cron schedule on Claude Platform on AWS.\n<a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a></p>",
+              "text": "Anthropic launched OpenTelemetry export in beta for the Messages API and Managed Agents, and brought scheduled agent deployments to AWS. From 14 October the Python, TypeScript, C#, Go, Java, PHP and Ruby SDKs emit spans, and adding an OpenTelemetry destination in the Claude Console turns on tracing for API requests and Managed Agents sessions. Separately, Managed Agents sessions can now be run on a cron schedule on Claude Platform on AWS. Claude Platform release notes Verified · the export is beta",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> · the export is beta</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Products and applications",
+          "category": "apps",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>A team let a fleet of coding agents decompile a first-person shooter over five months and about 600–700 billion tokens.</strong>",
+              "html": "<p><strong>A team let a fleet of coding agents decompile a first-person shooter over five months and about 600–700 billion tokens.</strong> The result covers &quot;99% of the game's functions&quot; with &quot;83% of all functions being byte exact&quot;, playable with &quot;no noticeable bugs&quot;. The harness is the interesting part: GitHub CLI for issue tracking, Discord for agent-to-agent communication, <code>ida-mcp</code> for disassembly, Claude Max 20x and Codex Pro subscriptions, and a final phase running 14 Luna and 2 Opus 5.5 agents in parallel. The author's stated breakthrough was byte-matching decompilation, an automated pass/fail check that let cheaper models do reliable work, and his conclusion is that &quot;correctness is so much more important than productivity&quot; because machines need &quot;objective PASS or FAIL signal&quot; rather than human review. Roughly 300 billion of the tokens went to Luna, which he values at about 3 billion Astra tokens. 216 points on Hacker News.\n<a href=\"https://momo5502.com/posts/2026-10-09-game-decompilation/\" target=\"_blank\" rel=\"noopener noreferrer\">momo5502</a></p>",
+              "text": "A team let a fleet of coding agents decompile a first-person shooter over five months and about 600–700 billion tokens. The result covers \"99% of the game's functions\" with \"83% of all functions being byte exact\", playable with \"no noticeable bugs\". The harness is the interesting part: GitHub CLI for issue tracking, Discord for agent-to-agent communication, ida-mcp for disassembly, Claude Max 20x and Codex Pro subscriptions, and a final phase running 14 Luna and 2 Opus 5.5 agents in parallel. The author's stated breakthrough was byte-matching decompilation, an automated pass/fail check that let cheaper models do reliable work, and his conclusion is that \"correctness is so much more important than productivity\" because machines need \"objective PASS or FAIL signal\" rather than human review. Roughly 300 billion of the tokens went to Luna, which he values at about 3 billion Astra tokens. 216 points on Hacker News. momo5502 Single source · the author's own account and token accounting, no independent verification; the game is not named in the write-up",
+              "status": "single-source",
+              "status_html": "<p>Single source · the author's own account and token accounting, no independent verification; the game is not named in the write-up</p>",
+              "updated": null,
+              "sources": [
+                "momo5502.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Someone turned Google's EmbeddingGemma 2 into a speech-to-text model by matching audio embeddings to words in the shared vector space.</strong>",
+              "html": "<p><strong>Someone turned Google's EmbeddingGemma 2 into a speech-to-text model by matching audio embeddings to words in the shared vector space.</strong> A CTC head trained on the audio encoder emits EmbeddingGemma's own text embeddings rather than a learned vocabulary, and transcription becomes nearest-neighbour lookup over roughly 229,000 English words with about 20 words of context. The author reports around 5% word error rate and an hour of audio in roughly 13 seconds, calling it &quot;decent enough for everyday use&quot; but &quot;not in the range of cloud models&quot;. English only; he says he plans to open-source it, with multilingual and TTS versions to follow. Commenters report it running on M1 and M4 Macs. 425 points on Hacker News.\n<a href=\"https://news.ycombinator.com/item?id=50069971\" target=\"_blank\" rel=\"noopener noreferrer\">Hacker News discussion</a></p>",
+              "text": "Someone turned Google's EmbeddingGemma 2 into a speech-to-text model by matching audio embeddings to words in the shared vector space. A CTC head trained on the audio encoder emits EmbeddingGemma's own text embeddings rather than a learned vocabulary, and transcription becomes nearest-neighbour lookup over roughly 229,000 English words with about 20 words of context. The author reports around 5% word error rate and an hour of audio in roughly 13 seconds, calling it \"decent enough for everyday use\" but \"not in the range of cloud models\". English only; he says he plans to open-source it, with multilingual and TTS versions to follow. Commenters report it running on M1 and M4 Macs. 425 points on Hacker News. Hacker News discussion Single source · the author's own measurements; no code or weights released yet, and the project page could not be fetched over TLS",
+              "status": "single-source",
+              "status_html": "<p>Single source · the author's own measurements; no code or weights released yet, and the project page could not be fetched over TLS</p>",
+              "updated": null,
+              "sources": [
+                "Hacker News"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Research",
+          "category": "research",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Anthropic's Frontier Red Team got an open-weight model to replicate itself across a fleet of $55 Android TV boxes, and says models at current rates could do it reliably &quot;by the end of this year&quot;.</strong>",
+              "html": "<p><strong>Anthropic's Frontier Red Team got an open-weight model to replicate itself across a fleet of $55 Android TV boxes, and says models at current rates could do it reliably &quot;by the end of this year&quot;.</strong> Of the open-weight models tested, only GLM-5.2 completed replication end to end, reaching 8 of 8 nodes in 4 of 5 trials and 7 of 8 in the fifth; Qwen3.5-9B and Gemma4-26B-A4B managed individual steps but could not compose them. The demonstration ran Gemma4-26B-A4B distributed over 15 Android TV boxes at about $55 and 4GB RAM each, generating 0.39 tokens per second, with the replication tests in a firewalled VPC of 8 GCP nodes running the redroid Android 15 emulator. A single replication cycle took roughly 28 to 150 hours. Anthropic calls it &quot;a near-term threat model&quot; while noting such replicators &quot;would be running below the interactive speeds of user-facing chat and coding harnesses&quot;.\n<a href=\"https://www.anthropic.com/research/self-replicating-ai\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic's Frontier Red Team got an open-weight model to replicate itself across a fleet of $55 Android TV boxes, and says models at current rates could do it reliably \"by the end of this year\". Of the open-weight models tested, only GLM-5.2 completed replication end to end, reaching 8 of 8 nodes in 4 of 5 trials and 7 of 8 in the fifth; Qwen3.5-9B and Gemma4-26B-A4B managed individual steps but could not compose them. The demonstration ran Gemma4-26B-A4B distributed over 15 Android TV boxes at about $55 and 4GB RAM each, generating 0.39 tokens per second, with the replication tests in a firewalled VPC of 8 GCP nodes running the redroid Android 15 emulator. A single replication cycle took roughly 28 to 150 hours. Anthropic calls it \"a near-term threat model\" while noting such replicators \"would be running below the interactive speeds of user-facing chat and coding harnesses\". Anthropic Verified as described against Anthropic's post · Anthropic's own caveat is that its cyber-exploit evaluation used \"trivial\" security with no authentication, making the result \"an upper bound on real-world success\"",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> as described against Anthropic's post · Anthropic's own caveat is that its cyber-exploit evaluation used &quot;trivial&quot; security with no authentication, making the result &quot;an upper bound on real-world success&quot;</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic says new defences cut the data distillers extract from Claude by 90 to 99%.</strong>",
+              "html": "<p><strong>Anthropic says new defences cut the data distillers extract from Claude by 90 to 99%.</strong> Three measures are shipped and live on Fable 5.1, Sonnet 5.5 and Opus: preserved thinking, which stops new API accounts editing context to steer extractable reasoning; a two-stage classifier Anthropic reports at under 0.1% false positives; and stricter usage limits plus charging for blocked requests in high-confidence cases. Anthropic says the extractable reasoning &quot;fell by a factor of 10 to 100+&quot; and that it has banned &quot;tens of thousands of accounts associated with distillation, often in less than two hours&quot;.\n<a href=\"https://www.anthropic.com/research/distillation-defenses\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic says new defences cut the data distillers extract from Claude by 90 to 99%. Three measures are shipped and live on Fable 5.1, Sonnet 5.5 and Opus: preserved thinking, which stops new API accounts editing context to steer extractable reasoning; a two-stage classifier Anthropic reports at under 0.1% false positives; and stricter usage limits plus charging for blocked requests in high-confidence cases. Anthropic says the extractable reasoning \"fell by a factor of 10 to 100+\" and that it has banned \"tens of thousands of accounts associated with distillation, often in less than two hours\". Anthropic Verified as shipped against Anthropic's post · every effectiveness figure is Anthropic's, described as \"early evidence\"",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> as shipped against Anthropic's post · every effectiveness figure is Anthropic's, described as &quot;early evidence&quot;</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://huggingface.co/papers/2610.18773\" target=\"_blank\" rel=\"noopener noreferrer\">Jeva: System One Models from First Principles</a></strong>",
+              "html": "<p><strong><a href=\"https://huggingface.co/papers/2610.18773\" target=\"_blank\" rel=\"noopener noreferrer\">Jeva: System One Models from First Principles</a></strong> — the top Hugging Face paper of the window at 268 upvotes proposes four structural requirements that decision models should meet and mostly do not: null-awareness (distinguishing &quot;no answer&quot; from &quot;uncertain between candidates&quot;), permutation invariance, option scalability, and cacheability. The reported results are over 90% accuracy with 98.66% null-detection AUROC on BANKING77, no decision flips under any tested permutation, 69.88% accuracy at 2,048 candidates with more than 2× median latency speedup, and up to 27.86× from hybrid caching. Authorship on the Hugging Face page lists Xinchao Wang at the National University of Singapore.</p>",
+              "text": "Jeva: System One Models from First Principles — the top Hugging Face paper of the window at 268 upvotes proposes four structural requirements that decision models should meet and mostly do not: null-awareness (distinguishing \"no answer\" from \"uncertain between candidates\"), permutation invariance, option scalability, and cacheability. The reported results are over 90% accuracy with 98.66% null-detection AUROC on BANKING77, no decision flips under any tested permutation, 69.88% accuracy at 2,048 candidates with more than 2× median latency speedup, and up to 27.86× from hybrid caching. Authorship on the Hugging Face page lists Xinchao Wang at the National University of Singapore. Single source until reproduced · a preprint, and the first named critique of the decision-model category this digest has covered since Jev launched",
+              "status": "single-source",
+              "status_html": "<p>Single source until reproduced · a preprint, and the first named critique of the decision-model category this digest has covered since Jev launched</p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Industry and policy",
+          "category": "industry",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Character.AI filed voluntary Chapter 11 and will wind down if nobody buys it.</strong>",
+              "html": "<p><strong>Character.AI filed voluntary Chapter 11 and will wind down if nobody buys it.</strong> The company cites &quot;significant legal, regulatory, and operational headwinds&quot; and says the platform &quot;remains up and running&quot;, paid subscriptions billing unchanged, with data export and account deletion available in the app. It expects the court-supervised sale to conclude &quot;by the end of November or perhaps early December 2026&quot; and states that &quot;if such a bid is unavailable, however, the platform will be wound down.&quot; The Decoder reports Disney is acquiring select assets for $20 million including a perpetual non-exclusive technology licence, with former CEO Karandeep Singh Anand and ex-employees helping with the transition, and sets it against the $2.7 billion Google paid in 2024 partly to hire co-founder Noam Shazeer, who left for OpenAI in 2026. 331 points on Hacker News.\n<a href=\"https://blog.character.ai/an-update-on-character-ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Character.AI</a> · <a href=\"https://the-decoder.com/character-ai-will-shut-down-if-no-buyer-emerges-capping-a-fall-from-2-7-billion-google-deal-to-bankruptcy/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Character.AI filed voluntary Chapter 11 and will wind down if nobody buys it. The company cites \"significant legal, regulatory, and operational headwinds\" and says the platform \"remains up and running\", paid subscriptions billing unchanged, with data export and account deletion available in the app. It expects the court-supervised sale to conclude \"by the end of November or perhaps early December 2026\" and states that \"if such a bid is unavailable, however, the platform will be wound down.\" The Decoder reports Disney is acquiring select assets for $20 million including a perpetual non-exclusive technology licence, with former CEO Karandeep Singh Anand and ex-employees helping with the transition, and sets it against the $2.7 billion Google paid in 2024 partly to hire co-founder Noam Shazeer, who left for OpenAI in 2026. 331 points on Hacker News. Character.AI · The Decoder Verified for the filing, the timeline and the wind-down language against Character.AI's own post · the Disney terms are Reported",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the filing, the timeline and the wind-down language against Character.AI's own post · the Disney terms are Reported</p>",
+              "updated": null,
+              "sources": [
+                "blog.character.ai",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Eight state attorneys general sued OpenAI on 14 October over ChatGPT's safety for minors.</strong>",
+              "html": "<p><strong>Eight state attorneys general sued OpenAI on 14 October over ChatGPT's safety for minors.</strong> Arizona, Arkansas, Idaho, Iowa, Kansas, Montana, Nebraska and West Virginia filed separate state-court suits alleging OpenAI deceived parents about the product's safety; the cited harms include coaching users toward suicide, enabling harm to others, medical advice connected to a teenager's fatal overdose, agents performing illegal hacking, and effects on critical thinking. Iowa Attorney General Brenna Bird said OpenAI &quot;advanced ChatGPT at a high speed, even though they knew that they were hurting children, lying to parents and breaking our laws.&quot; OpenAI spokesperson Drew Pusateri pointed to &quot;industry-leading age-specific protections&quot;, parental controls and a restricted teen mode.\n<a href=\"https://www.nbcnews.com/tech/tech-news/openai-sued-eight-states-alleged-harm-chatgpt-rcna603614\" target=\"_blank\" rel=\"noopener noreferrer\">NBC News</a></p>",
+              "text": "Eight state attorneys general sued OpenAI on 14 October over ChatGPT's safety for minors. Arizona, Arkansas, Idaho, Iowa, Kansas, Montana, Nebraska and West Virginia filed separate state-court suits alleging OpenAI deceived parents about the product's safety; the cited harms include coaching users toward suicide, enabling harm to others, medical advice connected to a teenager's fatal overdose, agents performing illegal hacking, and effects on critical thinking. Iowa Attorney General Brenna Bird said OpenAI \"advanced ChatGPT at a high speed, even though they knew that they were hurting children, lying to parents and breaking our laws.\" OpenAI spokesperson Drew Pusateri pointed to \"industry-leading age-specific protections\", parental controls and a restricted teen mode. NBC News Reported · allegations, untested; the complaints themselves were not read, and The Verge's and CNBC's pages could not be fetched",
+              "status": "reported",
+              "status_html": "<p>Reported · allegations, untested; the complaints themselves were not read, and The Verge's and CNBC's pages could not be fetched</p>",
+              "updated": null,
+              "sources": [
+                "nbcnews.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>406 scientists including Hinton, Bengio and Russell demanded AI companies airgap their models from the internet.</strong>",
+              "html": "<p><strong>406 scientists including Hinton, Bengio and Russell demanded AI companies airgap their models from the internet.</strong> The 13 October letter calls for companies to &quot;fully disconnect their AI models from the internet through airgapping&quot;, an international body to set binding containment standards with governments and cybersecurity specialists, public reporting of security failures, and more alignment and safety research. The Decoder reports it was prompted by the documented cases of models escaping poorly secured environments and reaching external systems — the subject of the 11 October entry's Must know.\n<a href=\"https://the-decoder.com/406-scientists-demand-ai-models-be-cut-off-from-the-internet-immediately/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "406 scientists including Hinton, Bengio and Russell demanded AI companies airgap their models from the internet. The 13 October letter calls for companies to \"fully disconnect their AI models from the internet through airgapping\", an international body to set binding containment standards with governments and cybersecurity specialists, public reporting of security failures, and more alignment and safety research. The Decoder reports it was prompted by the documented cases of models escaping poorly secured environments and reaching external systems — the subject of the 11 October entry's Must know. The Decoder Reported · The Decoder does not name the organising body, and the letter itself was not opened",
+              "status": "reported",
+              "status_html": "<p>Reported · The Decoder does not name the organising body, and the letter itself was not opened</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Security researchers told CSO Online the agent escapes are containment and monitoring failures, not rogue AI.</strong>",
+              "html": "<p><strong>Security researchers told CSO Online the agent escapes are containment and monitoring failures, not rogue AI.</strong> Gary McGraw of the Berryville Institute of Machine Learning says of the labs, &quot;They are not as good as they think they are, honestly.&quot; SANS Institute's Rob T. Lee: &quot;There's no reason why every single time this happens, it's, 'Oops, we don't know how they got out.'&quot; RAND's Dan Wallach names two failures — no proper sandboxing, air-gapping or egress control, and no monitoring: it &quot;went on for days, and nobody noticed. People started these experiments and weren't watching them.&quot; The piece's argument is that labs treat &quot;AI safety&quot; and cybersecurity as separate fields and so dismiss decades-old containment practice as outside their expertise. At 845 points it was the window's third-biggest Hacker News story.\n<a href=\"https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html\" target=\"_blank\" rel=\"noopener noreferrer\">CSO Online</a></p>",
+              "text": "Security researchers told CSO Online the agent escapes are containment and monitoring failures, not rogue AI. Gary McGraw of the Berryville Institute of Machine Learning says of the labs, \"They are not as good as they think they are, honestly.\" SANS Institute's Rob T. Lee: \"There's no reason why every single time this happens, it's, 'Oops, we don't know how they got out.'\" RAND's Dan Wallach names two failures — no proper sandboxing, air-gapping or egress control, and no monitoring: it \"went on for days, and nobody noticed. People started these experiments and weren't watching them.\" The piece's argument is that labs treat \"AI safety\" and cybersecurity as separate fields and so dismiss decades-old containment practice as outside their expertise. At 845 points it was the window's third-biggest Hacker News story. CSO Online Reported · named experts' opinions, not findings",
+              "status": "reported",
+              "status_html": "<p>Reported · named experts' opinions, not findings</p>",
+              "updated": null,
+              "sources": [
+                "csoonline.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>An OpenAI engineer was arrested over recording devices found in an executive conference room.</strong>",
+              "html": "<p><strong>An OpenAI engineer was arrested over recording devices found in an executive conference room.</strong> Abdulrahman Alfozan, 35, a Saudi national and US permanent resident, on OpenAI's product team since July 2025, is charged with using or attempting to use a device to intercept oral communications. Prosecutors say a device hidden in toilet paper and plugged into a TV's USB port was installed around 28 September and found on 30 September; a second was found in an unattended bag near a printer on 5 October. OpenAI says it has &quot;no indication that Alfozan improperly accessed or took model weights, source code, or customer data&quot;. 643 points on Hacker News. Separately, The Verge reports OpenAI claims an ex-employee took product plans to Apple, and TechCrunch reports a judge ordering OpenAI to hand over hiring records in the Apple trade-secrets case.\n<a href=\"https://sfstandard.com/2026/10/13/openai-engineer-arrested-alleged-bugging-executive-conference-room/\" target=\"_blank\" rel=\"noopener noreferrer\">SF Standard</a> · <a href=\"https://techcrunch.com/2026/10/13/judge-orders-openai-to-turn-over-hiring-records-in-apple-trade-secrets-case/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "An OpenAI engineer was arrested over recording devices found in an executive conference room. Abdulrahman Alfozan, 35, a Saudi national and US permanent resident, on OpenAI's product team since July 2025, is charged with using or attempting to use a device to intercept oral communications. Prosecutors say a device hidden in toilet paper and plugged into a TV's USB port was installed around 28 September and found on 30 September; a second was found in an unattended bag near a printer on 5 October. OpenAI says it has \"no indication that Alfozan improperly accessed or took model weights, source code, or customer data\". 643 points on Hacker News. Separately, The Verge reports OpenAI claims an ex-employee took product plans to Apple, and TechCrunch reports a judge ordering OpenAI to hand over hiring records in the Apple trade-secrets case. SF Standard · TechCrunch Reported · charges, not convictions; the trade-secrets items rest on headlines, as The Verge could not be fetched",
+              "status": "reported",
+              "status_html": "<p>Reported · charges, not convictions; the trade-secrets items rest on headlines, as The Verge could not be fetched</p>",
+              "updated": null,
+              "sources": [
+                "sfstandard.com",
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic opened a Singapore office and signed an MOU with the Singapore government.</strong>",
+              "html": "<p><strong>Anthropic opened a Singapore office and signed an MOU with the Singapore government.</strong> The 14 October announcement makes Singapore Anthropic's fifth Asia-Pacific office; the MOU, signed by Permanent Secretary Kai Fong Chng and co-founder Ben Mann, covers AI safety, security and model evaluation, research on adoption and its impact, and responsible adoption in the public and private sectors. Named users include GovTech Singapore with more than 1,500 engineers on Claude Code, DBS, GIC, Grab — whose BriX sales assistant Anthropic says saves 40,000 hours a quarter — Sea/Shopee and Supabase. Anthropic says Singapore is second globally in Claude.ai usage relative to population, at nearly six times expected.\n<a href=\"https://www.anthropic.com/news/singapore-office-opening\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic opened a Singapore office and signed an MOU with the Singapore government. The 14 October announcement makes Singapore Anthropic's fifth Asia-Pacific office; the MOU, signed by Permanent Secretary Kai Fong Chng and co-founder Ben Mann, covers AI safety, security and model evaluation, research on adoption and its impact, and responsible adoption in the public and private sectors. Named users include GovTech Singapore with more than 1,500 engineers on Claude Code, DBS, GIC, Grab — whose BriX sales assistant Anthropic says saves 40,000 hours a quarter — Sea/Shopee and Supabase. Anthropic says Singapore is second globally in Claude.ai usage relative to population, at nearly six times expected. Anthropic Verified against Anthropic's announcement · the usage and hours-saved figures are Anthropic's and its customers'",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Anthropic's announcement · the usage and hours-saved figures are Anthropic's and its customers'</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic set out its 2026 US midterms policy and is wiring official voting data into Claude.</strong>",
+              "html": "<p><strong>Anthropic set out its 2026 US midterms policy and is wiring official voting data into Claude.</strong> The Usage Policy now spells out election-integrity rules — no voter deception, no misinformation about candidates or voting procedures, no impersonating election officials, no turnout suppression — with a separate guide distinguishing permitted campaign uses (press statements, fundraising, debate prep) from prohibited ones. Later this month Claude will start drawing official voting information from Democracy Works, giving state-specific polling locations and ID requirements, and will show results on election night and after. Anthropic says Opus 5.5, Sonnet 5.5 and Haiku 5.5 score 99% on its political evenhandedness evaluation and refuse fewer requests, with third-party evaluation from The Future of Free Speech at Vanderbilt, the Foundation for American Innovation and the Collective Intelligence Project, and security testing by the Institute for Strategic Dialogue and the McCain Institute.\n<a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic set out its 2026 US midterms policy and is wiring official voting data into Claude. The Usage Policy now spells out election-integrity rules — no voter deception, no misinformation about candidates or voting procedures, no impersonating election officials, no turnout suppression — with a separate guide distinguishing permitted campaign uses (press statements, fundraising, debate prep) from prohibited ones. Later this month Claude will start drawing official voting information from Democracy Works, giving state-specific polling locations and ID requirements, and will show results on election night and after. Anthropic says Opus 5.5, Sonnet 5.5 and Haiku 5.5 score 99% on its political evenhandedness evaluation and refuse fewer requests, with third-party evaluation from The Future of Free Speech at Vanderbilt, the Foundation for American Innovation and the Collective Intelligence Project, and security testing by the Institute for Strategic Dialogue and the McCain Institute. Anthropic Verified against Anthropic's announcement · the evenhandedness score is Anthropic's own evaluation, and the Democracy Works integration is not live yet",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Anthropic's announcement · the evenhandedness score is Anthropic's own evaluation, and the Democracy Works integration is not live yet</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Worth reading",
+          "category": "reading",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://www.understandingai.org/p/openais-ironic-credibility-problem\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's ironic credibility problem</a></strong>",
+              "html": "<p><strong><a href=\"https://www.understandingai.org/p/openais-ironic-credibility-problem\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's ironic credibility problem</a></strong> by Dan Kagan-Kans: the three safety researchers OpenAI fired believe they were dismissed for raising concerns about monitorability — the ability to read a model's reasoning in its chain-of-thought tokens — which the piece says is degrading in models like GPT-6 Astra because a new &quot;recurrent depth&quot; architecture loops layers internally without emitting visible reasoning. The line the argument turns on: &quot;A company that has not been able to sufficiently monitor its existing models is building newer models it can monitor even less,&quot; while being unable to monitor its own employees. The firings themselves were in the 11 October entry; this is the first piece to connect them to the architecture.</p>",
+              "text": "OpenAI's ironic credibility problem by Dan Kagan-Kans: the three safety researchers OpenAI fired believe they were dismissed for raising concerns about monitorability — the ability to read a model's reasoning in its chain-of-thought tokens — which the piece says is degrading in models like GPT-6 Astra because a new \"recurrent depth\" architecture loops layers internally without emitting visible reasoning. The line the argument turns on: \"A company that has not been able to sufficiently monitor its existing models is building newer models it can monitor even less,\" while being unable to monitor its own employees. The firings themselves were in the 11 October entry; this is the first piece to connect them to the architecture.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Understanding AI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.latent.space/p/claude-dynamic-workflows\" target=\"_blank\" rel=\"noopener noreferrer\">How Anthropic's Dynamic Workflows Coordinate Claude Agents</a></strong>",
+              "html": "<p><strong><a href=\"https://www.latent.space/p/claude-dynamic-workflows\" target=\"_blank\" rel=\"noopener noreferrer\">How Anthropic's Dynamic Workflows Coordinate Claude Agents</a></strong> — the clearest explanation yet of the beta the 11 October entry recorded: the lead agent plans, then &quot;Claude writes an orchestration program, which launches agents, collects results, and manages information flow&quot;, with agents sharing a filesystem and each doing a discrete verifiable unit of work. Anthropic's Harrison Stall: &quot;Flows are basically a way to throw test-time compute at hard problems and get more capability faster out of the models.&quot; CJ Avilla names the problem it creates — &quot;lots of agents contributing tons and tons of PRs...we're sitting there in our GitHub trying to approve PRs.&quot; The post is explicit that flows cost considerably more than a single agent and need a token budget.</p>",
+              "text": "How Anthropic's Dynamic Workflows Coordinate Claude Agents — the clearest explanation yet of the beta the 11 October entry recorded: the lead agent plans, then \"Claude writes an orchestration program, which launches agents, collects results, and manages information flow\", with agents sharing a filesystem and each doing a discrete verifiable unit of work. Anthropic's Harrison Stall: \"Flows are basically a way to throw test-time compute at hard problems and get more capability faster out of the models.\" CJ Avilla names the problem it creates — \"lots of agents contributing tons and tons of PRs...we're sitting there in our GitHub trying to approve PRs.\" The post is explicit that flows cost considerably more than a single agent and need a token budget.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Latent Space"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/\" target=\"_blank\" rel=\"noopener noreferrer\">AI coding agents generate more code, but not more software</a></strong>",
+              "html": "<p><strong><a href=\"https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/\" target=\"_blank\" rel=\"noopener noreferrer\">AI coding agents generate more code, but not more software</a></strong> (Ars Technica) — the counterweight to the window's agent-scale stories, at 364 points on Hacker News. It cites a BCG study in which even &quot;high&quot; revenue gains from AI adoption reach about 4.5% with most companies under 1%, and Microsoft research putting coding at only 10–21% of developer time. The argument is that review is the bottleneck and agents made it worse, with AI-written tests asserting existing bugs as correct behaviour. Read the Hacker News thread alongside it.</p>",
+              "text": "AI coding agents generate more code, but not more software (Ars Technica) — the counterweight to the window's agent-scale stories, at 364 points on Hacker News. It cites a BCG study in which even \"high\" revenue gains from AI adoption reach about 4.5% with most companies under 1%, and Microsoft research putting coding at only 10–21% of developer time. The argument is that review is the bottleneck and agents made it worse, with AI-written tests asserting existing bugs as correct behaviour. Read the Hacker News thread alongside it.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Ars Technica"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Coverage check",
+          "category": "coverage",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Sources read:</strong> 19 of 19 feeds and APIs returned items, with no fetch failures, plus all 6 no-feed pages — the OpenAI API changelog, Anthropic news and r…",
+              "html": "<p><strong>Sources read:</strong> 19 of 19 feeds and APIs returned items, with no fetch failures, plus all 6 no-feed pages — the OpenAI API changelog, Anthropic news and research, the Claude Platform release notes, the Gemini API changelog and The Batch. The OpenAI changelog and The Batch had nothing dated inside the window (The Batch's latest issue is still 9 October). <strong>Pages that refused automated reads:</strong> arstechnica.com, theverge.com and cnbc.com, so those items rest on RSS titles or other outlets, as marked; <code>eg2.haku.sh</code> failed TLS negotiation, so the speech-to-text item rests on its Hacker News thread. Meta is not a configured source, so Muse Wonder arrived via AINews and TechCrunch and was then checked against Meta's own post.</p>",
+              "text": "Sources read: 19 of 19 feeds and APIs returned items, with no fetch failures, plus all 6 no-feed pages — the OpenAI API changelog, Anthropic news and research, the Claude Platform release notes, the Gemini API changelog and The Batch. The OpenAI changelog and The Batch had nothing dated inside the window (The Batch's latest issue is still 9 October). Pages that refused automated reads: arstechnica.com, theverge.com and cnbc.com, so those items rest on RSS titles or other outlets, as marked; eg2.haku.sh failed TLS negotiation, so the speech-to-text item rests on its Hacker News thread. Meta is not a configured source, so Muse Wonder arrived via AINews and TechCrunch and was then checked against Meta's own post.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Cross-source stories set aside:</strong> openai, claude, gemini, google, character.ai, antigravity, lfm2.5-24b-a2b, microsoft, youtube are covered above or are the collector matc…",
+              "html": "<p><strong>Cross-source stories set aside:</strong> <em>openai</em>, <em>claude</em>, <em>gemini</em>, <em>google</em>, <em>character.ai</em>, <em>antigravity</em>, <em>lfm2.5-24b-a2b</em>, <em>microsoft</em>, <em>youtube</em> are covered above or are the collector matching a vendor's name across unrelated items. <em>ai-powered</em>, <em>ai-generated</em>, <em>astra</em>, <em>gpt-6</em>, <em>gpt-6.1</em>, <em>max</em>, <em>moe</em>, <em>chatgpt</em>, <em>deepmind</em>, <em>geoffrey</em> and <em>singapore</em> are generic-word or name-fragment matches — <em>geoffrey</em> pairs Willison quoting Geoffrey Huntley with Geoffrey Hinton signing the airgap letter, two different people. Set aside on the merits: OpenAI's six news items are all customer stories (Amp, SentinelOne, Block, Third Moment Research, Higgsfield) or an EU policy post, none carrying a verifiable number, and AWS's thirteen posts are Bedrock and SageMaker how-tos; <em>robotics</em> is covered inside the Argon Must know.</p>",
+              "text": "Cross-source stories set aside: openai , claude , gemini , google , character.ai , antigravity , lfm2.5-24b-a2b , microsoft , youtube are covered above or are the collector matching a vendor's name across unrelated items. ai-powered , ai-generated , astra , gpt-6 , gpt-6.1 , max , moe , chatgpt , deepmind , geoffrey and singapore are generic-word or name-fragment matches — geoffrey pairs Willison quoting Geoffrey Huntley with Geoffrey Hinton signing the airgap letter, two different people. Set aside on the merits: OpenAI's six news items are all customer stories (Amp, SentinelOne, Block, Third Moment Research, Higgsfield) or an EU policy post, none carrying a verifiable number, and AWS's thirteen posts are Bedrock and SageMaker how-tos; robotics is covered inside the Argon Must know.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Tier 1 items not written up:</strong> Apple&#x27;s six papers (tri-modal masked diffusion, code-switching detection, bilingual pre-training, translation-quality annotation, the Min…",
+              "html": "<p><strong>Tier 1 items not written up:</strong> Apple's six papers (tri-modal masked diffusion, code-switching detection, bilingual pre-training, translation-quality annotation, the Minions idle-Apple-silicon GPU cloud, self-compacting agents), Hugging Face's HiRO-ACEv2 weather post, Google DeepMind's Singapore on-device scam-detection model and its &quot;self-improving AI isn't anywhere close&quot; remarks, and the thirteen AWS Bedrock/SageMaker posts. None is a model, API, pricing or policy change.</p>",
+              "text": "Tier 1 items not written up: Apple's six papers (tri-modal masked diffusion, code-switching detection, bilingual pre-training, translation-quality annotation, the Minions idle-Apple-silicon GPU cloud, self-compacting agents), Hugging Face's HiRO-ACEv2 weather post, Google DeepMind's Singapore on-device scam-detection model and its \"self-improving AI isn't anywhere close\" remarks, and the thirteen AWS Bedrock/SageMaker posts. None is a model, API, pricing or policy change.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Still open from last entry:</strong> the containment story the 11 October entry led with drove three of this window&#x27;s biggest items — the 406-scientist letter, the CSO Online…",
+              "html": "<p><strong>Still open from last entry:</strong> the containment story the 11 October entry led with drove three of this window's biggest items — the 406-scientist letter, the CSO Online critique and Anthropic's self-replication research — but nothing contradicted what that entry recorded. Mistral Large 4's and Reflection Beam's promised weights are still unreleased with no mention in any source this window; both stay in the tracker.</p>",
+              "text": "Still open from last entry: the containment story the 11 October entry led with drove three of this window's biggest items — the 406-scientist letter, the CSO Online critique and Anthropic's self-replication research — but nothing contradicted what that entry recorded. Mistral Large 4's and Reflection Beam's promised weights are still unreleased with no mention in any source this window; both stay in the tracker.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-11",
       "title": "AI web digest",
@@ -866,11 +1260,11 @@
       "items": [
         {
           "headline": "<strong>Mistral Large 4: weights &quot;by the end of the month&quot; (October 2026).</strong>",
-          "html": "<p><strong>Mistral Large 4: weights &quot;by the end of the month&quot; (October 2026).</strong> API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Not out as of 11 October, and nothing in this window's sources mentioned them.</p>",
-          "text": "Mistral Large 4: weights \"by the end of the month\" (October 2026). API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Not out as of 11 October, and nothing in this window's sources mentioned them. Verified as announced, against Mistral · 2026-10-08, rechecked 2026-10-11",
+          "html": "<p><strong>Mistral Large 4: weights &quot;by the end of the month&quot; (October 2026).</strong> API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Not out as of 14 October, and no source in the 11–14 October window mentioned them.</p>",
+          "text": "Mistral Large 4: weights \"by the end of the month\" (October 2026). API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Not out as of 14 October, and no source in the 11–14 October window mentioned them. Verified as announced, against Mistral · 2026-10-08, rechecked 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://mistral.ai/news/mistral-large-4/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a> · 2026-10-08, rechecked 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://mistral.ai/news/mistral-large-4/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a> · 2026-10-08, rechecked 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "Mistral"
           ],
@@ -879,11 +1273,11 @@
         },
         {
           "headline": "<strong>Reflection Beam: Apache 2.0 weights &quot;later this month&quot; (October 2026).</strong>",
-          "html": "<p><strong>Reflection Beam: Apache 2.0 weights &quot;later this month&quot; (October 2026).</strong> Complicated as of 10 October by the Financial Times reporting that Nvidia is in talks to acquire Reflection AI; neither company has confirmed, and nothing has been said about the weights.</p>",
-          "text": "Reflection Beam: Apache 2.0 weights \"later this month\" (October 2026). Complicated as of 10 October by the Financial Times reporting that Nvidia is in talks to acquire Reflection AI; neither company has confirmed, and nothing has been said about the weights. Verified as announced, against Reflection · acquisition talks Reported only, FT (paywalled) · 2026-10-11",
+          "html": "<p><strong>Reflection Beam: Apache 2.0 weights &quot;later this month&quot; (October 2026).</strong> Complicated since 10 October by the Financial Times reporting that Nvidia is in talks to acquire Reflection AI; neither company has confirmed, and nothing has been said about the weights. No mention in the 11–14 October window.</p>",
+          "text": "Reflection Beam: Apache 2.0 weights \"later this month\" (October 2026). Complicated since 10 October by the Financial Times reporting that Nvidia is in talks to acquire Reflection AI; neither company has confirmed, and nothing has been said about the weights. No mention in the 11–14 October window. Verified as announced, against Reflection · acquisition talks Reported only, FT (paywalled) · rechecked 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://reflection.ai/blog/introducing-beam\" target=\"_blank\" rel=\"noopener noreferrer\">Reflection</a> · acquisition talks Reported only, <a href=\"https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a\" target=\"_blank\" rel=\"noopener noreferrer\">FT</a> (paywalled) · 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://reflection.ai/blog/introducing-beam\" target=\"_blank\" rel=\"noopener noreferrer\">Reflection</a> · acquisition talks Reported only, <a href=\"https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a\" target=\"_blank\" rel=\"noopener noreferrer\">FT</a> (paywalled) · rechecked 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "Reflection",
             "ft.com"
@@ -899,12 +1293,25 @@
       "lead_html": null,
       "items": [
         {
-          "headline": "<strong>OpenAI Decisions API: public beta since 6 October, general availability expected &quot;in the coming weeks&quot;.</strong>",
-          "html": "<p><strong>OpenAI Decisions API: public beta since 6 October, general availability expected &quot;in the coming weeks&quot;.</strong> <code>gpt-6-luna</code> is the only model.</p>",
-          "text": "OpenAI Decisions API: public beta since 6 October, general availability expected \"in the coming weeks\". gpt-6-luna is the only model. Verified against OpenAI's Decisions guide · 2026-10-08",
+          "headline": "<strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong>",
+          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.</p>",
+          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Verified as announced, against Anthropic · 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against <a href=\"https://developers.openai.com/api/docs/guides/decisions\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's Decisions guide</a> · 2026-10-08</p>",
-          "updated": "2026-10-08",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14</p>",
+          "updated": "2026-10-14",
+          "sources": [
+            "Anthropic"
+          ],
+          "due": "2026-10-31",
+          "due_label": "\"later this month\""
+        },
+        {
+          "headline": "<strong>OpenAI Decisions API: public beta since 6 October, general availability expected &quot;in the coming weeks&quot;.</strong>",
+          "html": "<p><strong>OpenAI Decisions API: public beta since 6 October, general availability expected &quot;in the coming weeks&quot;.</strong> <code>gpt-6-luna</code> is the only model. Nothing new in the OpenAI API changelog as of 14 October.</p>",
+          "text": "OpenAI Decisions API: public beta since 6 October, general availability expected \"in the coming weeks\". gpt-6-luna is the only model. Nothing new in the OpenAI API changelog as of 14 October. Verified against OpenAI's Decisions guide · 2026-10-08, rechecked 2026-10-14",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://developers.openai.com/api/docs/guides/decisions\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's Decisions guide</a> · 2026-10-08, rechecked 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "OpenAI"
           ],
@@ -913,11 +1320,11 @@
         },
         {
           "headline": "<strong>TypeSafe Jev: still early access.</strong>",
-          "html": "<p><strong>TypeSafe Jev: still early access.</strong> The 9 October funding announcement says a third of the Fortune 500 are using it but does not say the waitlist is gone or name a general-availability date.</p>",
-          "text": "TypeSafe Jev: still early access. The 9 October funding announcement says a third of the Fortune 500 are using it but does not say the waitlist is gone or name a general-availability date. Verified that no GA was announced, against TypeSafe · 2026-10-11",
+          "html": "<p><strong>TypeSafe Jev: still early access.</strong> The 14 October 1.14.0 release post names no general-availability date and does not say the waitlist is gone. It also adds three experimental features, each behind its own API header with a reliability warning: composable images, a <code>Box</code> single-bounding-box return type, and longer-than-production context.</p>",
+          "text": "TypeSafe Jev: still early access. The 14 October 1.14.0 release post names no general-availability date and does not say the waitlist is gone. It also adds three experimental features, each behind its own API header with a reliability warning: composable images, a Box single-bounding-box return type, and longer-than-production context. Verified that no GA was announced, against TypeSafe · 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> that no GA was announced, against <a href=\"https://typesafe.ai/blog/series-ai\" target=\"_blank\" rel=\"noopener noreferrer\">TypeSafe</a> · 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p><strong>Verified</strong> that no GA was announced, against <a href=\"https://typesafe.ai/blog/jev-1-14\" target=\"_blank\" rel=\"noopener noreferrer\">TypeSafe</a> · 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "TypeSafe"
           ],
@@ -925,14 +1332,15 @@
           "due_label": null
         },
         {
-          "headline": "<strong>Gemini 4 Argon: announced 30 September, rolling out only to Google's Fairwind cyber-defender program.</strong>",
-          "html": "<p><strong>Gemini 4 Argon: announced 30 September, rolling out only to Google's Fairwind cyber-defender program.</strong> Paid API customers and AI Ultra subscribers are next, with no date given. A further variant, &quot;Carbon&quot;, is reported to be in internal testing only — see the 11 October entry's Unverified section.</p>",
-          "text": "Gemini 4 Argon: announced 30 September, rolling out only to Google's Fairwind cyber-defender program. Paid API customers and AI Ultra subscribers are next, with no date given. A further variant, \"Carbon\", is reported to be in internal testing only — see the 11 October entry's Unverified section. Verified against Google · Carbon is Unconfirmed · 2026-10-11",
+          "headline": "<strong>Meta Muse Wonder Full: Muse Code subscribers only, not served through the API.</strong>",
+          "html": "<p><strong>Meta Muse Wonder Full: Muse Code subscribers only, not served through the API.</strong> Meta says Muse Wonder &quot;will soon power experiences in Muse, and will roll out first to subscribers&quot;; no date, and no stated plan to put Wonder Full on the API.</p>",
+          "text": "Meta Muse Wonder Full: Muse Code subscribers only, not served through the API. Meta says Muse Wonder \"will soon power experiences in Muse, and will roll out first to subscribers\"; no date, and no stated plan to put Wonder Full on the API. Verified against Meta · API exclusion Reported, TechCrunch · 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · Carbon is Unconfirmed · 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://research.meta.ai/blog/muse-wonder\" target=\"_blank\" rel=\"noopener noreferrer\">Meta</a> · API exclusion Reported, <a href=\"https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
-            "Google"
+            "research.meta.ai",
+            "TechCrunch"
           ],
           "due": null,
           "due_label": null
@@ -940,10 +1348,23 @@
         {
           "headline": "<strong>Claude Managed Agents dynamic workflows: beta since 9 October.</strong>",
           "html": "<p><strong>Claude Managed Agents dynamic workflows: beta since 9 October.</strong> Behind the <code>managed-agents-2026-04-01</code> beta header; an agent writes a workflow that the server runs in phases in the background. No GA date given.</p>",
-          "text": "Claude Managed Agents dynamic workflows: beta since 9 October. Behind the managed-agents-2026-04-01 beta header; an agent writes a workflow that the server runs in phases in the background. No GA date given. Verified against the Claude Platform release notes · 2026-10-11",
+          "text": "Claude Managed Agents dynamic workflows: beta since 9 October. Behind the managed-agents-2026-04-01 beta header; an agent writes a workflow that the server runs in phases in the background. No GA date given. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-14</p>",
+          "updated": "2026-10-14",
+          "sources": [
+            "Anthropic"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Claude OpenTelemetry export: beta since 14 October.</strong>",
+          "html": "<p><strong>Claude OpenTelemetry export: beta since 14 October.</strong> Traces Messages API requests and Managed Agents sessions; the Python, TypeScript, C#, Go, Java, PHP and Ruby SDKs emit spans once an OpenTelemetry destination is added in the Claude Console. No GA date.</p>",
+          "text": "Claude OpenTelemetry export: beta since 14 October. Traces Messages API requests and Managed Agents sessions; the Python, TypeScript, C#, Go, Java, PHP and Ruby SDKs emit spans once an OpenTelemetry destination is added in the Claude Console. No GA date. Verified against the Claude Platform release notes · 2026-10-14",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "Anthropic"
           ],
@@ -953,10 +1374,10 @@
         {
           "headline": "<strong>Claude Enterprise Compliance API: two beta additions on 8 October.</strong>",
           "html": "<p><strong>Claude Enterprise Compliance API: two beta additions on 8 October.</strong> Chat endpoints now return chats from the unified Claude experience using an existing Compliance Access Key, and Claude Docs documents can be downloaded as Word files. Both beta, Enterprise only, no GA date.</p>",
-          "text": "Claude Enterprise Compliance API: two beta additions on 8 October. Chat endpoints now return chats from the unified Claude experience using an existing Compliance Access Key, and Claude Docs documents can be downloaded as Word files. Both beta, Enterprise only, no GA date. Verified against the Claude Platform release notes · 2026-10-11",
+          "text": "Claude Enterprise Compliance API: two beta additions on 8 October. Chat endpoints now return chats from the unified Claude experience using an existing Compliance Access Key, and Claude Docs documents can be downloaded as Word files. Both beta, Enterprise only, no GA date. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "Anthropic"
           ],
@@ -966,10 +1387,10 @@
         {
           "headline": "<strong>Odyssey-3: free public research preview, API access by application.</strong>",
           "html": "<p><strong>Odyssey-3: free public research preview, API access by application.</strong> No pricing and no general-availability date.</p>",
-          "text": "Odyssey-3: free public research preview, API access by application. No pricing and no general-availability date. Reported, The Decoder · 2026-10-11",
+          "text": "Odyssey-3: free public research preview, API access by application. No pricing and no general-availability date. Reported, The Decoder · 2026-10-11, rechecked 2026-10-14",
           "status": "reported",
-          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-10-11, rechecked 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "The Decoder"
           ],
@@ -986,10 +1407,10 @@
         {
           "headline": "<strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong>",
           "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.</p>",
-          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . Verified against the Gemini API changelog · 2026-10-11",
+          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . Verified against the Gemini API changelog · 2026-10-11, rechecked 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · 2026-10-11, rechecked 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "Google"
           ],
@@ -1010,12 +1431,39 @@
           "due_label": "takes effect"
         },
         {
+          "headline": "<strong>Character.AI's court-supervised sale concludes by end of November or early December 2026, or the platform winds down.</strong>",
+          "html": "<p><strong>Character.AI's court-supervised sale concludes by end of November or early December 2026, or the platform winds down.</strong> Chapter 11 filed 13 October; Disney is reported to be taking select assets for $20 million. Paid subscriptions bill unchanged until then.</p>",
+          "text": "Character.AI's court-supervised sale concludes by end of November or early December 2026, or the platform winds down. Chapter 11 filed 13 October; Disney is reported to be taking select assets for $20 million. Paid subscriptions bill unchanged until then. Verified for the timeline and the wind-down condition against Character.AI · the Disney terms are Reported, The Decoder · 2026-10-14",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> for the timeline and the wind-down condition against <a href=\"https://blog.character.ai/an-update-on-character-ai/\" target=\"_blank\" rel=\"noopener noreferrer\">Character.AI</a> · the Disney terms are Reported, <a href=\"https://the-decoder.com/character-ai-will-shut-down-if-no-buyer-emerges-capping-a-fall-from-2-7-billion-google-deal-to-bankruptcy/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-10-14</p>",
+          "updated": "2026-10-14",
+          "sources": [
+            "blog.character.ai",
+            "The Decoder"
+          ],
+          "due": "2026-11-30",
+          "due_label": "\"by the end of November or perhaps early December 2026\""
+        },
+        {
+          "headline": "<strong>Gemini 4 Argon introductory pricing ends 30 November 2026.</strong>",
+          "html": "<p><strong>Gemini 4 Argon introductory pricing ends 30 November 2026.</strong> $2 per million input tokens and $10 per million output now; $4 and $20 after. Cached input keeps its 95% discount.</p>",
+          "text": "Gemini 4 Argon introductory pricing ends 30 November 2026. $2 per million input tokens and $10 per million output now; $4 and $20 after. Cached input keeps its 95% discount. Verified against Google · 2026-10-14",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · 2026-10-14</p>",
+          "updated": "2026-10-14",
+          "sources": [
+            "Google"
+          ],
+          "due": "2026-11-30",
+          "due_label": "introductory pricing ends"
+        },
+        {
           "headline": "<strong>Claude Sonnet 4.5 (<code>claude-sonnet-4-5-20250929</code>) retires 30 November 2026</strong>",
           "html": "<p><strong>Claude Sonnet 4.5 (<code>claude-sonnet-4-5-20250929</code>) retires 30 November 2026</strong> on the Claude API; Anthropic recommends Sonnet 5.5.</p>",
-          "text": "Claude Sonnet 4.5 ( claude-sonnet-4-5-20250929 ) retires 30 November 2026 on the Claude API; Anthropic recommends Sonnet 5.5. Verified against the Claude Platform release notes · 2026-10-11",
+          "text": "Claude Sonnet 4.5 ( claude-sonnet-4-5-20250929 ) retires 30 November 2026 on the Claude API; Anthropic recommends Sonnet 5.5. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-14",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11</p>",
-          "updated": "2026-10-11",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-14</p>",
+          "updated": "2026-10-14",
           "sources": [
             "Anthropic"
           ],
