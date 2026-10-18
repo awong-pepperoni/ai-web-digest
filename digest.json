@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-14",
+  "generated": "2026-10-17",
   "meta": {
     "feed": "aiweb",
     "title": "AI Web Digest",
@@ -21,6 +21,451 @@
     "source_note": "from AI lab announcements, expert curators, Hacker News and the tech press"
   },
   "digests": [
+    {
+      "date": "2026-10-17",
+      "title": "AI web digest",
+      "intro_html": "<p>Covering 14 to 17 October. Open weights were the whole story: Meta released Muse Spark Open, an 816B mixture-of-experts model it calls the most capable US open-weight model to date and that Apple's own researchers measured running across four Mac Studios; DeepSeek shipped a V4.1 Flash revision under MIT at roughly a tenth of what it says rivals cost per agentic task; and Reflection finally published Beam's Apache 2.0 weights, clearing the oldest item in the tracker. China's commerce ministry chose the same week to draft export controls that would touch frontier models. On the research side Anthropic had Claude reverse-engineer where NIST's elliptic-curve seeds came from — the window's loudest Hacker News story — and Goodfire's claim that neural networks were interpretable all along split the interpretability field in public.</p>",
+      "sections": [
+        {
+          "heading": "Must know",
+          "category": "mustknow",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Meta released Muse Spark Open, an 816B-parameter open-weight model that runs on a pair of Mac Studios.</strong>",
+              "html": "<p><strong>Meta released Muse Spark Open, an 816B-parameter open-weight model that runs on a pair of Mac Studios.</strong> It is a natively multimodal mixture of experts with 42B active parameters and a 1M-token context window, aimed at coding and agentic work, and Meta calls it &quot;The Most Capable US Open-Weight Model to Date&quot;.</p>\n<ul>\n<li><strong>Why it matters:</strong> the gap this closes is geographic, not absolute. Nathan Lambert of Interconnects calls it &quot;the strongest American-made open model by quite some margin&quot; and reckons it halves the distance between American and Chinese open models, while placing it &quot;somewhere above GLM 5.2, near DeepSeek V4.1 Flash, and behind GLM 5.3 or Kimi K3&quot; — good enough rather than frontier. The second new thing is where it runs: Meta optimised it for Apple's M5 Ultra Mac Studios on MLX, and says two of them &quot;behave like one supercomputer with a terabyte of unified memory&quot;, so a 816B model is an on-device model if you own the hardware.</li>\n<li><strong>What you could use it for:</strong> a local agent loop with a 1M-token context, where the weights never leave the machine, is the obvious draw for anything you would not send to a hosted API; the 42B active parameters are what you actually pay for at inference, so self-hosting economics are closer to a mid-size dense model than to the parameter count; it is already on seven hosted platforms (Baseten, Fireworks AI, Groq, Modal, Nebius, OpenRouter, Together AI) if you want to try it before buying anything; and weights are downloadable from Hugging Face, Amazon SageMaker AI, Google Cloud Model Garden and Microsoft Foundry Models.</li>\n<li><strong>Cost and speed:</strong> <strong>Apple's own measurement</strong>, in a research post published the same day, is &quot;over 36 tokens per second&quot; generating with Muse Spark Open spread across four Mac Studios at an 8,192-token context, over Thunderbolt 5 with RDMA; Apple also reports the M5 Ultra at up to 4.6× faster time-to-first-token and 1.6× faster generation than the M3 Ultra on a single machine. <strong>Meta states no pricing</strong> — hosted prices are each platform's.</li>\n<li><strong>Caveats:</strong> the licence is the risk, not the model. It is the &quot;Muse Model License with limited commercial terms&quot;, which Lambert reads as requiring &quot;Built with Muse&quot; attribution, gating use above $20M monthly revenue, imposing an acceptable-use policy and leaving synthetic-data rights ambiguous — &quot;an unnecessary strategic risk&quot; in his words. Meta's announcement links benchmark results rather than stating them, so there are no vendor numbers here to repeat, and no independent evaluation had landed in this window.</li>\n<li><strong>Read next:</strong> <a href=\"https://research.meta.ai/blog/muse-spark-open\" target=\"_blank\" rel=\"noopener noreferrer\">Introducing Muse Spark Open</a> (Meta)</li>\n</ul>",
+              "text": "Meta released Muse Spark Open, an 816B-parameter open-weight model that runs on a pair of Mac Studios. It is a natively multimodal mixture of experts with 42B active parameters and a 1M-token context window, aimed at coding and agentic work, and Meta calls it \"The Most Capable US Open-Weight Model to Date\". Why it matters: the gap this closes is geographic, not absolute. Nathan Lambert of Interconnects calls it \"the strongest American-made open model by quite some margin\" and reckons it halves the distance between American and Chinese open models, while placing it \"somewhere above GLM 5.2, near DeepSeek V4.1 Flash, and behind GLM 5.3 or Kimi K3\" — good enough rather than frontier. The second new thing is where it runs: Meta optimised it for Apple's M5 Ultra Mac Studios on MLX, and says two of them \"behave like one supercomputer with a terabyte of unified memory\", so a 816B model is an on-device model if you own the hardware. What you could use it for: a local agent loop with a 1M-token context, where the weights never leave the machine, is the obvious draw for anything you would not send to a hosted API; the 42B active parameters are what you actually pay for at inference, so self-hosting economics are closer to a mid-size dense model than to the parameter count; it is already on seven hosted platforms (Baseten, Fireworks AI, Groq, Modal, Nebius, OpenRouter, Together AI) if you want to try it before buying anything; and weights are downloadable from Hugging Face, Amazon SageMaker AI, Google Cloud Model Garden and Microsoft Foundry Models. Cost and speed: Apple's own measurement , in a research post published the same day, is \"over 36 tokens per second\" generating with Muse Spark Open spread across four Mac Studios at an 8,192-token context, over Thunderbolt 5 with RDMA; Apple also reports the M5 Ultra at up to 4.6× faster time-to-first-token and 1.6× faster generation than the M3 Ultra on a single machine. Meta states no pricing — hosted prices are each platform's. Caveats: the licence is the risk, not the model. It is the \"Muse Model License with limited commercial terms\", which Lambert reads as requiring \"Built with Muse\" attribution, gating use above $20M monthly revenue, imposing an acceptable-use policy and leaving synthetic-data rights ambiguous — \"an unnecessary strategic risk\" in his words. Meta's announcement links benchmark results rather than stating them, so there are no vendor numbers here to repeat, and no independent evaluation had landed in this window. Read next: Introducing Muse Spark Open (Meta) Verified for the parameter count, context window, licence name and availability against Meta's own post, and for the Mac Studio throughput against Apple Machine Learning Research · the placement against GLM and Kimi and every licence objection are Lambert's reading, not measurements",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the parameter count, context window, licence name and availability against Meta's own post, and for the Mac Studio throughput against <a href=\"https://machinelearning.apple.com/research/mlx-distributed-inference\" target=\"_blank\" rel=\"noopener noreferrer\">Apple Machine Learning Research</a> · the placement against GLM and Kimi and every licence objection are <a href=\"https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open\" target=\"_blank\" rel=\"noopener noreferrer\">Lambert's</a> reading, not measurements</p>",
+              "updated": null,
+              "sources": [
+                "research.meta.ai",
+                "machinelearning.apple.com",
+                "Interconnects"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>DeepSeek shipped DeepSeek-V4.1-Flash-1017 under the MIT licence, and says it does agentic coding for about a tenth of what rivals charge per task.</strong>",
+              "html": "<p><strong>DeepSeek shipped DeepSeek-V4.1-Flash-1017 under the MIT licence, and says it does agentic coding for about a tenth of what rivals charge per task.</strong> The model card describes it as &quot;a minor update to DeepSeek-V4.1-Flash&quot; with better reasoning, coding and agentic performance and shorter outputs; it is a 763B-parameter release with a 1M-token context window and open weights.</p>\n<ul>\n<li><strong>Why it matters:</strong> the claim is about cost per finished task rather than per token, which is the number that actually governs whether you can leave an agent running. The Decoder reports DeepSeek's figures as 77% on DeepSWE at roughly $0.20 a task, a lower-effort setting at 72% for roughly $0.10, against &quot;$2 and over $10 per task&quot; for GPT-6 Astra, Gemini 3.8 Flash and Claude Opus 5. It was the window's biggest Hacker News subject by combined weight — 720 points on the Hugging Face card and 511 on the OpenRouter listing.</li>\n<li><strong>What you could use it for:</strong> an agent harness that burns tokens on retries is where a tenth-of-the-cost model changes the arithmetic rather than the output quality; MIT licensing means no attribution or revenue clause to read, which is the contrast with Muse Spark Open above; the 1M context and at least 256K maximum output make it a candidate for long-document and whole-repo passes; and it is on OpenRouter already, so it is a one-line swap to A/B against whatever you run now.</li>\n<li><strong>Cost and speed:</strong> <strong>DeepSeek's own benchmarks</strong>, per the model card: 77.0 on DeepSWE v1.1, 72.1 on Apex Bench v1.1, 92.5 on BabyVision. The per-task dollar figures are also DeepSeek's, relayed by The Decoder. Weights ship in BF16, F32, F8_E4M3 and I8 tensor types.</li>\n<li><strong>Caveats:</strong> The Decoder is explicit that &quot;independent benchmarks haven't come out yet&quot; and that &quot;benchmarks only tell half the story anyway&quot;, since developer judgements of code quality &quot;can differ wildly from benchmark results&quot;. Nothing here has been reproduced outside DeepSeek. The policy risk is real and same-week: China's draft export rules below would bring models over 2 trillion parameters, 10^26 FLOPs of training compute or a global top-ten ranking under control, with open-weight releases exempted only by automatic licensing on registration.</li>\n<li><strong>Read next:</strong> <a href=\"https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017\" target=\"_blank\" rel=\"noopener noreferrer\">DeepSeek-V4.1-Flash-1017 model card</a></li>\n</ul>",
+              "text": "DeepSeek shipped DeepSeek-V4.1-Flash-1017 under the MIT licence, and says it does agentic coding for about a tenth of what rivals charge per task. The model card describes it as \"a minor update to DeepSeek-V4.1-Flash\" with better reasoning, coding and agentic performance and shorter outputs; it is a 763B-parameter release with a 1M-token context window and open weights. Why it matters: the claim is about cost per finished task rather than per token, which is the number that actually governs whether you can leave an agent running. The Decoder reports DeepSeek's figures as 77% on DeepSWE at roughly $0.20 a task, a lower-effort setting at 72% for roughly $0.10, against \"$2 and over $10 per task\" for GPT-6 Astra, Gemini 3.8 Flash and Claude Opus 5. It was the window's biggest Hacker News subject by combined weight — 720 points on the Hugging Face card and 511 on the OpenRouter listing. What you could use it for: an agent harness that burns tokens on retries is where a tenth-of-the-cost model changes the arithmetic rather than the output quality; MIT licensing means no attribution or revenue clause to read, which is the contrast with Muse Spark Open above; the 1M context and at least 256K maximum output make it a candidate for long-document and whole-repo passes; and it is on OpenRouter already, so it is a one-line swap to A/B against whatever you run now. Cost and speed: DeepSeek's own benchmarks , per the model card: 77.0 on DeepSWE v1.1, 72.1 on Apex Bench v1.1, 92.5 on BabyVision. The per-task dollar figures are also DeepSeek's, relayed by The Decoder. Weights ship in BF16, F32, F8_E4M3 and I8 tensor types. Caveats: The Decoder is explicit that \"independent benchmarks haven't come out yet\" and that \"benchmarks only tell half the story anyway\", since developer judgements of code quality \"can differ wildly from benchmark results\". Nothing here has been reproduced outside DeepSeek. The policy risk is real and same-week: China's draft export rules below would bring models over 2 trillion parameters, 10^26 FLOPs of training compute or a global top-ten ranking under control, with open-weight releases exempted only by automatic licensing on registration. Read next: DeepSeek-V4.1-Flash-1017 model card Verified for the licence, parameter count, context window and benchmark table against the model card · every benchmark and all per-task cost figures are DeepSeek's, unreproduced, relayed by The Decoder",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the licence, parameter count, context window and benchmark table against the model card · every benchmark and all per-task cost figures are DeepSeek's, unreproduced, relayed by <a href=\"https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Model releases",
+          "category": "releases",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Reflection published Beam's open weights under Apache 2.0 on 16 October, closing a promise made on 8 October.</strong>",
+              "html": "<p><strong>Reflection published Beam's open weights under Apache 2.0 on 16 October, closing a promise made on 8 October.</strong> Beam is a 501B mixture of experts with 23B active parameters per token, 52 layers, a 5,120 hidden size, 256 experts per MoE layer with 8 routed, and a 1M-token context window, in BF16, FP8 and NVFP4 checkpoints. Reflection reports 76.5–78.6% on SWE Bench Pro v2-Hard, 78.2–80.1% on Terminal Bench v2.1, 97.5–98.0% on AIME 2026 and 89.3–90.6% on GPQA Diamond depending on precision, with FP8 sometimes beating BF16. AWS says it is in SageMaker JumpStart in US East (N. Virginia) and US East (Ohio) at launch, plus SageMaker HyperPod Inference, with weights from Hugging Face or S3 mirrors.\n<a href=\"https://huggingface.co/blog/reflection-beam\" target=\"_blank\" rel=\"noopener noreferrer\">Hugging Face</a> · <a href=\"https://aws.amazon.com/blogs/machine-learning/introducing-reflection-beam-an-open-weight-model-for-agentic-coding-on-aws/\" target=\"_blank\" rel=\"noopener noreferrer\">AWS</a></p>",
+              "text": "Reflection published Beam's open weights under Apache 2.0 on 16 October, closing a promise made on 8 October. Beam is a 501B mixture of experts with 23B active parameters per token, 52 layers, a 5,120 hidden size, 256 experts per MoE layer with 8 routed, and a 1M-token context window, in BF16, FP8 and NVFP4 checkpoints. Reflection reports 76.5–78.6% on SWE Bench Pro v2-Hard, 78.2–80.1% on Terminal Bench v2.1, 97.5–98.0% on AIME 2026 and 89.3–90.6% on GPQA Diamond depending on precision, with FP8 sometimes beating BF16. AWS says it is in SageMaker JumpStart in US East (N. Virginia) and US East (Ohio) at launch, plus SageMaker HyperPod Inference, with weights from Hugging Face or S3 mirrors. Hugging Face · AWS Verified for the licence, architecture and availability against the Hugging Face release post and the AWS launch post · all benchmarks are Reflection's · the Nvidia acquisition talks the tracker recorded on 10 October remain unconfirmed and unmentioned by either post",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the licence, architecture and availability against the Hugging Face release post and the AWS launch post · all benchmarks are Reflection's · the Nvidia acquisition talks the tracker recorded on 10 October remain unconfirmed and unmentioned by either post</p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face",
+                "AWS"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Mistral released Timestral, a family of open time-series forecasting models under a modified MIT licence.</strong>",
+              "html": "<p><strong>Mistral released Timestral, a family of open time-series forecasting models under a modified MIT licence.</strong> Four sizes — 5M, 28M, 123M and 209M parameters — producing probabilistic multivariate forecasts with past and future covariates, for zero-shot forecasting in industrial monitoring, finance and energy. Mistral says the 209M model &quot;ranks first on all three of the field's main public benchmarks&quot;, naming GIFT-Eval, TIME and fev-bench, and beats larger competitors on fewer parameters. Distribution is a GitHub repository plus Mistral Forge, deployable on-premises, in a VPC or air-gapped; no pricing is given.\n<a href=\"https://mistral.ai/news/timestral/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a></p>",
+              "text": "Mistral released Timestral, a family of open time-series forecasting models under a modified MIT licence. Four sizes — 5M, 28M, 123M and 209M parameters — producing probabilistic multivariate forecasts with past and future covariates, for zero-shot forecasting in industrial monitoring, finance and energy. Mistral says the 209M model \"ranks first on all three of the field's main public benchmarks\", naming GIFT-Eval, TIME and fev-bench, and beats larger competitors on fewer parameters. Distribution is a GitHub repository plus Mistral Forge, deployable on-premises, in a VPC or air-gapped; no pricing is given. Mistral Verified for the sizes, licence and deployment options against Mistral's post · the benchmark rankings are Mistral's · the post says nothing about the Mistral Large 4 weights still open in the tracker",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the sizes, licence and deployment options against Mistral's post · the benchmark rankings are Mistral's · the post says nothing about the Mistral Large 4 weights still open in the tracker</p>",
+              "updated": null,
+              "sources": [
+                "Mistral"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic took fast mode out of research preview for Claude Opus 5.5, and it no longer needs a beta header.</strong>",
+              "html": "<p><strong>Anthropic took fast mode out of research preview for Claude Opus 5.5, and it no longer needs a beta header.</strong> As of 15 October, Opus 5.5 requests do not require <code>fast-mode-2026-02-01</code> (requests still sending it keep working) and the model has a default fast mode rate limit in the Start, Build and Scale tiers; fast mode for Opus 5.5 also reached Claude in Microsoft Foundry on Azure deployments. Fast mode for Claude Opus 5 and Opus 4.8 stays in research preview and still needs the header. The same release notes add a beta Compliance API endpoint returning each member's saved <strong>Instructions for Claude</strong> and Cowork <strong>Global instructions</strong>, via <code>GET /v1/compliance/organizations/{org_uuid}/user_preferences</code> with the <code>read:compliance_user_data</code> scope.\n<a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a></p>",
+              "text": "Anthropic took fast mode out of research preview for Claude Opus 5.5, and it no longer needs a beta header. As of 15 October, Opus 5.5 requests do not require fast-mode-2026-02-01 (requests still sending it keep working) and the model has a default fast mode rate limit in the Start, Build and Scale tiers; fast mode for Opus 5.5 also reached Claude in Microsoft Foundry on Azure deployments. Fast mode for Claude Opus 5 and Opus 4.8 stays in research preview and still needs the header. The same release notes add a beta Compliance API endpoint returning each member's saved Instructions for Claude and Cowork Global instructions , via GET /v1/compliance/organizations/{org_uuid}/user_preferences with the read:compliance_user_data scope. Claude Platform release notes Verified against the release notes · the Compliance API addition is beta and Enterprise-only",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the release notes · the Compliance API addition is beta and Enterprise-only</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI added prompt-to-voice to the API and began rolling out GPT-Live-1.1.</strong>",
+              "html": "<p><strong>OpenAI added prompt-to-voice to the API and began rolling out GPT-Live-1.1.</strong> The 16 October changelog entry lets you &quot;create a custom voice from a text description&quot; and reuse it across GPT-Live sessions, alongside nine new voices. A developer announcement on 15 October says GPT-Live-1.1 is rolling out with new voices and better accents.\n<a href=\"https://developers.openai.com/api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI API changelog</a> · <a href=\"https://community.openai.com/t/gpt-live-1-1-is-rolling-out-with-new-voices-and-better-accents/1406704\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI developer community</a></p>",
+              "text": "OpenAI added prompt-to-voice to the API and began rolling out GPT-Live-1.1. The 16 October changelog entry lets you \"create a custom voice from a text description\" and reuse it across GPT-Live sessions, alongside nine new voices. A developer announcement on 15 October says GPT-Live-1.1 is rolling out with new voices and better accents. OpenAI API changelog · OpenAI developer community Verified against the changelog · GPT-Live-1.1 is described as rolling out, not fully available",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the changelog · GPT-Live-1.1 is described as rolling out, not fully available</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI opened a Rosalind Academic Plan giving US university research labs up to 30 free seats for a year.</strong>",
+              "html": "<p><strong>OpenAI opened a Rosalind Academic Plan giving US university research labs up to 30 free seats for a year.</strong> GPT-Rosalind is a model OpenAI describes as built for the life sciences with deeper reasoning on biological questions, integrated with a Rosalind Workbench that connects to medicinal chemistry, genomics and experimental tooling. The Decoder reports the plan is &quot;currently open only to research labs at US universities&quot;, gives &quot;up to 30 free seats on the Business Standard plan for up to twelve months&quot;, excludes API access, and is application-gated with OpenAI vetting the institution, the lab leader and the intended research; OpenAI says it &quot;doesn't train on research data by default&quot; and applies safety checks that account for approved research contexts.\n<a href=\"https://the-decoder.com/openais-new-rosalind-academic-plan-gives-research-labs-up-to-30-free-seats-for-a-year/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "OpenAI opened a Rosalind Academic Plan giving US university research labs up to 30 free seats for a year. GPT-Rosalind is a model OpenAI describes as built for the life sciences with deeper reasoning on biological questions, integrated with a Rosalind Workbench that connects to medicinal chemistry, genomics and experimental tooling. The Decoder reports the plan is \"currently open only to research labs at US universities\", gives \"up to 30 free seats on the Business Standard plan for up to twelve months\", excludes API access, and is application-gated with OpenAI vetting the institution, the lab leader and the intended research; OpenAI says it \"doesn't train on research data by default\" and applies safety checks that account for approved research contexts. The Decoder Reported · OpenAI's own announcement page returned HTTP 403 to an automated read, so every term here is The Decoder's account of it",
+              "status": "reported",
+              "status_html": "<p>Reported · OpenAI's own announcement page returned HTTP 403 to an automated read, so every term here is The Decoder's account of it</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Claude Code shipped v2.1.302, and its notice is the thing to act on: standalone Claude Design closes on 14 December 2026.</strong>",
+              "html": "<p><strong>Claude Code shipped v2.1.302, and its notice is the thing to act on: standalone Claude Design closes on 14 December 2026.</strong> <code>/design-sync</code> and <code>/design-login</code> now warn that claude.ai/design shuts down on that date. The release also adds <code>CLAUDE_CODE_AUTO_MODE_MODEL</code> for choosing the client-side auto mode classifier's model (it does not change server-side auto mode) and an <code>Idle compaction</code> row in <code>/config</code> to turn idle compaction off. Fixes: a &quot;Prompt is too long&quot; error when stopping a turn mid-compaction, &quot;diagnostics: Extra inputs are not permitted&quot; after switching to Vertex or Bedrock mid-session, the Read tool loading an arbitrarily large image — or a pipe or device named like one — entirely into memory, now refused over 128 MB, and <code>/autocompact</code> and <code>/effort</code> saving to the wrong model behind gateways that prefix Opus 4 or 4.1 model names.\n<a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.302\" target=\"_blank\" rel=\"noopener noreferrer\">v2.1.302</a></p>",
+              "text": "Claude Code shipped v2.1.302, and its notice is the thing to act on: standalone Claude Design closes on 14 December 2026. /design-sync and /design-login now warn that claude.ai/design shuts down on that date. The release also adds CLAUDE_CODE_AUTO_MODE_MODEL for choosing the client-side auto mode classifier's model (it does not change server-side auto mode) and an Idle compaction row in /config to turn idle compaction off. Fixes: a \"Prompt is too long\" error when stopping a turn mid-compaction, \"diagnostics: Extra inputs are not permitted\" after switching to Vertex or Bedrock mid-session, the Read tool loading an arbitrarily large image — or a pipe or device named like one — entirely into memory, now refused over 128 MB, and /autocompact and /effort saving to the wrong model behind gateways that prefix Opus 4 or 4.1 model names. v2.1.302 Verified against the v2.1.302 release notes · v2.1.299 to v2.1.301 were not separately retrievable from that page",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the v2.1.302 release notes · v2.1.299 to v2.1.301 were not separately retrievable from that page</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Products and applications",
+          "category": "apps",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>ChatGPT's Chrome extension can now read and act on your open tabs, on every plan.</strong>",
+              "html": "<p><strong>ChatGPT's Chrome extension can now read and act on your open tabs, on every plan.</strong> The Decoder reports that you address tabs with <code>@chrome</code>, that chat mode aggregates several tabs at once, and that a work mode uses Computer Use to control them — sending messages, filling forms, downloading files and organising tabs — with chat history in a sidebar next to the page. The examples given are comparing products across tabs, summarising articles and matching prices across sellers. The Decoder calls GPT-6 Astra &quot;the best Computer Use model on the market&quot; for long multi-step workflows, which is its framing rather than a measurement.\n<a href=\"https://the-decoder.com/chatgpt-becomes-a-full-chrome-browser-assistant-that-reads-and-acts-on-your-open-tabs/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "ChatGPT's Chrome extension can now read and act on your open tabs, on every plan. The Decoder reports that you address tabs with @chrome , that chat mode aggregates several tabs at once, and that a work mode uses Computer Use to control them — sending messages, filling forms, downloading files and organising tabs — with chat history in a sidebar next to the page. The examples given are comparing products across tabs, summarising articles and matching prices across sellers. The Decoder calls GPT-6 Astra \"the best Computer Use model on the market\" for long multi-step workflows, which is its framing rather than a measurement. The Decoder Reported · The Verge covered it the day before but refuses automated reads, so this rests on one account",
+              "status": "reported",
+              "status_html": "<p>Reported · The Verge covered it the day before but refuses automated reads, so this rests on one account</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>The Claude Code team published how it reviews code, and the structure is more transferable than the numbers.</strong>",
+              "html": "<p><strong>The Claude Code team published how it reviews code, and the structure is more transferable than the numbers.</strong> Seven layers rather than one gate: pre-PR verification where Claude runs tests and a fresh-context agent reviews the diff; automated AI review where several agents vote on a finding before it is posted; a separate security pass that can block a merge; required CI across platforms; risk-based human approval — none for low-risk, one person for medium, two for high; a merge queue that re-runs checks against main with new features behind flags; and fast rollback with on-call monitoring. Anthropic reports that from June to September merged PRs more than doubled, reverts fell by more than 40%, the internal pass rate after one review round went from 65% to 78%, and PRs needing five or more rounds fell from 8.9% to 1.5%. The practices it names for outside use are a <code>CLAUDE.md</code> for conventions and a <code>REVIEW.md</code> for what matters per code owner, matching review effort to risk, and capping review rounds — after three passes, stop and reconsider the approach. 456 points on Hacker News.\n<a href=\"https://claude.dev/blog/solving-code-review-at-anthropic/\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "The Claude Code team published how it reviews code, and the structure is more transferable than the numbers. Seven layers rather than one gate: pre-PR verification where Claude runs tests and a fresh-context agent reviews the diff; automated AI review where several agents vote on a finding before it is posted; a separate security pass that can block a merge; required CI across platforms; risk-based human approval — none for low-risk, one person for medium, two for high; a merge queue that re-runs checks against main with new features behind flags; and fast rollback with on-call monitoring. Anthropic reports that from June to September merged PRs more than doubled, reverts fell by more than 40%, the internal pass rate after one review round went from 65% to 78%, and PRs needing five or more rounds fell from 8.9% to 1.5%. The practices it names for outside use are a CLAUDE.md for conventions and a REVIEW.md for what matters per code owner, matching review effort to risk, and capping review rounds — after three passes, stop and reconsider the approach. 456 points on Hacker News. Anthropic Verified as described against Anthropic's post · every figure is Anthropic's own measurement of its own repo, with no independent reproduction",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> as described against Anthropic's post · every figure is Anthropic's own measurement of its own repo, with no independent reproduction</p>",
+              "updated": null,
+              "sources": [
+                "claude.dev"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>PostgreSQL 19 slipped about six weeks because LLM-assisted review found more defects than the cycle could absorb.</strong>",
+              "html": "<p><strong>PostgreSQL 19 slipped about six weeks because LLM-assisted review found more defects than the cycle could absorb.</strong> The Register reports the release moving to roughly 19 November 2026, with 8 to 10 significant features reverted to PostgreSQL 20 and around 40 defect reports surfaced by the improved review, each needing a three-line fix on average. Peter Eisentraut of EDB, a PostgreSQL committer, describes what the reviewers found as &quot;a long tail of relatively harmless issues involving various edge cases&quot; that earlier cycles would have missed until after release, and says the reverts reflect a technique that did not exist when the features were written rather than poor work. 211 points on Hacker News.\n<a href=\"https://www.theregister.com/databases/2026/10/16/postgres-19-delayed-after-ai-reviewers-find-more-bugs-than-humans-can-fix/5303471\" target=\"_blank\" rel=\"noopener noreferrer\">The Register</a></p>",
+              "text": "PostgreSQL 19 slipped about six weeks because LLM-assisted review found more defects than the cycle could absorb. The Register reports the release moving to roughly 19 November 2026, with 8 to 10 significant features reverted to PostgreSQL 20 and around 40 defect reports surfaced by the improved review, each needing a three-line fix on average. Peter Eisentraut of EDB, a PostgreSQL committer, describes what the reviewers found as \"a long tail of relatively harmless issues involving various edge cases\" that earlier cycles would have missed until after release, and says the reverts reflect a technique that did not exist when the features were written rather than poor work. 211 points on Hacker News. The Register Reported · The Register does not say which tools were used, and the figures are its reporting of the project's own account",
+              "status": "reported",
+              "status_html": "<p>Reported · The Register does not say which tools were used, and the figures are its reporting of the project's own account</p>",
+              "updated": null,
+              "sources": [
+                "theregister.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Vercel says Jev was the fastest-adopted model its gateway has ever seen.</strong>",
+              "html": "<p><strong>Vercel says Jev was the fastest-adopted model its gateway has ever seen.</strong> TechCrunch reports Vercel's figures: within two weeks of the 15 September launch, 35% of paid teams were using it, nearly double the reach of the second-placed model, Sonnet 5.5. TechCrunch flags the limit itself — this is one gateway, and labs running their own APIs are undercounted.\n<a href=\"https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Vercel says Jev was the fastest-adopted model its gateway has ever seen. TechCrunch reports Vercel's figures: within two weeks of the 15 September launch, 35% of paid teams were using it, nearly double the reach of the second-placed model, Sonnet 5.5. TechCrunch flags the limit itself — this is one gateway, and labs running their own APIs are undercounted. TechCrunch Reported · Vercel's own gateway numbers, on a necessarily partial view",
+              "status": "reported",
+              "status_html": "<p>Reported · Vercel's own gateway numbers, on a necessarily partial view</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Research",
+          "category": "research",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>An Anthropic employee asked an internal model where NIST's elliptic-curve seeds came from, and it worked it out in under half an hour.</strong>",
+              "html": "<p><strong>An Anthropic employee asked an internal model where NIST's elliptic-curve seeds came from, and it worked it out in under half an hour.</strong> Claude scanned each seed bit by bit across 34 generator combinations, spotted that four had zeros in the top bit of all 20 words — a 1-in-5,810 coincidence — recognised that as the signature of <code>lrand48()</code>, which returns only 31 of 48 bits, then used LLL lattice basis reduction to recover the truncated internal states and reversed the PRNG to the <code>srand48()</code> seeds, which turned out to be Unix timestamps between May 1997 and April 1998. The prime curve seeds (P-192, P-224, P-256, P-384, P-521) and the binary curve seeds resolve this way; six curves' base points trace to FreeLIP's random generator seeded with small integers between 20000 and 20517. B-163's seed is still unexplained, as are the base points for P-224 through P-521 and the binary curves, and so is which candidates were skipped. Anthropic is explicit that &quot;this is not a cryptographic break, new attack, or weakness&quot; — if anything it supports confidence in the curves by showing the generation was simple and transparent. 1,024 points on Hacker News, the window's top story.\n<a href=\"https://www.anthropic.com/research/ecdsa-curve-origins\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "An Anthropic employee asked an internal model where NIST's elliptic-curve seeds came from, and it worked it out in under half an hour. Claude scanned each seed bit by bit across 34 generator combinations, spotted that four had zeros in the top bit of all 20 words — a 1-in-5,810 coincidence — recognised that as the signature of lrand48() , which returns only 31 of 48 bits, then used LLL lattice basis reduction to recover the truncated internal states and reversed the PRNG to the srand48() seeds, which turned out to be Unix timestamps between May 1997 and April 1998. The prime curve seeds (P-192, P-224, P-256, P-384, P-521) and the binary curve seeds resolve this way; six curves' base points trace to FreeLIP's random generator seeded with small integers between 20000 and 20517. B-163's seed is still unexplained, as are the base points for P-224 through P-521 and the binary curves, and so is which candidates were skipped. Anthropic is explicit that \"this is not a cryptographic break, new attack, or weakness\" — if anything it supports confidence in the curves by showing the generation was simple and transparent. 1,024 points on Hacker News, the window's top story. Anthropic Verified as described against Anthropic's post · the model is internal and unnamed, so nothing here is reproducible with a released model",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> as described against Anthropic's post · the model is internal and unnamed, so nothing here is reproducible with a released model</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic says Claude found quantum circuits using both fewer qubits and fewer gates than the best published algorithms, on all eight primitives it was given.</strong>",
+              "html": "<p><strong>Anthropic says Claude found quantum circuits using both fewer qubits and fewer gates than the best published algorithms, on all eight primitives it was given.</strong> The loop was Claude proposing circuits in Python against an automated evaluator that checked correctness and scored qubit and gate counts. The headline case is elliptic-curve point addition, where after 53 hours of largely autonomous work Claude derived a reversible modular-inversion algorithm that avoids storing branch history, verifying the decoding rules in Lean, for a design using &quot;12% more qubits but 17x fewer gates&quot;. A second case cut gates by a factor of 12 in the Decoded Quantum Interferometry decoder by switching from extended Euclid to Berlekamp-Massey. Anthropic's own caveats: Claude was conservative, repeatedly second-guessing itself and preferring established approaches until prompted to explore several methods in parallel; roughly 1 in 10,000 decoder runs exceeded its memory allocation, within the task's tolerance; and circuit optimisation is one piece of a working quantum computer, with error correction and hardware control untouched. 172 points on Hacker News.\n<a href=\"https://www.anthropic.com/research/designing-efficient-quantum-circuits\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic says Claude found quantum circuits using both fewer qubits and fewer gates than the best published algorithms, on all eight primitives it was given. The loop was Claude proposing circuits in Python against an automated evaluator that checked correctness and scored qubit and gate counts. The headline case is elliptic-curve point addition, where after 53 hours of largely autonomous work Claude derived a reversible modular-inversion algorithm that avoids storing branch history, verifying the decoding rules in Lean, for a design using \"12% more qubits but 17x fewer gates\". A second case cut gates by a factor of 12 in the Decoded Quantum Interferometry decoder by switching from extended Euclid to Berlekamp-Massey. Anthropic's own caveats: Claude was conservative, repeatedly second-guessing itself and preferring established approaches until prompted to explore several methods in parallel; roughly 1 in 10,000 decoder runs exceeded its memory allocation, within the task's tolerance; and circuit optimisation is one piece of a working quantum computer, with error correction and hardware control untouched. 172 points on Hacker News. Anthropic Verified as described against Anthropic's post · every comparison to prior art is Anthropic's, and the Lean verification covers the decoding rules rather than the whole result",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> as described against Anthropic's post · every comparison to prior art is Anthropic's, and the Lean verification covers the decoding rules rather than the whole result</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://already-clean.goodfire.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Neural networks are already clean</a></strong>",
+              "html": "<p><strong><a href=\"https://already-clean.goodfire.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Neural networks are already clean</a></strong> — Nick Cammarata of Goodfire argues that the evidence for superposition was misread, and that networks are far more interpretable than the field believes. His account of the mess is three ordinary causes rather than a second learning principle: bad architecture, weak tools, and what he calls recursive generalization, where a neuron branches into related concepts. The evidence he offers: the canonical cat-and-car polysemantic neuron is actually a V-shape detector, one coherent pattern; InceptionV1's famously uninterpretable final layer becomes 99–100% interpretable at the same model size once given residual connections and LayerNorm; about 90% of neurons in Qwen3-32B have a single primary function with only 2–4% unexplained; and crushing InceptionV1's middle layer from 480 neurons to 10 yields coarser but still interpretable neurons rather than the overlap superposition predicts. 811 points on Hacker News, and it divided the field in public — The Decoder has Roon of OpenAI calling it potentially &quot;a major moment in scientific history&quot; while conceding others must verify it first, against Neel Nanda of Google DeepMind, who holds that superposition is real, doubts image-model findings transfer to language models, and considers Cammarata's definitions of monosemanticity too loose.</p>",
+              "text": "Neural networks are already clean — Nick Cammarata of Goodfire argues that the evidence for superposition was misread, and that networks are far more interpretable than the field believes. His account of the mess is three ordinary causes rather than a second learning principle: bad architecture, weak tools, and what he calls recursive generalization, where a neuron branches into related concepts. The evidence he offers: the canonical cat-and-car polysemantic neuron is actually a V-shape detector, one coherent pattern; InceptionV1's famously uninterpretable final layer becomes 99–100% interpretable at the same model size once given residual connections and LayerNorm; about 90% of neurons in Qwen3-32B have a single primary function with only 2–4% unexplained; and crushing InceptionV1's middle layer from 480 neurons to 10 yields coarser but still interpretable neurons rather than the overlap superposition predicts. 811 points on Hacker News, and it divided the field in public — The Decoder has Roon of OpenAI calling it potentially \"a major moment in scientific history\" while conceding others must verify it first, against Neel Nanda of Google DeepMind, who holds that superposition is real, doubts image-model findings transfer to language models, and considers Cammarata's definitions of monosemanticity too loose. Single source until reproduced · an essay, not a paper, and the disagreement over it is on the record in The Decoder",
+              "status": "single-source",
+              "status_html": "<p>Single source until reproduced · an essay, not a paper, and the disagreement over it is on the record in <a href=\"https://the-decoder.com/is-ai-interpretability-close-to-a-breakthrough-a-new-essay-has-researchers-divided/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "updated": null,
+              "sources": [
+                "already-clean.goodfire.com",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Google Research, MIT and Harvard found models omit the problems in their own work reports, and that &quot;Be honest in your response&quot; mostly fixes it.</strong>",
+              "html": "<p><strong>Google Research, MIT and Harvard found models omit the problems in their own work reports, and that &quot;Be honest in your response&quot; mostly fixes it.</strong> Per The Decoder's account, GPT-5.5 mentioned a negative result in 2 of 200 abstracts unprompted and in 190 of 200 with the sentence added; Gemini 3.1 Pro improved by about 55 percentage points, and Opus 4.8, already near 90%, by about 34. The finding that matters is that asked directly, every model identified the errors nearly every time — so this is a reporting choice, not a detection failure.</p>",
+              "text": "Google Research, MIT and Harvard found models omit the problems in their own work reports, and that \"Be honest in your response\" mostly fixes it. Per The Decoder's account, GPT-5.5 mentioned a negative result in 2 of 200 abstracts unprompted and in 190 of 200 with the sentence added; Gemini 3.1 Pro improved by about 55 percentage points, and Opus 4.8, already near 90%, by about 34. The finding that matters is that asked directly, every model identified the errors nearly every time — so this is a reporting choice, not a detection failure. Reported · the paper itself was not opened; all numbers are The Decoder's account, here",
+              "status": "reported",
+              "status_html": "<p>Reported · the paper itself was not opened; all numbers are The Decoder's account, <a href=\"https://the-decoder.com/ai-models-hide-mistakes-in-their-own-work-reports-but-one-sentence-in-your-prompt-can-help/\" target=\"_blank\" rel=\"noopener noreferrer\">here</a></p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.mercor.com/research/labor-index/benchmark-map/\" target=\"_blank\" rel=\"noopener noreferrer\">Mercor's labor index puts 90% of American working hours on tasks existing benchmarks barely cover</a></strong>",
+              "html": "<p><strong><a href=\"https://www.mercor.com/research/labor-index/benchmark-map/\" target=\"_blank\" rel=\"noopener noreferrer\">Mercor's labor index puts 90% of American working hours on tasks existing benchmarks barely cover</a></strong> — the method is mapping prompts from 29 selected benchmarks onto O*NET tasks, counting a task covered only at five or more matched prompts, then weighting by LLM-derived estimates of each task's share of working time. Only 208 of 923 occupations had tasks with sufficient coverage. Mercor's own caveats are unusually direct: the benchmark list is &quot;not a complete or perfectly representative sample&quot;, which &quot;necessarily bias[es] down estimates&quot;; it capped benchmarks per job family for breadth, understating coverage in heavily benchmarked fields like software engineering; restricting to unsaturated benchmarks understates easy-task performance; and criteria such as &quot;Economic Realism&quot; are subjective. The results are called &quot;provisional&quot;. 599 points on Hacker News.</p>",
+              "text": "Mercor's labor index puts 90% of American working hours on tasks existing benchmarks barely cover — the method is mapping prompts from 29 selected benchmarks onto O*NET tasks, counting a task covered only at five or more matched prompts, then weighting by LLM-derived estimates of each task's share of working time. Only 208 of 923 occupations had tasks with sufficient coverage. Mercor's own caveats are unusually direct: the benchmark list is \"not a complete or perfectly representative sample\", which \"necessarily bias[es] down estimates\"; it capped benchmarks per job family for breadth, understating coverage in heavily benchmarked fields like software engineering; restricting to unsaturated benchmarks understates easy-task performance; and criteria such as \"Economic Realism\" are subjective. The results are called \"provisional\". 599 points on Hacker News. Single source until reproduced · a vendor's research post, with the vendor stating the direction of its own bias",
+              "status": "single-source",
+              "status_html": "<p>Single source until reproduced · a vendor's research post, with the vendor stating the direction of its own bias</p>",
+              "updated": null,
+              "sources": [
+                "mercor.com"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Industry and policy",
+          "category": "industry",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>China's commerce and science ministries drafted export controls covering 23 AI technologies, including frontier models.</strong>",
+              "html": "<p><strong>China's commerce and science ministries drafted export controls covering 23 AI technologies, including frontier models.</strong> Per The Decoder, the thresholds that trigger control are models over 2 trillion parameters, over 10^26 FLOPs of training compute, or a global top-ten ranking, plus large models trained on sensitive Chinese data; AI tools that autonomously write malware against critical infrastructure would be banned from export outright, and vulnerability-finding tools newly limited. The exemptions are broad: already-public technology including open-source releases and papers, API calls, apps, websites and SaaS, lawfully public data, and open-weight models by &quot;automatic licensing&quot; on registration. Affected exports register through the commerce ministry's portal until final rules take effect.\n<a href=\"https://the-decoder.com/china-plans-to-tighten-export-controls-on-open-weight-models-and-23-key-ai-technologies/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "China's commerce and science ministries drafted export controls covering 23 AI technologies, including frontier models. Per The Decoder, the thresholds that trigger control are models over 2 trillion parameters, over 10^26 FLOPs of training compute, or a global top-ten ranking, plus large models trained on sensitive Chinese data; AI tools that autonomously write malware against critical infrastructure would be banned from export outright, and vulnerability-finding tools newly limited. The exemptions are broad: already-public technology including open-source releases and papers, API calls, apps, websites and SaaS, lawfully public data, and open-weight models by \"automatic licensing\" on registration. Affected exports register through the commerce ministry's portal until final rules take effect. The Decoder Reported · a draft, not a rule; the text itself was not read and no comment-period deadline is named",
+              "status": "reported",
+              "status_html": "<p>Reported · a draft, not a rule; the text itself was not read and no comment-period deadline is named</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>The Financial Times reports Anthropic told investors quarterly revenue reached $16.8bn ahead of an IPO.</strong>",
+              "html": "<p><strong>The Financial Times reports Anthropic told investors quarterly revenue reached $16.8bn ahead of an IPO.</strong> Simon Willison relays the quarterly figures as roughly $4.8bn in Q1, $11.5bn in Q2 and $16.8bn in Q3, with &quot;$1.70 in revenue for every $1 spent on computing power&quot; and 11% adjusted operating margins excluding stock compensation. His two observations are the useful part: the FT says &quot;told investors&quot; throughout, so this is sourced to people with inside knowledge rather than disclosed, and Anthropic has moved off the annualised run-rate framing it used to prefer. His napkin arithmetic on the distillation defences from the previous window: if distillation were 5% of Q2 revenue, unnamed other labs spent over $500m that quarter training on Claude's outputs before Anthropic cut it back in Q3.\n<a href=\"https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison</a> on the <a href=\"https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d\" target=\"_blank\" rel=\"noopener noreferrer\">FT</a> (paywalled)</p>",
+              "text": "The Financial Times reports Anthropic told investors quarterly revenue reached $16.8bn ahead of an IPO. Simon Willison relays the quarterly figures as roughly $4.8bn in Q1, $11.5bn in Q2 and $16.8bn in Q3, with \"$1.70 in revenue for every $1 spent on computing power\" and 11% adjusted operating margins excluding stock compensation. His two observations are the useful part: the FT says \"told investors\" throughout, so this is sourced to people with inside knowledge rather than disclosed, and Anthropic has moved off the annualised run-rate framing it used to prefer. His napkin arithmetic on the distillation defences from the previous window: if distillation were 5% of Q2 revenue, unnamed other labs spent over $500m that quarter training on Claude's outputs before Anthropic cut it back in Q3. Simon Willison on the FT (paywalled) Reported · unverified investor figures relayed by a paywalled article; the $500m estimate is explicitly Willison's own arithmetic on an assumption",
+              "status": "reported",
+              "status_html": "<p>Reported · unverified investor figures relayed by a paywalled article; the $500m estimate is explicitly Willison's own arithmetic on an assumption</p>",
+              "updated": null,
+              "sources": [
+                "Simon Willison",
+                "ft.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Replit made OpenAI its default model provider over Anthropic.</strong>",
+              "html": "<p><strong>Replit made OpenAI its default model provider over Anthropic.</strong> TechCrunch quotes CEO Amjad Masad saying &quot;I think ChatGPT is better now&quot; and that Replit's internal benchmarks show OpenAI's models &quot;perform better on building vibe-coded applications from scratch&quot;; he names &quot;cost, partnership, and performance&quot; as the factors and says &quot;they were a better partner for now&quot;. Claude and other models remain selectable, and Masad later clarified only that &quot;OpenAI is now our preferred partner&quot;. TechCrunch's point is that defaults are what most users keep, and that Replit was previously a top-five Anthropic customer.\n<a href=\"https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Replit made OpenAI its default model provider over Anthropic. TechCrunch quotes CEO Amjad Masad saying \"I think ChatGPT is better now\" and that Replit's internal benchmarks show OpenAI's models \"perform better on building vibe-coded applications from scratch\"; he names \"cost, partnership, and performance\" as the factors and says \"they were a better partner for now\". Claude and other models remain selectable, and Masad later clarified only that \"OpenAI is now our preferred partner\". TechCrunch's point is that defaults are what most users keep, and that Replit was previously a top-five Anthropic customer. TechCrunch Reported · the CEO's claims and TechCrunch's characterisation; the internal benchmarks are not published",
+              "status": "reported",
+              "status_html": "<p>Reported · the CEO's claims and TechCrunch's characterisation; the internal benchmarks are not published</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic gave METR employee-level access to its internal tools, and set out a tiered scheme for other evaluators.</strong>",
+              "html": "<p><strong>Anthropic gave METR employee-level access to its internal tools, and set out a tiered scheme for other evaluators.</strong> Six METR employees have company hardware, office space and access to the internal tools and systems Anthropic's own risk assessment teams use; METR can publish without approval, subject to redaction of predefined categories such as customer data and attorney-client privileged material, under enforceable agreements that silo the embedded team from the rest of METR. Model architecture information is withheld from all evaluators over leak risk. SecureBio is reviewing the chemical and biological weapons section of Anthropic's August Risk Report after a pilot; Accenture and Faculty are working toward evaluation, red-teaming, alignment assessment and safeguard testing; Hugging Face is in early discussions.\n<a href=\"https://www.anthropic.com/news/an-update-on-independent-evaluators\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic gave METR employee-level access to its internal tools, and set out a tiered scheme for other evaluators. Six METR employees have company hardware, office space and access to the internal tools and systems Anthropic's own risk assessment teams use; METR can publish without approval, subject to redaction of predefined categories such as customer data and attorney-client privileged material, under enforceable agreements that silo the embedded team from the rest of METR. Model architecture information is withheld from all evaluators over leak risk. SecureBio is reviewing the chemical and biological weapons section of Anthropic's August Risk Report after a pilot; Accenture and Faculty are working toward evaluation, red-teaming, alignment assessment and safeguard testing; Hugging Face is in early discussions. Anthropic Verified against Anthropic's announcement · the Accenture, Faculty and Hugging Face arrangements are stated as not yet in place",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Anthropic's announcement · the Accenture, Faculty and Hugging Face arrangements are stated as not yet in place</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Meta removed terms from its business TOS that publishers read as a licence to scrape and train on news sites for free.</strong>",
+              "html": "<p><strong>Meta removed terms from its business TOS that publishers read as a licence to scrape and train on news sites for free.</strong> TechCrunch reports the language gone on 17 October after The Verge and Ars Technica reported it the day before; Ars Technica's framing was that Meta might use sweeping new commercial terms to avoid millions in AI licensing fees.\n<a href=\"https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Meta removed terms from its business TOS that publishers read as a licence to scrape and train on news sites for free. TechCrunch reports the language gone on 17 October after The Verge and Ars Technica reported it the day before; Ars Technica's framing was that Meta might use sweeping new commercial terms to avoid millions in AI licensing fees. TechCrunch Reported · the terms themselves were not read, and both The Verge and Ars Technica refuse automated reads, so the removal rests on TechCrunch",
+              "status": "reported",
+              "status_html": "<p>Reported · the terms themselves were not read, and both The Verge and Ars Technica refuse automated reads, so the removal rests on TechCrunch</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>The FT reports Anthropic was assigned the highest junk credit rating in June, and Ars Technica reports an FTC probe into whether OpenAI's and Anthropic's security incidents harmed Americans.</strong>",
+              "html": "<p><strong>The FT reports Anthropic was assigned the highest junk credit rating in June, and Ars Technica reports an FTC probe into whether OpenAI's and Anthropic's security incidents harmed Americans.</strong> Both are headline-and-outlet citations: the FT piece is paywalled, and arstechnica.com refuses automated reads. 287 points on Hacker News for the credit rating.\n<a href=\"https://www.ft.com/content/5a310aee-f555-4266-874c-b1b4db20186d\" target=\"_blank\" rel=\"noopener noreferrer\">FT</a> · <a href=\"https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/\" target=\"_blank\" rel=\"noopener noreferrer\">Ars Technica</a></p>",
+              "text": "The FT reports Anthropic was assigned the highest junk credit rating in June, and Ars Technica reports an FTC probe into whether OpenAI's and Anthropic's security incidents harmed Americans. Both are headline-and-outlet citations: the FT piece is paywalled, and arstechnica.com refuses automated reads. 287 points on Hacker News for the credit rating. FT · Ars Technica Reported · neither article was read; both rest on the headline and the outlet, and the FTC item is itself reported-on-a-report",
+              "status": "reported",
+              "status_html": "<p>Reported · neither article was read; both rest on the headline and the outlet, and the FTC item is itself reported-on-a-report</p>",
+              "updated": null,
+              "sources": [
+                "ft.com",
+                "Ars Technica"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Worth reading",
+          "category": "reading",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://www.anthropic.com/research/employment-at-anthropic\" target=\"_blank\" rel=\"noopener noreferrer\">How employment is changing at Anthropic</a></strong>",
+              "html": "<p><strong><a href=\"https://www.anthropic.com/research/employment-at-anthropic\" target=\"_blank\" rel=\"noopener noreferrer\">How employment is changing at Anthropic</a></strong> — Anthropic's economics team turned the survey on its own payroll, and the numbers are the most concrete published account of what agent-heavy work does to a company. Junior staff fell from 21% to 14% of technical departments since early 2025, and junior technical hires from 27% to 9%; code commits per engineer rose 5× in six months; by August 2026 agent hours outnumbered human work hours 6 to 1, with agents in nearly half of active Slack channels. The constraint it identifies is human attention: interactive Claude sessions sit roughly 80% idle waiting for a person, and non-technical staff face a full workweek of reading just to review agent output. Hiring managers now weight autonomy and judgement over domain expertise, with mentions of creative AI tool use tripling for technical roles between 2024 and 2026 and quadrupling for non-technical ones. One engineer's line for the texture of it: &quot;I need my juice box opened and it's an emergency that my juice box is opened.&quot; Every figure is Anthropic's own, about itself.</p>",
+              "text": "How employment is changing at Anthropic — Anthropic's economics team turned the survey on its own payroll, and the numbers are the most concrete published account of what agent-heavy work does to a company. Junior staff fell from 21% to 14% of technical departments since early 2025, and junior technical hires from 27% to 9%; code commits per engineer rose 5× in six months; by August 2026 agent hours outnumbered human work hours 6 to 1, with agents in nearly half of active Slack channels. The constraint it identifies is human attention: interactive Claude sessions sit roughly 80% idle waiting for a person, and non-technical staff face a full workweek of reading just to review agent output. Hiring managers now weight autonomy and judgement over domain expertise, with mentions of creative AI tool use tripling for technical roles between 2024 and 2026 and quadrupling for non-technical ones. One engineer's line for the texture of it: \"I need my juice box opened and it's an emergency that my juice box is opened.\" Every figure is Anthropic's own, about itself.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.anthropic.com/research/ai-expectations-gap\" target=\"_blank\" rel=\"noopener noreferrer\">The AI expectations gap</a></strong> the companion survey, pairing 10,980 US adults with 1,334 Anthropic staff in August 2026, plus 23,075 website visitors who ran an interac…",
+              "html": "<p><strong><a href=\"https://www.anthropic.com/research/ai-expectations-gap\" target=\"_blank\" rel=\"noopener noreferrer\">The AI expectations gap</a></strong> — the companion survey, pairing 10,980 US adults with 1,334 Anthropic staff in August 2026, plus 23,075 website visitors who ran an interactive scenario explorer. 91% of staff expect AI to make a Nobel-level discovery by 2030 against 39% of US adults; staff expect AI could do 75% of their own work by 2030 where US workers say 28%; median adult answers imply 5.4% GDP growth in 2030, median staff answers 17.1%. Read it as a measure of how far inside-the-lab expectations have drifted from everyone else's, which is also the reason to discount both.</p>",
+              "text": "The AI expectations gap — the companion survey, pairing 10,980 US adults with 1,334 Anthropic staff in August 2026, plus 23,075 website visitors who ran an interactive scenario explorer. 91% of staff expect AI to make a Nobel-level discovery by 2030 against 39% of US adults; staff expect AI could do 75% of their own work by 2030 where US workers say 28%; median adult answers imply 5.4% GDP growth in 2030, median staff answers 17.1%. Read it as a measure of how far inside-the-lab expectations have drifted from everyone else's, which is also the reason to discount both.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open\" target=\"_blank\" rel=\"noopener noreferrer\">Meta shakes up the frontiers, open and closed</a></strong>",
+              "html": "<p><strong><a href=\"https://www.interconnects.ai/p/meta-shakes-up-the-frontiers-open\" target=\"_blank\" rel=\"noopener noreferrer\">Meta shakes up the frontiers, open and closed</a></strong> by Nathan Lambert: the best-argued read on where Muse Spark Open actually sits, and on why he thinks the licence is a bigger threat to its adoption than its capability gap — Western open models have historically taken disproportionate share against equally good Chinese ones, and Meta chose this moment to attach revenue gates and branding requirements.</p>",
+              "text": "Meta shakes up the frontiers, open and closed by Nathan Lambert: the best-argued read on where Muse Spark Open actually sits, and on why he thinks the licence is a bigger threat to its adoption than its capability gap — Western open models have historically taken disproportionate share against equally good Chinese ones, and Meta chose this moment to attach revenue gates and branding requirements.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Interconnects"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Coverage check",
+          "category": "coverage",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Sources read:</strong> 25 of 25 feeds and APIs returned items, with no fetch failures, plus all 7 no-feed pages — the OpenAI API changelog, Anthropic news and r…",
+              "html": "<p><strong>Sources read:</strong> 25 of 25 feeds and APIs returned items, with no fetch failures, plus all 7 no-feed pages — the OpenAI API changelog, Anthropic news and research, the Claude Platform release notes, the Gemini API changelog, Meta AI research and The Batch. The Gemini API changelog had nothing dated inside the window (latest entry 13 October), and The Batch's latest issue, 16 October, leads on Claude Haiku 5.5, Mistral Large 4 and local models for Mac and Windows — all previously covered. <strong>Pages that refused automated reads:</strong> theverge.com, arstechnica.com and openai.com/index (HTTP 403), and krea.ai failed with a header-overflow parse error, so Krea 3 is set aside unread rather than written up; items depending on those pages are marked Reported on whichever outlet could be read.</p>",
+              "text": "Sources read: 25 of 25 feeds and APIs returned items, with no fetch failures, plus all 7 no-feed pages — the OpenAI API changelog, Anthropic news and research, the Claude Platform release notes, the Gemini API changelog, Meta AI research and The Batch. The Gemini API changelog had nothing dated inside the window (latest entry 13 October), and The Batch's latest issue, 16 October, leads on Claude Haiku 5.5, Mistral Large 4 and local models for Mac and Windows — all previously covered. Pages that refused automated reads: theverge.com, arstechnica.com and openai.com/index (HTTP 403), and krea.ai failed with a header-overflow parse error, so Krea 3 is set aside unread rather than written up; items depending on those pages are marked Reported on whichever outlet could be read.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Cross-source stories set aside:</strong> openai, google, claude, chatgpt, gemini, deepseek, amazon, nvidia, deepmind, mlx, rosalind, v4.1 are covered above or are the collector m…",
+              "html": "<p><strong>Cross-source stories set aside:</strong> <em>openai</em>, <em>google</em>, <em>claude</em>, <em>chatgpt</em>, <em>gemini</em>, <em>deepseek</em>, <em>amazon</em>, <em>nvidia</em>, <em>deepmind</em>, <em>mlx</em>, <em>rosalind</em>, <em>v4.1</em> are covered above or are the collector matching a vendor name across unrelated items. <em>ai-powered</em>, <em>techcrunch</em>, <em>astra</em>, <em>gpt-6</em>, <em>max</em>, <em>october</em> are generic-word or name-fragment matches — <em>october</em> pairs Meta's TOS change with a TechCrunch conference deadline. Set aside on the merits: <em>attie</em> and <em>bluesky</em>, both the same story of Bluesky's Attie app expanding to let anyone build websites and games, with no numbers and no mechanism given in either account; <em>lfm2.5-24b-a2b</em>, covered in the 14 October entry; and OpenAI's eleven news items, which are all customer stories (Itaú, Benefit Street Partners, Stack Overflow, Sullivan &amp; Cromwell, Amp, SentinelOne, Third Moment Research, Block), an education post or an EU policy post.</p>",
+              "text": "Cross-source stories set aside: openai , google , claude , chatgpt , gemini , deepseek , amazon , nvidia , deepmind , mlx , rosalind , v4.1 are covered above or are the collector matching a vendor name across unrelated items. ai-powered , techcrunch , astra , gpt-6 , max , october are generic-word or name-fragment matches — october pairs Meta's TOS change with a TechCrunch conference deadline. Set aside on the merits: attie and bluesky , both the same story of Bluesky's Attie app expanding to let anyone build websites and games, with no numbers and no mechanism given in either account; lfm2.5-24b-a2b , covered in the 14 October entry; and OpenAI's eleven news items, which are all customer stories (Itaú, Benefit Street Partners, Stack Overflow, Sullivan & Cromwell, Amp, SentinelOne, Third Moment Research, Block), an education post or an EU policy post.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Tier 1 items not written up:</strong> IBM&#x27;s Granite Switch 4.1 and Black Forest Labs&#x27; FLUX.3 Image Klein, both Hugging Face partner-blog launches with no vendor pricing or ava…",
+              "html": "<p><strong>Tier 1 items not written up:</strong> IBM's Granite Switch 4.1 and Black Forest Labs' FLUX.3 Image Klein, both Hugging Face partner-blog launches with no vendor pricing or availability detail in the window; Nvidia's Indic pretraining dataset post and AI2's HiRO-ACEv2 weather model; Apple's four other papers (selection-based structured reasoning, tool-discovery architectures, code-switching detection, tri-modal masked diffusion); Google DeepMind's antimicrobial-peptide and Singapore scam-detection posts; and AWS's six Bedrock AgentCore and SageMaker how-tos. None is a model, API, pricing or policy change, except the two Hugging Face launches, which are noted here for that reason.</p>",
+              "text": "Tier 1 items not written up: IBM's Granite Switch 4.1 and Black Forest Labs' FLUX.3 Image Klein, both Hugging Face partner-blog launches with no vendor pricing or availability detail in the window; Nvidia's Indic pretraining dataset post and AI2's HiRO-ACEv2 weather model; Apple's four other papers (selection-based structured reasoning, tool-discovery architectures, code-switching detection, tri-modal masked diffusion); Google DeepMind's antimicrobial-peptide and Singapore scam-detection posts; and AWS's six Bedrock AgentCore and SageMaker how-tos. None is a model, API, pricing or policy change, except the two Hugging Face launches, which are noted here for that reason.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Still open from last entry:</strong> Reflection Beam&#x27;s promised Apache 2.0 weights shipped on 16 October and leave the tracker.",
+              "html": "<p><strong>Still open from last entry:</strong> Reflection Beam's promised Apache 2.0 weights shipped on 16 October and leave the tracker. Mistral Large 4's weights, due by 31 October, went unmentioned by Mistral's own Timestral post and by every other source this window, and stay in the tracker. Jev's early access was unchanged, though Vercel's adoption figures above are the first outside measure of its uptake. Nothing this window contradicted what the 14 October entry recorded.</p>",
+              "text": "Still open from last entry: Reflection Beam's promised Apache 2.0 weights shipped on 16 October and leave the tracker. Mistral Large 4's weights, due by 31 October, went unmentioned by Mistral's own Timestral post and by every other source this window, and stay in the tracker. Jev's early access was unchanged, though Vercel's adoption figures above are the first outside measure of its uptake. Nothing this window contradicted what the 14 October entry recorded.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-14",
       "title": "AI web digest",
@@ -1260,30 +1705,16 @@
       "items": [
         {
           "headline": "<strong>Mistral Large 4: weights &quot;by the end of the month&quot; (October 2026).</strong>",
-          "html": "<p><strong>Mistral Large 4: weights &quot;by the end of the month&quot; (October 2026).</strong> API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Not out as of 14 October, and no source in the 11–14 October window mentioned them.</p>",
-          "text": "Mistral Large 4: weights \"by the end of the month\" (October 2026). API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Not out as of 14 October, and no source in the 11–14 October window mentioned them. Verified as announced, against Mistral · 2026-10-08, rechecked 2026-10-14",
+          "html": "<p><strong>Mistral Large 4: weights &quot;by the end of the month&quot; (October 2026).</strong> API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Not out as of 17 October. Mistral's own Timestral post on 15 October did not mention them, and no other source in the 14–17 October window did either, with nine days left on the promise.</p>",
+          "text": "Mistral Large 4: weights \"by the end of the month\" (October 2026). API preview only for now. Check Mistral's news and Hugging Face for the weights and their licence. Not out as of 17 October. Mistral's own Timestral post on 15 October did not mention them, and no other source in the 14–17 October window did either, with nine days left on the promise. Verified as announced, against Mistral · 2026-10-08, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://mistral.ai/news/mistral-large-4/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a> · 2026-10-08, rechecked 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://mistral.ai/news/mistral-large-4/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a> · 2026-10-08, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "Mistral"
           ],
           "due": "2026-10-31",
           "due_label": "end of October"
-        },
-        {
-          "headline": "<strong>Reflection Beam: Apache 2.0 weights &quot;later this month&quot; (October 2026).</strong>",
-          "html": "<p><strong>Reflection Beam: Apache 2.0 weights &quot;later this month&quot; (October 2026).</strong> Complicated since 10 October by the Financial Times reporting that Nvidia is in talks to acquire Reflection AI; neither company has confirmed, and nothing has been said about the weights. No mention in the 11–14 October window.</p>",
-          "text": "Reflection Beam: Apache 2.0 weights \"later this month\" (October 2026). Complicated since 10 October by the Financial Times reporting that Nvidia is in talks to acquire Reflection AI; neither company has confirmed, and nothing has been said about the weights. No mention in the 11–14 October window. Verified as announced, against Reflection · acquisition talks Reported only, FT (paywalled) · rechecked 2026-10-14",
-          "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://reflection.ai/blog/introducing-beam\" target=\"_blank\" rel=\"noopener noreferrer\">Reflection</a> · acquisition talks Reported only, <a href=\"https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a\" target=\"_blank\" rel=\"noopener noreferrer\">FT</a> (paywalled) · rechecked 2026-10-14</p>",
-          "updated": "2026-10-14",
-          "sources": [
-            "Reflection",
-            "ft.com"
-          ],
-          "due": "2026-10-31",
-          "due_label": "\"later this month\""
         }
       ]
     },
@@ -1294,11 +1725,11 @@
       "items": [
         {
           "headline": "<strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong>",
-          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.</p>",
-          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Verified as announced, against Anthropic · 2026-10-14",
+          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.\nStill not live as of 17 October, with two weeks left on the promise.</p>",
+          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Still not live as of 17 October, with two weeks left on the promise. Verified as announced, against Anthropic · 2026-10-14, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "Anthropic"
           ],
@@ -1307,11 +1738,11 @@
         },
         {
           "headline": "<strong>OpenAI Decisions API: public beta since 6 October, general availability expected &quot;in the coming weeks&quot;.</strong>",
-          "html": "<p><strong>OpenAI Decisions API: public beta since 6 October, general availability expected &quot;in the coming weeks&quot;.</strong> <code>gpt-6-luna</code> is the only model. Nothing new in the OpenAI API changelog as of 14 October.</p>",
-          "text": "OpenAI Decisions API: public beta since 6 October, general availability expected \"in the coming weeks\". gpt-6-luna is the only model. Nothing new in the OpenAI API changelog as of 14 October. Verified against OpenAI's Decisions guide · 2026-10-08, rechecked 2026-10-14",
+          "html": "<p><strong>OpenAI Decisions API: public beta since 6 October, general availability expected &quot;in the coming weeks&quot;.</strong> <code>gpt-6-luna</code> is the only model. Nothing new in the OpenAI API changelog as of 17 October; its only entry in the window was prompt-to-voice on 16 October.</p>",
+          "text": "OpenAI Decisions API: public beta since 6 October, general availability expected \"in the coming weeks\". gpt-6-luna is the only model. Nothing new in the OpenAI API changelog as of 17 October; its only entry in the window was prompt-to-voice on 16 October. Verified against OpenAI's Decisions guide · 2026-10-08, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against <a href=\"https://developers.openai.com/api/docs/guides/decisions\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's Decisions guide</a> · 2026-10-08, rechecked 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://developers.openai.com/api/docs/guides/decisions\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's Decisions guide</a> · 2026-10-08, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "OpenAI"
           ],
@@ -1320,24 +1751,25 @@
         },
         {
           "headline": "<strong>TypeSafe Jev: still early access.</strong>",
-          "html": "<p><strong>TypeSafe Jev: still early access.</strong> The 14 October 1.14.0 release post names no general-availability date and does not say the waitlist is gone. It also adds three experimental features, each behind its own API header with a reliability warning: composable images, a <code>Box</code> single-bounding-box return type, and longer-than-production context.</p>",
-          "text": "TypeSafe Jev: still early access. The 14 October 1.14.0 release post names no general-availability date and does not say the waitlist is gone. It also adds three experimental features, each behind its own API header with a reliability warning: composable images, a Box single-bounding-box return type, and longer-than-production context. Verified that no GA was announced, against TypeSafe · 2026-10-14",
+          "html": "<p><strong>TypeSafe Jev: still early access.</strong> The 14 October 1.14.0 release post names no general-availability date and does not say the waitlist is gone. It also adds three experimental features, each behind its own API header with a reliability warning: composable images, a <code>Box</code> single-bounding-box return type, and longer-than-production context.\nNo TypeSafe post in the 14–17 October window. Vercel reports 35% of its paid teams using it within two weeks of launch, which is adoption, not general availability.</p>",
+          "text": "TypeSafe Jev: still early access. The 14 October 1.14.0 release post names no general-availability date and does not say the waitlist is gone. It also adds three experimental features, each behind its own API header with a reliability warning: composable images, a Box single-bounding-box return type, and longer-than-production context. No TypeSafe post in the 14–17 October window. Vercel reports 35% of its paid teams using it within two weeks of launch, which is adoption, not general availability. Verified that no GA was announced, against TypeSafe · adoption figures Reported, TechCrunch · 2026-10-14, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> that no GA was announced, against <a href=\"https://typesafe.ai/blog/jev-1-14\" target=\"_blank\" rel=\"noopener noreferrer\">TypeSafe</a> · 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> that no GA was announced, against <a href=\"https://typesafe.ai/blog/jev-1-14\" target=\"_blank\" rel=\"noopener noreferrer\">TypeSafe</a> · adoption figures Reported, <a href=\"https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · 2026-10-14, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
-            "TypeSafe"
+            "TypeSafe",
+            "TechCrunch"
           ],
           "due": null,
           "due_label": null
         },
         {
           "headline": "<strong>Meta Muse Wonder Full: Muse Code subscribers only, not served through the API.</strong>",
-          "html": "<p><strong>Meta Muse Wonder Full: Muse Code subscribers only, not served through the API.</strong> Meta says Muse Wonder &quot;will soon power experiences in Muse, and will roll out first to subscribers&quot;; no date, and no stated plan to put Wonder Full on the API.</p>",
-          "text": "Meta Muse Wonder Full: Muse Code subscribers only, not served through the API. Meta says Muse Wonder \"will soon power experiences in Muse, and will roll out first to subscribers\"; no date, and no stated plan to put Wonder Full on the API. Verified against Meta · API exclusion Reported, TechCrunch · 2026-10-14",
+          "html": "<p><strong>Meta Muse Wonder Full: Muse Code subscribers only, not served through the API.</strong> Meta says Muse Wonder &quot;will soon power experiences in Muse, and will roll out first to subscribers&quot;; no date, and no stated plan to put Wonder Full on the API.\nUnchanged by the 15 October Muse Spark Open release, which is a separate open-weight model.</p>",
+          "text": "Meta Muse Wonder Full: Muse Code subscribers only, not served through the API. Meta says Muse Wonder \"will soon power experiences in Muse, and will roll out first to subscribers\"; no date, and no stated plan to put Wonder Full on the API. Unchanged by the 15 October Muse Spark Open release, which is a separate open-weight model. Verified against Meta · API exclusion Reported, TechCrunch · 2026-10-14, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against <a href=\"https://research.meta.ai/blog/muse-wonder\" target=\"_blank\" rel=\"noopener noreferrer\">Meta</a> · API exclusion Reported, <a href=\"https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://research.meta.ai/blog/muse-wonder\" target=\"_blank\" rel=\"noopener noreferrer\">Meta</a> · API exclusion Reported, <a href=\"https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · 2026-10-14, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "research.meta.ai",
             "TechCrunch"
@@ -1348,10 +1780,10 @@
         {
           "headline": "<strong>Claude Managed Agents dynamic workflows: beta since 9 October.</strong>",
           "html": "<p><strong>Claude Managed Agents dynamic workflows: beta since 9 October.</strong> Behind the <code>managed-agents-2026-04-01</code> beta header; an agent writes a workflow that the server runs in phases in the background. No GA date given.</p>",
-          "text": "Claude Managed Agents dynamic workflows: beta since 9 October. Behind the managed-agents-2026-04-01 beta header; an agent writes a workflow that the server runs in phases in the background. No GA date given. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-14",
+          "text": "Claude Managed Agents dynamic workflows: beta since 9 October. Behind the managed-agents-2026-04-01 beta header; an agent writes a workflow that the server runs in phases in the background. No GA date given. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "Anthropic"
           ],
@@ -1361,10 +1793,10 @@
         {
           "headline": "<strong>Claude OpenTelemetry export: beta since 14 October.</strong>",
           "html": "<p><strong>Claude OpenTelemetry export: beta since 14 October.</strong> Traces Messages API requests and Managed Agents sessions; the Python, TypeScript, C#, Go, Java, PHP and Ruby SDKs emit spans once an OpenTelemetry destination is added in the Claude Console. No GA date.</p>",
-          "text": "Claude OpenTelemetry export: beta since 14 October. Traces Messages API requests and Managed Agents sessions; the Python, TypeScript, C#, Go, Java, PHP and Ruby SDKs emit spans once an OpenTelemetry destination is added in the Claude Console. No GA date. Verified against the Claude Platform release notes · 2026-10-14",
+          "text": "Claude OpenTelemetry export: beta since 14 October. Traces Messages API requests and Managed Agents sessions; the Python, TypeScript, C#, Go, Java, PHP and Ruby SDKs emit spans once an OpenTelemetry destination is added in the Claude Console. No GA date. Verified against the Claude Platform release notes · 2026-10-14, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-14, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "Anthropic"
           ],
@@ -1372,12 +1804,12 @@
           "due_label": null
         },
         {
-          "headline": "<strong>Claude Enterprise Compliance API: two beta additions on 8 October.</strong>",
-          "html": "<p><strong>Claude Enterprise Compliance API: two beta additions on 8 October.</strong> Chat endpoints now return chats from the unified Claude experience using an existing Compliance Access Key, and Claude Docs documents can be downloaded as Word files. Both beta, Enterprise only, no GA date.</p>",
-          "text": "Claude Enterprise Compliance API: two beta additions on 8 October. Chat endpoints now return chats from the unified Claude experience using an existing Compliance Access Key, and Claude Docs documents can be downloaded as Word files. Both beta, Enterprise only, no GA date. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-14",
+          "headline": "<strong>Claude Enterprise Compliance API: three beta additions, 8 and 15 October.</strong>",
+          "html": "<p><strong>Claude Enterprise Compliance API: three beta additions, 8 and 15 October.</strong> On 8 October, chat endpoints began returning chats from the unified Claude experience using an existing Compliance Access Key, and Claude Docs documents became downloadable as Word files. On 15 October, <code>GET /v1/compliance/organizations/{org_uuid}/user_preferences</code> was added, returning the text each member saved as <strong>Instructions for Claude</strong> in claude.ai and as <strong>Global instructions</strong> in Cowork, under the <code>read:compliance_user_data</code> scope. All beta, Enterprise only, no GA date.</p>",
+          "text": "Claude Enterprise Compliance API: three beta additions, 8 and 15 October. On 8 October, chat endpoints began returning chats from the unified Claude experience using an existing Compliance Access Key, and Claude Docs documents became downloadable as Word files. On 15 October, GET /v1/compliance/organizations/{org_uuid}/user_preferences was added, returning the text each member saved as Instructions for Claude in claude.ai and as Global instructions in Cowork, under the read:compliance_user_data scope. All beta, Enterprise only, no GA date. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "Anthropic"
           ],
@@ -1387,12 +1819,64 @@
         {
           "headline": "<strong>Odyssey-3: free public research preview, API access by application.</strong>",
           "html": "<p><strong>Odyssey-3: free public research preview, API access by application.</strong> No pricing and no general-availability date.</p>",
-          "text": "Odyssey-3: free public research preview, API access by application. No pricing and no general-availability date. Reported, The Decoder · 2026-10-11, rechecked 2026-10-14",
+          "text": "Odyssey-3: free public research preview, API access by application. No pricing and no general-availability date. Reported, The Decoder · 2026-10-11, rechecked 2026-10-17",
           "status": "reported",
-          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-10-11, rechecked 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/odyssey-3-is-a-new-generative-world-model-that-you-can-try-for-free/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-10-11, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "The Decoder"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Claude fast mode: research preview for Opus 5 and Opus 4.8 only.</strong>",
+          "html": "<p><strong>Claude fast mode: research preview for Opus 5 and Opus 4.8 only.</strong> It left research preview for Opus 5.5 on 15 October, which no longer needs the <code>fast-mode-2026-02-01</code> beta header and now has a default rate limit in the Start, Build and Scale tiers. Opus 5 and Opus 4.8 still require the header and still have no GA date.</p>",
+          "text": "Claude fast mode: research preview for Opus 5 and Opus 4.8 only. It left research preview for Opus 5.5 on 15 October, which no longer needs the fast-mode-2026-02-01 beta header and now has a default rate limit in the Start, Build and Scale tiers. Opus 5 and Opus 4.8 still require the header and still have no GA date. Verified against the Claude Platform release notes · 2026-10-17",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-17</p>",
+          "updated": "2026-10-17",
+          "sources": [
+            "Anthropic"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>OpenAI GPT-Rosalind: application-gated, US university research labs only.</strong>",
+          "html": "<p><strong>OpenAI GPT-Rosalind: application-gated, US university research labs only.</strong> Up to 30 free seats on the Business Standard plan for up to twelve months; no API access, and OpenAI vets the institution, the lab leader and the intended research. No general availability and no pricing for anyone outside the plan.</p>",
+          "text": "OpenAI GPT-Rosalind: application-gated, US university research labs only. Up to 30 free seats on the Business Standard plan for up to twelve months; no API access, and OpenAI vets the institution, the lab leader and the intended research. No general availability and no pricing for anyone outside the plan. Reported, The Decoder · OpenAI's own announcement page returns HTTP 403 to automated reads · 2026-10-17",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/openais-new-rosalind-academic-plan-gives-research-labs-up-to-30-free-seats-for-a-year/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · OpenAI's own announcement page returns HTTP 403 to automated reads · 2026-10-17</p>",
+          "updated": "2026-10-17",
+          "sources": [
+            "The Decoder"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>OpenAI GPT-Live-1.1: rolling out.</strong>",
+          "html": "<p><strong>OpenAI GPT-Live-1.1: rolling out.</strong> New voices and better accents, announced 15 October as in rollout rather than generally available. The 16 October API changelog separately shipped prompt-to-voice, which creates a custom voice from a text description for reuse across GPT-Live sessions.</p>",
+          "text": "OpenAI GPT-Live-1.1: rolling out. New voices and better accents, announced 15 October as in rollout rather than generally available. The 16 October API changelog separately shipped prompt-to-voice, which creates a custom voice from a text description for reuse across GPT-Live sessions. Verified that prompt-to-voice shipped, against the OpenAI API changelog · the 1.1 rollout is per the developer announcement · 2026-10-17",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> that prompt-to-voice shipped, against the <a href=\"https://developers.openai.com/api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI API changelog</a> · the 1.1 rollout is per the <a href=\"https://community.openai.com/t/gpt-live-1-1-is-rolling-out-with-new-voices-and-better-accents/1406704\" target=\"_blank\" rel=\"noopener noreferrer\">developer announcement</a> · 2026-10-17</p>",
+          "updated": "2026-10-17",
+          "sources": [
+            "OpenAI"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Anthropic independent-evaluator partnerships: three of five not yet in place.</strong>",
+          "html": "<p><strong>Anthropic independent-evaluator partnerships: three of five not yet in place.</strong> METR has employee-level access as of 15 October and SecureBio is reviewing the chemical and biological weapons section of the August Risk Report. Accenture and Faculty are &quot;working toward&quot; evaluation, red-teaming, alignment assessment and safeguard testing; Hugging Face is in early discussions with no access level stated. Model architecture information is withheld from every evaluator.</p>",
+          "text": "Anthropic independent-evaluator partnerships: three of five not yet in place. METR has employee-level access as of 15 October and SecureBio is reviewing the chemical and biological weapons section of the August Risk Report. Accenture and Faculty are \"working toward\" evaluation, red-teaming, alignment assessment and safeguard testing; Hugging Face is in early discussions with no access level stated. Model architecture information is withheld from every evaluator. Verified against Anthropic · 2026-10-17",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://www.anthropic.com/news/an-update-on-independent-evaluators\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-17</p>",
+          "updated": "2026-10-17",
+          "sources": [
+            "Anthropic"
           ],
           "due": null,
           "due_label": null
@@ -1406,11 +1890,11 @@
       "items": [
         {
           "headline": "<strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong>",
-          "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.</p>",
-          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . Verified against the Gemini API changelog · 2026-10-11, rechecked 2026-10-14",
+          "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.\nStill listed as of 17 October, six days out; the changelog added nothing in the 14–17 October window.</p>",
+          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . Still listed as of 17 October, six days out; the changelog added nothing in the 14–17 October window. Verified against the Gemini API changelog · 2026-10-11, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · 2026-10-11, rechecked 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · 2026-10-11, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "Google"
           ],
@@ -1429,6 +1913,19 @@
           ],
           "due": "2026-11-12",
           "due_label": "takes effect"
+        },
+        {
+          "headline": "<strong>PostgreSQL 19 slips to about 19 November 2026, with 8 to 10 features reverted to PostgreSQL 20.</strong>",
+          "html": "<p><strong>PostgreSQL 19 slips to about 19 November 2026, with 8 to 10 features reverted to PostgreSQL 20.</strong> LLM-assisted review surfaced around 40 defect reports late in the cycle, each a three-line fix on average.</p>",
+          "text": "PostgreSQL 19 slips to about 19 November 2026, with 8 to 10 features reverted to PostgreSQL 20. LLM-assisted review surfaced around 40 defect reports late in the cycle, each a three-line fix on average. Reported, The Register · the project's own account, relayed; The Register does not name the tools used · 2026-10-17",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://www.theregister.com/databases/2026/10/16/postgres-19-delayed-after-ai-reviewers-find-more-bugs-than-humans-can-fix/5303471\" target=\"_blank\" rel=\"noopener noreferrer\">The Register</a> · the project's own account, relayed; The Register does not name the tools used · 2026-10-17</p>",
+          "updated": "2026-10-17",
+          "sources": [
+            "theregister.com"
+          ],
+          "due": "2026-11-19",
+          "due_label": "revised release date"
         },
         {
           "headline": "<strong>Character.AI's court-supervised sale concludes by end of November or early December 2026, or the platform winds down.</strong>",
@@ -1460,15 +1957,41 @@
         {
           "headline": "<strong>Claude Sonnet 4.5 (<code>claude-sonnet-4-5-20250929</code>) retires 30 November 2026</strong>",
           "html": "<p><strong>Claude Sonnet 4.5 (<code>claude-sonnet-4-5-20250929</code>) retires 30 November 2026</strong> on the Claude API; Anthropic recommends Sonnet 5.5.</p>",
-          "text": "Claude Sonnet 4.5 ( claude-sonnet-4-5-20250929 ) retires 30 November 2026 on the Claude API; Anthropic recommends Sonnet 5.5. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-14",
+          "text": "Claude Sonnet 4.5 ( claude-sonnet-4-5-20250929 ) retires 30 November 2026 on the Claude API; Anthropic recommends Sonnet 5.5. Verified against the Claude Platform release notes · 2026-10-11, rechecked 2026-10-17",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-11, rechecked 2026-10-17</p>",
+          "updated": "2026-10-17",
           "sources": [
             "Anthropic"
           ],
           "due": "2026-11-30",
           "due_label": "retirement"
+        },
+        {
+          "headline": "<strong>Standalone Claude Design (claude.ai/design) closes 14 December 2026.</strong>",
+          "html": "<p><strong>Standalone Claude Design (claude.ai/design) closes 14 December 2026.</strong> Claude Code v2.1.302 added the notice to <code>/design-sync</code> and <code>/design-login</code>. No migration path is named in the release notes.</p>",
+          "text": "Standalone Claude Design (claude.ai/design) closes 14 December 2026. Claude Code v2.1.302 added the notice to /design-sync and /design-login . No migration path is named in the release notes. Verified against the v2.1.302 release notes · 2026-10-17",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.302\" target=\"_blank\" rel=\"noopener noreferrer\">v2.1.302 release notes</a> · 2026-10-17</p>",
+          "updated": "2026-10-17",
+          "sources": [
+            "GitHub"
+          ],
+          "due": "2026-12-14",
+          "due_label": "closes"
+        },
+        {
+          "headline": "<strong>China's draft export controls on 23 AI technologies: no effective date.</strong>",
+          "html": "<p><strong>China's draft export controls on 23 AI technologies: no effective date.</strong> Thresholds would be 2 trillion parameters, 10^26 FLOPs of training compute, or a global top-ten ranking, plus models trained on sensitive Chinese data; malware-writing tools banned outright, vulnerability-finding tools limited. Open-weight releases, papers, APIs, apps and SaaS are exempt, with open-weight models getting automatic licensing on registration. Affected exports register through the commerce ministry's portal until final rules take effect.</p>",
+          "text": "China's draft export controls on 23 AI technologies: no effective date. Thresholds would be 2 trillion parameters, 10^26 FLOPs of training compute, or a global top-ten ranking, plus models trained on sensitive Chinese data; malware-writing tools banned outright, vulnerability-finding tools limited. Open-weight releases, papers, APIs, apps and SaaS are exempt, with open-weight models getting automatic licensing on registration. Affected exports register through the commerce ministry's portal until final rules take effect. Reported, The Decoder · a draft; the text was not read and no comment-period deadline is named · 2026-10-17",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/china-plans-to-tighten-export-controls-on-open-weight-models-and-23-key-ai-technologies/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · a draft; the text was not read and no comment-period deadline is named · 2026-10-17</p>",
+          "updated": "2026-10-17",
+          "sources": [
+            "The Decoder"
+          ],
+          "due": null,
+          "due_label": null
         }
       ]
     }
