@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-27",
+  "generated": "2026-10-30",
   "meta": {
     "feed": "aiweb",
     "title": "AI Web Digest",
@@ -21,6 +21,350 @@
     "source_note": "from AI lab announcements, expert curators, Hacker News and the tech press"
   },
   "digests": [
+    {
+      "date": "2026-10-30",
+      "title": "AI web digest",
+      "intro_html": "<p>Covering 27 to 30 October. The window that most needs action is a security incident. For about eleven hours on 29 October, a trojanized build of the Claude Code extension was served through Cursor's marketplace, and it planted an SSH backdoor. On the model side, Google announced Gemini 4 Carbon, now first on Artificial Analysis's new index but open only to selected cyber defenders. Mistral kept its end-of-October promise and published Le Chonk's weights, at about half the preview's price.</p>",
+      "sections": [
+        {
+          "heading": "Must know",
+          "category": "mustknow",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>A trojanized Claude Code extension, version 2.1.313, was served through Cursor's marketplace on 29 October and installed an SSH backdoor.</strong>",
+              "html": "<p><strong>A trojanized Claude Code extension, version 2.1.313, was served through Cursor's marketplace on 29 October and installed an SSH backdoor.</strong> Someone published a malicious build of the Claude Code editor extension under Anthropic's own publisher identity, so Cursor users with auto-update could have received it without doing anything.</p>\n<ul>\n<li><strong>Why it matters:</strong> this is a supply-chain attack on a coding-agent tool, which runs with your user's access to code, keys and credentials. According to The Hacker News, which relays Cursor, the build was live from about 2:27 a.m. to 1:35 p.m. PT on 29 October and reached at most 5,000 users. Cursor says &quot;this malicious version of the extension was not developed by Anthropic&quot;. The payload ran when the editor started. It added an attacker key labelled <code>svc-telemetry</code> to <code>~/.ssh/authorized_keys</code>, tried to enable SSH, opened a reverse tunnel, and installed persistence (a LaunchAgent on macOS, crontab on Linux, a scheduled task on Windows). It also sent your hostname, username, Git email and the names (not values) of up to 40 credential-like environment variables over plain HTTP. No follow-on payload has been seen.</li>\n<li><strong>What you could use it for:</strong> check now if you run Cursor: look for <code>svc-telemetry</code> in <code>~/.ssh/authorized_keys</code>, for an unfamiliar LaunchAgent in <code>~/Library/LaunchAgents</code>, and for connections to 134.209.82.225 on port 8099; confirm the installed extension is 2.1.314 or later; and if you were exposed, remove the key and persistence, then rotate credentials and sessions, as Cursor advises &quot;regardless&quot;. More generally, this is a reason to pin or review editor-extension auto-updates for agent tools.</li>\n<li><strong>Cost and speed:</strong> about eleven hours of exposure and at most 5,000 users, both per Cursor; Anthropic published the clean 2.1.314 to Open VSX and the Microsoft VS Code Marketplace.</li>\n<li><strong>Caveats:</strong> how the attacker published under Anthropic's identity is still unknown. Kevin Beaumont's post, which reached 367 points on Hacker News, and a DoublePulsar post at 240 points both say Anthropic was compromised. A researcher analysis that CryptoNews cites says the findings do not prove Anthropic's own Marketplace release or distribution systems were breached. ExplainX reports that OpenSourceMalware later found the Open VSX build, the Microsoft Marketplace extension and the npm CLI not malicious; early reports had blamed Open VSX. Anthropic's news page carried no statement as of 30 October, and the v2.1.314 release notes do not mention the incident.</li>\n<li><strong>Read next:</strong> <a href=\"https://thehackernews.com/2026/10/official-claude-code-vs-code-extension.html\" target=\"_blank\" rel=\"noopener noreferrer\">Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor</a> (The Hacker News)</li>\n</ul>",
+              "text": "A trojanized Claude Code extension, version 2.1.313, was served through Cursor's marketplace on 29 October and installed an SSH backdoor. Someone published a malicious build of the Claude Code editor extension under Anthropic's own publisher identity, so Cursor users with auto-update could have received it without doing anything. Why it matters: this is a supply-chain attack on a coding-agent tool, which runs with your user's access to code, keys and credentials. According to The Hacker News, which relays Cursor, the build was live from about 2:27 a.m. to 1:35 p.m. PT on 29 October and reached at most 5,000 users. Cursor says \"this malicious version of the extension was not developed by Anthropic\". The payload ran when the editor started. It added an attacker key labelled svc-telemetry to ~/.ssh/authorized_keys , tried to enable SSH, opened a reverse tunnel, and installed persistence (a LaunchAgent on macOS, crontab on Linux, a scheduled task on Windows). It also sent your hostname, username, Git email and the names (not values) of up to 40 credential-like environment variables over plain HTTP. No follow-on payload has been seen. What you could use it for: check now if you run Cursor: look for svc-telemetry in ~/.ssh/authorized_keys , for an unfamiliar LaunchAgent in ~/Library/LaunchAgents , and for connections to 134.209.82.225 on port 8099; confirm the installed extension is 2.1.314 or later; and if you were exposed, remove the key and persistence, then rotate credentials and sessions, as Cursor advises \"regardless\". More generally, this is a reason to pin or review editor-extension auto-updates for agent tools. Cost and speed: about eleven hours of exposure and at most 5,000 users, both per Cursor; Anthropic published the clean 2.1.314 to Open VSX and the Microsoft VS Code Marketplace. Caveats: how the attacker published under Anthropic's identity is still unknown. Kevin Beaumont's post, which reached 367 points on Hacker News, and a DoublePulsar post at 240 points both say Anthropic was compromised. A researcher analysis that CryptoNews cites says the findings do not prove Anthropic's own Marketplace release or distribution systems were breached. ExplainX reports that OpenSourceMalware later found the Open VSX build, the Microsoft Marketplace extension and the npm CLI not malicious; early reports had blamed Open VSX. Anthropic's news page carried no statement as of 30 October, and the v2.1.314 release notes do not mention the incident. Read next: Official Claude Code Extension on Cursor Marketplace Trojanized with Persistent SSH Backdoor (The Hacker News) Reported, by The Hacker News relaying Cursor's statement · Cursor's own advisory and Anthropic's account were not found; Beaumont's and DoublePulsar's posts could not be fetched",
+              "status": "reported",
+              "status_html": "<p>Reported, by The Hacker News relaying Cursor's statement · Cursor's own advisory and Anthropic's account were not found; Beaumont's and DoublePulsar's posts could not be fetched</p>",
+              "updated": null,
+              "sources": [
+                "thehackernews.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Mistral published the open weights of Mistral Large 4, &quot;Le Chonk&quot;, a 1-trillion-parameter model, and cut its API price to about half the preview's.</strong>",
+              "html": "<p><strong>Mistral published the open weights of Mistral Large 4, &quot;Le Chonk&quot;, a 1-trillion-parameter model, and cut its API price to about half the preview's.</strong> It is a mixture-of-experts model that accepts text and images, now under a licence that allows commercial use. This keeps the &quot;end of October&quot; promise the tracker has followed since 8 October.</p>\n<ul>\n<li><strong>Why it matters:</strong> a trillion-parameter model from a European lab can now be downloaded and run, and it is cheaper than the preview it replaces. According to The Decoder, the API now costs $0.70 per million input tokens and $2.10 output, against the preview's $1.36 and $4.18. Mistral lists cached input at $0.07.</li>\n<li><strong>What you could use it for:</strong> a cheaper second opinion on code inside an agent loop, since it ties GLM-5.3 on Artificial Analysis's Coding Agent Index with fewer tokens; a self-hosted coding model where data cannot leave your infrastructure, if you have the hardware; an EU-hosted model through Mistral's API for work that needs one; and a candidate for defensive security work, since it scores 51 on Artificial Analysis's Cyber Index and Mistral reports it refuses 96.6% of malicious cyber requests.</li>\n<li><strong>Cost and speed:</strong> Artificial Analysis, as reported by The Decoder, measured 161 tokens per second (up from 111) and $2.06 per index task. That is cheaper than GLM-5.3 ($5.01) and Kimi K3.1 Pro ($3.68), but far above DeepSeek V4.1 Flash ($0.60). Terminal-Bench 4.0 went from 28% to 41%, per Mistral. The full model needs eight Nvidia B300 GPUs, and a compressed variant needs four GB300s.</li>\n<li><strong>Caveats:</strong> it still trails the best Chinese open models overall. It scores 26 on Artificial Analysis's Intelligence Index, against 32 for DeepSeek V4.1 Flash and GLM-5.3, and The Decoder notes that Mistral's comparisons leave out Kimi K3.1 Pro. On FrontierCode 2.0 it scores 19.7% against 46% for Claude Opus 5.5. The licence is a modified MIT that requires a separate commercial licence for anyone selling it as a hosted service. Mistral says it saw potential uplift toward real attacks in live traffic and is tightening guardrails; a penetration-testing variant goes only to vetted partners.</li>\n<li><strong>Read next:</strong> <a href=\"https://the-decoder.com/paris-based-mistral-releases-le-chonk-a-strong-coding-model-that-still-trails-china-overall/\" target=\"_blank\" rel=\"noopener noreferrer\">Paris-based Mistral releases &quot;Le Chonk,&quot; a strong coding model that still trails China overall</a> (The Decoder)</li>\n</ul>",
+              "text": "Mistral published the open weights of Mistral Large 4, \"Le Chonk\", a 1-trillion-parameter model, and cut its API price to about half the preview's. It is a mixture-of-experts model that accepts text and images, now under a licence that allows commercial use. This keeps the \"end of October\" promise the tracker has followed since 8 October. Why it matters: a trillion-parameter model from a European lab can now be downloaded and run, and it is cheaper than the preview it replaces. According to The Decoder, the API now costs $0.70 per million input tokens and $2.10 output, against the preview's $1.36 and $4.18. Mistral lists cached input at $0.07. What you could use it for: a cheaper second opinion on code inside an agent loop, since it ties GLM-5.3 on Artificial Analysis's Coding Agent Index with fewer tokens; a self-hosted coding model where data cannot leave your infrastructure, if you have the hardware; an EU-hosted model through Mistral's API for work that needs one; and a candidate for defensive security work, since it scores 51 on Artificial Analysis's Cyber Index and Mistral reports it refuses 96.6% of malicious cyber requests. Cost and speed: Artificial Analysis, as reported by The Decoder, measured 161 tokens per second (up from 111) and $2.06 per index task. That is cheaper than GLM-5.3 ($5.01) and Kimi K3.1 Pro ($3.68), but far above DeepSeek V4.1 Flash ($0.60). Terminal-Bench 4.0 went from 28% to 41%, per Mistral. The full model needs eight Nvidia B300 GPUs, and a compressed variant needs four GB300s. Caveats: it still trails the best Chinese open models overall. It scores 26 on Artificial Analysis's Intelligence Index, against 32 for DeepSeek V4.1 Flash and GLM-5.3, and The Decoder notes that Mistral's comparisons leave out Kimi K3.1 Pro. On FrontierCode 2.0 it scores 19.7% against 46% for Claude Opus 5.5. The licence is a modified MIT that requires a separate commercial licence for anyone selling it as a hosted service. Mistral says it saw potential uplift toward real attacks in live traffic and is tightening guardrails; a penetration-testing variant goes only to vetted partners. Read next: Paris-based Mistral releases \"Le Chonk,\" a strong coding model that still trails China overall (The Decoder) Verified that the weights, licence and prices were published, against Mistral · the coding, speed and cost-per-task figures are Artificial Analysis's, relayed by The Decoder; the page does not state the context window or the exact release date",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> that the weights, licence and prices were published, against <a href=\"https://mistral.ai/news/mistral-large-4-oss/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a> · the coding, speed and cost-per-task figures are Artificial Analysis's, relayed by The Decoder; the page does not state the context window or the exact release date</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder",
+                "Mistral"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Model releases",
+          "category": "releases",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Google announced Gemini 4 Carbon, its new frontier model, but only selected cyber defenders can use it so far.</strong>",
+              "html": "<p><strong>Google announced Gemini 4 Carbon, its new frontier model, but only selected cyber defenders can use it so far.</strong> Google says it is starting &quot;this week&quot; with a subset of cyber defenders, and widening access through its Fairwind Program and then to developers and consumers &quot;as soon as possible&quot;, with no date. It quotes the same introductory price as Argon: $2 per million input tokens and $10 output, rising to $4 and $20. Its own claims are security-heavy: 88.2% on SEC-bench Pro for finding vulnerabilities, 54.8% on ExploitGym and 71.0% on CWE-bench. Independently, Artificial Analysis puts it first on its new Intelligence Index v5 with 59, and at $7.76 per index task against $10.04 for Opus 5.5, per The Decoder and Latent Space. It still trails Claude Code with Opus 5.5 on Artificial Analysis's Coding Agent Index (59 against 62). The Decoder notes its hallucination rate on AA-Omniscience rose from 4% to 11%, that it produces 2.3 times as many reasoning tokens, and that Google's own benchmark selection shows it first in 15 of 16 tests. Ars Technica headlined it as a model &quot;you can't use&quot;. The launch reached 1,007 points on Hacker News. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · <a href=\"https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · <a href=\"https://latent.space/p/ainews-gemini-4-carbon/\" target=\"_blank\" rel=\"noopener noreferrer\">Latent Space</a></p>",
+              "text": "Google announced Gemini 4 Carbon, its new frontier model, but only selected cyber defenders can use it so far. Google says it is starting \"this week\" with a subset of cyber defenders, and widening access through its Fairwind Program and then to developers and consumers \"as soon as possible\", with no date. It quotes the same introductory price as Argon: $2 per million input tokens and $10 output, rising to $4 and $20. Its own claims are security-heavy: 88.2% on SEC-bench Pro for finding vulnerabilities, 54.8% on ExploitGym and 71.0% on CWE-bench. Independently, Artificial Analysis puts it first on its new Intelligence Index v5 with 59, and at $7.76 per index task against $10.04 for Opus 5.5, per The Decoder and Latent Space. It still trails Claude Code with Opus 5.5 on Artificial Analysis's Coding Agent Index (59 against 62). The Decoder notes its hallucination rate on AA-Omniscience rose from 4% to 11%, that it produces 2.3 times as many reasoning tokens, and that Google's own benchmark selection shows it first in 15 of 16 tests. Ars Technica headlined it as a model \"you can't use\". The launch reached 1,007 points on Hacker News. Google · The Decoder · Latent Space Verified as announced with limited access, against Google's page · the security benchmarks are Google's; the index, cost and hallucination figures are Artificial Analysis's, relayed by The Decoder and Latent Space",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> as announced with limited access, against Google's page · the security benchmarks are Google's; the index, cost and hallucination figures are Artificial Analysis's, relayed by The Decoder and Latent Space</p>",
+              "updated": null,
+              "sources": [
+                "Google",
+                "The Decoder",
+                "Latent Space"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Google's Gemini API made Computer Use generally available and launched a <code>gemini-api</code> command-line client in beta.</strong>",
+              "html": "<p><strong>Google's Gemini API made Computer Use generally available and launched a <code>gemini-api</code> command-line client in beta.</strong> Computer Use reached GA on 30 October in the Interactions and GenerateContent APIs. The CLI, launched on 27 October, is built for coding agents, scripts and CI, and works with the Interactions API for generation, file analysis and managed agents. <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a></p>",
+              "text": "Google's Gemini API made Computer Use generally available and launched a gemini-api command-line client in beta. Computer Use reached GA on 30 October in the Interactions and GenerateContent APIs. The CLI, launched on 27 October, is built for coding agents, scripts and CI, and works with the Interactions API for generation, file analysis and managed agents. Gemini API changelog Verified against the changelog",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the changelog</p>",
+              "updated": null,
+              "sources": [
+                "Google"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic raised the Messages API request size limit from 32 MB to 128 MB, and launched a Usage and Cost Analytics API in beta.</strong>",
+              "html": "<p><strong>Anthropic raised the Messages API request size limit from 32 MB to 128 MB, and launched a Usage and Cost Analytics API in beta.</strong> The size increase, on 28 October, covers the Messages and Token Counting APIs on the first-party Claude API. The analytics API, on 29 October, sits behind the <code>analytics-usage-cost-2026-08-24</code> beta header. Its <code>/v1/organizations/analytics/usage</code> and <code>/v1/organizations/analytics/cost</code> endpoints cover Claude Console and Claude Enterprise organizations and group by model, workspace, API key and user or service account. The older Usage and Cost API and four Enterprise Analytics report endpoints are now legacy but still supported. TechCrunch covered the analytics launch as tools to show companies what their AI spending buys. <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a></p>",
+              "text": "Anthropic raised the Messages API request size limit from 32 MB to 128 MB, and launched a Usage and Cost Analytics API in beta. The size increase, on 28 October, covers the Messages and Token Counting APIs on the first-party Claude API. The analytics API, on 29 October, sits behind the analytics-usage-cost-2026-08-24 beta header. Its /v1/organizations/analytics/usage and /v1/organizations/analytics/cost endpoints cover Claude Console and Claude Enterprise organizations and group by model, workspace, API key and user or service account. The older Usage and Cost API and four Enterprise Analytics report endpoints are now legacy but still supported. TechCrunch covered the analytics launch as tools to show companies what their AI spending buys. Claude Platform release notes Verified against the release notes",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the release notes</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Claude Code shipped v2.1.312 and v2.1.314, adding a setting that blocks file writes outside the working directories.</strong>",
+              "html": "<p><strong>Claude Code shipped v2.1.312 and v2.1.314, adding a setting that blocks file writes outside the working directories.</strong> In v2.1.314, <code>permissions.blockWritesOutsideWorkingDirectories</code> makes Write, Edit and NotebookEdit refuse such paths in every permission mode. Sandbox protections now apply to worktrees entered with <code>claude -p --resume</code> or <code>--continue</code>. Bash hooks now also run on commands the Monitor tool starts, although they can only block or ask. Idle conversations over 200K tokens are now compacted in VS Code and Claude Desktop. <code>forceRemoteSettingsRefresh</code> no longer lapses after its stored copy expires. v2.1.312 caps prompt and agent hooks at 24 running at a time per session, lets a subagent's <code>autoCompactWindow</code> lower the global window, and stops Claude overwriting a very large CLAUDE.md it has only partly read. <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.314\" target=\"_blank\" rel=\"noopener noreferrer\">v2.1.314</a> · <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.312\" target=\"_blank\" rel=\"noopener noreferrer\">v2.1.312</a></p>",
+              "text": "Claude Code shipped v2.1.312 and v2.1.314, adding a setting that blocks file writes outside the working directories. In v2.1.314, permissions.blockWritesOutsideWorkingDirectories makes Write, Edit and NotebookEdit refuse such paths in every permission mode. Sandbox protections now apply to worktrees entered with claude -p --resume or --continue . Bash hooks now also run on commands the Monitor tool starts, although they can only block or ask. Idle conversations over 200K tokens are now compacted in VS Code and Claude Desktop. forceRemoteSettingsRefresh no longer lapses after its stored copy expires. v2.1.312 caps prompt and agent hooks at 24 running at a time per session, lets a subagent's autoCompactWindow lower the global window, and stops Claude overwriting a very large CLAUDE.md it has only partly read. v2.1.314 · v2.1.312 Verified against the release notes",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the release notes</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>NVIDIA released Nemotron 3.5 Transcribe, an open-weight speech-recognition model you can steer with a prompt, with the Granary v2 dataset.</strong>",
+              "html": "<p><strong>NVIDIA released Nemotron 3.5 Transcribe, an open-weight speech-recognition model you can steer with a prompt, with the Granary v2 dataset.</strong> Latent Space reports Artificial Analysis measuring a 2.8% word error rate, tied for first among open models. AWS published a guide to serving Nemotron models on EKS the same week. <a href=\"https://huggingface.co/blog/nvidia/nemotron-transcribe-granary\" target=\"_blank\" rel=\"noopener noreferrer\">Hugging Face</a> · <a href=\"https://latent.space/p/ainews-gemini-4-carbon/\" target=\"_blank\" rel=\"noopener noreferrer\">Latent Space</a></p>",
+              "text": "NVIDIA released Nemotron 3.5 Transcribe, an open-weight speech-recognition model you can steer with a prompt, with the Granary v2 dataset. Latent Space reports Artificial Analysis measuring a 2.8% word error rate, tied for first among open models. AWS published a guide to serving Nemotron models on EKS the same week. Hugging Face · Latent Space Single source for the error rate · the vendor post was not opened",
+              "status": "single-source",
+              "status_html": "<p>Single source for the error rate · the vendor post was not opened</p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face",
+                "Latent Space"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Products and applications",
+          "category": "apps",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>A widely shared gist says Claude Code sends each background agent's full transcript to its model about every 30 seconds, to write a status-line summary.</strong>",
+              "html": "<p><strong>A widely shared gist says Claude Code sends each background agent's full transcript to its model about every 30 seconds, to write a status-line summary.</strong> The author found it in OpenTelemetry exports, where <code>agent_summary</code> requests were 16.4% of estimated spend and 19.7% of requests. A commenter's replay of another user's transcripts put it nearer 8%, and the prompt cache makes the calls cheaper. The author says it has been on by default since v2.1.232, and that the documented <code>agentProgressSummaries</code> setting can only turn it on, not off. The workaround is an unofficial Bun preload hook that may break on any update. Neither of this window's release notes mentions it. It reached 569 points on Hacker News. <a href=\"https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce\" target=\"_blank\" rel=\"noopener noreferrer\">gist</a></p>",
+              "text": "A widely shared gist says Claude Code sends each background agent's full transcript to its model about every 30 seconds, to write a status-line summary. The author found it in OpenTelemetry exports, where agent_summary requests were 16.4% of estimated spend and 19.7% of requests. A commenter's replay of another user's transcripts put it nearer 8%, and the prompt cache makes the calls cheaper. The author says it has been on by default since v2.1.232, and that the documented agentProgressSummaries setting can only turn it on, not off. The workaround is an unofficial Bun preload hook that may break on any update. Neither of this window's release notes mentions it. It reached 569 points on Hacker News. gist Single source, self-measured · the share of spend depends on the workload",
+              "status": "single-source",
+              "status_html": "<p>Single source, self-measured · the share of spend depends on the workload</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI now gives ChatGPT Pro and Business subscribers up to $500 a month in API credits, and doubled usage limits on its Pro plans.</strong>",
+              "html": "<p><strong>OpenAI now gives ChatGPT Pro and Business subscribers up to $500 a month in API credits, and doubled usage limits on its Pro plans.</strong> The API changelog says eligible subscribers link an API organization they own to claim the credits. Simon Willison reports matching amounts for the $100, $200 and $500 plans, weeks after Anthropic's similar Max and Team offer. The Decoder reports that the Work and Codex quotas doubled on Pro 100 and Pro 500, and that OpenAI reversed a planned cut to Pro 200's lower quota; Plus is unchanged. <a href=\"https://developers.openai.com/api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI API changelog</a> · <a href=\"https://simonwillison.net/2026/Oct/29/api-credits/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison</a> · <a href=\"https://the-decoder.com/openai-doubles-usage-limits-on-pro-plans-as-competition-with-anthropic-heats-up/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "OpenAI now gives ChatGPT Pro and Business subscribers up to $500 a month in API credits, and doubled usage limits on its Pro plans. The API changelog says eligible subscribers link an API organization they own to claim the credits. Simon Willison reports matching amounts for the $100, $200 and $500 plans, weeks after Anthropic's similar Max and Team offer. The Decoder reports that the Work and Codex quotas doubled on Pro 100 and Pro 500, and that OpenAI reversed a planned cut to Pro 200's lower quota; Plus is unchanged. OpenAI API changelog · Simon Willison · The Decoder Verified for the credits against the changelog · the per-plan amounts and the limit changes are Reported",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the credits against the changelog · the per-plan amounts and the limit changes are Reported</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI",
+                "Simon Willison",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Google opened Android Studio to more than 40 outside coding agents, including Claude Agent and Codex, through the Agent Client Protocol.</strong>",
+              "html": "<p><strong>Google opened Android Studio to more than 40 outside coding agents, including Claude Agent and Codex, through the Agent Client Protocol.</strong> According to The Decoder, Android Studio Rabbit 2 adds &quot;bring your own agent&quot;, and the Android CLI is now an agent plugin for Claude Code, Codex and Antigravity. Google's internal tests put UI tasks 77% faster with up to three times fewer tokens. New APIs include an AppFunctions API in beta that exposes app functions to agents over MCP, and an on-device Agentic API on Gemini Nano 4 in alpha. <a href=\"https://the-decoder.com/google-opens-android-development-to-third-party-ai-agents-and-unveils-new-gemini-apis/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Google opened Android Studio to more than 40 outside coding agents, including Claude Agent and Codex, through the Agent Client Protocol. According to The Decoder, Android Studio Rabbit 2 adds \"bring your own agent\", and the Android CLI is now an agent plugin for Claude Code, Codex and Antigravity. Google's internal tests put UI tasks 77% faster with up to three times fewer tokens. New APIs include an AppFunctions API in beta that exposes app functions to agents over MCP, and an on-device Agentic API on Gemini Nano 4 in alpha. The Decoder Reported · the speed figure is Google's internal test",
+              "status": "reported",
+              "status_html": "<p>Reported · the speed figure is Google's internal test</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Google DeepMind announced Genie 4, a real-time world model that also generates audio, as a research preview for trusted testers.</strong>",
+              "html": "<p><strong>Google DeepMind announced Genie 4, a real-time world model that also generates audio, as a research preview for trusted testers.</strong> Running simulations can be changed with text prompts, and Google says it models physics and natural character motion better. Google plans access for AI Ultra subscribers through Project Genie and for early-access Gemini API partners, with no date. Google lists visual drift over long sessions and poor text rendering as limits. <a href=\"https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/\" target=\"_blank\" rel=\"noopener noreferrer\">Google DeepMind</a> · <a href=\"https://arstechnica.com/google/2026/10/deepminds-genie-4-world-model-adds-audio-and-more-realistic-people-to-simulations/\" target=\"_blank\" rel=\"noopener noreferrer\">Ars Technica</a></p>",
+              "text": "Google DeepMind announced Genie 4, a real-time world model that also generates audio, as a research preview for trusted testers. Running simulations can be changed with text prompts, and Google says it models physics and natural character motion better. Google plans access for AI Ultra subscribers through Project Genie and for early-access Gemini API partners, with no date. Google lists visual drift over long sessions and poor text rendering as limits. Google DeepMind · Ars Technica Verified as a limited preview, against DeepMind's post · Ars cited by headline only",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> as a limited preview, against DeepMind's post · Ars cited by headline only</p>",
+              "updated": null,
+              "sources": [
+                "Google DeepMind",
+                "Ars Technica"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Research",
+          "category": "research",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://www.anthropic.com/research/agents-judgment-calls\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic's randomised trial found that expert analysts sided with an AI agent's secretly assigned lean 86% of the time, and rarely credited it</a></strong>",
+              "html": "<p><strong><a href=\"https://www.anthropic.com/research/agents-judgment-calls\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic's randomised trial found that expert analysts sided with an AI agent's secretly assigned lean 86% of the time, and rarely credited it</a></strong> — 50 analysts used Claude Code with Opus 4.8 on a fictional programme evaluation, and a coin flip set which way the agent leaned on each analytical choice. 77% repeated the agent's arguments but only 15% credited it. When the agent disagreed with a preference an analyst had already stated, analysts switched 60% of the time, against 6% when it agreed, though that rests on 38 cases. The authors say they strengthened the leans deliberately and tested one task and one model. <a href=\"https://the-decoder.com/experts-adopt-ai-agents-random-opinions-and-think-theyre-their-own-anthropic-study-finds/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Anthropic's randomised trial found that expert analysts sided with an AI agent's secretly assigned lean 86% of the time, and rarely credited it — 50 analysts used Claude Code with Opus 4.8 on a fictional programme evaluation, and a coin flip set which way the agent leaned on each analytical choice. 77% repeated the agent's arguments but only 15% credited it. When the agent disagreed with a preference an analyst had already stated, analysts switched 60% of the time, against 6% when it agreed, though that rests on 38 cases. The authors say they strengthened the leans deliberately and tested one task and one model. The Decoder Single source until reproduced",
+              "status": "single-source",
+              "status_html": "<p>Single source until reproduced</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://the-decoder.com/open-weight-model-glm-5-3-built-full-firefox-exploit-chains-with-zero-human-input-in-under-48-hours/\" target=\"_blank\" rel=\"noopener noreferrer\">Epoch AI found that the open-weight GLM 5.3 built working Firefox exploit chains with no human input, the fastest in 12 hours</a></strong>",
+              "html": "<p><strong><a href=\"https://the-decoder.com/open-weight-model-glm-5-3-built-full-firefox-exploit-chains-with-zero-human-input-in-under-48-hours/\" target=\"_blank\" rel=\"noopener noreferrer\">Epoch AI found that the open-weight GLM 5.3 built working Firefox exploit chains with no human input, the fastest in 12 hours</a></strong> — per The Decoder, the model spotted security fixes disguised as routine changes and chained them with a sandbox escape it rediscovered every time. The resulting exploit read local files from a malicious page. Each successful attack cost about $1,000 in API fees; a $100,000 attempt on Chrome produced nothing comparable. Mozilla patched the sandbox bug in Firefox 159.0 on 27 October. No provider guardrail triggered.</p>",
+              "text": "Epoch AI found that the open-weight GLM 5.3 built working Firefox exploit chains with no human input, the fastest in 12 hours — per The Decoder, the model spotted security fixes disguised as routine changes and chained them with a sandbox escape it rediscovered every time. The resulting exploit read local files from a malicious page. Each successful attack cost about $1,000 in API fees; a $100,000 attempt on Chrome produced nothing comparable. Mozilla patched the sandbox bug in Firefox 159.0 on 27 October. No provider guardrail triggered. Reported · Epoch's own write-up was not opened",
+              "status": "reported",
+              "status_html": "<p>Reported · Epoch's own write-up was not opened</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Industry and policy",
+          "category": "industry",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>The US Justice Department is examining Nvidia's planned $12.93 billion purchase of Hugging Face, as part of a wider look at its sales practices, according to Reuters.</strong>",
+              "html": "<p><strong>The US Justice Department is examining Nvidia's planned $12.93 billion purchase of Hugging Face, as part of a wider look at its sales practices, according to Reuters.</strong> The Decoder, citing Reuters's two unnamed sources, says officials are also checking whether Nvidia offered more chips to customers who bought its networking gear, and France's competition authority is separately looking at CUDA dependence. The inquiry is at the information-gathering stage; the deal is expected to close in the first half of 2027. <a href=\"https://the-decoder.com/us-antitrust-regulators-are-scrutinizing-nvidias-hugging-face-deal-and-sales-practices/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "The US Justice Department is examining Nvidia's planned $12.93 billion purchase of Hugging Face, as part of a wider look at its sales practices, according to Reuters. The Decoder, citing Reuters's two unnamed sources, says officials are also checking whether Nvidia offered more chips to customers who bought its networking gear, and France's competition authority is separately looking at CUDA dependence. The inquiry is at the information-gathering stage; the deal is expected to close in the first half of 2027. The Decoder Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Chinese labs now mainly distil OpenAI's GPT-6 Astra rather than Claude, according to The Information.</strong>",
+              "html": "<p><strong>Chinese labs now mainly distil OpenAI's GPT-6 Astra rather than Claude, according to The Information.</strong> The Decoder reports that DeepSeek and Moonshot drew heavily on Astra's outputs for Kimi K3.1 Pro and V4.1-Flash 1017, after Anthropic said its defences cut extractable data by 90 to 99%. Moonshot declined to comment and DeepSeek did not respond. <a href=\"https://the-decoder.com/openais-astra-becomes-the-main-target-for-chinese-ai-labs-after-anthropic-tightens-its-defenses/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Chinese labs now mainly distil OpenAI's GPT-6 Astra rather than Claude, according to The Information. The Decoder reports that DeepSeek and Moonshot drew heavily on Astra's outputs for Kimi K3.1 Pro and V4.1-Flash 1017, after Anthropic said its defences cut extractable data by 90 to 99%. Moonshot declined to comment and DeepSeek did not respond. The Decoder Reported, from unnamed sources",
+              "status": "reported",
+              "status_html": "<p>Reported, from unnamed sources</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic signed a new agreement with the US General Services Administration that gives government buyers 40% off Claude Enterprise, Claude for Government and the Claude API.</strong>",
+              "html": "<p><strong>Anthropic signed a new agreement with the US General Services Administration that gives government buyers 40% off Claude Enterprise, Claude for Government and the Claude API.</strong> It also published early results from drug-development partnerships with six organizations, and expanded its AI for Science programme to 20 foundations and institutes. <a href=\"https://www.anthropic.com/news/expanding-partnership-gsa\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic signed a new agreement with the US General Services Administration that gives government buyers 40% off Claude Enterprise, Claude for Government and the Claude API. It also published early results from drug-development partnerships with six organizations, and expanded its AI for Science programme to 20 foundations and institutes. Anthropic Verified against Anthropic's news page",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Anthropic's news page</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>The Stanford Daily reports that books by more than ten Stanford professors were among the pirated works covered by the Bartz v. Anthropic settlement.</strong>",
+              "html": "<p><strong>The Stanford Daily reports that books by more than ten Stanford professors were among the pirated works covered by the Bartz v. Anthropic settlement.</strong> Two of them, Tobias Wolff and Chang-Rae Lee, opted out and filed their own suit in May, seeking up to $150,000 per work against roughly $3,000 in the settlement. The article includes no Anthropic response. It reached 599 points on Hacker News. <a href=\"https://stanforddaily.com/2026/10/27/professors-books-pirated-to-train-claude/\" target=\"_blank\" rel=\"noopener noreferrer\">The Stanford Daily</a></p>",
+              "text": "The Stanford Daily reports that books by more than ten Stanford professors were among the pirated works covered by the Bartz v. Anthropic settlement. Two of them, Tobias Wolff and Chang-Rae Lee, opted out and filed their own suit in May, seeking up to $150,000 per work against roughly $3,000 in the settlement. The article includes no Anthropic response. It reached 599 points on Hacker News. The Stanford Daily Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "stanforddaily.com"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Worth reading",
+          "category": "reading",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://simonwillison.net/2026/Oct/28/vibe-game-development/\" target=\"_blank\" rel=\"noopener noreferrer\">The October inflection point for vibe game development</a></strong>",
+              "html": "<p><strong><a href=\"https://simonwillison.net/2026/Oct/28/vibe-game-development/\" target=\"_blank\" rel=\"noopener noreferrer\">The October inflection point for vibe game development</a></strong> by Simon Willison: he argues Claude Opus 5.5 crossed a line on game design, which he calls the hardest part, with four browser games built in three.js as evidence. He finds GPT-6 Astra not yet there on &quot;fun&quot;.</p>",
+              "text": "The October inflection point for vibe game development by Simon Willison: he argues Claude Opus 5.5 crossed a line on game design, which he calls the hardest part, with four browser games built in three.js as evidence. He finds GPT-6 Astra not yet there on \"fun\".",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Simon Willison"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers\" target=\"_blank\" rel=\"noopener noreferrer\">Artificial Analysis v5 and the benchmarker's dilemma</a></strong>",
+              "html": "<p><strong><a href=\"https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers\" target=\"_blank\" rel=\"noopener noreferrer\">Artificial Analysis v5 and the benchmarker's dilemma</a></strong> by Nathan Lambert: he says the new index, with eight closed models above the best open one, tilts toward frontier agentic work and overstates the open-model gap. He adds that because Artificial Analysis is paid by the labs it ranks, the field needs more indices with different biases. Latent Space notes that Kimi K3.1 Pro fell from 55 to 46 in the rebuild.</p>",
+              "text": "Artificial Analysis v5 and the benchmarker's dilemma by Nathan Lambert: he says the new index, with eight closed models above the best open one, tilts toward frontier agentic work and overstates the open-model gap. He adds that because Artificial Analysis is paid by the labs it ranks, the field needs more indices with different biases. Latent Space notes that Kimi K3.1 Pro fell from 55 to 46 in the rebuild.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Interconnects"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Coverage check",
+          "category": "coverage",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Sources read:</strong> 25 of 25 returned items; failed: none at collection.",
+              "html": "<p><strong>Sources read:</strong> 25 of 25 returned items; <strong>failed:</strong> none at collection. When opened, openai.com returned HTTP 403, so the updated Model Spec and OpenAI's misalignment-detection post are unread and not described. DoublePulsar returned 403, and the Mastodon post was empty to the fetcher, so the extension story rests on The Hacker News and search results. <strong>Pages read:</strong> OpenAI API changelog, Anthropic news, Anthropic research, Claude Platform release notes, Gemini API changelog, Meta AI research, The Batch. Meta AI research added only a university-research post on 28 October. The Batch had nothing since issue 23 October. Anthropic's news page has no election-information post yet.</p>",
+              "text": "Sources read: 25 of 25 returned items; failed: none at collection. When opened, openai.com returned HTTP 403, so the updated Model Spec and OpenAI's misalignment-detection post are unread and not described. DoublePulsar returned 403, and the Mastodon post was empty to the fetcher, so the extension story rests on The Hacker News and search results. Pages read: OpenAI API changelog, Anthropic news, Anthropic research, Claude Platform release notes, Gemini API changelog, Meta AI research, The Batch. Meta AI research added only a university-research post on 28 October. The Batch had nothing since issue 23 October. Anthropic's news page has no election-information post yet.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Cross-source stories set aside:</strong> openai, chatgpt, gemini, google, claude and deepmind are generic and covered above.",
+              "html": "<p><strong>Cross-source stories set aside:</strong> <code>openai</code>, <code>chatgpt</code>, <code>gemini</code>, <code>google</code>, <code>claude</code> and <code>deepmind</code> are generic and covered above. The OpenAI customer and partner posts (Ropes &amp; Gray, ServiceNow, Legora, Retell, Oracle, Check Point, &quot;The future of the firm&quot;) are vendor marketing. <code>s-1</code> is the Anthropic filing covered on 27 October; this window added commentary (Understanding AI, Exponential View, The Verge, Ars Technica on its risk factors) but no new filing facts. <code>nvidia</code>, <code>chinese</code>, <code>huang</code> and <code>jensen</code> include the reported Chinese spy plot aimed at Jensen Huang, a security story outside AI products. <code>microsoft</code> is earnings (Azure at $33.2 billion, $10 billion from OpenAI) and a Verge piece on buyouts. <code>amazon</code> and <code>agentic</code> are AWS how-to posts plus a paper. <code>instagram</code> pairs Adam Mosseri's interview with Meta's Style Sketch app. <code>ai-generated</code> and <code>november</code> are unrelated items sharing a word. <code>astra</code> and <code>gpt-6</code> are covered under distillation. <code>europe</code> is Le Chonk.</p>",
+              "text": "Cross-source stories set aside: openai , chatgpt , gemini , google , claude and deepmind are generic and covered above. The OpenAI customer and partner posts (Ropes & Gray, ServiceNow, Legora, Retell, Oracle, Check Point, \"The future of the firm\") are vendor marketing. s-1 is the Anthropic filing covered on 27 October; this window added commentary (Understanding AI, Exponential View, The Verge, Ars Technica on its risk factors) but no new filing facts. nvidia , chinese , huang and jensen include the reported Chinese spy plot aimed at Jensen Huang, a security story outside AI products. microsoft is earnings (Azure at $33.2 billion, $10 billion from OpenAI) and a Verge piece on buyouts. amazon and agentic are AWS how-to posts plus a paper. instagram pairs Adam Mosseri's interview with Meta's Style Sketch app. ai-generated and november are unrelated items sharing a word. astra and gpt-6 are covered under distillation. europe is Le Chonk.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "Other items set aside as thin, out of scope or unread: Google&#x27;s AI search earnings and ad expansion, Reddit&#x27;s move to logged-in browsing, Thrive Holdings buy…",
+              "html": "<p>Other items set aside as thin, out of scope or unread: Google's AI search earnings and ad expansion, Reddit's move to logged-in browsing, Thrive Holdings buying ADT, Wabi at $1.25 billion, Deepgram buying Daily, Granola dictation, Gemini editing Docs in chat, the Delaware proposal for agent-run businesses, Trump's robot-import declaration, IBM Granite Switch 4.1.1, LiquidAI LFM3, Hugging Face's ProtoStar, and Hacker News essays on AI and work (678 points), Wikipedia's AI cleanup (516), LLM Voice (514), the humanist AI exemption (489) and Survival LLM (538). Hugging Face trending models are names only.</p>",
+              "text": "Other items set aside as thin, out of scope or unread: Google's AI search earnings and ad expansion, Reddit's move to logged-in browsing, Thrive Holdings buying ADT, Wabi at $1.25 billion, Deepgram buying Daily, Granola dictation, Gemini editing Docs in chat, the Delaware proposal for agent-run businesses, Trump's robot-import declaration, IBM Granite Switch 4.1.1, LiquidAI LFM3, Hugging Face's ProtoStar, and Hacker News essays on AI and work (678 points), Wikipedia's AI cleanup (516), LLM Voice (514), the humanist AI exemption (489) and Survival LLM (538). Hugging Face trending models are names only.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-27",
       "title": "AI web digest",
@@ -2894,19 +3238,6 @@
       "lead_html": null,
       "items": [
         {
-          "headline": "<strong>Mistral Large 4: weights &quot;at the end of October&quot; 2026.</strong>",
-          "html": "<p><strong>Mistral Large 4: weights &quot;at the end of October&quot; 2026.</strong> API preview only for now. Mistral restated the promise on 21 October in its NVIDIA partnership post, which also discloses the architecture for the first time — roughly 1 trillion total parameters with 49 billion active, nicknamed &quot;Le Chonk&quot;, trained on 3,800 NVIDIA Grace Blackwell GPUs. Still no licence named. Not out as of 24 October, with a week left; the model page still lists API preview only. No source in the 24–27 October window reported a release.</p>",
-          "text": "Mistral Large 4: weights \"at the end of October\" 2026. API preview only for now. Mistral restated the promise on 21 October in its NVIDIA partnership post, which also discloses the architecture for the first time — roughly 1 trillion total parameters with 49 billion active, nicknamed \"Le Chonk\", trained on 3,800 NVIDIA Grace Blackwell GPUs. Still no licence named. Not out as of 24 October, with a week left; the model page still lists API preview only. No source in the 24–27 October window reported a release. Verified as announced, against Mistral and restated in Mistral's NVIDIA post · 2026-10-08, rechecked 2026-10-24, no new evidence 2026-10-27",
-          "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://mistral.ai/news/mistral-large-4/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral</a> and restated in <a href=\"https://mistral.ai/news/mistral-nvidia-ai-for-industrial-engineering/\" target=\"_blank\" rel=\"noopener noreferrer\">Mistral's NVIDIA post</a> · 2026-10-08, rechecked 2026-10-24, no new evidence 2026-10-27</p>",
-          "updated": "2026-10-27",
-          "sources": [
-            "Mistral"
-          ],
-          "due": "2026-10-31",
-          "due_label": "end of October"
-        },
-        {
           "headline": "<strong>Kimi K3.1 Pro weights: &quot;by Nov 4, 2026&quot;.</strong>",
           "html": "<p><strong>Kimi K3.1 Pro weights: &quot;by Nov 4, 2026&quot;.</strong> The model is available through Moonshot's API now; Moonshot says full weights follow, and no licence is stated.</p>",
           "text": "Kimi K3.1 Pro weights: \"by Nov 4, 2026\". The model is available through Moonshot's API now; Moonshot says full weights follow, and no licence is stated. Reported, as quoted by Simon Willison · Moonshot's own page was not read · 2026-10-24",
@@ -2928,16 +3259,69 @@
       "items": [
         {
           "headline": "<strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong>",
-          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.\nStill not live as of 24 October, with a week left on the promise. As of 27 October, Anthropic's news page has added only the S-1 filing since then.</p>",
-          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Still not live as of 24 October, with a week left on the promise. As of 27 October, Anthropic's news page has added only the S-1 filing since then. Verified as announced, against Anthropic · 2026-10-14, rechecked 2026-10-27",
+          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.\nStill not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election.</p>",
+          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Still not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election. Verified as announced, against Anthropic · 2026-10-14, rechecked 2026-10-30",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14, rechecked 2026-10-27</p>",
-          "updated": "2026-10-27",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14, rechecked 2026-10-30</p>",
+          "updated": "2026-10-30",
           "sources": [
             "Anthropic"
           ],
           "due": "2026-10-31",
           "due_label": "\"later this month\""
+        },
+        {
+          "headline": "<strong>Gemini 4 Carbon: selected cyber defenders only.</strong>",
+          "html": "<p><strong>Gemini 4 Carbon: selected cyber defenders only.</strong> Google is starting &quot;this week&quot; with a subset of cyber defenders, then more trusted partners through its Fairwind Program, then developers, businesses and consumers &quot;as soon as possible&quot;, with no date. Quoted introductory price $2 per million input tokens and $10 output, rising to $4 and $20; Google names no end date for the introductory price, and The Decoder says the discount runs through the end of 2026. No model ID is published.</p>",
+          "text": "Gemini 4 Carbon: selected cyber defenders only. Google is starting \"this week\" with a subset of cyber defenders, then more trusted partners through its Fairwind Program, then developers, businesses and consumers \"as soon as possible\", with no date. Quoted introductory price $2 per million input tokens and $10 output, rising to $4 and $20; Google names no end date for the introductory price, and The Decoder says the discount runs through the end of 2026. No model ID is published. Verified as announced, against Google · the end date of the discount Reported, The Decoder · 2026-10-30",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · the end date of the discount Reported, <a href=\"https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-10-30</p>",
+          "updated": "2026-10-30",
+          "sources": [
+            "Google",
+            "The Decoder"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Genie 4: research preview for trusted testers, waitlist open.</strong>",
+          "html": "<p><strong>Genie 4: research preview for trusted testers, waitlist open.</strong> Google plans access for Google AI Ultra subscribers through Project Genie and for early-access Gemini API and AI Studio partners, &quot;coming soon&quot;, with no date.</p>",
+          "text": "Genie 4: research preview for trusted testers, waitlist open. Google plans access for Google AI Ultra subscribers through Project Genie and for early-access Gemini API and AI Studio partners, \"coming soon\", with no date. Verified against Google DeepMind · 2026-10-30",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/\" target=\"_blank\" rel=\"noopener noreferrer\">Google DeepMind</a> · 2026-10-30</p>",
+          "updated": "2026-10-30",
+          "sources": [
+            "Google DeepMind"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Gemini API CLI (<code>gemini-api</code>): beta since 27 October.</strong>",
+          "html": "<p><strong>Gemini API CLI (<code>gemini-api</code>): beta since 27 October.</strong> A command-line client for coding agents, scripts and CI, working with the Interactions API. No GA date.</p>",
+          "text": "Gemini API CLI ( gemini-api ): beta since 27 October. A command-line client for coding agents, scripts and CI, working with the Interactions API. No GA date. Verified against the Gemini API changelog · 2026-10-30",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · 2026-10-30</p>",
+          "updated": "2026-10-30",
+          "sources": [
+            "Google"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Claude Usage and Cost Analytics API: beta since 29 October.</strong>",
+          "html": "<p><strong>Claude Usage and Cost Analytics API: beta since 29 October.</strong> <code>/v1/organizations/analytics/usage</code> and <code>/v1/organizations/analytics/cost</code>, behind the <code>analytics-usage-cost-2026-08-24</code> beta header, for Claude Console and Claude Enterprise organizations. The older Usage and Cost API and the Enterprise Analytics <code>usage_report</code>, <code>cost_report</code>, <code>user_usage_report</code> and <code>user_cost_report</code> endpoints are now legacy, still supported, with no retirement date.</p>",
+          "text": "Claude Usage and Cost Analytics API: beta since 29 October. /v1/organizations/analytics/usage and /v1/organizations/analytics/cost , behind the analytics-usage-cost-2026-08-24 beta header, for Claude Console and Claude Enterprise organizations. The older Usage and Cost API and the Enterprise Analytics usage_report , cost_report , user_usage_report and user_cost_report endpoints are now legacy, still supported, with no retirement date. Verified against the Claude Platform release notes · 2026-10-30",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-10-30</p>",
+          "updated": "2026-10-30",
+          "sources": [
+            "Anthropic"
+          ],
+          "due": null,
+          "due_label": null
         },
         {
           "headline": "<strong>Claude Duet: research preview, waitlist for US Pro and Max subscribers only.</strong>",
@@ -3172,6 +3556,19 @@
           "due_label": "expected around Nov 9, per Latent Space"
         },
         {
+          "headline": "<strong>Nvidia's $12.93 billion purchase of Hugging Face: expected to close in the first half of 2027, under US Justice Department review.</strong>",
+          "html": "<p><strong>Nvidia's $12.93 billion purchase of Hugging Face: expected to close in the first half of 2027, under US Justice Department review.</strong> Reuters's sources say the inquiry is at the information-gathering stage and part of a wider look at Nvidia's sales practices; France's competition authority is separately investigating Nvidia.</p>",
+          "text": "Nvidia's $12.93 billion purchase of Hugging Face: expected to close in the first half of 2027, under US Justice Department review. Reuters's sources say the inquiry is at the information-gathering stage and part of a wider look at Nvidia's sales practices; France's competition authority is separately investigating Nvidia. Reported, The Decoder relaying Reuters · 2026-10-30",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/us-antitrust-regulators-are-scrutinizing-nvidias-hugging-face-deal-and-sales-practices/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> relaying Reuters · 2026-10-30</p>",
+          "updated": "2026-10-30",
+          "sources": [
+            "The Decoder"
+          ],
+          "due": "2027-06-30",
+          "due_label": "expected close \"in the first half of 2027\""
+        },
+        {
           "headline": "<strong>Anthropic and Nscale: a second $45bn compute deal reported as imminent, unconfirmed.</strong>",
           "html": "<p><strong>Anthropic and Nscale: a second $45bn compute deal reported as imminent, unconfirmed.</strong> Bloomberg's sources say the two are &quot;on the verge of announcing&quot; it, a month after the August $45bn deal, while cautioning that talks are underway and details could change. Neither company has confirmed. TechCrunch separately puts Anthropic's compute commitments at $51.7bn over about eleven months, which does not reconcile with two $45bn Nscale deals and is left unexplained.</p>",
           "text": "Anthropic and Nscale: a second $45bn compute deal reported as imminent, unconfirmed. Bloomberg's sources say the two are \"on the verge of announcing\" it, a month after the August $45bn deal, while cautioning that talks are underway and details could change. Neither company has confirmed. TechCrunch separately puts Anthropic's compute commitments at $51.7bn over about eleven months, which does not reconcile with two $45bn Nscale deals and is left unexplained. Reported, TechCrunch relaying Bloomberg · unconfirmed by either party · 2026-10-21",
@@ -3193,11 +3590,11 @@
       "items": [
         {
           "headline": "<strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong>",
-          "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.\nThe shutdown date has passed. The changelog's newest entry is now dated 26 October (Generate Content storage on by default) and still does not confirm the shutdown happened; delete this entry once it does.</p>",
-          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . The shutdown date has passed. The changelog's newest entry is now dated 26 October (Generate Content storage on by default) and still does not confirm the shutdown happened; delete this entry once it does. Verified that the deprecation was announced, against the Gemini API changelog · shutdown not confirmed · 2026-10-11, rechecked 2026-10-27",
+          "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.\nThe shutdown date has passed. The changelog's newest entry is now dated 30 October (Computer Use GA) and still does not confirm the shutdown happened; delete this entry once it does.</p>",
+          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . The shutdown date has passed. The changelog's newest entry is now dated 30 October (Computer Use GA) and still does not confirm the shutdown happened; delete this entry once it does. Verified that the deprecation was announced, against the Gemini API changelog · shutdown not confirmed · 2026-10-11, rechecked 2026-10-30",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> that the deprecation was announced, against the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · shutdown not confirmed · 2026-10-11, rechecked 2026-10-27</p>",
-          "updated": "2026-10-27",
+          "status_html": "<p><strong>Verified</strong> that the deprecation was announced, against the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · shutdown not confirmed · 2026-10-11, rechecked 2026-10-30</p>",
+          "updated": "2026-10-30",
           "sources": [
             "Google"
           ],
