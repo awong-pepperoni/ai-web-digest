@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06",
+  "generated": "2026-11-09",
   "meta": {
     "feed": "aiweb",
     "title": "AI Web Digest",
@@ -21,6 +21,367 @@
     "source_note": "from AI lab announcements, expert curators, Hacker News and the tech press"
   },
   "digests": [
+    {
+      "date": "2026-11-09",
+      "title": "AI web digest",
+      "intro_html": "<p>A three-day window with no new frontier model. The scandal around Nvidia's CEO dominated the press: Nvidia's board opened an independent investigation, and the story weakens Huang's lobbying against tighter chip export controls. For people building with AI, the useful material was a cost study that pairs a cheap decision model with Opus, and Anthropic's engineering post on how agent memory should be layered. Anthropic's IPO is still aimed at a listing before Thanksgiving, at a valuation the reports don't agree on.</p>",
+      "sections": [
+        {
+          "heading": "Must know",
+          "category": "mustknow",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Catch-up: Hightouch reports that routing only Jev's uncertain cases to Opus 5.5 matched Opus's accuracy at about a quarter of the cost.</strong>",
+              "html": "<p><strong>Catch-up: Hightouch reports that routing only Jev's uncertain cases to Opus 5.5 matched Opus's accuracy at about a quarter of the cost.</strong> A small, fast &quot;decision model&quot; (Jev) answers every case, and only the cases it is unsure about go to the expensive frontier model.</p>\n<ul>\n<li><strong>Why it matters:</strong> It is a concrete, measured recipe for a cascade, with costs for each step. The post is dated 4 November but reached Hacker News on 6 November with 599 points. The previous entry set it aside unread.</li>\n<li><strong>What you could use it for:</strong> a triage step in a digest or classification skill, where a cheap model labels items and a stronger model reviews only the borderline ones; a hook or agent check that escalates to Opus only when a cheap scorer's confidence sits in a middle band; tuning that band against a small labelled set, as Hightouch did, before trusting it.</li>\n<li><strong>Cost and speed:</strong> These are Hightouch's measurements on its own setup. On the easier test, Opus 5.5 alone scored 99.0% at $3.86 per 1,000 identities and 2.2 seconds each. The Jev hybrid sent 22% of cases to Opus (confidence 30–90%) and scored 98.8% at $0.88 and 0.63 seconds, about 4.4 times cheaper. On the harder test the hybrid scored 95.3% against Opus's 95.1%, but at $2.94 against $5.39, so only about 1.8 times cheaper. Jev alone cost $0.05 to $0.06 per 1,000.</li>\n<li><strong>Caveats:</strong> The task is narrow: deciding whether a merged customer identity is really several people, on about 1,000 synthetic identities from the pseudopeople generator. The authors say costs &quot;will vary&quot; and that GPT-6 Luna, the other decision model, is overconfident, which limits its hybrid. Hightouch sells the product this feeds; nobody has reproduced the result.</li>\n<li><strong>Read next:</strong> <a href=\"https://hightouch.com/blog/llm-judges-identity-resolution\" target=\"_blank\" rel=\"noopener noreferrer\">Hightouch: &quot;A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost&quot;</a></li>\n</ul>",
+              "text": "Catch-up: Hightouch reports that routing only Jev's uncertain cases to Opus 5.5 matched Opus's accuracy at about a quarter of the cost. A small, fast \"decision model\" (Jev) answers every case, and only the cases it is unsure about go to the expensive frontier model. Why it matters: It is a concrete, measured recipe for a cascade, with costs for each step. The post is dated 4 November but reached Hacker News on 6 November with 599 points. The previous entry set it aside unread. What you could use it for: a triage step in a digest or classification skill, where a cheap model labels items and a stronger model reviews only the borderline ones; a hook or agent check that escalates to Opus only when a cheap scorer's confidence sits in a middle band; tuning that band against a small labelled set, as Hightouch did, before trusting it. Cost and speed: These are Hightouch's measurements on its own setup. On the easier test, Opus 5.5 alone scored 99.0% at $3.86 per 1,000 identities and 2.2 seconds each. The Jev hybrid sent 22% of cases to Opus (confidence 30–90%) and scored 98.8% at $0.88 and 0.63 seconds, about 4.4 times cheaper. On the harder test the hybrid scored 95.3% against Opus's 95.1%, but at $2.94 against $5.39, so only about 1.8 times cheaper. Jev alone cost $0.05 to $0.06 per 1,000. Caveats: The task is narrow: deciding whether a merged customer identity is really several people, on about 1,000 synthetic identities from the pseudopeople generator. The authors say costs \"will vary\" and that GPT-6 Luna, the other decision model, is overconfident, which limits its hybrid. Hightouch sells the product this feeds; nobody has reproduced the result. Read next: Hightouch: \"A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost\" Single source · every figure is Hightouch's own measurement on synthetic data",
+              "status": "single-source",
+              "status_html": "<p>Single source · every figure is Hightouch's own measurement on synthetic data</p>",
+              "updated": null,
+              "sources": [
+                "hightouch.com"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Model releases",
+          "category": "releases",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Nous Research released Arete-27B, a fine-tune of Qwen3.8-27B meant to shift its answers on seven political and social topics toward Western values.</strong>",
+              "html": "<p><strong>Nous Research released Arete-27B, a fine-tune of Qwen3.8-27B meant to shift its answers on seven political and social topics toward Western values.</strong> The model card says it is supervised fine-tuning only, on about 52.8 million tokens with Inkling as the teacher, under Apache 2.0. Nous reports that answers containing propaganda fell from 22% to 0.9% on its own evaluation, with general capability unchanged. It was on Hugging Face's trending list within days of release. <a href=\"https://huggingface.co/NousResearch/Arete-27B\" target=\"_blank\" rel=\"noopener noreferrer\">model card</a></p>",
+              "text": "Nous Research released Arete-27B, a fine-tune of Qwen3.8-27B meant to shift its answers on seven political and social topics toward Western values. The model card says it is supervised fine-tuning only, on about 52.8 million tokens with Inkling as the teacher, under Apache 2.0. Nous reports that answers containing propaganda fell from 22% to 0.9% on its own evaluation, with general capability unchanged. It was on Hugging Face's trending list within days of release. model card Verified against the Hugging Face model card · all scores are Nous's own",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the Hugging Face model card · all scores are Nous's own</p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Products and applications",
+          "category": "apps",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Goldman Sachs has restricted Claude Code and GitHub's AI coding tools to engineers, so most traders and bankers lose access, according to Bloomberg.</strong>",
+              "html": "<p><strong>Goldman Sachs has restricted Claude Code and GitHub's AI coding tools to engineers, so most traders and bankers lose access, according to Bloomberg.</strong> The State of AI, relaying Bloomberg's unnamed sources, says &quot;strats&quot; keep access and that the bank's in-house assistant stays available to everyone. A Goldman spokesperson said the bank offers tools &quot;to determine the best use cases&quot;. The guidance changed in October; the story reached 820 points on Hacker News on 8 November. <a href=\"https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers\" target=\"_blank\" rel=\"noopener noreferrer\">The State of AI</a></p>",
+              "text": "Goldman Sachs has restricted Claude Code and GitHub's AI coding tools to engineers, so most traders and bankers lose access, according to Bloomberg. The State of AI, relaying Bloomberg's unnamed sources, says \"strats\" keep access and that the bank's in-house assistant stays available to everyone. A Goldman spokesperson said the bank offers tools \"to determine the best use cases\". The guidance changed in October; the story reached 820 points on Hacker News on 8 November. The State of AI Reported · Bloomberg's original not read",
+              "status": "reported",
+              "status_html": "<p>Reported · Bloomberg's original not read</p>",
+              "updated": null,
+              "sources": [
+                "thestateofai.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>A project called llama-modchip runs the 284-billion-parameter DeepSeek-V4-Flash on a 64 GB machine with no GPU.</strong>",
+              "html": "<p><strong>A project called llama-modchip runs the 284-billion-parameter DeepSeek-V4-Flash on a 64 GB machine with no GPU.</strong> It patches llama.cpp and quantises the model to about 1.71 bits per weight (56.56 GiB on disk), keeping it all in RAM. On a 16-core Ryzen 9 9955HX the author reports 9 to 10 tokens per second of output, or up to 14.7 with a speculative drafter. Quality is measured only against the same quantised checkpoint, not full precision, and the files need the project's own build. Apache 2.0; 443 points on Hacker News. <a href=\"https://github.com/synchopate/llama-modchip\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a></p>",
+              "text": "A project called llama-modchip runs the 284-billion-parameter DeepSeek-V4-Flash on a 64 GB machine with no GPU. It patches llama.cpp and quantises the model to about 1.71 bits per weight (56.56 GiB on disk), keeping it all in RAM. On a 16-core Ryzen 9 9955HX the author reports 9 to 10 tokens per second of output, or up to 14.7 with a speculative drafter. Quality is measured only against the same quantised checkpoint, not full precision, and the files need the project's own build. Apache 2.0; 443 points on Hacker News. GitHub Single source · speeds are the maintainer's",
+              "status": "single-source",
+              "status_html": "<p>Single source · speeds are the maintainer's</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Andrej Karpathy built HackerTube, a video site curated from 20 years of Hacker News comments, over a weekend with Claude Code and Opus 5.5.</strong>",
+              "html": "<p><strong>Andrej Karpathy built HackerTube, a video site curated from 20 years of Hacker News comments, over a weekend with Claude Code and Opus 5.5.</strong> According to The Decoder, it filtered 43 million comments to 6,454 recommended videos, and Karpathy's only manual steps were an API key, a server and a domain. He then built a second site from a 47,000-video channel list in what he called three minutes. <a href=\"https://the-decoder.com/andrej-karpathy-built-a-curated-video-platform-in-a-weekend-using-claude-and-20-years-of-hacker-news/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Andrej Karpathy built HackerTube, a video site curated from 20 years of Hacker News comments, over a weekend with Claude Code and Opus 5.5. According to The Decoder, it filtered 43 million comments to 6,454 recommended videos, and Karpathy's only manual steps were an API key, a server and a domain. He then built a second site from a 47,000-video channel list in what he called three minutes. The Decoder Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Automattic launched Spacefast, a backend for vibe-coded apps with databases, sign-in, file uploads, email and analytics.</strong>",
+              "html": "<p><strong>Automattic launched Spacefast, a backend for vibe-coded apps with databases, sign-in, file uploads, email and analytics.</strong> TechCrunch says it connects to Claude, ChatGPT, Cursor, Pi and other agents, or to a Git repository; no price is given. <a href=\"https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Automattic launched Spacefast, a backend for vibe-coded apps with databases, sign-in, file uploads, email and analytics. TechCrunch says it connects to Claude, ChatGPT, Cursor, Pi and other agents, or to a Git repository; no price is given. TechCrunch Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Meta added Spaces to Muse, topic workspaces such as trackers and planners that the agent builds from a chat request and updates in the background.</strong>",
+              "html": "<p><strong>Meta added Spaces to Muse, topic workspaces such as trackers and planners that the agent builds from a chat request and updates in the background.</strong> TechCrunch doesn't say who can use them. Meta's research page lists a 6 November post on specialised models for Muse, but its link returned a 404. <a href=\"https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Meta added Spaces to Muse, topic workspaces such as trackers and planners that the agent builds from a chat request and updates in the background. TechCrunch doesn't say who can use them. Meta's research page lists a 6 November post on specialised models for Muse, but its link returned a 404. TechCrunch Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Research",
+          "category": "research",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://www.anthropic.com/research/components-of-agent-memory\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic's engineering team describes agent memory as four layers, with an offline &quot;dreaming&quot; pass that checks notes against transcripts and fixes them</a></strong>",
+              "html": "<p><strong><a href=\"https://www.anthropic.com/research/components-of-agent-memory\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic's engineering team describes agent memory as four layers, with an offline &quot;dreaming&quot; pass that checks notes against transcripts and fixes them</a></strong> — the layers are transcripts, notes the model writes, structured artifacts such as wikis, and context loaded into every session. On its CL-Bench database task, memory lifted Opus 5.5's mean reward from 0.655 to 0.838. Telling strong models to &quot;record only failures&quot; cut their gains. A wiki plus search answered 61% of questions, against 53% for search alone, using about 20,000 fewer tokens per question. The advice that applies here: keep the always-loaded layer small, store strategy and verified rules rather than state you can see, and give each document one writer. It notes that Claude Code's auto memory loads only the first 200 lines or 25 KB of <code>MEMORY.md</code>. 182 points on Hacker News.</p>",
+              "text": "Anthropic's engineering team describes agent memory as four layers, with an offline \"dreaming\" pass that checks notes against transcripts and fixes them — the layers are transcripts, notes the model writes, structured artifacts such as wikis, and context loaded into every session. On its CL-Bench database task, memory lifted Opus 5.5's mean reward from 0.655 to 0.838. Telling strong models to \"record only failures\" cut their gains. A wiki plus search answered 61% of questions, against 53% for search alone, using about 20,000 fewer tokens per question. The advice that applies here: keep the always-loaded layer small, store strategy and verified rules rather than state you can see, and give each document one writer. It notes that Claude Code's auto memory loads only the first 200 lines or 25 KB of MEMORY.md . 182 points on Hacker News. Single source · Anthropic's measurements on its own models",
+              "status": "single-source",
+              "status_html": "<p>Single source · Anthropic's measurements on its own models</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://arxiv.org/abs/2610.35138\" target=\"_blank\" rel=\"noopener noreferrer\">Co-Design Bench finds that the best of ten coding agents, GPT-6 Astra, fully completed only 26.4% of real user change requests</a></strong>",
+              "html": "<p><strong><a href=\"https://arxiv.org/abs/2610.35138\" target=\"_blank\" rel=\"noopener noreferrer\">Co-Design Bench finds that the best of ten coding agents, GPT-6 Astra, fully completed only 26.4% of real user change requests</a></strong> — the tasks come from requests users rephrased or rolled back. AI judges test the finished app in a browser, and points count only for features that work. According to The Decoder, every model gets worse as a task combines three or four kinds of change. The authors are from Alibaba and several Asian universities, and they note that the AI judges can err. <a href=\"https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Co-Design Bench finds that the best of ten coding agents, GPT-6 Astra, fully completed only 26.4% of real user change requests — the tasks come from requests users rephrased or rolled back. AI judges test the finished app in a browser, and points count only for features that work. According to The Decoder, every model gets worse as a task combines three or four kinds of change. The authors are from Alibaba and several Asian universities, and they note that the AI judges can err. The Decoder Single source until reproduced",
+              "status": "single-source",
+              "status_html": "<p>Single source until reproduced</p>",
+              "updated": null,
+              "sources": [
+                "arxiv.org",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://freesystems.substack.com/p/were-using-ai-to-audit-ai\" target=\"_blank\" rel=\"noopener noreferrer\">Andy Hall found that AI auditors catch most agent misbehaviour in METR's logs, but at high detection rates they raise many false alarms</a></strong>",
+              "html": "<p><strong><a href=\"https://freesystems.substack.com/p/were-using-ai-to-audit-ai\" target=\"_blank\" rel=\"noopener noreferrer\">Andy Hall found that AI auditors catch most agent misbehaviour in METR's logs, but at high detection rates they raise many false alarms</a></strong> — at 99% detection on R-Judge, the best auditor, GPT-6 Astra, flagged about 15% of safe actions, and Gemini 3.8 Flash 81%. Newer models were not consistently better. Hall, of the Anthropic Institute, writes in a personal capacity and calls it a pilot. The reward-hacking result rests on 47 cases. <a href=\"https://the-decoder.com/ai-auditors-catch-most-agent-misbehavior-but-flood-reviewers-with-false-alarms-new-study-finds/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Andy Hall found that AI auditors catch most agent misbehaviour in METR's logs, but at high detection rates they raise many false alarms — at 99% detection on R-Judge, the best auditor, GPT-6 Astra, flagged about 15% of safe actions, and Gemini 3.8 Flash 81%. Newer models were not consistently better. Hall, of the Anthropic Institute, writes in a personal capacity and calls it a pilot. The reward-hacking result rests on 47 cases. The Decoder Single source",
+              "status": "single-source",
+              "status_html": "<p>Single source</p>",
+              "updated": null,
+              "sources": [
+                "freesystems.substack.com",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.vals.ai/benchmarks/cyber_offense\" target=\"_blank\" rel=\"noopener noreferrer\">Vals AI reports that open-weight DeepSeek V4.1 Flash reached 72.8% of cyber-offence objectives, against 80.8% for OpenAI's restricted GPT-6 Sol Daybreak</a></strong>",
+              "html": "<p><strong><a href=\"https://www.vals.ai/benchmarks/cyber_offense\" target=\"_blank\" rel=\"noopener noreferrer\">Vals AI reports that open-weight DeepSeek V4.1 Flash reached 72.8% of cyber-offence objectives, against 80.8% for OpenAI's restricted GPT-6 Sol Daybreak</a></strong> — at about $3 a run against about $22, per The Decoder. DeepSeek made most of its progress after 100 million tokens, so short tests understate open models. The Decoder adds that the UK AI Security Institute put the open-closed gap at four to seven months in July. <a href=\"https://the-decoder.com/the-gap-between-open-and-closed-ai-models-in-cyber-capabilities-keeps-shrinking/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Vals AI reports that open-weight DeepSeek V4.1 Flash reached 72.8% of cyber-offence objectives, against 80.8% for OpenAI's restricted GPT-6 Sol Daybreak — at about $3 a run against about $22, per The Decoder. DeepSeek made most of its progress after 100 million tokens, so short tests understate open models. The Decoder adds that the UK AI Security Institute put the open-closed gap at four to seven months in July. The Decoder Reported · Vals's figures not checked on its own page",
+              "status": "reported",
+              "status_html": "<p>Reported · Vals's figures not checked on its own page</p>",
+              "updated": null,
+              "sources": [
+                "Vals AI",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Vals AI also found 316 expletives in Inkling 2 Small's reasoning traces, across 50 of 2,655 benchmark runs.</strong>",
+              "html": "<p><strong>Vals AI also found 316 expletives in Inkling 2 Small's reasoning traces, across 50 of 2,655 benchmark runs.</strong> Two runs held 241 of them. The Decoder says the swearing doesn't reliably predict failure, since three-quarters of all scored runs failed anyway. Thinking Machines has not commented. <a href=\"https://the-decoder.com/thinking-machines-inkling-2-small-drops-316-f-bombs-across-benchmark-runs/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Vals AI also found 316 expletives in Inkling 2 Small's reasoning traces, across 50 of 2,655 benchmark runs. Two runs held 241 of them. The Decoder says the swearing doesn't reliably predict failure, since three-quarters of all scored runs failed anyway. Thinking Machines has not commented. The Decoder Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Industry and policy",
+          "category": "industry",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Nvidia's board opened an independent investigation after reports that a foreign intelligence effort targeted Jensen Huang, who has admitted an extramarital affair.</strong>",
+              "html": "<p><strong>Nvidia's board opened an independent investigation after reports that a foreign intelligence effort targeted Jensen Huang, who has admitted an extramarital affair.</strong> The board's 8 November statement says a committee of independent directors will lead it with outside counsel, and that it has no reason to think national security or company secrets were compromised. It names no country. The same day, Huang wrote to staff: &quot;I was unfaithful to my wife.&quot; He says he will cooperate. According to TechCrunch, the New York Times reported on 6 November a memo, said to rest on US intelligence, alleging that China's Ministry of State Security recruited Alice Huang, an executive at Singapore's Megaspeed, to spy on him. The Decoder, citing Bloomberg, says the affair weakens Huang's lobbying against tighter chip export controls just as the new Democratic Congress plans to scrutinise exports to China. The Chinese embassy denies the espionage allegations. 792 and 477 points on Hacker News. <a href=\"https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors\" target=\"_blank\" rel=\"noopener noreferrer\">Nvidia board</a> · <a href=\"https://nvidianews.nvidia.com/news/a-message-to-our-company\" target=\"_blank\" rel=\"noopener noreferrer\">Huang's letter</a> · <a href=\"https://techcrunch.com/2026/11/07/chinese-exec-was-recruited-to-spy-on-nvidia-ceo-according-to-us-intelligence-memo/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · <a href=\"https://the-decoder.com/nvidia-espionage-scandal-weakens-huangs-lobby-against-tighter-ai-chip-export-controls/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Nvidia's board opened an independent investigation after reports that a foreign intelligence effort targeted Jensen Huang, who has admitted an extramarital affair. The board's 8 November statement says a committee of independent directors will lead it with outside counsel, and that it has no reason to think national security or company secrets were compromised. It names no country. The same day, Huang wrote to staff: \"I was unfaithful to my wife.\" He says he will cooperate. According to TechCrunch, the New York Times reported on 6 November a memo, said to rest on US intelligence, alleging that China's Ministry of State Security recruited Alice Huang, an executive at Singapore's Megaspeed, to spy on him. The Decoder, citing Bloomberg, says the affair weakens Huang's lobbying against tighter chip export controls just as the new Democratic Congress plans to scrutinise exports to China. The Chinese embassy denies the espionage allegations. 792 and 477 points on Hacker News. Nvidia board · Huang's letter · TechCrunch · The Decoder Verified for the investigation and the letter against Nvidia's newsroom · the espionage allegation is Reported and unproven",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the investigation and the letter against Nvidia's newsroom · the espionage allegation is Reported and unproven</p>",
+              "updated": null,
+              "sources": [
+                "nvidianews.nvidia.com",
+                "TechCrunch",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic is still aiming to list before Thanksgiving, but the reported valuations disagree.</strong>",
+              "html": "<p><strong>Anthropic is still aiming to list before Thanksgiving, but the reported valuations disagree.</strong> The Decoder, citing the Financial Times, gives investors' range as $1.25 trillion to $1.75 trillion for a raise of $80 billion to $100 billion. A Bloomberg headline of 6 November, &quot;Anthropic IPO buyers see valuation as low as $1.1T&quot;, put the floor lower. Both are below the $1.5 trillion reported last week. Anthropic has confirmed no terms. <a href=\"https://the-decoder.com/anthropic-pushes-ahead-with-pre-thanksgiving-ipo-despite-tech-selloff-accepts-lower-valuation/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Anthropic is still aiming to list before Thanksgiving, but the reported valuations disagree. The Decoder, citing the Financial Times, gives investors' range as $1.25 trillion to $1.75 trillion for a raise of $80 billion to $100 billion. A Bloomberg headline of 6 November, \"Anthropic IPO buyers see valuation as low as $1.1T\", put the floor lower. Both are below the $1.5 trillion reported last week. Anthropic has confirmed no terms. The Decoder Reported · Bloomberg is paywalled and cited by headline only",
+              "status": "reported",
+              "status_html": "<p>Reported · Bloomberg is paywalled and cited by headline only</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Microsoft Research's AI Frontiers group, about 50 people, is over, according to John Langford, one of its leaders.</strong>",
+              "html": "<p><strong>Microsoft Research's AI Frontiers group, about 50 people, is over, according to John Langford, one of its leaders.</strong> He writes that it was folded into Microsoft AI in September and that leadership there preferred scaling to research, so he and his team left. The group built AutoGen and the Fara computer-use agent. 504 points on Hacker News. <a href=\"https://hunch.net/?p=13764006\" target=\"_blank\" rel=\"noopener noreferrer\">Langford</a></p>",
+              "text": "Microsoft Research's AI Frontiers group, about 50 people, is over, according to John Langford, one of its leaders. He writes that it was folded into Microsoft AI in September and that leadership there preferred scaling to research, so he and his team left. The group built AutoGen and the Fara computer-use agent. 504 points on Hacker News. Langford Single source · Microsoft has not commented in anything read",
+              "status": "single-source",
+              "status_html": "<p>Single source · Microsoft has not commented in anything read</p>",
+              "updated": null,
+              "sources": [
+                "hunch.net"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Google now offers four eighth-generation TPU variants, adding the confidential-computing TPU 8tx and the dual-chip TPU 8i Max.</strong>",
+              "html": "<p><strong>Google now offers four eighth-generation TPU variants, adding the confidential-computing TPU 8tx and the dual-chip TPU 8i Max.</strong> According to The Decoder, both reuse existing silicon. Google reports nearly 100 external TPU customers and has open-sourced TorchTPU for running PyTorch on TPUs. No dates or prices are given. <a href=\"https://the-decoder.com/google-ships-four-tpu-variants-in-one-year-as-it-ramps-up-competition-with-nvidia/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Google now offers four eighth-generation TPU variants, adding the confidential-computing TPU 8tx and the dual-chip TPU 8i Max. According to The Decoder, both reuse existing silicon. Google reports nearly 100 external TPU customers and has open-sourced TorchTPU for running PyTorch on TPUs. No dates or prices are given. The Decoder Reported · Google's own post not read",
+              "status": "reported",
+              "status_html": "<p>Reported · Google's own post not read</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Palo Alto Networks is reported to be in talks to buy Clutch Security, which secures AI agents' access to company systems, for $500 million in cash.</strong>",
+              "html": "<p><strong>Palo Alto Networks is reported to be in talks to buy Clutch Security, which secures AI agents' access to company systems, for $500 million in cash.</strong> TechCrunch, following The Information and one unnamed source, says Clutch is near $10 million in annual recurring revenue. Neither company commented. <a href=\"https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Palo Alto Networks is reported to be in talks to buy Clutch Security, which secures AI agents' access to company systems, for $500 million in cash. TechCrunch, following The Information and one unnamed source, says Clutch is near $10 million in annual recurring revenue. Neither company commented. TechCrunch Reported · talks only",
+              "status": "reported",
+              "status_html": "<p>Reported · talks only</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Worth reading",
+          "category": "reading",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai\" target=\"_blank\" rel=\"noopener noreferrer\">AI is dramatically accelerating AI research</a></strong>",
+              "html": "<p><strong><a href=\"https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai\" target=\"_blank\" rel=\"noopener noreferrer\">AI is dramatically accelerating AI research</a></strong> by Ajeya Cotra: she reads last week's METR report as showing that Anthropic crossed its &quot;dramatically accelerated progress&quot; threshold. She works out that the roughly 2x speed-up implies about a tenfold boost to each researcher, near the 12x that Anthropic staff report themselves. Cotra is at METR but did not work on the report, and she says most of its evidence is redacted.</p>",
+              "text": "AI is dramatically accelerating AI research by Ajeya Cotra: she reads last week's METR report as showing that Anthropic crossed its \"dramatically accelerated progress\" threshold. She works out that the roughly 2x speed-up implies about a tenfold boost to each researcher, near the 12x that Anthropic staff report themselves. Cotra is at METR but did not work on the report, and she says most of its evidence is redacted.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "planned-obsolescence.org"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://caleb.software/posts/claude-to-pi.html\" target=\"_blank\" rel=\"noopener noreferrer\">Goodbye Claude, hello Pi</a></strong>",
+              "html": "<p><strong><a href=\"https://caleb.software/posts/claude-to-pi.html\" target=\"_blank\" rel=\"noopener noreferrer\">Goodbye Claude, hello Pi</a></strong> by Caleb: why one user left Claude Code for the minimal open-source Pi harness. His reasons are frequent changes to the system prompt and tool descriptions (over three-quarters of 244 releases this year), a Bash tool description of almost 3,000 tokens, and what he calls a product without &quot;a strong vision&quot;. First published in September and updated 7 November; 784 points on Hacker News.</p>",
+              "text": "Goodbye Claude, hello Pi by Caleb: why one user left Claude Code for the minimal open-source Pi harness. His reasons are frequent changes to the system prompt and tool descriptions (over three-quarters of 244 releases this year), a Bash tool description of almost 3,000 tokens, and what he calls a product without \"a strong vision\". First published in September and updated 7 November; 784 points on Hacker News.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "caleb.software"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Unverified, and worth watching",
+          "category": "unverified",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "Apiiro reports that Claude Code&#x27;s &quot;Don&#x27;t ask again&quot; approvals have put passwords into 1,122 public GitHub files (612 points on Hacker News).",
+              "html": "<p>Apiiro reports that Claude Code's &quot;Don't ask again&quot; approvals have put passwords into 1,122 public GitHub files (612 points on Hacker News). Apiiro's page refused automated reads, and a search found no copy, so the mechanism and the count are unread. Claude Code's settings documentation says those approvals go to <code>.claude/settings.local.json</code>, which Claude Code adds to the global git excludes the first time it writes the file. It also says a file created by hand needs a <code>.gitignore</code> entry, and that the VS Code extension lets you save an approval to the shared project file. Either path could explain the leak; neither is confirmed. <a href=\"https://news.ycombinator.com/item?id=50407882\" target=\"_blank\" rel=\"noopener noreferrer\">Hacker News</a></p>",
+              "text": "Apiiro reports that Claude Code's \"Don't ask again\" approvals have put passwords into 1,122 public GitHub files (612 points on Hacker News). Apiiro's page refused automated reads, and a search found no copy, so the mechanism and the count are unread. Claude Code's settings documentation says those approvals go to .claude/settings.local.json , which Claude Code adds to the global git excludes the first time it writes the file. It also says a file created by hand needs a .gitignore entry, and that the VS Code extension lets you save an approval to the shared project file. Either path could explain the leak; neither is confirmed. Hacker News Unconfirmed",
+              "status": "unconfirmed",
+              "status_html": "<p><strong>Unconfirmed</strong></p>",
+              "updated": null,
+              "sources": [
+                "Hacker News"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Coverage check",
+          "category": "coverage",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Sources read:</strong> 25 of 25 returned items; failed: none at collection.",
+              "html": "<p><strong>Sources read:</strong> 25 of 25 returned items; <strong>failed:</strong> none at collection. The Verge, Apiiro and OpenAI's own posts refused automated reads; The Verge's Nvidia stories were covered through TechCrunch, The Decoder and Nvidia's newsroom. <strong>Pages read:</strong> Anthropic news (newest item still 28 October), Anthropic research (two posts on 6 November: agent memory, covered above, and a Tübingen guest essay on AI-built scientific models, which names no model or benchmark), the Claude Platform release notes (newest 5 November, already covered), the OpenAI API changelog (newest 5 November, already covered), the Gemini API changelog (6 November: the <code>gemini-embedding-2-preview</code> reroute, already covered; voice remixing for Gemini 3.8 TTS on 4 November, before the window), Meta AI research (the specialised-models post, link broken) and The Batch (6 November issue, covered last entry).</p>",
+              "text": "Sources read: 25 of 25 returned items; failed: none at collection. The Verge, Apiiro and OpenAI's own posts refused automated reads; The Verge's Nvidia stories were covered through TechCrunch, The Decoder and Nvidia's newsroom. Pages read: Anthropic news (newest item still 28 October), Anthropic research (two posts on 6 November: agent memory, covered above, and a Tübingen guest essay on AI-built scientific models, which names no model or benchmark), the Claude Platform release notes (newest 5 November, already covered), the OpenAI API changelog (newest 5 November, already covered), the Gemini API changelog (6 November: the gemini-embedding-2-preview reroute, already covered; voice remixing for Gemini 3.8 TTS on 4 November, before the window), Meta AI research (the specialised-models post, link broken) and The Batch (6 November issue, covered last entry).",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Cross-source stories set aside:</strong> huang, jensen and chinese are the Nvidia story above, along with a Verge report on chips sold to an empty office in China (not read).",
+              "html": "<p><strong>Cross-source stories set aside:</strong> <code>huang</code>, <code>jensen</code> and <code>chinese</code> are the Nvidia story above, along with a Verge report on chips sold to an empty office in China (not read). <code>openai</code> is the funding round covered last entry, plus OpenAI's Hacktron security partnership and its wet-lab agent evaluation, neither readable. <code>claude</code> is covered above, plus Claude Code v2.1.319 (covered last entry), an AWS how-to for remote Claude Code sessions and two Simon Willison posts that aren't news. <code>amazon</code> is AWS how-to and customer posts, including one on multi-instance GPU for SageMaker endpoints. <code>github</code> is the Apiiro report and that AWS post. <code>google</code> is the TPU story and the Crusoe sale covered last entry. <code>deepseek</code> is llama-modchip and the Vals study. Also not read: an Elvis and Eminem rights-holders' lawsuit against Suno and Apple's agentic Siri (The Verge), Ramp data on stalling AI spending, and Underdog's 32 MB speech model.</p>",
+              "text": "Cross-source stories set aside: huang , jensen and chinese are the Nvidia story above, along with a Verge report on chips sold to an empty office in China (not read). openai is the funding round covered last entry, plus OpenAI's Hacktron security partnership and its wet-lab agent evaluation, neither readable. claude is covered above, plus Claude Code v2.1.319 (covered last entry), an AWS how-to for remote Claude Code sessions and two Simon Willison posts that aren't news. amazon is AWS how-to and customer posts, including one on multi-instance GPU for SageMaker endpoints. github is the Apiiro report and that AWS post. google is the TPU story and the Crusoe sale covered last entry. deepseek is llama-modchip and the Vals study. Also not read: an Elvis and Eminem rights-holders' lawsuit against Suno and Apple's agentic Siri (The Verge), Ramp data on stalling AI spending, and Underdog's 32 MB speech model.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "The window ran 2026-11-06 to 2026-11-09 and was thin on releases.",
+              "html": "<p>The window ran 2026-11-06 to 2026-11-09 and was thin on releases.</p>",
+              "text": "The window ran 2026-11-06 to 2026-11-09 and was thin on releases.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-11-06",
       "title": "AI web digest",
@@ -3579,11 +3940,11 @@
       "items": [
         {
           "headline": "<strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong>",
-          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.\nStill not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election.</p>",
-          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Still not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election. Verified as announced, against Anthropic · 2026-10-14, rechecked 2026-10-30",
+          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.\nStill not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election. As of 9 November, after the 3 November election, the news page still has nothing newer than 28 October, so there is no confirmation that either feature shipped.</p>",
+          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Still not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election. As of 9 November, after the 3 November election, the news page still has nothing newer than 28 October, so there is no confirmation that either feature shipped. Verified as announced, against Anthropic · 2026-10-14, rechecked 2026-11-09",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14, rechecked 2026-10-30</p>",
-          "updated": "2026-10-30",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14, rechecked 2026-11-09</p>",
+          "updated": "2026-11-09",
           "sources": [
             "Anthropic"
           ],
@@ -3929,18 +4290,17 @@
       "items": [
         {
           "headline": "<strong>Anthropic IPO: S-1 filed 26 October for a Nasdaq listing under ANT; no price range, raise size or date yet.</strong>",
-          "html": "<p><strong>Anthropic IPO: S-1 filed 26 October for a Nasdaq listing under ANT; no price range, raise size or date yet.</strong> Goldman Sachs and Morgan Stanley lead, per The Decoder. Latent Space's AINews cites an expected listing around 9 November; that is commentary, not a filing date.\nOn 6 November The Decoder, citing Reuters and the WSJ, reported investors pushing back on the $1.5 trillion valuation (one floated $1 trillion), doubts that the roadshow can start &quot;next week as scheduled&quot;, a raise of up to $100 billion, and October revenue missing from the updated S-1. No delay is confirmed and Anthropic has said nothing.</p>",
-          "text": "Anthropic IPO: S-1 filed 26 October for a Nasdaq listing under ANT; no price range, raise size or date yet. Goldman Sachs and Morgan Stanley lead, per The Decoder. Latent Space's AINews cites an expected listing around 9 November; that is commentary, not a filing date. On 6 November The Decoder, citing Reuters and the WSJ, reported investors pushing back on the $1.5 trillion valuation (one floated $1 trillion), doubts that the roadshow can start \"next week as scheduled\", a raise of up to $100 billion, and October revenue missing from the updated S-1. No delay is confirmed and Anthropic has said nothing. Verified that the S-1 was filed, against Anthropic · timing Reported, Latent Space · 2026-10-27 · valuation pushback Reported, The Decoder · 2026-11-06",
+          "html": "<p><strong>Anthropic IPO: S-1 filed 26 October for a Nasdaq listing under ANT; no price range, raise size or date yet.</strong> Goldman Sachs and Morgan Stanley lead, per The Decoder. Latent Space's AINews had cited a listing around 9 November; that did not happen.\nOn 6 November The Decoder, citing Reuters and the WSJ, reported investors pushing back on the $1.5 trillion valuation (one floated $1 trillion), doubts that the roadshow can start &quot;next week as scheduled&quot;, a raise of up to $100 billion, and October revenue missing from the updated S-1. On 7 November The Decoder, citing the FT, said Anthropic is pushing ahead to list &quot;before Thanksgiving&quot; at a range of $1.25 trillion to $1.75 trillion, raising $80 billion to $100 billion; a Bloomberg headline of 6 November put buyers' floor as low as $1.1 trillion. Anthropic's news page has nothing new since the S-1.</p>",
+          "text": "Anthropic IPO: S-1 filed 26 October for a Nasdaq listing under ANT; no price range, raise size or date yet. Goldman Sachs and Morgan Stanley lead, per The Decoder. Latent Space's AINews had cited a listing around 9 November; that did not happen. On 6 November The Decoder, citing Reuters and the WSJ, reported investors pushing back on the $1.5 trillion valuation (one floated $1 trillion), doubts that the roadshow can start \"next week as scheduled\", a raise of up to $100 billion, and October revenue missing from the updated S-1. On 7 November The Decoder, citing the FT, said Anthropic is pushing ahead to list \"before Thanksgiving\" at a range of $1.25 trillion to $1.75 trillion, raising $80 billion to $100 billion; a Bloomberg headline of 6 November put buyers' floor as low as $1.1 trillion. Anthropic's news page has nothing new since the S-1. Verified that the S-1 was filed, against Anthropic · timing and valuation Reported, The Decoder relaying the FT · 2026-11-09",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> that the S-1 was filed, against <a href=\"https://www.anthropic.com/news\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · timing Reported, <a href=\"https://latent.space/p/ainews-anthropic-s1/\" target=\"_blank\" rel=\"noopener noreferrer\">Latent Space</a> · 2026-10-27 · valuation pushback Reported, <a href=\"https://the-decoder.com/anthropics-1-5-trillion-ipo-hits-resistance-as-investors-balk-at-valuation/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-11-06</p>",
-          "updated": "2026-11-06",
+          "status_html": "<p><strong>Verified</strong> that the S-1 was filed, against <a href=\"https://www.anthropic.com/news\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · timing and valuation Reported, <a href=\"https://the-decoder.com/anthropic-pushes-ahead-with-pre-thanksgiving-ipo-despite-tech-selloff-accepts-lower-valuation/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> relaying the FT · 2026-11-09</p>",
+          "updated": "2026-11-09",
           "sources": [
             "Anthropic",
-            "Latent Space",
             "The Decoder"
           ],
-          "due": "2026-11-09",
-          "due_label": "expected around Nov 9, per Latent Space"
+          "due": "2026-11-26",
+          "due_label": "\"before Thanksgiving\", per the FT via The Decoder"
         },
         {
           "headline": "<strong>Nvidia's $12.93 billion purchase of Hugging Face: expected to close in the first half of 2027, under US Justice Department review.</strong>",
@@ -3954,6 +4314,19 @@
           ],
           "due": "2027-06-30",
           "due_label": "expected close \"in the first half of 2027\""
+        },
+        {
+          "headline": "<strong>Palo Alto Networks and Clutch Security: talks on a $500 million cash purchase, plus milestone payouts.</strong>",
+          "html": "<p><strong>Palo Alto Networks and Clutch Security: talks on a $500 million cash purchase, plus milestone payouts.</strong> Clutch secures AI agents' access to company systems and is near $10 million in annual recurring revenue. Neither company has commented; nothing is signed.</p>",
+          "text": "Palo Alto Networks and Clutch Security: talks on a $500 million cash purchase, plus milestone payouts. Clutch secures AI agents' access to company systems and is near $10 million in annual recurring revenue. Neither company has commented; nothing is signed. Reported, TechCrunch following The Information · 2026-11-09",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> following The Information · 2026-11-09</p>",
+          "updated": "2026-11-09",
+          "sources": [
+            "TechCrunch"
+          ],
+          "due": null,
+          "due_label": null
         },
         {
           "headline": "<strong>Anthropic and Nscale: a second $45bn compute deal reported as imminent, unconfirmed.</strong>",
@@ -3977,13 +4350,13 @@
       "items": [
         {
           "headline": "<strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong>",
-          "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.\nThe shutdown date has passed. The changelog's newest entry is now dated 30 October (Computer Use GA) and still does not confirm the shutdown happened; delete this entry once it does.</p>",
-          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . The shutdown date has passed. The changelog's newest entry is now dated 30 October (Computer Use GA) and still does not confirm the shutdown happened; delete this entry once it does. Verified that the deprecation was announced, against the Gemini API changelog · shutdown not confirmed · 2026-10-11, rechecked 2026-10-30",
+          "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.\nThe shutdown date has passed. As of 9 November the changelog's newest entry is dated 6 November, and it still does not confirm that the shutdown happened. Delete this entry once it does.</p>",
+          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . The shutdown date has passed. As of 9 November the changelog's newest entry is dated 6 November, and it still does not confirm that the shutdown happened. Delete this entry once it does. Verified that the deprecation was announced, against the Gemini API changelog · shutdown not confirmed · 2026-10-11, rechecked 2026-11-09",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> that the deprecation was announced, against the <a href=\"https://ai.google.dev/gemini-api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · shutdown not confirmed · 2026-10-11, rechecked 2026-10-30</p>",
-          "updated": "2026-10-30",
+          "status_html": "<p><strong>Verified</strong> that the deprecation was announced, against the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · shutdown not confirmed · 2026-10-11, rechecked 2026-11-09</p>",
+          "updated": "2026-11-09",
           "sources": [
-            "Google"
+            "aistudio.google.com"
           ],
           "due": "2026-10-23",
           "due_label": "shuts down"
