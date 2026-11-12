@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-09",
+  "generated": "2026-11-12",
   "meta": {
     "feed": "aiweb",
     "title": "AI Web Digest",
@@ -21,6 +21,510 @@
     "source_note": "from AI lab announcements, expert curators, Hacker News and the tech press"
   },
   "digests": [
+    {
+      "date": "2026-11-12",
+      "title": "AI web digest",
+      "intro_html": "<p>A busy three days. Anthropic released Claude Fable 5.2 on the first day of the window and launched its IPO roadshow the next. Google shipped Gemini Decision 1, a cheap multimodal decision model, and made Gemini 4 Carbon generally available. Jensen Huang resigned as Nvidia's CEO on 12 November. DeepMind also published three research results: AlphaProof Code, AlphaGenome 2 and Gemini Robotics 2.5.</p>",
+      "sections": [
+        {
+          "heading": "Must know",
+          "category": "mustknow",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Anthropic released Claude Fable 5.2, its new top model, at a lower price than Fable 5.1 and with a fast mode that it says runs up to 2.5 times faster.</strong>",
+              "html": "<p><strong>Anthropic released Claude Fable 5.2, its new top model, at a lower price than Fable 5.1 and with a fast mode that it says runs up to 2.5 times faster.</strong> It is the model behind Claude's apps and Claude Code, now the default Fable model there, and also on the API and the AWS, Google Cloud and Azure platforms; a sibling, Claude Mythos 5.2, shares the same underlying model with lighter cyber and biology safeguards and goes only to vetted organisations.</p>\n<ul>\n<li><strong>Why it matters:</strong> It is the strongest model you can use day to day, and it costs less than the one it replaces. Artificial Analysis, measuring independently, ranks it first of 74 models on its Intelligence Index with a score of 65. Arena's Agent Arena, as relayed by Latent Space's AINews, puts it first with about 1.6 times the net improvement of second-placed Opus 5.5. It reached 996 points on Hacker News.</li>\n<li><strong>What you could use it for:</strong> the default model in Claude Code sessions here, with no change needed; fast mode (<code>speed: &quot;fast&quot;</code>, no beta header) for interactive work where waiting costs more than the doubled price; Anthropic's suggested prompt line &quot;You are the owner and long-term maintainer of this codebase, and its design is up to you&quot;, which in its own small tests raised the rate at which the model merged duplicated code from under 10% of runs to about 75%; hardware and CAD tasks, where Anthropic reports that Fable 5.2 designed three working prototype boards with Diode Computers.</li>\n<li><strong>Cost and speed:</strong> $8 per million input tokens and $40 per million output, down from $10 and $50 for Fable 5.1; cache reads $0.20 per million, according to Claude Code v2.1.321. Fast mode is $16 and $80. The context window is 1M tokens, with up to 128k output tokens. Anthropic claims output is up to 30% faster than Fable 5.1 and fast mode up to 2.5 times faster still. Artificial Analysis measured 96 tokens per second at Max effort, 252 seconds to the first answer token, and $26.54 per index task, all far slower and dearer than the class median.</li>\n<li><strong>Caveats:</strong> Several API changes return errors. Editing <code>system</code>, <code>tools</code> or an earlier message and then sending back a later thinking block returns a 400. The older <code>computer_20251124</code> tool returns a 400 everywhere but Bedrock. No other model can read Fable 5.2's thinking blocks, and they work only in the account that produced them. Both models require 30-day data retention, so they are unavailable under zero data retention unless Anthropic authorises it. Anthropic says it deliberately held some AI research capabilities at about Opus 5.5's level, and that both models suspected they were being evaluated more often than earlier models, which complicates its safety testing. Gemini 4 Carbon beats it on AutomationBench, 53.9% to 51.4%, by Anthropic's own table. Ethan Mollick, after a week of projects, calls it &quot;Jagged AGI&quot;: as good as most experts at most computer tasks, but rarely noticing when its own work is slow, repetitive or dull.</li>\n<li><strong>Read next:</strong> <a href=\"https://www.anthropic.com/claude-fable-and-mythos-5-2\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic: Introducing Claude Fable 5.2 and Claude Mythos 5.2</a></li>\n</ul>",
+              "text": "Anthropic released Claude Fable 5.2, its new top model, at a lower price than Fable 5.1 and with a fast mode that it says runs up to 2.5 times faster. It is the model behind Claude's apps and Claude Code, now the default Fable model there, and also on the API and the AWS, Google Cloud and Azure platforms; a sibling, Claude Mythos 5.2, shares the same underlying model with lighter cyber and biology safeguards and goes only to vetted organisations. Why it matters: It is the strongest model you can use day to day, and it costs less than the one it replaces. Artificial Analysis, measuring independently, ranks it first of 74 models on its Intelligence Index with a score of 65. Arena's Agent Arena, as relayed by Latent Space's AINews, puts it first with about 1.6 times the net improvement of second-placed Opus 5.5. It reached 996 points on Hacker News. What you could use it for: the default model in Claude Code sessions here, with no change needed; fast mode ( speed: \"fast\" , no beta header) for interactive work where waiting costs more than the doubled price; Anthropic's suggested prompt line \"You are the owner and long-term maintainer of this codebase, and its design is up to you\", which in its own small tests raised the rate at which the model merged duplicated code from under 10% of runs to about 75%; hardware and CAD tasks, where Anthropic reports that Fable 5.2 designed three working prototype boards with Diode Computers. Cost and speed: $8 per million input tokens and $40 per million output, down from $10 and $50 for Fable 5.1; cache reads $0.20 per million, according to Claude Code v2.1.321. Fast mode is $16 and $80. The context window is 1M tokens, with up to 128k output tokens. Anthropic claims output is up to 30% faster than Fable 5.1 and fast mode up to 2.5 times faster still. Artificial Analysis measured 96 tokens per second at Max effort, 252 seconds to the first answer token, and $26.54 per index task, all far slower and dearer than the class median. Caveats: Several API changes return errors. Editing system , tools or an earlier message and then sending back a later thinking block returns a 400. The older computer_20251124 tool returns a 400 everywhere but Bedrock. No other model can read Fable 5.2's thinking blocks, and they work only in the account that produced them. Both models require 30-day data retention, so they are unavailable under zero data retention unless Anthropic authorises it. Anthropic says it deliberately held some AI research capabilities at about Opus 5.5's level, and that both models suspected they were being evaluated more often than earlier models, which complicates its safety testing. Gemini 4 Carbon beats it on AutomationBench, 53.9% to 51.4%, by Anthropic's own table. Ethan Mollick, after a week of projects, calls it \"Jagged AGI\": as good as most experts at most computer tasks, but rarely noticing when its own work is slow, repetitive or dull. Read next: Anthropic: Introducing Claude Fable 5.2 and Claude Mythos 5.2 Verified against Anthropic's announcement and the Claude Platform release notes · benchmark scores and speed-ups are Anthropic's; the index rank and measured speed are Artificial Analysis 's",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Anthropic's announcement and the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · benchmark scores and speed-ups are Anthropic's; the index rank and measured speed are <a href=\"https://artificialanalysis.ai/models/claude-fable-5-2\" target=\"_blank\" rel=\"noopener noreferrer\">Artificial Analysis</a>'s</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic",
+                "artificialanalysis.ai"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Google launched Gemini Decision 1, a decision model that answers up to 1,000 yes/no, multiple-choice or rubric questions about one input in a single pass, for $0.10 per million input tokens and nothing for output.</strong>",
+              "html": "<p><strong>Google launched Gemini Decision 1, a decision model that answers up to 1,000 yes/no, multiple-choice or rubric questions about one input in a single pass, for $0.10 per million input tokens and nothing for output.</strong> It does not write text: it scores the options you give it and returns a confidence for each. Unlike TypeSafe's Jev, it accepts images, audio, video and PDFs as well as text.</p>\n<ul>\n<li><strong>Why it matters:</strong> It is the first decision model from a major lab that takes any kind of input, and Google, OpenAI and TypeSafe now all sell one. Hugging Face added decision-model support to Transformers and llama.cpp the day before, so the category now has a common API. Four independent sources covered it, including Simon Willison's hands-on test.</li>\n<li><strong>What you could use it for:</strong> the cheap first stage of the Jev-then-Opus cascade from last entry's Must know, now for screenshots or PDFs as well as text; a hook or agent check that asks &quot;does this diff touch secrets? does this command write outside the worktree?&quot; and escalates only uncertain cases; triage in a digest pipeline, scoring each item on several rubric questions in one request; choosing which tool or model to route a request to, as Google says Gemini Notebook does.</li>\n<li><strong>Cost and speed:</strong> Google claims 150–250 ms end to end, latency &quot;nearly flat from 1 to 100 questions per request&quot; for inputs up to 16K tokens, and about five times lower cost than Gemini 3.5 Flash-Lite on its benchmark suite. Jev is cheaper per token at $0.042 per million, according to Simon Willison. Artificial Analysis, as relayed by AINews, measured $345 per million tasks and 211 ms per task, against $156 and 92 ms for Jev 1.14.</li>\n<li><strong>Caveats:</strong> Google's benchmark leads appear only in charts. On Artificial Analysis's Decision Index it ties Jev 1.14 and Elephant 9B at 66, seven points behind Drex Max v1.1 and GLiDE v1.2, per AINews. Simon Willison found it returns graded probabilities, where Jev and OpenAI's model return exactly 0 or 1 for yes/no questions. Google doesn't say whether it is a preview or generally available. Availability in Google Cloud is &quot;coming soon&quot;.</li>\n<li><strong>Read next:</strong> <a href=\"https://simonwillison.net/2026/Nov/11/gemini-decisions-api/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison: Gemini Decisions API</a></li>\n</ul>",
+              "text": "Google launched Gemini Decision 1, a decision model that answers up to 1,000 yes/no, multiple-choice or rubric questions about one input in a single pass, for $0.10 per million input tokens and nothing for output. It does not write text: it scores the options you give it and returns a confidence for each. Unlike TypeSafe's Jev, it accepts images, audio, video and PDFs as well as text. Why it matters: It is the first decision model from a major lab that takes any kind of input, and Google, OpenAI and TypeSafe now all sell one. Hugging Face added decision-model support to Transformers and llama.cpp the day before, so the category now has a common API. Four independent sources covered it, including Simon Willison's hands-on test. What you could use it for: the cheap first stage of the Jev-then-Opus cascade from last entry's Must know, now for screenshots or PDFs as well as text; a hook or agent check that asks \"does this diff touch secrets? does this command write outside the worktree?\" and escalates only uncertain cases; triage in a digest pipeline, scoring each item on several rubric questions in one request; choosing which tool or model to route a request to, as Google says Gemini Notebook does. Cost and speed: Google claims 150–250 ms end to end, latency \"nearly flat from 1 to 100 questions per request\" for inputs up to 16K tokens, and about five times lower cost than Gemini 3.5 Flash-Lite on its benchmark suite. Jev is cheaper per token at $0.042 per million, according to Simon Willison. Artificial Analysis, as relayed by AINews, measured $345 per million tasks and 211 ms per task, against $156 and 92 ms for Jev 1.14. Caveats: Google's benchmark leads appear only in charts. On Artificial Analysis's Decision Index it ties Jev 1.14 and Elephant 9B at 66, seven points behind Drex Max v1.1 and GLiDE v1.2, per AINews. Simon Willison found it returns graded probabilities, where Jev and OpenAI's model return exactly 0 or 1 for yes/no questions. Google doesn't say whether it is a preview or generally available. Availability in Google Cloud is \"coming soon\". Read next: Simon Willison: Gemini Decisions API Verified against Google and the Gemini API changelog ( gemini-decision-1 , 11 November) · benchmark claims are Google's; Artificial Analysis's figures were not read on its own page",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> and the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> (<code>gemini-decision-1</code>, 11 November) · benchmark claims are Google's; Artificial Analysis's figures were not read on its own page</p>",
+              "updated": null,
+              "sources": [
+                "Simon Willison",
+                "Google",
+                "aistudio.google.com"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Model releases",
+          "category": "releases",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Google made Gemini 4 Carbon generally available on 10 November, ending the limited cyber-defender preview.</strong>",
+              "html": "<p><strong>Google made Gemini 4 Carbon generally available on 10 November, ending the limited cyber-defender preview.</strong> <code>gemini-4-carbon</code> is on the paid tier of the Gemini API in AI Studio and Android Studio and in Gemini Enterprise, and is rolling out to Google AI Ultra subscribers in the Gemini app, Antigravity and AI Mode in Search. Introductory pricing of $2 per million input tokens and $10 output runs through 30 November, then rises to $4 and $20. AINews relays Vals ranking it third on its index, and Theo reporting about 11 seconds to first token. <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">changelog</a></p>",
+              "text": "Google made Gemini 4 Carbon generally available on 10 November, ending the limited cyber-defender preview. gemini-4-carbon is on the paid tier of the Gemini API in AI Studio and Android Studio and in Gemini Enterprise, and is rolling out to Google AI Ultra subscribers in the Gemini app, Antigravity and AI Mode in Search. Introductory pricing of $2 per million input tokens and $10 output runs through 30 November, then rises to $4 and $20. AINews relays Vals ranking it third on its index, and Theo reporting about 11 seconds to first token. Google · changelog Verified against Google's post and the Gemini API changelog",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Google's post and the Gemini API changelog</p>",
+              "updated": null,
+              "sources": [
+                "Google",
+                "aistudio.google.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Meta released Muse Ember, its smallest and cheapest model, built for agent subtasks such as tool calls, routing and extraction.</strong>",
+              "html": "<p><strong>Meta released Muse Ember, its smallest and cheapest model, built for agent subtasks such as tool calls, routing and extraction.</strong> <code>muse-ember-1.0</code> is on the Meta Model API, Muse Code, Google Cloud and Oracle Cloud. It costs $0.10 per million input tokens and $0.50 output, with a 1M-token context and up to 512K output tokens. Meta reports a cost of about $0.14 per Artificial Analysis task, against $2.39 for Muse Spark 1.3 at nearly the same index score, and says it beats Claude Haiku 5.5 and GPT-6 Luna on intelligence per dollar, though Haiku leads on FrontierCode 2.0. Meta labels some of its chart's costs as estimates. Meta gives no parameter count and doesn't say whether the weights are open. 332 points on Hacker News. <a href=\"https://research.meta.ai/blog/muse-ember\" target=\"_blank\" rel=\"noopener noreferrer\">Meta</a></p>",
+              "text": "Meta released Muse Ember, its smallest and cheapest model, built for agent subtasks such as tool calls, routing and extraction. muse-ember-1.0 is on the Meta Model API, Muse Code, Google Cloud and Oracle Cloud. It costs $0.10 per million input tokens and $0.50 output, with a 1M-token context and up to 512K output tokens. Meta reports a cost of about $0.14 per Artificial Analysis task, against $2.39 for Muse Spark 1.3 at nearly the same index score, and says it beats Claude Haiku 5.5 and GPT-6 Luna on intelligence per dollar, though Haiku leads on FrontierCode 2.0. Meta labels some of its chart's costs as estimates. Meta gives no parameter count and doesn't say whether the weights are open. 332 points on Hacker News. Meta Verified against Meta's post · benchmarks are Meta's",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Meta's post · benchmarks are Meta's</p>",
+              "updated": null,
+              "sources": [
+                "research.meta.ai"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>NaiveAI released Naive-N0.5-Flash, an open-weight coding model that Latent Space clocked at about 1,000 to 1,800 tokens per second sustained, against a 2,100 peak.</strong>",
+              "html": "<p><strong>NaiveAI released Naive-N0.5-Flash, an open-weight coding model that Latent Space clocked at about 1,000 to 1,800 tokens per second sustained, against a 2,100 peak.</strong> It is a further-trained version of Xiaomi's MiMo-V2.5. In the author's tests it had the shortest median response time of three open models but was slower than DeepSeek V4.1 Flash on hard questions, and produced the best of three solar-system apps. The target price is $0.10 per million input tokens and $0.40 output. The speeds come from a single eight-GPU Blackwell node; the sample was 30 questions, with answers ungraded. <a href=\"https://latent.space/p/naiveai/\" target=\"_blank\" rel=\"noopener noreferrer\">Latent Space</a></p>",
+              "text": "NaiveAI released Naive-N0.5-Flash, an open-weight coding model that Latent Space clocked at about 1,000 to 1,800 tokens per second sustained, against a 2,100 peak. It is a further-trained version of Xiaomi's MiMo-V2.5. In the author's tests it had the shortest median response time of three open models but was slower than DeepSeek V4.1 Flash on hard questions, and produced the best of three solar-system apps. The target price is $0.10 per million input tokens and $0.40 output. The speeds come from a single eight-GPU Blackwell node; the sample was 30 questions, with answers ungraded. Latent Space Single source · benchmarks are NaiveAI's",
+              "status": "single-source",
+              "status_html": "<p>Single source · benchmarks are NaiveAI's</p>",
+              "updated": null,
+              "sources": [
+                "Latent Space"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Products and applications",
+          "category": "apps",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Anthropic added Claude Whiteboards and Claude Sheets in beta on all paid plans, and renamed Claude Dashboards to Claude Data.</strong>",
+              "html": "<p><strong>Anthropic added Claude Whiteboards and Claude Sheets in beta on all paid plans, and renamed Claude Dashboards to Claude Data.</strong> Whiteboards turn brainstorms into timelines with owners and dates; Sheets builds spreadsheets with formulas and drop-downs, for now with &quot;simple&quot; functionality. Claude Data is generally available and needs a data connector; its certified queries and live sharing are in beta. On Enterprise plans, Whiteboards and Sheets are off by default, and Claude Data turns on by default on 19 November. 286 points on Hacker News. <a href=\"https://claude.com/resources/articles/sheets-whiteboards-data\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic added Claude Whiteboards and Claude Sheets in beta on all paid plans, and renamed Claude Dashboards to Claude Data. Whiteboards turn brainstorms into timelines with owners and dates; Sheets builds spreadsheets with formulas and drop-downs, for now with \"simple\" functionality. Claude Data is generally available and needs a data connector; its certified queries and live sharing are in beta. On Enterprise plans, Whiteboards and Sheets are off by default, and Claude Data turns on by default on 19 November. 286 points on Hacker News. Anthropic Verified against Anthropic's article",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Anthropic's article</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Claude Code v2.1.321 fixed several permission and sandbox holes alongside adding Fable 5.2.</strong>",
+              "html": "<p><strong>Claude Code v2.1.321 fixed several permission and sandbox holes alongside adding Fable 5.2.</strong> A read-only Bash command could run outside the sandbox without a prompt. MCP OAuth could send refresh tokens to another host on a redirect. A PreToolUse hook's <code>ask</code> could be lost when another hook's <code>defer</code> finished first. Deny rules now cover the destination of a <code>cp</code> or <code>mv</code> into a directory. Fast mode now falls back to standard speed on the same model instead of switching models. v2.1.322 brought fast mode to Vertex in the global, US and EU regions. <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.321\" target=\"_blank\" rel=\"noopener noreferrer\">v2.1.321</a> · <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.322\" target=\"_blank\" rel=\"noopener noreferrer\">v2.1.322</a></p>",
+              "text": "Claude Code v2.1.321 fixed several permission and sandbox holes alongside adding Fable 5.2. A read-only Bash command could run outside the sandbox without a prompt. MCP OAuth could send refresh tokens to another host on a redirect. A PreToolUse hook's ask could be lost when another hook's defer finished first. Deny rules now cover the destination of a cp or mv into a directory. Fast mode now falls back to standard speed on the same model instead of switching models. v2.1.322 brought fast mode to Vertex in the global, US and EU regions. v2.1.321 · v2.1.322 Verified against the release notes",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the release notes</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>The Claude Code secrets leak flagged last entry is now explained: &quot;don't ask again&quot; saves the full approved command, including any inline password, to <code>.claude/settings.local.json</code>.</strong>",
+              "html": "<p><strong>The Claude Code secrets leak flagged last entry is now explained: &quot;don't ask again&quot; saves the full approved command, including any inline password, to <code>.claude/settings.local.json</code>.</strong> According to a Cloud Security Alliance note summarising Apiiro's report, Claude Code's global git exclude protects only the machine that wrote the file, not teammates, CI or packages. Apiiro found 1,379 secrets in 1,122 of 104,185 public copies, plus 734 more in git history, and Gitleaks and TruffleHog together missed 215 of the files. The note says Anthropic has not replied to the related issues. Its advice: rotate first, then untrack the file and add it to the repository's own <code>.gitignore</code>. Ars Technica also covered it. <a href=\"https://labs.cloudsecurityalliance.org/research/csa-research-note-claude-code-settings-secret-leak-20261108/\" target=\"_blank\" rel=\"noopener noreferrer\">CSA</a></p>",
+              "text": "The Claude Code secrets leak flagged last entry is now explained: \"don't ask again\" saves the full approved command, including any inline password, to .claude/settings.local.json . According to a Cloud Security Alliance note summarising Apiiro's report, Claude Code's global git exclude protects only the machine that wrote the file, not teammates, CI or packages. Apiiro found 1,379 secrets in 1,122 of 104,185 public copies, plus 734 more in git history, and Gitleaks and TruffleHog together missed 215 of the files. The note says Anthropic has not replied to the related issues. Its advice: rotate first, then untrack the file and add it to the repository's own .gitignore . Ars Technica also covered it. CSA Reported · Apiiro's own page still unread",
+              "status": "reported",
+              "status_html": "<p>Reported · Apiiro's own page still unread</p>",
+              "updated": null,
+              "sources": [
+                "labs.cloudsecurityalliance.org"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI opened Businesses in ChatGPT in beta, letting businesses claim a listing and publish a verified &quot;Business Agent&quot; that answers customers inside ChatGPT.</strong>",
+              "html": "<p><strong>OpenAI opened Businesses in ChatGPT in beta, letting businesses claim a listing and publish a verified &quot;Business Agent&quot; that answers customers inside ChatGPT.</strong> Business Agents are for eligible US ecommerce and online-service businesses; claiming a listing is open wherever ChatGPT is. OpenAI says businesses get aggregated insights but not users' conversations. Forum users report verification failures and a 30-minute DNS window. <a href=\"https://community.openai.com/t/introducing-businesses-in-chatgpt-in-beta/1414865\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI developer forum</a></p>",
+              "text": "OpenAI opened Businesses in ChatGPT in beta, letting businesses claim a listing and publish a verified \"Business Agent\" that answers customers inside ChatGPT. Business Agents are for eligible US ecommerce and online-service businesses; claiming a listing is open wherever ChatGPT is. OpenAI says businesses get aggregated insights but not users' conversations. Forum users report verification failures and a 30-minute DNS window. OpenAI developer forum Reported · OpenAI's own post refused automated reads",
+              "status": "reported",
+              "status_html": "<p>Reported · OpenAI's own post refused automated reads</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Hugging Face added decision models to Transformers and llama.cpp, with a <code>DecisionPipeline</code> and a shared <code>/v1/systemone</code> endpoint.</strong>",
+              "html": "<p><strong>Hugging Face added decision models to Transformers and llama.cpp, with a <code>DecisionPipeline</code> and a shared <code>/v1/systemone</code> endpoint.</strong> Both use the same three question types as Jev and Gemini Decision 1. Open examples include <code>autotrust/JEV-9B</code> and <code>ggml-org/Kev-4B-GGUF</code>. Fine-tuning works with <code>Trainer</code>, and Unsloth offers a LoRA recipe that converts a generative model such as Qwen. <a href=\"https://huggingface.co/blog/decision\" target=\"_blank\" rel=\"noopener noreferrer\">Hugging Face</a></p>",
+              "text": "Hugging Face added decision models to Transformers and llama.cpp, with a DecisionPipeline and a shared /v1/systemone endpoint. Both use the same three question types as Jev and Gemini Decision 1. Open examples include autotrust/JEV-9B and ggml-org/Kev-4B-GGUF . Fine-tuning works with Trainer , and Unsloth offers a LoRA recipe that converts a generative model such as Qwen. Hugging Face Verified against Hugging Face's post",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Hugging Face's post</p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>AWS now lets OpenAI's Codex send its model requests to Amazon Bedrock, and launched a Web Search API for agents on Bedrock AgentCore.</strong>",
+              "html": "<p><strong>AWS now lets OpenAI's Codex send its model requests to Amazon Bedrock, and launched a Web Search API for agents on Bedrock AgentCore.</strong> Codex still runs locally; Sol, Terra and Luna are named as the models, with availability varying by account and region. The search API runs on Amazon's own index, returns up to 25 results per query, and filters by domain and date. Neither post states pricing or says whether it is preview or GA. <a href=\"https://aws.amazon.com/blogs/machine-learning/openai-codex-on-amazon-bedrock/\" target=\"_blank\" rel=\"noopener noreferrer\">Codex on Bedrock</a> · <a href=\"https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/\" target=\"_blank\" rel=\"noopener noreferrer\">Web Search API</a></p>",
+              "text": "AWS now lets OpenAI's Codex send its model requests to Amazon Bedrock, and launched a Web Search API for agents on Bedrock AgentCore. Codex still runs locally; Sol, Terra and Luna are named as the models, with availability varying by account and region. The search API runs on Amazon's own index, returns up to 25 results per query, and filters by domain and date. Neither post states pricing or says whether it is preview or GA. Codex on Bedrock · Web Search API Verified against AWS's posts",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against AWS's posts</p>",
+              "updated": null,
+              "sources": [
+                "AWS"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Atuin Threads syncs and searches coding-agent sessions across machines, end-to-end encrypted, and can fork a session from one agent into another.</strong>",
+              "html": "<p><strong>Atuin Threads syncs and searches coding-agent sessions across machines, end-to-end encrypted, and can fork a session from one agent into another.</strong> It supports Claude Code, Codex, Pi, Omp and OpenCode, and <code>atuin mcp</code> lets agents search past sessions. Capture is opt-in; sync can be hosted, self-hosted or local. 226 points on Hacker News. <a href=\"https://blog.atuin.sh/threads-agent-sessions/\" target=\"_blank\" rel=\"noopener noreferrer\">Atuin</a></p>",
+              "text": "Atuin Threads syncs and searches coding-agent sessions across machines, end-to-end encrypted, and can fork a session from one agent into another. It supports Claude Code, Codex, Pi, Omp and OpenCode, and atuin mcp lets agents search past sessions. Capture is opt-in; sync can be hosted, self-hosted or local. 226 points on Hacker News. Atuin Single source",
+              "status": "single-source",
+              "status_html": "<p>Single source</p>",
+              "updated": null,
+              "sources": [
+                "blog.atuin.sh"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Google Chrome's team published Modern Web Guidance, Apache-2.0 skills covering about 250 web features, to stop coding agents writing dated JavaScript.</strong>",
+              "html": "<p><strong>Google Chrome's team published Modern Web Guidance, Apache-2.0 skills covering about 250 web features, to stop coding agents writing dated JavaScript.</strong> It ships plugin manifests for Claude, Codex, Cursor, Gemini and others, plus a CLI that scans a codebase for legacy patterns. 432 points on Hacker News. <a href=\"https://github.com/GoogleChrome/modern-web-guidance\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a></p>",
+              "text": "Google Chrome's team published Modern Web Guidance, Apache-2.0 skills covering about 250 web features, to stop coding agents writing dated JavaScript. It ships plugin manifests for Claude, Codex, Cursor, Gemini and others, plus a CLI that scans a codebase for legacy patterns. 432 points on Hacker News. GitHub Single source",
+              "status": "single-source",
+              "status_html": "<p>Single source</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Notion says Fireworks AI kept Notion AI chat transcripts despite a contractual zero-retention commitment, affecting under 1% of workspaces.</strong>",
+              "html": "<p><strong>Notion says Fireworks AI kept Notion AI chat transcripts despite a contractual zero-retention commitment, affecting under 1% of workspaces.</strong> Notion cut off Fireworks on 3 November, deleted the data there, disabled its Insights feature and halted training runs on data from its early-access programme. It advises anyone who pasted credentials into Notion AI to rotate them. 164 points on Hacker News. <a href=\"https://www.notion.com/help/security-incident-involving-a-third-party-ai-vendor\" target=\"_blank\" rel=\"noopener noreferrer\">Notion</a></p>",
+              "text": "Notion says Fireworks AI kept Notion AI chat transcripts despite a contractual zero-retention commitment, affecting under 1% of workspaces. Notion cut off Fireworks on 3 November, deleted the data there, disabled its Insights feature and halted training runs on data from its early-access programme. It advises anyone who pasted credentials into Notion AI to rotate them. 164 points on Hacker News. Notion Verified against Notion's notice",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Notion's notice</p>",
+              "updated": null,
+              "sources": [
+                "notion.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>United Airlines is barring &quot;unauthorized, third-party personal AI agents&quot; from booking flights.</strong>",
+              "html": "<p><strong>United Airlines is barring &quot;unauthorized, third-party personal AI agents&quot; from booking flights.</strong> It cites credential exposure, unintended purchases and federal check-in rules; an analyst quoted by CBS suggests it also keeps control of bookings. Southwest is going the other way, opening its inventory to ChatGPT. No effective date is given. 598 points on Hacker News. <a href=\"https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/\" target=\"_blank\" rel=\"noopener noreferrer\">CBS News</a></p>",
+              "text": "United Airlines is barring \"unauthorized, third-party personal AI agents\" from booking flights. It cites credential exposure, unintended purchases and federal check-in rules; an analyst quoted by CBS suggests it also keeps control of bookings. Southwest is going the other way, opening its inventory to ChatGPT. No effective date is given. 598 points on Hacker News. CBS News Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "cbsnews.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>A hobbyist's 48 AI agents spotted a Maya hilltop site in NASA lidar data, but it turned out to be already published.</strong>",
+              "html": "<p><strong>A hobbyist's 48 AI agents spotted a Maya hilltop site in NASA lidar data, but it turned out to be already published.</strong> Pietro Miotti's agents reviewed about 1,200 km² of lidar images and flagged a plaza and an 8–12 m pyramid. Mexico's INAH had no record of a site there, but a later update found it in a 2025 paper that the agents' literature review missed. 1,014 points on Hacker News. <a href=\"https://pietromiotti.com/latest/maya-site\" target=\"_blank\" rel=\"noopener noreferrer\">Miotti</a></p>",
+              "text": "A hobbyist's 48 AI agents spotted a Maya hilltop site in NASA lidar data, but it turned out to be already published. Pietro Miotti's agents reviewed about 1,200 km² of lidar images and flagged a plaza and an 8–12 m pyramid. Mexico's INAH had no record of a site there, but a later update found it in a 2025 paper that the agents' literature review missed. 1,014 points on Hacker News. Miotti Single source",
+              "status": "single-source",
+              "status_html": "<p>Single source</p>",
+              "updated": null,
+              "sources": [
+                "pietromiotti.com"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Research",
+          "category": "research",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://deepmind.google/blog/introducing-alphaproof-code/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepMind's AlphaProof Code formally verified the compiled code of Signal's cryptographic protocol in about four weeks</a></strong>",
+              "html": "<p><strong><a href=\"https://deepmind.google/blog/introducing-alphaproof-code/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepMind's AlphaProof Code formally verified the compiled code of Signal's cryptographic protocol in about four weeks</a></strong> — agents running on Gemini Carbon wrote over six million lines of Lean, and humans reviewed the specifications. DeepMind says such work historically takes expert teams years. When two previously fixed bugs were reintroduced, it produced machine-checked proofs that the buggy versions were insecure. Agents flagged about 1% of the code for a human to check. The verification artifacts are being open-sourced; the framework itself is not described as available. Covered by The Decoder and Ars Technica.</p>",
+              "text": "DeepMind's AlphaProof Code formally verified the compiled code of Signal's cryptographic protocol in about four weeks — agents running on Gemini Carbon wrote over six million lines of Lean, and humans reviewed the specifications. DeepMind says such work historically takes expert teams years. When two previously fixed bugs were reintroduced, it produced machine-checked proofs that the buggy versions were insecure. Agents flagged about 1% of the code for a human to check. The verification artifacts are being open-sourced; the framework itself is not described as available. Covered by The Decoder and Ars Technica. Single source · DeepMind's account",
+              "status": "single-source",
+              "status_html": "<p>Single source · DeepMind's account</p>",
+              "updated": null,
+              "sources": [
+                "Google DeepMind"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepMind's AlphaGenome 2 predicts how DNA is read in a single named cell type, rather than averaged across tissue</a></strong>",
+              "html": "<p><strong><a href=\"https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepMind's AlphaGenome 2 predicts how DNA is read in a single named cell type, rather than averaged across tissue</a></strong> — on the TenK10K immune-cell dataset it found causal variants in 30% of cases against 16% for the original model fine-tuned on single-cell data, and adds DNA methylation. It can be conditioned on a new dataset of a few dozen cells without retraining. It is available now through the AlphaGenome API for non-commercial research; commercial access is in private preview. Research use only, not validated for diagnosis.</p>",
+              "text": "DeepMind's AlphaGenome 2 predicts how DNA is read in a single named cell type, rather than averaged across tissue — on the TenK10K immune-cell dataset it found causal variants in 30% of cases against 16% for the original model fine-tuned on single-cell data, and adds DNA methylation. It can be conditioned on a new dataset of a few dozen cells without retraining. It is available now through the AlphaGenome API for non-commercial research; commercial access is in private preview. Research use only, not validated for diagnosis. Single source · DeepMind's figures",
+              "status": "single-source",
+              "status_html": "<p>Single source · DeepMind's figures</p>",
+              "updated": null,
+              "sources": [
+                "Google DeepMind"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepMind's Gemini Robotics 2.5 raised task success 30% to 100% over its predecessor across 200 tasks</a></strong>",
+              "html": "<p><strong><a href=\"https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepMind's Gemini Robotics 2.5 raised task success 30% to 100% over its predecessor across 200 tasks</a></strong> — for example, packing pastries with tongs went from 5% to 100%. It reached 96% on a car-parts kitting pilot with Apptronik and Mercedes-Benz, which DeepMind calls a proof of concept. It is rolling out to robotics partners only. DeepMind also released ASIMOV-Jailbreak, an open benchmark of disguised unsafe robot requests.</p>",
+              "text": "DeepMind's Gemini Robotics 2.5 raised task success 30% to 100% over its predecessor across 200 tasks — for example, packing pastries with tongs went from 5% to 100%. It reached 96% on a car-parts kitting pilot with Apptronik and Mercedes-Benz, which DeepMind calls a proof of concept. It is rolling out to robotics partners only. DeepMind also released ASIMOV-Jailbreak, an open benchmark of disguised unsafe robot requests. Single source · DeepMind's evaluations",
+              "status": "single-source",
+              "status_html": "<p>Single source · DeepMind's evaluations</p>",
+              "updated": null,
+              "sources": [
+                "Google DeepMind"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.anthropic.com/research/claude-electronics-design\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic had Fable 5.2 design a speakerphone, a voice-assistant hub and a handheld virtual pet, and Diode Computers built working prototypes from its files without circuit fixes</a></strong>",
+              "html": "<p><strong><a href=\"https://www.anthropic.com/research/claude-electronics-design\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic had Fable 5.2 design a speakerphone, a voice-assistant hub and a handheld virtual pet, and Diode Computers built working prototypes from its files without circuit fixes</a></strong> — human prompting was limited to short directives such as &quot;continue&quot;. On Anthropic's PCB Gym, Fable 5.2 scored 69% against 25% for Fable 5. The devices have had no electrical validation, thermal testing or certification, and Anthropic discloses a commercial relationship with Diode.</p>",
+              "text": "Anthropic had Fable 5.2 design a speakerphone, a voice-assistant hub and a handheld virtual pet, and Diode Computers built working prototypes from its files without circuit fixes — human prompting was limited to short directives such as \"continue\". On Anthropic's PCB Gym, Fable 5.2 scored 69% against 25% for Fable 5. The devices have had no electrical validation, thermal testing or certification, and Anthropic discloses a commercial relationship with Diode. Single source",
+              "status": "single-source",
+              "status_html": "<p>Single source</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Industry and policy",
+          "category": "industry",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Jensen Huang resigned as Nvidia's CEO, president and board member on 12 November, effective immediately.</strong>",
+              "html": "<p><strong>Jensen Huang resigned as Nvidia's CEO, president and board member on 12 November, effective immediately.</strong> CFO Colette Kress is interim CEO while the board searches internally and externally, and Harvey C. Jones becomes Nvidia's first board chair. Nvidia gives no reason. The Wall Street Journal had reported a day earlier that the board was preparing to oust him (1,164 points on Hacker News). The Decoder says Nvidia has lost about $1.4 trillion in market value since the New York Times report of 29 October, without saying how it measured that. <a href=\"https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition\" target=\"_blank\" rel=\"noopener noreferrer\">Nvidia</a> · <a href=\"https://the-decoder.com/jensen-huang-resigns-as-nvidia-ceo-after-espionage-scandal-wipes-out-1-4-trillion-in-market-value/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Jensen Huang resigned as Nvidia's CEO, president and board member on 12 November, effective immediately. CFO Colette Kress is interim CEO while the board searches internally and externally, and Harvey C. Jones becomes Nvidia's first board chair. Nvidia gives no reason. The Wall Street Journal had reported a day earlier that the board was preparing to oust him (1,164 points on Hacker News). The Decoder says Nvidia has lost about $1.4 trillion in market value since the New York Times report of 29 October, without saying how it measured that. Nvidia · The Decoder Verified for the resignation and appointments against Nvidia's newsroom · the market-value figure and the espionage allegations are Reported",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the resignation and appointments against Nvidia's newsroom · the market-value figure and the espionage allegations are Reported</p>",
+              "updated": null,
+              "sources": [
+                "nvidianews.nvidia.com",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic launched its IPO roadshow on 10 November, offering 825 million shares at $70 to $78 each on Nasdaq under ANT.</strong>",
+              "html": "<p><strong>Anthropic launched its IPO roadshow on 10 November, offering 825 million shares at $70 to $78 each on Nasdaq under ANT.</strong> Anthropic is selling 801,351,354 shares and existing holders the rest, with a 30-day option for 123,750,000 more; Goldman Sachs and Morgan Stanley supply the prospectus. Anthropic states no pricing date or valuation. In the roadshow video, as transcribed by Simon Willison, co-founder Tom Brown says Mythos got Claude running on AMD GPUs in about three days, porting or writing &quot;almost 100%&quot; of the kernels, where a new chip used to take dozens of engineers months. <a href=\"https://www.anthropic.com/news/roadshow-launch\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · <a href=\"https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison</a></p>",
+              "text": "Anthropic launched its IPO roadshow on 10 November, offering 825 million shares at $70 to $78 each on Nasdaq under ANT. Anthropic is selling 801,351,354 shares and existing holders the rest, with a 30-day option for 123,750,000 more; Goldman Sachs and Morgan Stanley supply the prospectus. Anthropic states no pricing date or valuation. In the roadshow video, as transcribed by Simon Willison, co-founder Tom Brown says Mythos got Claude running on AMD GPUs in about three days, porting or writing \"almost 100%\" of the kernels, where a new chip used to take dozens of engineers months. Anthropic · Simon Willison Verified for the offering terms against Anthropic · the AMD claim is Anthropic's, unverified",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the offering terms against Anthropic · the AMD claim is Anthropic's, unverified</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic",
+                "Simon Willison"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI's quarterly revenue reportedly topped $10 billion for the first time in Q3, up about 50% from $6.7 billion in Q2.</strong>",
+              "html": "<p><strong>OpenAI's quarterly revenue reportedly topped $10 billion for the first time in Q3, up about 50% from $6.7 billion in Q2.</strong> Bloomberg's anonymous sources put the annual run rate near $50 billion and the adjusted operating margin at -109%, according to TechCrunch. Anthropic reported $17 billion for the same quarter, though the two count annualised revenue differently. <a href=\"https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "OpenAI's quarterly revenue reportedly topped $10 billion for the first time in Q3, up about 50% from $6.7 billion in Q2. Bloomberg's anonymous sources put the annual run rate near $50 billion and the adjusted operating margin at -109%, according to TechCrunch. Anthropic reported $17 billion for the same quarter, though the two count annualised revenue differently. TechCrunch Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>New York's RAISE Act portal opened on 10 November, and frontier developers with over $500 million in revenue must register by 1 January 2027.</strong>",
+              "html": "<p><strong>New York's RAISE Act portal opened on 10 November, and frontier developers with over $500 million in revenue must register by 1 January 2027.</strong> They must publish safety frameworks, report critical incidents within 72 hours and issue transparency reports, with fines of up to $1 million per violation and $3 million for repeats. Australia separately proposed a law requiring independent audits of frontier models, with details to follow consultation. <a href=\"https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · <a href=\"https://the-decoder.com/australias-proposed-ai-safety-bill-would-force-frontier-model-makers-to-open-up-to-independent-testing/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "New York's RAISE Act portal opened on 10 November, and frontier developers with over $500 million in revenue must register by 1 January 2027. They must publish safety frameworks, report critical incidents within 72 hours and issue transparency reports, with fines of up to $1 million per violation and $3 million for repeats. Australia separately proposed a law requiring independent audits of frontier models, with details to follow consultation. TechCrunch · The Decoder Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch",
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>A ChinaTalk investigation says US data vendors, including Mercor, Surge AI, AfterQuery and Turing, have sold about half a billion dollars of reinforcement-learning training environments to Chinese AI labs.</strong>",
+              "html": "<p><strong>A ChinaTalk investigation says US data vendors, including Mercor, Surge AI, AfterQuery and Turing, have sold about half a billion dollars of reinforcement-learning training environments to Chinese AI labs.</strong> According to The Decoder, the sales run through offshore structures and are largely outside export controls; ChinaTalk could not independently verify them and names no buying lab. The authors want dual-use coding and biology environments brought under existing controls. <a href=\"https://the-decoder.com/us-data-brokers-are-selling-half-a-billion-dollars-in-rl-training-environments-to-chinese-ai-labs/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "A ChinaTalk investigation says US data vendors, including Mercor, Surge AI, AfterQuery and Turing, have sold about half a billion dollars of reinforcement-learning training environments to Chinese AI labs. According to The Decoder, the sales run through offshore structures and are largely outside export controls; ChinaTalk could not independently verify them and names no buying lab. The authors want dual-use coding and biology environments brought under existing controls. The Decoder Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Worth reading",
+          "category": "reading",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://www.vulncheck.com/blog/anthropic-glasswing-november-update\" target=\"_blank\" rel=\"noopener noreferrer\">Tracking Anthropic-discovered vulnerabilities</a></strong>",
+              "html": "<p><strong><a href=\"https://www.vulncheck.com/blog/anthropic-glasswing-november-update\" target=\"_blank\" rel=\"noopener noreferrer\">Tracking Anthropic-discovered vulnerabilities</a></strong> by Patrick Garrity of VulnCheck: seven months into Project Glasswing, he counts 442 CVEs attributable to Anthropic, but only 217 of 37,966 findings on Anthropic's own ledger are marked fixed. Claude rated 91.5% of September's findings critical or high, against 51.3% from maintainers, and 19 of 34 published curl reports were not vulnerabilities. A data-backed counterweight to the launch narrative. 456 points on Hacker News.</p>",
+              "text": "Tracking Anthropic-discovered vulnerabilities by Patrick Garrity of VulnCheck: seven months into Project Glasswing, he counts 442 CVEs attributable to Anthropic, but only 217 of 37,966 findings on Anthropic's own ledger are marked fixed. Claude rated 91.5% of September's findings critical or high, against 51.3% from maintainers, and 19 of 34 published curl reports were not vulnerabilities. A data-backed counterweight to the launch narrative. 456 points on Hacker News.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "vulncheck.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.oneusefulthing.org/p/fable-52-and-jagged-agi\" target=\"_blank\" rel=\"noopener noreferrer\">Fable 5.2 and Jagged AGI</a></strong>",
+              "html": "<p><strong><a href=\"https://www.oneusefulthing.org/p/fable-52-and-jagged-agi\" target=\"_blank\" rel=\"noopener noreferrer\">Fable 5.2 and Jagged AGI</a></strong> by Ethan Mollick: a week of long projects, from a 182-page economics paper to 450 procedurally drawn 3D worlds, each with its failures listed. Mollick steered every project and receives early model access.</p>",
+              "text": "Fable 5.2 and Jagged AGI by Ethan Mollick: a week of long projects, from a 182-page economics paper to 450 procedurally drawn 3D worlds, each with its failures listed. Mollick steered every project and receives early model access.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "oneusefulthing.org"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/\" target=\"_blank\" rel=\"noopener noreferrer\">AI usage generates a fragile codebase</a></strong>",
+              "html": "<p><strong><a href=\"https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/\" target=\"_blank\" rel=\"noopener noreferrer\">AI usage generates a fragile codebase</a></strong> by Evan X. Merz: an anecdotal case that AI-written code and tests look complete but miss real user paths, and that reviewers skim. 637 points and 617 comments on Hacker News.</p>",
+              "text": "AI usage generates a fragile codebase by Evan X. Merz: an anecdotal case that AI-written code and tests look complete but miss real user paths, and that reviewers skim. 637 points and 617 comments on Hacker News.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "evanxmerz.com"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Unverified, and worth watching",
+          "category": "unverified",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "Ars Technica&#x27;s headline says TSMC will invest $1 billion in Anthropic and OpenAI.",
+              "html": "<p>Ars Technica's headline says TSMC will invest $1 billion in Anthropic and OpenAI. Ars blocks automated reads, and two searches found no other report, so the terms are unknown.</p>",
+              "text": "Ars Technica's headline says TSMC will invest $1 billion in Anthropic and OpenAI. Ars blocks automated reads, and two searches found no other report, so the terms are unknown. Unconfirmed",
+              "status": "unconfirmed",
+              "status_html": "<p><strong>Unconfirmed</strong></p>",
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "9to5Mac reports, from leaker Aaron Perris, that Apple is building Harbor, a Mac app under its Claris brand that runs open-weight models locally and pools mem…",
+              "html": "<p>9to5Mac reports, from leaker Aaron Perris, that Apple is building Harbor, a Mac app under its Claris brand that runs open-weight models locally and pools memory across Macs over Thunderbolt 5. Apple has announced nothing. 540 points on Hacker News. <a href=\"https://9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy/\" target=\"_blank\" rel=\"noopener noreferrer\">9to5Mac</a></p>",
+              "text": "9to5Mac reports, from leaker Aaron Perris, that Apple is building Harbor, a Mac app under its Claris brand that runs open-weight models locally and pools memory across Macs over Thunderbolt 5. Apple has announced nothing. 540 points on Hacker News. 9to5Mac Unconfirmed",
+              "status": "unconfirmed",
+              "status_html": "<p><strong>Unconfirmed</strong></p>",
+              "updated": null,
+              "sources": [
+                "9to5mac.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "A GitHub write-up claims consumer Gemini pulls Drive files and Gmail into chats without being asked, and that this content can reach human reviewers.",
+              "html": "<p>A GitHub write-up claims consumer Gemini pulls Drive files and Gmail into chats without being asked, and that this content can reach human reviewers. It cites an October edit to Google's 2023 privacy post, which was not read here; the tests are the author's own and admittedly inconsistent. 737 points on Hacker News. <a href=\"https://github.com/thisisme6598/gemini_files/\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a></p>",
+              "text": "A GitHub write-up claims consumer Gemini pulls Drive files and Gmail into chats without being asked, and that this content can reach human reviewers. It cites an October edit to Google's 2023 privacy post, which was not read here; the tests are the author's own and admittedly inconsistent. 737 points on Hacker News. GitHub Unconfirmed",
+              "status": "unconfirmed",
+              "status_html": "<p><strong>Unconfirmed</strong></p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Coverage check",
+          "category": "coverage",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Sources read:</strong> 25 of 25 returned items; failed: none at collection.",
+              "html": "<p><strong>Sources read:</strong> 25 of 25 returned items; <strong>failed:</strong> none at collection. Ars Technica, The Verge and OpenAI's own pages refused automated reads. Their stories were covered through other outlets where possible: the secrets leak through CSA, the Verge's Business Agents story through OpenAI's forum post, and the Huang stories through Nvidia and The Decoder. <strong>Pages read:</strong> Anthropic news (Fable 5.2 on 9 November and the roadshow on 10 November, both covered), Anthropic research (the electronics-design post, covered; the 6 November posts were covered last entry), the Claude Platform release notes (9 November, covered), the OpenAI API changelog (nothing newer than 5 November), the Gemini API changelog (Decision 1 and Carbon GA, covered; still no confirmation of the Deep Research shutdown), Meta AI research (Muse Ember, covered) and The Batch (newest issue still 6 November).</p>",
+              "text": "Sources read: 25 of 25 returned items; failed: none at collection. Ars Technica, The Verge and OpenAI's own pages refused automated reads. Their stories were covered through other outlets where possible: the secrets leak through CSA, the Verge's Business Agents story through OpenAI's forum post, and the Huang stories through Nvidia and The Decoder. Pages read: Anthropic news (Fable 5.2 on 9 November and the roadshow on 10 November, both covered), Anthropic research (the electronics-design post, covered; the 6 November posts were covered last entry), the Claude Platform release notes (9 November, covered), the OpenAI API changelog (nothing newer than 5 November), the Gemini API changelog (Decision 1 and Carbon GA, covered; still no confirmation of the Deep Research shutdown), Meta AI research (Muse Ember, covered) and The Batch (newest issue still 6 November).",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Cross-source stories set aside:</strong> openai, chatgpt and marketplace also include customer stories with no mechanism (Singapore Airlines, CodeRabbit, Kuken and others), ChatG…",
+              "html": "<p><strong>Cross-source stories set aside:</strong> <code>openai</code>, <code>chatgpt</code> and <code>marketplace</code> also include customer stories with no mechanism (Singapore Airlines, CodeRabbit, Kuken and others), ChatGPT Enterprise in AWS Marketplace, ChatGPT Plus for veterans, education and caregiver posts, and OpenAI's Control Room post, which was unreadable. <code>google</code> and <code>tabletop</code> include Google Labs' Tabletop, which has a waitlist, the Adobe tie-up and Gemini for healthcare, all marketing without numbers. <code>amazon</code> and <code>ai-native</code> are AWS how-tos and customer posts, Ring's security drone, and Oura's $625 million purchase of Counsel Health. <code>coreweave</code> is credit stress on CoreWeave, reported by CNBC and TechCrunch and not read. <code>robotics</code> and <code>agentic</code> include the LEASH paper and the BotPsy on-device model, neither read. <code>openai-compatible</code> and <code>javascript</code> are Simon Willison tool releases and the Chrome skills covered above. <code>jev</code> is a Latent Space essay on decision models. <code>mercor</code> is a Mercor funding round in AINews and the ChinaTalk story above. <code>chinese</code>, <code>wednesday</code> and <code>u.s</code> are the Huang story. <code>october</code> is The Decoder's US corporate AI spending figures and an AWS roundup, not read. Also not read: Congress calling Huang to testify and the Anthropic founders' IPO payouts (TechCrunch headlines only), Grok Build leaking confidential data (Ars, blocked), the Big Walk indie-game controversy, ElevenLabs Scribe v3 Live, Helsing's targeting system, Fractile's $720 million round, OpenAI's purchase of Odessia, and Kimi K3.1 Pro on Bedrock (its weights were covered on 6 November).</p>",
+              "text": "Cross-source stories set aside: openai , chatgpt and marketplace also include customer stories with no mechanism (Singapore Airlines, CodeRabbit, Kuken and others), ChatGPT Enterprise in AWS Marketplace, ChatGPT Plus for veterans, education and caregiver posts, and OpenAI's Control Room post, which was unreadable. google and tabletop include Google Labs' Tabletop, which has a waitlist, the Adobe tie-up and Gemini for healthcare, all marketing without numbers. amazon and ai-native are AWS how-tos and customer posts, Ring's security drone, and Oura's $625 million purchase of Counsel Health. coreweave is credit stress on CoreWeave, reported by CNBC and TechCrunch and not read. robotics and agentic include the LEASH paper and the BotPsy on-device model, neither read. openai-compatible and javascript are Simon Willison tool releases and the Chrome skills covered above. jev is a Latent Space essay on decision models. mercor is a Mercor funding round in AINews and the ChinaTalk story above. chinese , wednesday and u.s are the Huang story. october is The Decoder's US corporate AI spending figures and an AWS roundup, not read. Also not read: Congress calling Huang to testify and the Anthropic founders' IPO payouts (TechCrunch headlines only), Grok Build leaking confidential data (Ars, blocked), the Big Walk indie-game controversy, ElevenLabs Scribe v3 Live, Helsing's targeting system, Fractile's $720 million round, OpenAI's purchase of Odessia, and Kimi K3.1 Pro on Bedrock (its weights were covered on 6 November).",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "The window ran 2026-11-09 to 2026-11-12.",
+              "html": "<p>The window ran 2026-11-09 to 2026-11-12.</p>",
+              "text": "The window ran 2026-11-09 to 2026-11-12.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-11-09",
       "title": "AI web digest",
@@ -3940,16 +4444,29 @@
       "items": [
         {
           "headline": "<strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong>",
-          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.\nStill not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election. As of 9 November, after the 3 November election, the news page still has nothing newer than 28 October, so there is no confirmation that either feature shipped.</p>",
-          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Still not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election. As of 9 November, after the 3 November election, the news page still has nothing newer than 28 October, so there is no confirmation that either feature shipped. Verified as announced, against Anthropic · 2026-10-14, rechecked 2026-11-09",
+          "html": "<p><strong>Claude election features: official voting information &quot;later this month&quot;, results on election night.</strong> Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October.\nStill not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election. As of 12 November, after the 3 November election, the news page has added only Fable 5.2 and the IPO roadshow, so there is no confirmation that either feature shipped.</p>",
+          "text": "Claude election features: official voting information \"later this month\", results on election night. Claude will draw state-specific polling locations and ID requirements from Democracy Works, and show results on election night and the days after. Not live as of 14 October. Still not live as of 24 October, with a week left on the promise. As of 30 October, Anthropic's news page has added only the S-1 filing, the GSA agreement, drug-development research and the AI for Science expansion, none about the election. As of 12 November, after the 3 November election, the news page has added only Fable 5.2 and the IPO roadshow, so there is no confirmation that either feature shipped. Verified as announced, against Anthropic · 2026-10-14, rechecked 2026-11-12",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14, rechecked 2026-11-09</p>",
-          "updated": "2026-11-09",
+          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://www.anthropic.com/news/2026-us-midterms\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-14, rechecked 2026-11-12</p>",
+          "updated": "2026-11-12",
           "sources": [
             "Anthropic"
           ],
           "due": "2026-10-31",
           "due_label": "\"later this month\""
+        },
+        {
+          "headline": "<strong>Claude Whiteboards and Claude Sheets: beta on all paid plans; Claude Data's certified queries and live sharing also beta.</strong>",
+          "html": "<p><strong>Claude Whiteboards and Claude Sheets: beta on all paid plans; Claude Data's certified queries and live sharing also beta.</strong> Claude Data itself is GA. On Enterprise plans Whiteboards and Sheets are off by default, and Claude Data turns on by default on 19 November.</p>",
+          "text": "Claude Whiteboards and Claude Sheets: beta on all paid plans; Claude Data's certified queries and live sharing also beta. Claude Data itself is GA. On Enterprise plans Whiteboards and Sheets are off by default, and Claude Data turns on by default on 19 November. Verified against Anthropic · 2026-11-12",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://claude.com/resources/articles/sheets-whiteboards-data\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-11-12</p>",
+          "updated": "2026-11-12",
+          "sources": [
+            "Anthropic"
+          ],
+          "due": "2026-11-19",
+          "due_label": "Claude Data on by default for Enterprise"
         },
         {
           "headline": "<strong>GPT-6 Cyber: a select group of Daybreak Red customers, in the API and Codex.</strong>",
@@ -4018,15 +4535,67 @@
           "due_label": null
         },
         {
-          "headline": "<strong>Gemini 4 Carbon: selected cyber defenders only.</strong>",
-          "html": "<p><strong>Gemini 4 Carbon: selected cyber defenders only.</strong> Google is starting &quot;this week&quot; with a subset of cyber defenders, then more trusted partners through its Fairwind Program, then developers, businesses and consumers &quot;as soon as possible&quot;, with no date. Quoted introductory price $2 per million input tokens and $10 output, rising to $4 and $20; Google names no end date for the introductory price, and The Decoder says the discount runs through the end of 2026. No model ID is published.</p>",
-          "text": "Gemini 4 Carbon: selected cyber defenders only. Google is starting \"this week\" with a subset of cyber defenders, then more trusted partners through its Fairwind Program, then developers, businesses and consumers \"as soon as possible\", with no date. Quoted introductory price $2 per million input tokens and $10 output, rising to $4 and $20; Google names no end date for the introductory price, and The Decoder says the discount runs through the end of 2026. No model ID is published. Verified as announced, against Google · the end date of the discount Reported, The Decoder · 2026-10-30",
+          "headline": "<strong>Claude Mythos 5.2: verified organisations only.</strong>",
+          "html": "<p><strong>Claude Mythos 5.2: verified organisations only.</strong> <code>claude-mythos-5-2</code> goes to members of Anthropic's Cyber Verification and Life Sciences Verification programmes; Claude Enterprise customers can use it through Claude Security without joining. Mythos fast mode is limited to the same organisations. No plan for wider access is stated.</p>",
+          "text": "Claude Mythos 5.2: verified organisations only. claude-mythos-5-2 goes to members of Anthropic's Cyber Verification and Life Sciences Verification programmes; Claude Enterprise customers can use it through Claude Security without joining. Mythos fast mode is limited to the same organisations. No plan for wider access is stated. Verified against Anthropic and the Claude Platform release notes · 2026-11-12",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> as announced, against <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · the end date of the discount Reported, <a href=\"https://the-decoder.com/google-deepmind-releases-gemini-4-carbon-just-two-weeks-after-argon-with-gains-across-the-board/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-10-30</p>",
-          "updated": "2026-10-30",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://www.anthropic.com/claude-fable-and-mythos-5-2\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> and the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-11-12</p>",
+          "updated": "2026-11-12",
+          "sources": [
+            "Anthropic"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Gemini Decision 1 (<code>gemini-decision-1</code>): in the Gemini API through AI Studio; Google Cloud &quot;coming soon&quot;.</strong>",
+          "html": "<p><strong>Gemini Decision 1 (<code>gemini-decision-1</code>): in the Gemini API through AI Studio; Google Cloud &quot;coming soon&quot;.</strong> Google doesn't say whether the API is a preview or GA. Third-party integrations (OpenRouter, LangChain, Vercel, LiteLLM) are &quot;rolling out&quot;.</p>",
+          "text": "Gemini Decision 1 ( gemini-decision-1 ): in the Gemini API through AI Studio; Google Cloud \"coming soon\". Google doesn't say whether the API is a preview or GA. Third-party integrations (OpenRouter, LangChain, Vercel, LiteLLM) are \"rolling out\". Verified against Google and the Gemini API changelog · 2026-11-12",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> and the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · 2026-11-12</p>",
+          "updated": "2026-11-12",
           "sources": [
             "Google",
-            "The Decoder"
+            "aistudio.google.com"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Gemini Robotics 2.5: rolling out to Google DeepMind's robotics partners only.</strong>",
+          "html": "<p><strong>Gemini Robotics 2.5: rolling out to Google DeepMind's robotics partners only.</strong> No public or developer access is announced.</p>",
+          "text": "Gemini Robotics 2.5: rolling out to Google DeepMind's robotics partners only. No public or developer access is announced. Verified against Google DeepMind · 2026-11-12",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/\" target=\"_blank\" rel=\"noopener noreferrer\">Google DeepMind</a> · 2026-11-12</p>",
+          "updated": "2026-11-12",
+          "sources": [
+            "Google DeepMind"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>AlphaGenome 2: non-commercial research through the AlphaGenome API; commercial access in private preview.</strong>",
+          "html": "<p><strong>AlphaGenome 2: non-commercial research through the AlphaGenome API; commercial access in private preview.</strong> AlphaGenome 2 Skills for Google Antigravity are planned, with no date.</p>",
+          "text": "AlphaGenome 2: non-commercial research through the AlphaGenome API; commercial access in private preview. AlphaGenome 2 Skills for Google Antigravity are planned, with no date. Verified against Google DeepMind · 2026-11-12",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/\" target=\"_blank\" rel=\"noopener noreferrer\">Google DeepMind</a> · 2026-11-12</p>",
+          "updated": "2026-11-12",
+          "sources": [
+            "Google DeepMind"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Businesses in ChatGPT: beta since 10 November.</strong>",
+          "html": "<p><strong>Businesses in ChatGPT: beta since 10 November.</strong> Business Agents are for eligible US ecommerce and online-service businesses; claiming a listing is open wherever ChatGPT is available. No GA date.</p>",
+          "text": "Businesses in ChatGPT: beta since 10 November. Business Agents are for eligible US ecommerce and online-service businesses; claiming a listing is open wherever ChatGPT is available. No GA date. Reported, OpenAI developer forum · OpenAI's own post refused automated reads · 2026-11-12",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://community.openai.com/t/introducing-businesses-in-chatgpt-in-beta/1414865\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI developer forum</a> · OpenAI's own post refused automated reads · 2026-11-12</p>",
+          "updated": "2026-11-12",
+          "sources": [
+            "OpenAI"
           ],
           "due": null,
           "due_label": null
@@ -4289,12 +4858,12 @@
       "lead_html": null,
       "items": [
         {
-          "headline": "<strong>Anthropic IPO: S-1 filed 26 October for a Nasdaq listing under ANT; no price range, raise size or date yet.</strong>",
-          "html": "<p><strong>Anthropic IPO: S-1 filed 26 October for a Nasdaq listing under ANT; no price range, raise size or date yet.</strong> Goldman Sachs and Morgan Stanley lead, per The Decoder. Latent Space's AINews had cited a listing around 9 November; that did not happen.\nOn 6 November The Decoder, citing Reuters and the WSJ, reported investors pushing back on the $1.5 trillion valuation (one floated $1 trillion), doubts that the roadshow can start &quot;next week as scheduled&quot;, a raise of up to $100 billion, and October revenue missing from the updated S-1. On 7 November The Decoder, citing the FT, said Anthropic is pushing ahead to list &quot;before Thanksgiving&quot; at a range of $1.25 trillion to $1.75 trillion, raising $80 billion to $100 billion; a Bloomberg headline of 6 November put buyers' floor as low as $1.1 trillion. Anthropic's news page has nothing new since the S-1.</p>",
-          "text": "Anthropic IPO: S-1 filed 26 October for a Nasdaq listing under ANT; no price range, raise size or date yet. Goldman Sachs and Morgan Stanley lead, per The Decoder. Latent Space's AINews had cited a listing around 9 November; that did not happen. On 6 November The Decoder, citing Reuters and the WSJ, reported investors pushing back on the $1.5 trillion valuation (one floated $1 trillion), doubts that the roadshow can start \"next week as scheduled\", a raise of up to $100 billion, and October revenue missing from the updated S-1. On 7 November The Decoder, citing the FT, said Anthropic is pushing ahead to list \"before Thanksgiving\" at a range of $1.25 trillion to $1.75 trillion, raising $80 billion to $100 billion; a Bloomberg headline of 6 November put buyers' floor as low as $1.1 trillion. Anthropic's news page has nothing new since the S-1. Verified that the S-1 was filed, against Anthropic · timing and valuation Reported, The Decoder relaying the FT · 2026-11-09",
+          "headline": "<strong>Anthropic IPO: roadshow launched 10 November, 825 million Class A shares at $70 to $78 on Nasdaq under ANT; no pricing date stated.</strong>",
+          "html": "<p><strong>Anthropic IPO: roadshow launched 10 November, 825 million Class A shares at $70 to $78 on Nasdaq under ANT; no pricing date stated.</strong> Anthropic sells 801,351,354 shares and existing holders 23,648,646, with a 30-day underwriters' option for 123,750,000 more; Goldman Sachs and Morgan Stanley supply the prospectus. S-1 filed 26 October. Latent Space's AINews had cited a listing around 9 November; that did not happen.\nOn 6 November The Decoder, citing Reuters and the WSJ, reported investors pushing back on the $1.5 trillion valuation (one floated $1 trillion), doubts that the roadshow can start &quot;next week as scheduled&quot;, a raise of up to $100 billion, and October revenue missing from the updated S-1. On 7 November The Decoder, citing the FT, said Anthropic is pushing ahead to list &quot;before Thanksgiving&quot; at a range of $1.25 trillion to $1.75 trillion, raising $80 billion to $100 billion; a Bloomberg headline of 6 November put buyers' floor as low as $1.1 trillion. Anthropic states no valuation.</p>",
+          "text": "Anthropic IPO: roadshow launched 10 November, 825 million Class A shares at $70 to $78 on Nasdaq under ANT; no pricing date stated. Anthropic sells 801,351,354 shares and existing holders 23,648,646, with a 30-day underwriters' option for 123,750,000 more; Goldman Sachs and Morgan Stanley supply the prospectus. S-1 filed 26 October. Latent Space's AINews had cited a listing around 9 November; that did not happen. On 6 November The Decoder, citing Reuters and the WSJ, reported investors pushing back on the $1.5 trillion valuation (one floated $1 trillion), doubts that the roadshow can start \"next week as scheduled\", a raise of up to $100 billion, and October revenue missing from the updated S-1. On 7 November The Decoder, citing the FT, said Anthropic is pushing ahead to list \"before Thanksgiving\" at a range of $1.25 trillion to $1.75 trillion, raising $80 billion to $100 billion; a Bloomberg headline of 6 November put buyers' floor as low as $1.1 trillion. Anthropic states no valuation. Verified for the offering terms against Anthropic · timing and valuation Reported, The Decoder relaying the FT · 2026-11-12",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> that the S-1 was filed, against <a href=\"https://www.anthropic.com/news\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · timing and valuation Reported, <a href=\"https://the-decoder.com/anthropic-pushes-ahead-with-pre-thanksgiving-ipo-despite-tech-selloff-accepts-lower-valuation/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> relaying the FT · 2026-11-09</p>",
-          "updated": "2026-11-09",
+          "status_html": "<p><strong>Verified</strong> for the offering terms against <a href=\"https://www.anthropic.com/news/roadshow-launch\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · timing and valuation Reported, <a href=\"https://the-decoder.com/anthropic-pushes-ahead-with-pre-thanksgiving-ipo-despite-tech-selloff-accepts-lower-valuation/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> relaying the FT · 2026-11-12</p>",
+          "updated": "2026-11-12",
           "sources": [
             "Anthropic",
             "The Decoder"
@@ -4350,29 +4919,16 @@
       "items": [
         {
           "headline": "<strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong>",
-          "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.\nThe shutdown date has passed. As of 9 November the changelog's newest entry is dated 6 November, and it still does not confirm that the shutdown happened. Delete this entry once it does.</p>",
-          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . The shutdown date has passed. As of 9 November the changelog's newest entry is dated 6 November, and it still does not confirm that the shutdown happened. Delete this entry once it does. Verified that the deprecation was announced, against the Gemini API changelog · shutdown not confirmed · 2026-10-11, rechecked 2026-11-09",
+          "html": "<p><strong>Gemini Deep Research agent <code>deep-research-pro-preview-12-2025</code> shuts down 23 October 2026.</strong> Migrate to <code>deep-research-preview-04-2026</code> or <code>deep-research-max-preview-04-2026</code>.\nThe shutdown date has passed. As of 12 November the changelog's newest entry is dated 11 November, and it still does not confirm that the shutdown happened. Delete this entry once it does.</p>",
+          "text": "Gemini Deep Research agent deep-research-pro-preview-12-2025 shuts down 23 October 2026. Migrate to deep-research-preview-04-2026 or deep-research-max-preview-04-2026 . The shutdown date has passed. As of 12 November the changelog's newest entry is dated 11 November, and it still does not confirm that the shutdown happened. Delete this entry once it does. Verified that the deprecation was announced, against the Gemini API changelog · shutdown not confirmed · 2026-10-11, rechecked 2026-11-12",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> that the deprecation was announced, against the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · shutdown not confirmed · 2026-10-11, rechecked 2026-11-09</p>",
-          "updated": "2026-11-09",
+          "status_html": "<p><strong>Verified</strong> that the deprecation was announced, against the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · shutdown not confirmed · 2026-10-11, rechecked 2026-11-12</p>",
+          "updated": "2026-11-12",
           "sources": [
             "aistudio.google.com"
           ],
           "due": "2026-10-23",
           "due_label": "shuts down"
-        },
-        {
-          "headline": "<strong>Anthropic Usage Policy update takes effect 12 November 2026.</strong>",
-          "html": "<p><strong>Anthropic Usage Policy update takes effect 12 November 2026.</strong> It includes the new rule on &quot;sustained and needless abusive or cruel behavior&quot; toward Claude, enforced mainly by Claude ending conversations.</p>",
-          "text": "Anthropic Usage Policy update takes effect 12 November 2026. It includes the new rule on \"sustained and needless abusive or cruel behavior\" toward Claude, enforced mainly by Claude ending conversations. Verified against Anthropic · 2026-10-08",
-          "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against <a href=\"https://www.anthropic.com/news/2026-usage-policy-update\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a> · 2026-10-08</p>",
-          "updated": "2026-10-08",
-          "sources": [
-            "Anthropic"
-          ],
-          "due": "2026-11-12",
-          "due_label": "takes effect"
         },
         {
           "headline": "<strong>PostgreSQL 19 slips to about 19 November 2026, with 8 to 10 features reverted to PostgreSQL 20.</strong>",
@@ -4403,14 +4959,15 @@
           "due_label": "\"by the end of November or perhaps early December 2026\""
         },
         {
-          "headline": "<strong>Gemini 4 Argon introductory pricing ends 30 November 2026.</strong>",
-          "html": "<p><strong>Gemini 4 Argon introductory pricing ends 30 November 2026.</strong> $2 per million input tokens and $10 per million output now; $4 and $20 after. Cached input keeps its 95% discount.</p>",
-          "text": "Gemini 4 Argon introductory pricing ends 30 November 2026. $2 per million input tokens and $10 per million output now; $4 and $20 after. Cached input keeps its 95% discount. Verified against Google · 2026-10-14",
+          "headline": "<strong>Gemini 4 Argon and Gemini 4 Carbon introductory pricing ends 30 November 2026.</strong>",
+          "html": "<p><strong>Gemini 4 Argon and Gemini 4 Carbon introductory pricing ends 30 November 2026.</strong> Both are $2 per million input tokens and $10 per million output now; $4 and $20 after. Argon's cached input keeps its 95% discount. Carbon became generally available on 10 November.</p>",
+          "text": "Gemini 4 Argon and Gemini 4 Carbon introductory pricing ends 30 November 2026. Both are $2 per million input tokens and $10 per million output now; $4 and $20 after. Argon's cached input keeps its 95% discount. Carbon became generally available on 10 November. Verified against Google for Argon and Carbon , and the Gemini API changelog · 2026-11-12",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · 2026-10-14</p>",
-          "updated": "2026-10-14",
+          "status_html": "<p><strong>Verified</strong> against Google for <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\" target=\"_blank\" rel=\"noopener noreferrer\">Argon</a> and <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/\" target=\"_blank\" rel=\"noopener noreferrer\">Carbon</a>, and the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · 2026-11-12</p>",
+          "updated": "2026-11-12",
           "sources": [
-            "Google"
+            "Google",
+            "aistudio.google.com"
           ],
           "due": "2026-11-30",
           "due_label": "introductory pricing ends"
@@ -4482,12 +5039,38 @@
           "due_label": "closes"
         },
         {
+          "headline": "<strong>New York RAISE Act: frontier developers with over $500 million in revenue must register through the state portal by 1 January 2027.</strong>",
+          "html": "<p><strong>New York RAISE Act: frontier developers with over $500 million in revenue must register through the state portal by 1 January 2027.</strong> The portal opened 10 November. Covered developers must publish safety frameworks, report critical incidents within 72 hours and issue transparency reports; fines are up to $1 million per violation and $3 million for repeats.</p>",
+          "text": "New York RAISE Act: frontier developers with over $500 million in revenue must register through the state portal by 1 January 2027. The portal opened 10 November. Covered developers must publish safety frameworks, report critical incidents within 72 hours and issue transparency reports; fines are up to $1 million per violation and $3 million for repeats. Reported, TechCrunch · the statute was not read · 2026-11-12",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · the statute was not read · 2026-11-12</p>",
+          "updated": "2026-11-12",
+          "sources": [
+            "TechCrunch"
+          ],
+          "due": "2027-01-01",
+          "due_label": "registration deadline"
+        },
+        {
           "headline": "<strong>China's draft export controls on 23 AI technologies: no effective date.</strong>",
           "html": "<p><strong>China's draft export controls on 23 AI technologies: no effective date.</strong> Thresholds would be 2 trillion parameters, 10^26 FLOPs of training compute, or a global top-ten ranking, plus models trained on sensitive Chinese data; malware-writing tools banned outright, vulnerability-finding tools limited. Open-weight releases, papers, APIs, apps and SaaS are exempt, with open-weight models getting automatic licensing on registration. Affected exports register through the commerce ministry's portal until final rules take effect.</p>",
           "text": "China's draft export controls on 23 AI technologies: no effective date. Thresholds would be 2 trillion parameters, 10^26 FLOPs of training compute, or a global top-ten ranking, plus models trained on sensitive Chinese data; malware-writing tools banned outright, vulnerability-finding tools limited. Open-weight releases, papers, APIs, apps and SaaS are exempt, with open-weight models getting automatic licensing on registration. Affected exports register through the commerce ministry's portal until final rules take effect. Reported, The Decoder · a draft; the text was not read and no comment-period deadline is named · 2026-10-17",
           "status": "reported",
           "status_html": "<p>Reported, <a href=\"https://the-decoder.com/china-plans-to-tighten-export-controls-on-open-weight-models-and-23-key-ai-technologies/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · a draft; the text was not read and no comment-period deadline is named · 2026-10-17</p>",
           "updated": "2026-10-17",
+          "sources": [
+            "The Decoder"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Australia's proposed frontier AI law: no bill or date yet.</strong>",
+          "html": "<p><strong>Australia's proposed frontier AI law: no bill or date yet.</strong> It would require independent audits, ongoing safety checks, published safety frameworks and immediate incident reports, enforced by a new body alongside the Australian AI Safety Institute. Details are to follow consultation.</p>",
+          "text": "Australia's proposed frontier AI law: no bill or date yet. It would require independent audits, ongoing safety checks, published safety frameworks and immediate incident reports, enforced by a new body alongside the Australian AI Safety Institute. Details are to follow consultation. Reported, The Decoder · 2026-11-12",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/australias-proposed-ai-safety-bill-would-force-frontier-model-makers-to-open-up-to-independent-testing/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-11-12</p>",
+          "updated": "2026-11-12",
           "sources": [
             "The Decoder"
           ],
