@@ -5,8 +5,15 @@
   <link href="https://awong-pepperoni.github.io/ai-web-digest/"/>
   <link rel="self" href="https://awong-pepperoni.github.io/ai-web-digest/feed.xml"/>
   <id>https://awong-pepperoni.github.io/ai-web-digest/</id>
-  <updated>2026-11-12T00:00:00Z</updated>
+  <updated>2026-11-15T00:00:00Z</updated>
   <author><name>awong-pepperoni</name></author>
+  <entry>
+    <title>AI web digest, 2026-11-15</title>
+    <link href="https://awong-pepperoni.github.io/ai-web-digest/"/>
+    <id>tag:awong-pepperoni.github.io,2026:aiweb/2026-11-15</id>
+    <updated>2026-11-15T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;A three-day window dominated by the fallout from Jensen Huang's resignation at Nvidia, which most of the press covered as a business and export-control story rather than a technical one. The main product change was Google's Gemini 4 Hydrogen, a faster, cheaper Gemini 4 model that is now generally available and powers Search. Anthropic shipped self-hosted Managed Agents and two large Claude Code releases that tighten sandbox and permission rules; its IPO is reportedly set for 19 November.&lt;/p&gt;&lt;p&gt;&lt;a href="https://awong-pepperoni.github.io/ai-web-digest/"&gt;Read the full run&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>AI web digest, 2026-11-12</title>
     <link href="https://awong-pepperoni.github.io/ai-web-digest/"/>
