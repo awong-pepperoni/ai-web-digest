@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-18",
+  "generated": "2026-11-22",
   "meta": {
     "feed": "aiweb",
     "title": "AI Web Digest",
@@ -21,6 +21,403 @@
     "source_note": "from AI lab announcements, expert curators, Hacker News and the tech press"
   },
   "digests": [
+    {
+      "date": "2026-11-22",
+      "title": "AI web digest",
+      "intro_html": "<p>A four-day window dominated by two stories: an Anthropic mathematician's Claude-assisted proof of the Riemann hypothesis, which the Lean community says checks out while a rival all-human draft ran into problems, and Google's Gemini 4 Neon, a near-frontier model priced well below the top tier. Anthropic's IPO priced, listed and closed in the window. Below the headlines the week was security-heavy: OpenAI on distillation, a canary study of cheap inference providers, and Signal's reaction to OS-level AI agents.</p>",
+      "sections": [
+        {
+          "heading": "Must know",
+          "category": "mustknow",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>An Anthropic mathematician posted a Riemann hypothesis proof built with Claude, and the Lean and Mathlib community says it checks out.</strong>",
+              "html": "<p><strong>An Anthropic mathematician posted a Riemann hypothesis proof built with Claude, and the Lean and Mathlib community says it checks out.</strong> Levent Alpöge posted about 17 million lines of Lean code on 20 November that he says prove the Generalized Riemann Hypothesis, which includes the original; The Decoder reports the Lean community has &quot;full confidence&quot; in it.</p>\n<ul>\n<li><strong>Why it matters:</strong> If it holds, an AI-assisted result settles a Millennium Prize problem, and the check is mechanical rather than a matter of trusting a referee. Five independent sources covered it (AINews, Simon Willison, TechCrunch, The Decoder, The Verge), and Anthropic's black-hole physics post of 17 November, which also relied on Lean verification, points the same way.</li>\n<li><strong>What you could use it for:</strong> The method matters more than the theorem for a personal setup. Have an agent propose and a formal checker or test suite decide; run several copies on one problem with each piece computed twice, as Anthropic's physics post describes; pair long background agent runs with a machine-checkable acceptance test; use Lean-style verification for any claim that must not be hand-waved.</li>\n<li><strong>Cost and speed:</strong> No cost figures were published. Alpöge says he worked with Claude over months, setting the direction while Claude took the final stretch; The Decoder reports Claude supplied the key insight on how chain length should scale.</li>\n<li><strong>Caveats:</strong> Lean checks logic against its axioms, so a mistranslation of the original statement into code would pass unnoticed; The Decoder, quoting Scientific American, says checking that translation should be quick. A human-readable version is promised over the coming months, since a printout would exceed 250,000 pages. Sources disagree on Alpöge's affiliation: The Decoder calls him a Stanford mathematician in one article and an Anthropic mathematician in another. Separately, Stanford's Ravi Vakil announced an all-human draft by Alessandro Masullo on 20 November, then updated the post about eight hours later: readers had reported problems found with AI models, and he makes no claim the strategy is correct. Neither proof is formally accepted yet. The Verge's article could not be read here.</li>\n<li><strong>Read next:</strong> <a href=\"https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder: Lean and Mathlib community confirms the proof</a></li>\n</ul>",
+              "text": "An Anthropic mathematician posted a Riemann hypothesis proof built with Claude, and the Lean and Mathlib community says it checks out. Levent Alpöge posted about 17 million lines of Lean code on 20 November that he says prove the Generalized Riemann Hypothesis, which includes the original; The Decoder reports the Lean community has \"full confidence\" in it. Why it matters: If it holds, an AI-assisted result settles a Millennium Prize problem, and the check is mechanical rather than a matter of trusting a referee. Five independent sources covered it (AINews, Simon Willison, TechCrunch, The Decoder, The Verge), and Anthropic's black-hole physics post of 17 November, which also relied on Lean verification, points the same way. What you could use it for: The method matters more than the theorem for a personal setup. Have an agent propose and a formal checker or test suite decide; run several copies on one problem with each piece computed twice, as Anthropic's physics post describes; pair long background agent runs with a machine-checkable acceptance test; use Lean-style verification for any claim that must not be hand-waved. Cost and speed: No cost figures were published. Alpöge says he worked with Claude over months, setting the direction while Claude took the final stretch; The Decoder reports Claude supplied the key insight on how chain length should scale. Caveats: Lean checks logic against its axioms, so a mistranslation of the original statement into code would pass unnoticed; The Decoder, quoting Scientific American, says checking that translation should be quick. A human-readable version is promised over the coming months, since a printout would exceed 250,000 pages. Sources disagree on Alpöge's affiliation: The Decoder calls him a Stanford mathematician in one article and an Anthropic mathematician in another. Separately, Stanford's Ravi Vakil announced an all-human draft by Alessandro Masullo on 20 November, then updated the post about eight hours later: readers had reported problems found with AI models, and he makes no claim the strategy is correct. Neither proof is formally accepted yet. The Verge's article could not be read here. Read next: The Decoder: Lean and Mathlib community confirms the proof Single source for the proof itself (the Lean artifact and Alpöge's post were not read directly) · community confirmation Reported by The Decoder · Anthropic's news and research pages say nothing about it",
+              "status": "single-source",
+              "status_html": "<p><strong>Single source</strong> for the proof itself (the Lean artifact and Alpöge's post were not read directly) · community confirmation Reported by The Decoder · Anthropic's news and research pages say nothing about it</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Google released Gemini 4 Neon, a model that ranks second or third on independent indexes at under half the cost per task of the top Claude model.</strong>",
+              "html": "<p><strong>Google released Gemini 4 Neon, a model that ranks second or third on independent indexes at under half the cost per task of the top Claude model.</strong> Neon sits below Carbon and above Hydrogen in Google's Gemini 4 family and is generally available in the Gemini API as <code>gemini-4-neon</code>.</p>\n<ul>\n<li><strong>Why it matters:</strong> It narrows the gap to Claude Fable 5.2 on cost. Per AINews, Vals ranks Neon second at 70.9%, about 0.4 points behind Fable 5.2 at under half the cost per task. Hacker News gave the launch 1,065 points and seven sources covered it.</li>\n<li><strong>What you could use it for:</strong> A cheaper second model for coding agents in Antigravity or Cursor; long-document work with the 1M-token window; tool-heavy agents using the new Tool Retrieval preview, which loads function schemas only when the model asks; legal and tax-style analysis, where Google cites first place on two Vals benchmarks.</li>\n<li><strong>Cost and speed:</strong> Google's price is $3.00 per million input tokens, $0.15 cached input and $15.00 output, with four thinking levels (low, medium, high by default, xhigh). Google claims 32% lower cost per task than Carbon at high effort; Artificial Analysis, via AINews, measured $3.74 per task at high, matching Carbon's score of 60.</li>\n<li><strong>Caveats:</strong> Most figures are Google's own. AINews relays that xhigh was not better than high on one Artificial Analysis task (28.0% against 33.4%), and one tester logged 57 capacity errors and four stalled runs in 13 Antigravity sessions. Jeremy Howard praised it, per AINews, but reverted Solveit's GPT-6.2 options. The Gemini app offers it only to Pro and Ultra subscribers.</li>\n<li><strong>Read next:</strong> <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/\" target=\"_blank\" rel=\"noopener noreferrer\">Google: Introducing Gemini 4 Neon</a></li>\n</ul>",
+              "text": "Google released Gemini 4 Neon, a model that ranks second or third on independent indexes at under half the cost per task of the top Claude model. Neon sits below Carbon and above Hydrogen in Google's Gemini 4 family and is generally available in the Gemini API as gemini-4-neon . Why it matters: It narrows the gap to Claude Fable 5.2 on cost. Per AINews, Vals ranks Neon second at 70.9%, about 0.4 points behind Fable 5.2 at under half the cost per task. Hacker News gave the launch 1,065 points and seven sources covered it. What you could use it for: A cheaper second model for coding agents in Antigravity or Cursor; long-document work with the 1M-token window; tool-heavy agents using the new Tool Retrieval preview, which loads function schemas only when the model asks; legal and tax-style analysis, where Google cites first place on two Vals benchmarks. Cost and speed: Google's price is $3.00 per million input tokens, $0.15 cached input and $15.00 output, with four thinking levels (low, medium, high by default, xhigh). Google claims 32% lower cost per task than Carbon at high effort; Artificial Analysis, via AINews, measured $3.74 per task at high, matching Carbon's score of 60. Caveats: Most figures are Google's own. AINews relays that xhigh was not better than high on one Artificial Analysis task (28.0% against 33.4%), and one tester logged 57 capacity errors and four stalled runs in 13 Antigravity sessions. Jeremy Howard praised it, per AINews, but reverted Solveit's GPT-6.2 options. The Gemini app offers it only to Pro and Ultra subscribers. Read next: Google: Introducing Gemini 4 Neon Verified for the model ID, price, context and thinking levels against Google's launch post and the Gemini API changelog · index scores are Google's or the named evaluators', relayed by AINews",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> for the model ID, price, context and thinking levels against Google's launch post and the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · index scores are Google's or the named evaluators', relayed by <a href=\"https://latent.space/p/ainews-gemini-4-neon-gdm-s-opus-sol-contender/\" target=\"_blank\" rel=\"noopener noreferrer\">AINews</a></p>",
+              "updated": null,
+              "sources": [
+                "Google",
+                "aistudio.google.com",
+                "Latent Space"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Model releases",
+          "category": "releases",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Google made Genie 4 generally available in the Gemini API and opened Project Genie to Ultra subscribers.</strong>",
+              "html": "<p><strong>Google made Genie 4 generally available in the Gemini API and opened Project Genie to Ultra subscribers.</strong> The API prices it at $1.50 per million input tokens, $9.00 per million text output and $17.50 per million video output (about $0.10 a second), producing 24 fps video with stereo audio. Project Genie is for eligible Google AI Ultra subscribers, with a waitlist for Pro. Google lists camera latency, physical interactions and scene permanence as open problems. <a href=\"https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/\" target=\"_blank\" rel=\"noopener noreferrer\">Google DeepMind</a></p>",
+              "text": "Google made Genie 4 generally available in the Gemini API and opened Project Genie to Ultra subscribers. The API prices it at $1.50 per million input tokens, $9.00 per million text output and $17.50 per million video output (about $0.10 a second), producing 24 fps video with stereo audio. Project Genie is for eligible Google AI Ultra subscribers, with a waitlist for Pro. Google lists camera latency, physical interactions and scene permanence as open problems. Google DeepMind Verified against the Genie 4 post and the Gemini API changelog (19 November)",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the Genie 4 post and the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> (19 November)</p>",
+              "updated": null,
+              "sources": [
+                "Google",
+                "aistudio.google.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI released GPT-Live-1.1, a voice model update, in the API.</strong>",
+              "html": "<p><strong>OpenAI released GPT-Live-1.1, a voice model update, in the API.</strong> It improves accents, letters and numbers, and instruction following; a standby mode pauses inference when idle and bills at $0.02 a minute against $0.05 active. OpenAI says the model has powered ChatGPT voice for Plus and Pro since 15 October. <a href=\"https://community.openai.com/t/gpt-live-1-1-has-arrived-in-the-api/1418537\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI forum</a></p>",
+              "text": "OpenAI released GPT-Live-1.1, a voice model update, in the API. It improves accents, letters and numbers, and instruction following; a standby mode pauses inference when idle and bills at $0.02 a minute against $0.05 active. OpenAI says the model has powered ChatGPT voice for Plus and Pro since 15 October. OpenAI forum Verified against the OpenAI API changelog (19 November)",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the <a href=\"https://developers.openai.com/api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI API changelog</a> (19 November)</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Thinking Machines' Inkling 2 Mini is an open 26B-parameter multimodal model that activates 3B parameters per token.</strong>",
+              "html": "<p><strong>Thinking Machines' Inkling 2 Mini is an open 26B-parameter multimodal model that activates 3B parameters per token.</strong> Hugging Face's blog describes a mixture-of-experts design with a 1M-token context, reusable middle layers and seven reasoning-effort levels. The authors claim it leads on 32 of 48 benchmarks against similar-sized open models; they also say more validation is needed, and the part of the post read states no licence. It topped Hugging Face's trending list. <a href=\"https://huggingface.co/blog/inkling2mini\" target=\"_blank\" rel=\"noopener noreferrer\">Hugging Face</a></p>",
+              "text": "Thinking Machines' Inkling 2 Mini is an open 26B-parameter multimodal model that activates 3B parameters per token. Hugging Face's blog describes a mixture-of-experts design with a 1M-token context, reusable middle layers and seven reasoning-effort levels. The authors claim it leads on 32 of 48 benchmarks against similar-sized open models; they also say more validation is needed, and the part of the post read states no licence. It topped Hugging Face's trending list. Hugging Face Single source, benchmark claims are the vendor's",
+              "status": "single-source",
+              "status_html": "<p>Single source, benchmark claims are the vendor's</p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Hugging Face's harness adapters train a small LoRA for each coding-agent harness, raising Qwen3.8-27B's scores.</strong>",
+              "html": "<p><strong>Hugging Face's harness adapters train a small LoRA for each coding-agent harness, raising Qwen3.8-27B's scores.</strong> On SWE-bench Pro hard, the Pi adapter moved from 40.0% to 64.0%; a merged adapter lifted mean pass@1 from 39.5% to 49.0% with thinking off. The authors say the merge weight was tuned on Terminal-Bench 2.1, so those numbers are slightly optimistic, and out-of-distribution gains were small (23.0% to 23.7%). <a href=\"https://huggingface.co/blog/harness-adapters-at-scale\" target=\"_blank\" rel=\"noopener noreferrer\">Hugging Face</a></p>",
+              "text": "Hugging Face's harness adapters train a small LoRA for each coding-agent harness, raising Qwen3.8-27B's scores. On SWE-bench Pro hard, the Pi adapter moved from 40.0% to 64.0%; a merged adapter lifted mean pass@1 from 39.5% to 49.0% with thinking off. The authors say the merge weight was tuned on Terminal-Bench 2.1, so those numbers are slightly optimistic, and out-of-distribution gains were small (23.0% to 23.7%). Hugging Face Single source, authors' own evaluations",
+              "status": "single-source",
+              "status_html": "<p>Single source, authors' own evaluations</p>",
+              "updated": null,
+              "sources": [
+                "Hugging Face"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Products and applications",
+          "category": "apps",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Google added computer use to the Gemini Mac app.</strong>",
+              "html": "<p><strong>Google added computer use to the Gemini Mac app.</strong> It works native apps and browses in the background with a live preview and pause and approve controls. It is English and US only, for Google AI Plus, Pro and Ultra subscribers, per TechCrunch. <a href=\"https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Google added computer use to the Gemini Mac app. It works native apps and browses in the background with a live preview and pause and approve controls. It is English and US only, for Google AI Plus, Pro and Ultra subscribers, per TechCrunch. TechCrunch Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Perplexity launched a Monitor API that turns web search into scheduled watchers.</strong>",
+              "html": "<p><strong>Perplexity launched a Monitor API that turns web search into scheduled watchers.</strong> Monitors run from every 15 minutes to weekly, watch up to 10 pages, and push changes to agents through signed webhooks, at $1 per 1,000 successful runs. Perplexity's own early test, relayed by The Decoder, found 63 fresh relevant pages in eight hours against 20 for Firecrawl and 15 for Exa. <a href=\"https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Perplexity launched a Monitor API that turns web search into scheduled watchers. Monitors run from every 15 minutes to weekly, watch up to 10 pages, and push changes to agents through signed webhooks, at $1 per 1,000 successful runs. Perplexity's own early test, relayed by The Decoder, found 63 fresh relevant pages in eight hours against 20 for Firecrawl and 15 for Exa. The Decoder Reported, the comparison is the vendor's",
+              "status": "reported",
+              "status_html": "<p>Reported, the comparison is the vendor's</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic shipped three Claude Code releases, 2.1.328 to 2.1.330.</strong>",
+              "html": "<p><strong>Anthropic shipped three Claude Code releases, 2.1.328 to 2.1.330.</strong> Scheduled tasks and <code>/loop</code> now run up to 30 days instead of 7; <code>/tasks</code> lists scheduled tasks and loop wakeups; the trust dialog warns where a folder's hooks are declared; <code>mcp_tool</code> hooks can block on failure; auto mode now covers Opus 4.6 and Sonnet 4.6 on Bedrock, Google Cloud and Foundry. 2.1.330 also reverts 2.1.329's removal of the <code>max_tokens</code> retry. <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.330\" target=\"_blank\" rel=\"noopener noreferrer\">release notes</a></p>",
+              "text": "Anthropic shipped three Claude Code releases, 2.1.328 to 2.1.330. Scheduled tasks and /loop now run up to 30 days instead of 7; /tasks lists scheduled tasks and loop wakeups; the trust dialog warns where a folder's hooks are declared; mcp_tool hooks can block on failure; auto mode now covers Opus 4.6 and Sonnet 4.6 on Bedrock, Google Cloud and Foundry. 2.1.330 also reverts 2.1.329's removal of the max_tokens retry. release notes Verified against the GitHub release notes",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the GitHub release notes</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Microsoft announced a family of MAI models at Ignite, with MAI Code 2 in GitHub Copilot.</strong>",
+              "html": "<p><strong>Microsoft announced a family of MAI models at Ignite, with MAI Code 2 in GitHub Copilot.</strong> Microsoft claims MAI Code 2 reaches 98% of GPT-6.1 Sol's coding quality at about 40% of the price; MAI Code 2 Flash is in limited preview in Foundry. The post is dated 17 November, just before the window, and all comparisons are Microsoft's. <a href=\"https://microsoft.ai/news/microsoft-ignite-2026/\" target=\"_blank\" rel=\"noopener noreferrer\">Microsoft AI</a></p>",
+              "text": "Microsoft announced a family of MAI models at Ignite, with MAI Code 2 in GitHub Copilot. Microsoft claims MAI Code 2 reaches 98% of GPT-6.1 Sol's coding quality at about 40% of the price; MAI Code 2 Flash is in limited preview in Foundry. The post is dated 17 November, just before the window, and all comparisons are Microsoft's. Microsoft AI Single source, vendor claims",
+              "status": "single-source",
+              "status_html": "<p>Single source, vendor claims</p>",
+              "updated": null,
+              "sources": [
+                "microsoft.ai"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>AWS added agent features to Bedrock AgentCore and launched Polly voice cloning.</strong>",
+              "html": "<p><strong>AWS added agent features to Bedrock AgentCore and launched Polly voice cloning.</strong> AgentCore can now pay for AWS Marketplace products through x402, and its harness gained Strands defaults, built-in tools and lifecycle hooks. These come from AWS blog announcements; availability details were not checked. <a href=\"https://aws.amazon.com/blogs/machine-learning/enable-ai-agents-to-pay-for-aws-marketplace-x402-products-with-amazon-bedrock-agentcore-payments/\" target=\"_blank\" rel=\"noopener noreferrer\">AWS ML blog</a></p>",
+              "text": "AWS added agent features to Bedrock AgentCore and launched Polly voice cloning. AgentCore can now pay for AWS Marketplace products through x402, and its harness gained Strands defaults, built-in tools and lifecycle hooks. These come from AWS blog announcements; availability details were not checked. AWS ML blog Single source",
+              "status": "single-source",
+              "status_html": "<p>Single source</p>",
+              "updated": null,
+              "sources": [
+                "AWS"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Signal is restricting screenshots in its mobile apps to stop OS-level AI agents reading conversations.</strong>",
+              "html": "<p><strong>Signal is restricting screenshots in its mobile apps to stop OS-level AI agents reading conversations.</strong> Meredith Whittaker called agentic AI an &quot;existential threat&quot; and conceded the fix is incomplete, because users can switch it off. Signal's blog post drew 577 points on Hacker News. <a href=\"https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Signal is restricting screenshots in its mobile apps to stop OS-level AI agents reading conversations. Meredith Whittaker called agentic AI an \"existential threat\" and conceded the fix is incomplete, because users can switch it off. Signal's blog post drew 577 points on Hacker News. TechCrunch Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Research",
+          "category": "research",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://openai.com/index/combatting-adversarial-distillation\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI describes defences against adversarial distillation</a></strong>",
+              "html": "<p><strong><a href=\"https://openai.com/index/combatting-adversarial-distillation\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI describes defences against adversarial distillation</a></strong> — it says protected-reasoning extraction attacks fell from 54.0% to 0.2% success on GPT-6.2 Astra, and names DeepSeek and Moonshot AI among the accounts it has acted against. The figures are internal evaluations.</p>",
+              "text": "OpenAI describes defences against adversarial distillation — it says protected-reasoning extraction attacks fell from 54.0% to 0.2% success on GPT-6.2 Astra, and names DeepSeek and Moonshot AI among the accounts it has acted against. The figures are internal evaluations. Single source, vendor evaluation",
+              "status": "single-source",
+              "status_html": "<p>Single source, vendor evaluation</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://openai.com/index/perplexity-and-intelligence\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's chief scientist proposes comparing labs by pretraining perplexity</a></strong>",
+              "html": "<p><strong><a href=\"https://openai.com/index/perplexity-and-intelligence\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI's chief scientist proposes comparing labs by pretraining perplexity</a></strong> — Jakub Pachocki publishes OpenAI's held-out codebase loss figures and argues capabilities emerge below set thresholds; he lists the limits himself, such as differing datasets across labs.</p>",
+              "text": "OpenAI's chief scientist proposes comparing labs by pretraining perplexity — Jakub Pachocki publishes OpenAI's held-out codebase loss figures and argues capabilities emerge below set thresholds; he lists the limits himself, such as differing datasets across labs. Single source, an opinion no one has reproduced",
+              "status": "single-source",
+              "status_html": "<p>Single source, an opinion no one has reproduced</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://openai.com/index/introducing-medchembench\" target=\"_blank\" rel=\"noopener noreferrer\">MedChemBench</a></strong> OpenAI&#x27;s 99-problem medicinal chemistry benchmark scores GPT-6.2 Astra 84.5% at xhigh, but selection and numerical prediction earned only…",
+              "html": "<p><strong><a href=\"https://openai.com/index/introducing-medchembench\" target=\"_blank\" rel=\"noopener noreferrer\">MedChemBench</a></strong> — OpenAI's 99-problem medicinal chemistry benchmark scores GPT-6.2 Astra 84.5% at xhigh, but selection and numerical prediction earned only about half credit and the post says it does not establish drug-discovery ability.</p>",
+              "text": "MedChemBench — OpenAI's 99-problem medicinal chemistry benchmark scores GPT-6.2 Astra 84.5% at xhigh, but selection and numerical prediction earned only about half credit and the post says it does not establish drug-discovery ability. Single source, vendor benchmark",
+              "status": "single-source",
+              "status_html": "<p>Single source, vendor benchmark</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/\" target=\"_blank\" rel=\"noopener noreferrer\">METR warns evaluations are falling behind</a></strong>",
+              "html": "<p><strong><a href=\"https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/\" target=\"_blank\" rel=\"noopener noreferrer\">METR warns evaluations are falling behind</a></strong> — as reported by The Decoder, METR measures the task length models handle doubling every 3.6 months and says public data cannot rule out a sharp acceleration in AI research.</p>",
+              "text": "METR warns evaluations are falling behind — as reported by The Decoder, METR measures the task length models handle doubling every 3.6 months and says public data cannot rule out a sharp acceleration in AI research. Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/\" target=\"_blank\" rel=\"noopener noreferrer\">A simulated-workplace test finds coding agents fully complete under one in ten tasks</a></strong>",
+              "html": "<p><strong><a href=\"https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/\" target=\"_blank\" rel=\"noopener noreferrer\">A simulated-workplace test finds coding agents fully complete under one in ten tasks</a></strong> — The Decoder says Claude Opus 5.5 and GPT-6 Astra did so; only the introduction was readable.</p>",
+              "text": "A simulated-workplace test finds coding agents fully complete under one in ten tasks — The Decoder says Claude Opus 5.5 and GPT-6 Astra did so; only the introduction was readable. Single source, partly read",
+              "status": "single-source",
+              "status_html": "<p>Single source, partly read</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Industry and policy",
+          "category": "industry",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Anthropic priced its IPO at $83 a share, listed on Nasdaq on 19 November and closed the offering on 20 November.</strong>",
+              "html": "<p><strong>Anthropic priced its IPO at $83 a share, listed on Nasdaq on 19 November and closed the offering on 20 November.</strong> Anthropic's pricing post says 980 million Class A shares were offered, trading as &quot;ANT&quot;, with an underwriters' option for 147 million more; its closing announcement says that option was exercised in full. TechCrunch reports an opening near $111.50, a market value above $2 trillion and over $81 billion raised. This resolves the previous entry's note that the registration statement was not yet effective. The Guardian, via Hacker News, reported the Nasdaq erasing its 2026 gains on the second day. <a href=\"https://www.anthropic.com/news/anthropic-prices-initial-public-offering\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></p>",
+              "text": "Anthropic priced its IPO at $83 a share, listed on Nasdaq on 19 November and closed the offering on 20 November. Anthropic's pricing post says 980 million Class A shares were offered, trading as \"ANT\", with an underwriters' option for 147 million more; its closing announcement says that option was exercised in full. TechCrunch reports an opening near $111.50, a market value above $2 trillion and over $81 billion raised. This resolves the previous entry's note that the registration statement was not yet effective. The Guardian, via Hacker News, reported the Nasdaq erasing its 2026 gains on the second day. Anthropic Verified against Anthropic's pricing and closing posts · market figures Reported, TechCrunch",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Anthropic's pricing and closing posts · market figures Reported, <a href=\"https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "updated": null,
+              "sources": [
+                "Anthropic",
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Jensen Huang resigned as Nvidia's CEO on 12 November, and anonymous sources say the SEC is examining possible accounting issues.</strong>",
+              "html": "<p><strong>Jensen Huang resigned as Nvidia's CEO on 12 November, and anonymous sources say the SEC is examining possible accounting issues.</strong> TechCrunch's timeline says US officials suspect a Megaspeed executive of being a Chinese spy; Colette Kress is interim CEO and the chairman said reinstatement is not under consideration. The SEC item comes from anonymous sources via MarketScreener. <a href=\"https://techcrunch.com/2026/11/19/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Jensen Huang resigned as Nvidia's CEO on 12 November, and anonymous sources say the SEC is examining possible accounting issues. TechCrunch's timeline says US officials suspect a Megaspeed executive of being a Chinese spy; Colette Kress is interim CEO and the chairman said reinstatement is not under consideration. The SEC item comes from anonymous sources via MarketScreener. TechCrunch Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Dragos found cheap inference providers stealing keys and reading user prompts.</strong>",
+              "html": "<p><strong>Dragos found cheap inference providers stealing keys and reading user prompts.</strong> Per The Decoder, about 2 million canary requests found at least three providers with active theft, including hundreds of harvested AWS keys; OpenRouter removed three providers and revoked Zero Data Retention approval for 125 endpoints. For anyone routing requests through resellers, the advice is to restrict routing and check privacy settings. <a href=\"https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "Dragos found cheap inference providers stealing keys and reading user prompts. Per The Decoder, about 2 million canary requests found at least three providers with active theft, including hundreds of harvested AWS keys; OpenRouter removed three providers and revoked Zero Data Retention approval for 125 endpoints. For anyone routing requests through resellers, the advice is to restrict routing and check privacy settings. The Decoder Reported, the Ars Technica write-up could not be read",
+              "status": "reported",
+              "status_html": "<p>Reported, the Ars Technica write-up could not be read</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Worth reading",
+          "category": "reading",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison: Token fraud is here and it's BAD</a></strong>",
+              "html": "<p><strong><a href=\"https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison: Token fraud is here and it's BAD</a></strong>: a link to Claire Vo's account of abusers looping free trials to resell tokens, which led her to end free trials on ChatPRD.</p>",
+              "text": "Simon Willison: Token fraud is here and it's BAD : a link to Claire Vo's account of abusers looping free trials to resell tokens, which led her to end free trials on ChatPRD.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Simon Willison"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://www.deeplearning.ai/the-batch/issue-380\" target=\"_blank\" rel=\"noopener noreferrer\">The Batch, issue 380</a></strong>: covers Huang&#x27;s exit, Fable 5.2&#x27;s $8/$40 pricing and World Labs&#x27; public Atlas release in one read.",
+              "html": "<p><strong><a href=\"https://www.deeplearning.ai/the-batch/issue-380\" target=\"_blank\" rel=\"noopener noreferrer\">The Batch, issue 380</a></strong>: covers Huang's exit, Fable 5.2's $8/$40 pricing and World Labs' public Atlas release in one read.</p>",
+              "text": "The Batch, issue 380 : covers Huang's exit, Fable 5.2's $8/$40 pricing and World Labs' public Atlas release in one read.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "deeplearning.ai"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Unverified, and worth watching",
+          "category": "unverified",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "A 151-point Hacker News post on contralabs.com claims two stealth models on a design leaderboard beat Fable 5.2.",
+              "html": "<p>A 151-point Hacker News post on contralabs.com claims two stealth models on a design leaderboard beat Fable 5.2. I did not trace it to a lab or an independent evaluation.</p>",
+              "text": "A 151-point Hacker News post on contralabs.com claims two stealth models on a design leaderboard beat Fable 5.2. I did not trace it to a lab or an independent evaluation. Unconfirmed",
+              "status": "unconfirmed",
+              "status_html": "<p><strong>Unconfirmed</strong></p>",
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Coverage check",
+          "category": "coverage",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Sources read:</strong> 25 of 25 feeds and APIs collected; failed: none in the collector.",
+              "html": "<p><strong>Sources read:</strong> 25 of 25 feeds and APIs collected; <strong>failed:</strong> none in the collector. Two follow-up pages could not be read, The Verge's Riemann article and Ars Technica's canary study, so those stories rest on The Decoder, TechCrunch and AINews. <strong>Pages read:</strong> Anthropic news and research, Claude Platform release notes, OpenAI API changelog, Gemini API changelog, The Batch (issue 380). Meta AI research was not read.</p>",
+              "text": "Sources read: 25 of 25 feeds and APIs collected; failed: none in the collector. Two follow-up pages could not be read, The Verge's Riemann article and Ars Technica's canary study, so those stories rest on The Decoder, TechCrunch and AINews. Pages read: Anthropic news and research, Claude Platform release notes, OpenAI API changelog, Gemini API changelog, The Batch (issue 380). Meta AI research was not read.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Cross-source stories set aside:</strong> openai (several vendor posts, covered individually or customer-story marketing); astra and gpt-6.2 (last entry&#x27;s Must know; Hebbia is a c…",
+              "html": "<p><strong>Cross-source stories set aside:</strong> openai (several vendor posts, covered individually or customer-story marketing); astra and gpt-6.2 (last entry's Must know; Hebbia is a customer story; later reviews and prompting tips added nothing new here); amazon, claude and google (generic words, covered by named items); gpt-6 (METR item, covered); nvidia (the Huang item above; the Nvidia context-window paper was not read); stanford (inside the Riemann story); post-training and daisyrose-27b (a Hugging Face model post and trending entry, not read in depth); ai-assisted, daniel, sunday (generic or unrelated names).</p>",
+              "text": "Cross-source stories set aside: openai (several vendor posts, covered individually or customer-story marketing); astra and gpt-6.2 (last entry's Must know; Hebbia is a customer story; later reviews and prompting tips added nothing new here); amazon, claude and google (generic words, covered by named items); gpt-6 (METR item, covered); nvidia (the Huang item above; the Nvidia context-window paper was not read); stanford (inside the Riemann story); post-training and daisyrose-27b (a Hugging Face model post and trending entry, not read in depth); ai-assisted, daniel, sunday (generic or unrelated names).",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Gap:</strong> four days since the last entry, longer than the usual three-day cadence.",
+              "html": "<p><strong>Gap:</strong> four days since the last entry, longer than the usual three-day cadence.</p>",
+              "text": "Gap: four days since the last entry, longer than the usual three-day cadence.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-11-18",
       "title": "AI web digest",
@@ -5253,6 +5650,32 @@
           "due_label": "Claude Data on by default for Enterprise"
         },
         {
+          "headline": "<strong>Gemini API Tool Retrieval: preview since 19 November, Interactions API only.</strong>",
+          "html": "<p><strong>Gemini API Tool Retrieval: preview since 19 November, Interactions API only.</strong> Function tools marked <code>defer_loading</code> are loaded only when the model asks; works with Gemini 3.6 and later. No GA date.</p>",
+          "text": "Gemini API Tool Retrieval: preview since 19 November, Interactions API only. Function tools marked defer_loading are loaded only when the model asks; works with Gemini 3.6 and later. No GA date. Verified against Google · 2026-11-22",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/\" target=\"_blank\" rel=\"noopener noreferrer\">Google</a> · 2026-11-22</p>",
+          "updated": "2026-11-22",
+          "sources": [
+            "Google"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>Levent Alpöge's Riemann hypothesis proof: Lean-checked per The Decoder, not yet formally accepted.</strong>",
+          "html": "<p><strong>Levent Alpöge's Riemann hypothesis proof: Lean-checked per The Decoder, not yet formally accepted.</strong> A human-readable version is promised &quot;over the coming months&quot;, with no date. A separate all-human Stanford draft by Alessandro Masullo has reported problems.</p>",
+          "text": "Levent Alpöge's Riemann hypothesis proof: Lean-checked per The Decoder, not yet formally accepted. A human-readable version is promised \"over the coming months\", with no date. A separate all-human Stanford draft by Alessandro Masullo has reported problems. Reported, The Decoder · 2026-11-22",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-11-22</p>",
+          "updated": "2026-11-22",
+          "sources": [
+            "The Decoder"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
           "headline": "<strong>OpenAI background completion windows: public beta since 17 November, Responses API.</strong>",
           "html": "<p><strong>OpenAI background completion windows: public beta since 17 November, Responses API.</strong> Two-hour and eight-hour windows for <code>gpt-6.2-astra</code>, <code>gpt-6.2-sol</code>, <code>gpt-6.1-terra</code> and <code>gpt-6-luna</code>, at token rates 30% and 40% below Standard. No GA date.</p>",
           "text": "OpenAI background completion windows: public beta since 17 November, Responses API. Two-hour and eight-hour windows for gpt-6.2-astra , gpt-6.2-sol , gpt-6.1-terra and gpt-6-luna , at token rates 30% and 40% below Standard. No GA date. Verified against the OpenAI API changelog · 2026-11-18",
@@ -5450,14 +5873,15 @@
           "due_label": null
         },
         {
-          "headline": "<strong>Genie 4: research preview for trusted testers, waitlist open.</strong>",
-          "html": "<p><strong>Genie 4: research preview for trusted testers, waitlist open.</strong> Google plans access for Google AI Ultra subscribers through Project Genie and for early-access Gemini API and AI Studio partners, &quot;coming soon&quot;, with no date.</p>",
-          "text": "Genie 4: research preview for trusted testers, waitlist open. Google plans access for Google AI Ultra subscribers through Project Genie and for early-access Gemini API and AI Studio partners, \"coming soon\", with no date. Verified against Google DeepMind · 2026-10-30",
+          "headline": "<strong>Genie 4: generally available in the Gemini API since 19 November; Project Genie open to eligible Google AI Ultra subscribers, with a waitlist for Pro.</strong>",
+          "html": "<p><strong>Genie 4: generally available in the Gemini API since 19 November; Project Genie open to eligible Google AI Ultra subscribers, with a waitlist for Pro.</strong> Google still calls Genie 3 and 4 frontier research world models.</p>",
+          "text": "Genie 4: generally available in the Gemini API since 19 November; Project Genie open to eligible Google AI Ultra subscribers, with a waitlist for Pro. Google still calls Genie 3 and 4 frontier research world models. Verified against Google DeepMind and the Gemini API changelog · 2026-11-22",
           "status": "verified",
-          "status_html": "<p><strong>Verified</strong> against <a href=\"https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/\" target=\"_blank\" rel=\"noopener noreferrer\">Google DeepMind</a> · 2026-10-30</p>",
-          "updated": "2026-10-30",
+          "status_html": "<p><strong>Verified</strong> against <a href=\"https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/\" target=\"_blank\" rel=\"noopener noreferrer\">Google DeepMind</a> and the <a href=\"https://aistudio.google.com/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">Gemini API changelog</a> · 2026-11-22</p>",
+          "updated": "2026-11-22",
           "sources": [
-            "Google DeepMind"
+            "Google",
+            "aistudio.google.com"
           ],
           "due": null,
           "due_label": null

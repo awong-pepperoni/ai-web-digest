@@ -5,8 +5,15 @@
   <link href="https://awong-pepperoni.github.io/ai-web-digest/"/>
   <link rel="self" href="https://awong-pepperoni.github.io/ai-web-digest/feed.xml"/>
   <id>https://awong-pepperoni.github.io/ai-web-digest/</id>
-  <updated>2026-11-18T00:00:00Z</updated>
+  <updated>2026-11-22T00:00:00Z</updated>
   <author><name>awong-pepperoni</name></author>
+  <entry>
+    <title>AI web digest, 2026-11-22</title>
+    <link href="https://awong-pepperoni.github.io/ai-web-digest/"/>
+    <id>tag:awong-pepperoni.github.io,2026:aiweb/2026-11-22</id>
+    <updated>2026-11-22T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;A four-day window dominated by two stories: an Anthropic mathematician's Claude-assisted proof of the Riemann hypothesis, which the Lean community says checks out while a rival all-human draft ran into problems, and Google's Gemini 4 Neon, a near-frontier model priced well below the top tier. Anthropic's IPO priced, listed and closed in the window. Below the headlines the week was security-heavy: OpenAI on distillation, a canary study of cheap inference providers, and Signal's reaction to OS-level AI agents.&lt;/p&gt;&lt;p&gt;&lt;a href="https://awong-pepperoni.github.io/ai-web-digest/"&gt;Read the full run&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>AI web digest, 2026-11-18</title>
     <link href="https://awong-pepperoni.github.io/ai-web-digest/"/>
