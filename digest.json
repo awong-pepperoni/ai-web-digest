@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22",
+  "generated": "2026-11-26",
   "meta": {
     "feed": "aiweb",
     "title": "AI Web Digest",
@@ -21,6 +21,335 @@
     "source_note": "from AI lab announcements, expert curators, Hacker News and the tech press"
   },
   "digests": [
+    {
+      "date": "2026-11-26",
+      "title": "AI web digest",
+      "intro_html": "<p>A four-day window led by Nvidia: the board reinstated Jensen Huang as CEO, then S&amp;P opened a review and Nvidia reportedly paused server shipments to four Southeast Asian countries. On the model side, Z.ai's GLM-5.4 is a new loop-transformer coding model, OpenAI changed GPT-6.2 usage limits after a billing error, and Anthropic and Google had little vendor news.</p>",
+      "sections": [
+        {
+          "heading": "Must know",
+          "category": "mustknow",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Z.ai released GLM-5.4, a coding model built as a loop transformer that reruns the same layers several times per token, but its weights are not out yet.</strong>",
+              "html": "<p><strong>Z.ai released GLM-5.4, a coding model built as a loop transformer that reruns the same layers several times per token, but its weights are not out yet.</strong> A loop transformer reuses one group of layers for multiple passes instead of stacking new layers, which the vendor says gives a deeper network without more parameters.</p>\n<ul>\n<li><strong>Why it matters:</strong> It is a different way to buy quality, with compute per token instead of parameter count. Hacker News gave the launch 1,180 points, and Simon Willison notes Thinking Machines Lab's Inkling 2 Mini (20 November) also loops its middle layers, running them three times per token.</li>\n<li><strong>What you could use it for:</strong> Today, a second coding model to compare against your current one: Simon Willison used a Coding Plan key on Z.ai's OpenAI-compatible Responses endpoint and wrote an <code>llm-glm</code> plugin for it; point a script or agent at that endpoint and run the same task on two models. Later, if the weights ship, a local model whose memory footprint stays small while quality scales with loops.</li>\n<li><strong>Cost and speed:</strong> No price, context length or speed figures appear in Simon Willison's post, and Z.ai's own page returned no readable content, so the vendor's benchmark claims were not checked.</li>\n<li><strong>Caveats:</strong> Weights are only promised &quot;after completing necessary safety hardening&quot;, with no licence or date. At launch the model was reachable only through a Coding Plan subscription, not the regular API. Simon Willison's own test, a pelican on a bicycle at max effort, left him saying &quot;It's not great to be honest&quot;, and he found 5.3 and 5.4 similar in quality. No independent benchmark was found.</li>\n<li><strong>Read next:</strong> <a href=\"https://simonwillison.net/2026/Nov/23/glm-54/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison on GLM-5.4</a></li>\n</ul>",
+              "text": "Z.ai released GLM-5.4, a coding model built as a loop transformer that reruns the same layers several times per token, but its weights are not out yet. A loop transformer reuses one group of layers for multiple passes instead of stacking new layers, which the vendor says gives a deeper network without more parameters. Why it matters: It is a different way to buy quality, with compute per token instead of parameter count. Hacker News gave the launch 1,180 points, and Simon Willison notes Thinking Machines Lab's Inkling 2 Mini (20 November) also loops its middle layers, running them three times per token. What you could use it for: Today, a second coding model to compare against your current one: Simon Willison used a Coding Plan key on Z.ai's OpenAI-compatible Responses endpoint and wrote an llm-glm plugin for it; point a script or agent at that endpoint and run the same task on two models. Later, if the weights ship, a local model whose memory footprint stays small while quality scales with loops. Cost and speed: No price, context length or speed figures appear in Simon Willison's post, and Z.ai's own page returned no readable content, so the vendor's benchmark claims were not checked. Caveats: Weights are only promised \"after completing necessary safety hardening\", with no licence or date. At launch the model was reachable only through a Coding Plan subscription, not the regular API. Simon Willison's own test, a pelican on a bicycle at max effort, left him saying \"It's not great to be honest\", and he found 5.3 and 5.4 similar in quality. No independent benchmark was found. Read next: Simon Willison on GLM-5.4 Single source · Z.ai's page could not be read, so the architecture description and the open-weights plan are as quoted by Simon Willison",
+              "status": "single-source",
+              "status_html": "<p><strong>Single source</strong> · Z.ai's page could not be read, so the architecture description and the open-weights plan are as quoted by Simon Willison</p>",
+              "updated": null,
+              "sources": [
+                "Simon Willison"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Model releases",
+          "category": "releases",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>OpenAI says GPT-6.2 Astra and Sol users will hit usage limits 40% and 25% sooner than last week, after it corrected a billing error made during the rollout.</strong>",
+              "html": "<p><strong>OpenAI says GPT-6.2 Astra and Sol users will hit usage limits 40% and 25% sooner than last week, after it corrected a billing error made during the rollout.</strong> The Decoder reports the bug gave most users the wrong discounts on both models; OpenAI will not charge back the difference, and subscribers on Go, Plus, Pro and Business get an extra saved reset. Thibault Sottiaux, posting on X, said quota should still last longer than with GPT-6 Astra and GPT-6.1 Sol. <a href=\"https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · <a href=\"https://twitter.com/thsottiaux/status/2125784147889393806\" target=\"_blank\" rel=\"noopener noreferrer\">Hacker News thread</a></p>",
+              "text": "OpenAI says GPT-6.2 Astra and Sol users will hit usage limits 40% and 25% sooner than last week, after it corrected a billing error made during the rollout. The Decoder reports the bug gave most users the wrong discounts on both models; OpenAI will not charge back the difference, and subscribers on Go, Plus, Pro and Business get an extra saved reset. Thibault Sottiaux, posting on X, said quota should still last longer than with GPT-6 Astra and GPT-6.1 Sol. The Decoder · Hacker News thread Reported · the figures come from an OpenAI employee's post as relayed by The Decoder; OpenAI's pages read give no list prices",
+              "status": "reported",
+              "status_html": "<p>Reported · the figures come from an OpenAI employee's post as relayed by The Decoder; OpenAI's pages read give no list prices</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder",
+                "twitter.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI added healthcare configurations of GPT-6.2 to the Responses API on 24 November.</strong>",
+              "html": "<p><strong>OpenAI added healthcare configurations of GPT-6.2 to the Responses API on 24 November.</strong> The model IDs are <code>gpt-6.2-astra-healthcare</code>, <code>gpt-6.2-sol-healthcare</code>, <code>gpt-6-astra-healthcare</code> and <code>gpt-6.1-sol-healthcare</code>; each pairs a model with a clinical-question harness, and web search uses a dedicated medical-source index when enabled. The same day OpenAI updated the <code>chat-latest</code> alias and recommended the GPT-6.2 family for production API use. <a href=\"https://developers.openai.com/api/docs/changelog\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI API changelog</a></p>",
+              "text": "OpenAI added healthcare configurations of GPT-6.2 to the Responses API on 24 November. The model IDs are gpt-6.2-astra-healthcare , gpt-6.2-sol-healthcare , gpt-6-astra-healthcare and gpt-6.1-sol-healthcare ; each pairs a model with a clinical-question harness, and web search uses a dedicated medical-source index when enabled. The same day OpenAI updated the chat-latest alias and recommended the GPT-6.2 family for production API use. OpenAI API changelog Verified against the OpenAI API changelog · pricing is linked from the changelog but no figures were read",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the OpenAI API changelog · pricing is linked from the changelog but no figures were read</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Anthropic deprecated Claude Opus 4.5 and set 22 January 2027 as its API retirement date.</strong>",
+              "html": "<p><strong>Anthropic deprecated Claude Opus 4.5 and set 22 January 2027 as its API retirement date.</strong> The release notes recommend moving to Claude Opus 5.5, and the same 23 November entry says Enterprise Frontier Safeguards launched in beta on Claude Platform, Claude Platform on AWS and Claude Models on Google Cloud. <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a></p>",
+              "text": "Anthropic deprecated Claude Opus 4.5 and set 22 January 2027 as its API retirement date. The release notes recommend moving to Claude Opus 5.5, and the same 23 November entry says Enterprise Frontier Safeguards launched in beta on Claude Platform, Claude Platform on AWS and Claude Models on Google Cloud. Claude Platform release notes Verified against the Claude Platform release notes",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the Claude Platform release notes</p>",
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Products and applications",
+          "category": "apps",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Claude Code 2.1.332 adds skills served by MCP servers in beta, and a new <code>PreSkillShellCommand</code> hook event.</strong>",
+              "html": "<p><strong>Claude Code 2.1.332 adds skills served by MCP servers in beta, and a new <code>PreSkillShellCommand</code> hook event.</strong> MCP skills show as <code>server:skill</code> in the <code>/</code> menu. The release also points the <code>sonnet</code> alias at Sonnet 5.5 on Google Cloud's Agent Platform and Microsoft Foundry, and fixes <code>sonnet</code> on Bedrock Mantle, which had resolved to Haiku 4.5. <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.332\" target=\"_blank\" rel=\"noopener noreferrer\">release</a></p>",
+              "text": "Claude Code 2.1.332 adds skills served by MCP servers in beta, and a new PreSkillShellCommand hook event. MCP skills show as server:skill in the / menu. The release also points the sonnet alias at Sonnet 5.5 on Google Cloud's Agent Platform and Microsoft Foundry, and fixes sonnet on Bedrock Mantle, which had resolved to Haiku 4.5. release Verified against the GitHub release notes",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the GitHub release notes</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Claude Code 2.1.331 brought Code Mode to terminal sessions on Bedrock, Google Cloud, Microsoft Foundry and Claude Platform on AWS, and sets a default change for 30 November.</strong>",
+              "html": "<p><strong>Claude Code 2.1.331 brought Code Mode to terminal sessions on Bedrock, Google Cloud, Microsoft Foundry and Claude Platform on AWS, and sets a default change for 30 November.</strong> From that date plugin marketplaces in managed <code>extraKnownMarketplaces</code> auto-update unless set to <code>&quot;autoUpdate&quot;: false</code>. It also fixed MCP tool calls that could hang for up to 30 minutes on malformed replies. <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.331\" target=\"_blank\" rel=\"noopener noreferrer\">release</a></p>",
+              "text": "Claude Code 2.1.331 brought Code Mode to terminal sessions on Bedrock, Google Cloud, Microsoft Foundry and Claude Platform on AWS, and sets a default change for 30 November. From that date plugin marketplaces in managed extraKnownMarketplaces auto-update unless set to \"autoUpdate\": false . It also fixed MCP tool calls that could hang for up to 30 minutes on malformed replies. release Verified against the GitHub release notes",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the GitHub release notes</p>",
+              "updated": null,
+              "sources": [
+                "GitHub"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI is piloting Private Inference, which lets enterprises run queries on its top models without OpenAI being able to access the data.</strong>",
+              "html": "<p><strong>OpenAI is piloting Private Inference, which lets enterprises run queries on its top models without OpenAI being able to access the data.</strong> According to The Decoder, queries run on isolated hardware whose security can be independently verified; no pricing or customer names were given, and consumer ChatGPT still trains on conversations by default unless users opt out. <a href=\"https://the-decoder.com/openai-wants-companies-to-trust-it-with-sensitive-work-by-promising-not-to-look-at-their-data/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a></p>",
+              "text": "OpenAI is piloting Private Inference, which lets enterprises run queries on its top models without OpenAI being able to access the data. According to The Decoder, queries run on isolated hardware whose security can be independently verified; no pricing or customer names were given, and consumer ChatGPT still trains on conversations by default unless users opt out. The Decoder Single source · OpenAI's own announcement was not read",
+              "status": "single-source",
+              "status_html": "<p>Single source · OpenAI's own announcement was not read</p>",
+              "updated": null,
+              "sources": [
+                "The Decoder"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>OpenAI says it is merging Chat and Work in ChatGPT into one experience with a single usage meter.</strong>",
+              "html": "<p><strong>OpenAI says it is merging Chat and Work in ChatGPT into one experience with a single usage meter.</strong> TechCrunch reports a spokesperson expects most users to see no change but a small fraction of the heaviest users may hit limits sooner; Instant conversations stay unlimited. It began with a small group of Pro subscribers, with shared limits planned &quot;more broadly in December&quot;. <a href=\"https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "OpenAI says it is merging Chat and Work in ChatGPT into one experience with a single usage meter. TechCrunch reports a spokesperson expects most users to see no change but a small fraction of the heaviest users may hit limits sooner; Instant conversations stay unlimited. It began with a small group of Pro subscribers, with shared limits planned \"more broadly in December\". TechCrunch Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Two amateur astronomers used GPT-6.2 Astra with Codex to search public telescope data and found planet candidates, not confirmed planets.</strong>",
+              "html": "<p><strong>Two amateur astronomers used GPT-6.2 Astra with Codex to search public telescope data and found planet candidates, not confirmed planets.</strong> OpenAI's post says one searched about 100,000 Kepler stars and flagged more than 200 signals, including 10 known planets; the other searched about 19 million stars and sent one of 49 first-pass candidates to a TESS team. A SETI Institute astronomer independently found two of the same Kepler signals, and confirmation could take months or years. <a href=\"https://openai.com/index/searching-for-distant-planets-with-astra\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI</a></p>",
+              "text": "Two amateur astronomers used GPT-6.2 Astra with Codex to search public telescope data and found planet candidates, not confirmed planets. OpenAI's post says one searched about 100,000 Kepler stars and flagged more than 200 signals, including 10 known planets; the other searched about 19 million stars and sent one of 49 first-pass candidates to a TESS team. A SETI Institute astronomer independently found two of the same Kepler signals, and confirmation could take months or years. OpenAI Single source · written by OpenAI; none of the candidates is confirmed",
+              "status": "single-source",
+              "status_html": "<p>Single source · written by OpenAI; none of the candidates is confirmed</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Research",
+          "category": "research",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI reports GPT-6 models have protein-design ability</a></strong>",
+              "html": "<p><strong><a href=\"https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI reports GPT-6 models have protein-design ability</a></strong> — in lab tests run with partner Onava, 35 of 322 GPT-6.2-designed minibinders (10.9%) bound their targets, and OpenAI's own numbers show GPT-6.2 well behind its unreleased internal model on structure prediction (average TM-score 0.26 against 0.38, with the specialised ESMFold2 at 0.93). OpenAI states the results &quot;do not yet establish&quot; end-to-end de novo minibinder design and flags possible memorisation.</p>",
+              "text": "OpenAI reports GPT-6 models have protein-design ability — in lab tests run with partner Onava, 35 of 322 GPT-6.2-designed minibinders (10.9%) bound their targets, and OpenAI's own numbers show GPT-6.2 well behind its unreleased internal model on structure prediction (average TM-score 0.26 against 0.38, with the specialised ESMFold2 at 0.93). OpenAI states the results \"do not yet establish\" end-to-end de novo minibinder design and flags possible memorisation. Single source until reproduced · the headline numbers come mostly from an internal model, not GPT-6.2",
+              "status": "single-source",
+              "status_html": "<p>Single source until reproduced · the headline numbers come mostly from an internal model, not GPT-6.2</p>",
+              "updated": null,
+              "sources": [
+                "OpenAI"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepMind used teams of Gemini 4 agents to improve known quantum algorithms, with each result proved in Lean</a></strong>",
+              "html": "<p><strong><a href=\"https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepMind used teams of Gemini 4 agents to improve known quantum algorithms, with each result proved in Lean</a></strong> — Google reports an 11.8x cut in computing cost for a fusion-circuit simulation, an 8x cheaper light-sensitive molecule simulation and a 290x speedup on an arcsin routine. The authors say the results would still need more resources than the first error-corrected quantum computers are likely to provide. The paper is arXiv 2611.09822 and the Lean library is open-sourced.</p>",
+              "text": "DeepMind used teams of Gemini 4 agents to improve known quantum algorithms, with each result proved in Lean — Google reports an 11.8x cut in computing cost for a fusion-circuit simulation, an 8x cheaper light-sensitive molecule simulation and a 290x speedup on an arcsin routine. The authors say the results would still need more resources than the first error-corrected quantum computers are likely to provide. The paper is arXiv 2611.09822 and the Lean library is open-sourced. Verified against the DeepMind post for what was claimed · results are the authors' own, not yet reproduced",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against the DeepMind post for what was claimed · results are the authors' own, not yet reproduced</p>",
+              "updated": null,
+              "sources": [
+                "Google DeepMind"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Industry and policy",
+          "category": "industry",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Nvidia's board reinstated Jensen Huang as president, CEO and director on 23 November, effective immediately.</strong>",
+              "html": "<p><strong>Nvidia's board reinstated Jensen Huang as president, CEO and director on 23 November, effective immediately.</strong> Nvidia's own release says the vote was unanimous, that the board received input from senior US government levels, and that it formed an all-independent committee, with independent counsel, to investigate reporting that Huang was the target of a foreign intelligence effort. It also created a National Security and Export Control Committee and is searching for a Chief Compliance Officer; Colette Kress, the interim CEO, remains CFO. The release does not describe the earlier ouster. The story drew 2,850 Hacker News points. <a href=\"https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director\" target=\"_blank\" rel=\"noopener noreferrer\">Nvidia</a></p>",
+              "text": "Nvidia's board reinstated Jensen Huang as president, CEO and director on 23 November, effective immediately. Nvidia's own release says the vote was unanimous, that the board received input from senior US government levels, and that it formed an all-independent committee, with independent counsel, to investigate reporting that Huang was the target of a foreign intelligence effort. It also created a National Security and Export Control Committee and is searching for a Chief Compliance Officer; Colette Kress, the interim CEO, remains CFO. The release does not describe the earlier ouster. The story drew 2,850 Hacker News points. Nvidia Verified against Nvidia's press release · the surrounding accounts, including who pushed for the reinstatement, are Reported",
+              "status": "verified",
+              "status_html": "<p><strong>Verified</strong> against Nvidia's press release · the surrounding accounts, including who pushed for the reinstatement, are Reported</p>",
+              "updated": null,
+              "sources": [
+                "nvidianews.nvidia.com"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>S&amp;P Global Ratings is considering cutting Nvidia from AA to AA-, citing weak executive oversight, lack of succession planning and key-man risk.</strong>",
+              "html": "<p><strong>S&amp;P Global Ratings is considering cutting Nvidia from AA to AA-, citing weak executive oversight, lack of succession planning and key-man risk.</strong> TechCrunch says S&amp;P expects to finish within 90 days and Nvidia would stay investment grade; a downgrade could raise borrowing costs, which matters for the $500 billion AI financing plan announced in August. <a href=\"https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "S&P Global Ratings is considering cutting Nvidia from AA to AA-, citing weak executive oversight, lack of succession planning and key-man risk. TechCrunch says S&P expects to finish within 90 days and Nvidia would stay investment grade; a downgrade could raise borrowing costs, which matters for the $500 billion AI financing plan announced in August. TechCrunch Reported · S&P's statement was not opened",
+              "status": "reported",
+              "status_html": "<p>Reported · S&amp;P's statement was not opened</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Nvidia has reportedly told manufacturing partners including Dell and Super Micro to pause server shipments to Malaysia, Singapore, Thailand and Indonesia.</strong>",
+              "html": "<p><strong>Nvidia has reportedly told manufacturing partners including Dell and Super Micro to pause server shipments to Malaysia, Singapore, Thailand and Indonesia.</strong> TechCrunch, citing the Wall Street Journal, says Nvidia is checking whether regional partners meet US export rules, after Commerce closed a loophole that let Chinese firms use Nvidia chips remotely from data centres there; the Institute for Progress estimates such sites supply about 24% of China's AI computing. No Nvidia statement was quoted. <a href=\"https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "Nvidia has reportedly told manufacturing partners including Dell and Super Micro to pause server shipments to Malaysia, Singapore, Thailand and Indonesia. TechCrunch, citing the Wall Street Journal, says Nvidia is checking whether regional partners meet US export rules, after Commerce closed a loophole that let Chinese firms use Nvidia chips remotely from data centres there; the Institute for Progress estimates such sites supply about 24% of China's AI computing. No Nvidia statement was quoted. TechCrunch Reported · not confirmed by Nvidia in the text read",
+              "status": "reported",
+              "status_html": "<p>Reported · not confirmed by Nvidia in the text read</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>A coalition of 42 state attorneys general is intervening in Character.AI's bankruptcy to stop the sale of users' private chats.</strong>",
+              "html": "<p><strong>A coalition of 42 state attorneys general is intervening in Character.AI's bankruptcy to stop the sale of users' private chats.</strong> TechCrunch says the data covers more than 21 million US accounts, including over 2.1 million belonging to minors; the only disclosed bidder is Smirks and Pangs Acquisition LLC, formed on 13 November, and the auction is set for 1 December. The AGs argue the buyer need not honour the privacy policy. <a href=\"https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a></p>",
+              "text": "A coalition of 42 state attorneys general is intervening in Character.AI's bankruptcy to stop the sale of users' private chats. TechCrunch says the data covers more than 21 million US accounts, including over 2.1 million belonging to minors; the only disclosed bidder is Smirks and Pangs Acquisition LLC, formed on 13 November, and the auction is set for 1 December. The AGs argue the buyer need not honour the privacy policy. TechCrunch Reported",
+              "status": "reported",
+              "status_html": "<p>Reported</p>",
+              "updated": null,
+              "sources": [
+                "TechCrunch"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Worth reading",
+          "category": "reading",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong><a href=\"https://www.anthropic.com/research/working-with-ai\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic: Working with AI</a></strong>",
+              "html": "<p><strong><a href=\"https://www.anthropic.com/research/working-with-ai\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic: Working with AI</a></strong> (23 November): Anthropic interviewed people at 58 companies using Claude, who reported few layoffs but reduced hiring, and said the most valuable uses involved reorganising roles. The article body was not read; this is the listing summary.</p>",
+              "text": "Anthropic: Working with AI (23 November): Anthropic interviewed people at 58 companies using Claude, who reported few layoffs but reduced hiring, and said the most valuable uses involved reorganising roles. The article body was not read; this is the listing summary.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Anthropic"
+              ],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong><a href=\"https://simonwillison.net/2026/Nov/24/astra-historical-mystery/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison: GPT 6.2 Astra Solves a Historical Mystery</a></strong>",
+              "html": "<p><strong><a href=\"https://simonwillison.net/2026/Nov/24/astra-historical-mystery/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison: GPT 6.2 Astra Solves a Historical Mystery</a></strong> links to historian Mark Humphries, who says Astra, with minimal prompting, identified the author of an anonymous 1808 sketchbook at Yale's Beinecke Library in 22 minutes. It is one case study, not a benchmark.</p>",
+              "text": "Simon Willison: GPT 6.2 Astra Solves a Historical Mystery links to historian Mark Humphries, who says Astra, with minimal prompting, identified the author of an anonymous 1808 sketchbook at Yale's Beinecke Library in 22 minutes. It is one case study, not a benchmark.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [
+                "Simon Willison"
+              ],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Unverified, and worth watching",
+          "category": "unverified",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "A Hacker News post titled &quot;Jev is probably Qwen3.5-35B-A3B&quot; (341 points) argues from latency measurements that the Jev model from an earlier Must know is a r…",
+              "html": "<p>A Hacker News post titled &quot;Jev is probably Qwen3.5-35B-A3B&quot; (341 points) argues from latency measurements that the Jev model from an earlier Must know is a repackaged Qwen model. I did not read it or trace it to a primary source.</p>",
+              "text": "A Hacker News post titled \"Jev is probably Qwen3.5-35B-A3B\" (341 points) argues from latency measurements that the Jev model from an earlier Must know is a repackaged Qwen model. I did not read it or trace it to a primary source. Unconfirmed",
+              "status": "unconfirmed",
+              "status_html": "<p><strong>Unconfirmed</strong></p>",
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        },
+        {
+          "heading": "Coverage check",
+          "category": "coverage",
+          "lead_html": null,
+          "items": [
+            {
+              "headline": "<strong>Sources read:</strong> 25 of 25 feeds and APIs returned items; failed: none in the collector.",
+              "html": "<p><strong>Sources read:</strong> 25 of 25 feeds and APIs returned items; <strong>failed:</strong> none in the collector. Follow-up pages that could not be read: Z.ai's GLM-5.4 post (empty), the AWS Bedrock Trusted Access API post (navigation only) and Ars Technica's Huang article (refused). <strong>Pages read:</strong> Anthropic news (nothing after 20 November), Anthropic research (two items, one only as a listing), Claude Platform release notes, OpenAI API changelog, Gemini API changelog (nothing after 19 November), Meta AI research (nothing after 9 November), The Batch (still issue 380).</p>",
+              "text": "Sources read: 25 of 25 feeds and APIs returned items; failed: none in the collector. Follow-up pages that could not be read: Z.ai's GLM-5.4 post (empty), the AWS Bedrock Trusted Access API post (navigation only) and Ars Technica's Huang article (refused). Pages read: Anthropic news (nothing after 20 November), Anthropic research (two items, one only as a listing), Claude Platform release notes, OpenAI API changelog, Gemini API changelog (nothing after 19 November), Meta AI research (nothing after 9 November), The Batch (still issue 380).",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Cross-source stories set aside:</strong> nvidia, jensen and huang are covered above, and the Ars Technica and Verge pieces on Huang&#x27;s all-hands, deepfakes and code-of-conduct sto…",
+              "html": "<p><strong>Cross-source stories set aside:</strong> nvidia, jensen and huang are covered above, and the Ars Technica and Verge pieces on Huang's all-hands, deepfakes and code-of-conduct stories were not read; astra and gpt-6.2 are covered under limits (Astra was the Must know in the 18 November entry); riemann, aaronson and scott follow up the 22 November Must know (the Understanding AI, The Decoder and Ars Technica pieces were not read, and nothing here changes its status); chinese is covered only through the Nvidia shipment pause; amazon, google, claude, microsoft, openai and gemini are generic words covered by named items or customer stories; spacex, fcc and ags (the FCC's Starmind clearance and the state suit over Grok) were not read; photoshop, tidal and ai-generated are consumer-media stories; amodei and dario are interview stories; the Bedrock Trusted Access API is known only by title; chatgpt, instagram, mcp, indonesia, malaysia and singapore are covered or generic.</p>",
+              "text": "Cross-source stories set aside: nvidia, jensen and huang are covered above, and the Ars Technica and Verge pieces on Huang's all-hands, deepfakes and code-of-conduct stories were not read; astra and gpt-6.2 are covered under limits (Astra was the Must know in the 18 November entry); riemann, aaronson and scott follow up the 22 November Must know (the Understanding AI, The Decoder and Ars Technica pieces were not read, and nothing here changes its status); chinese is covered only through the Nvidia shipment pause; amazon, google, claude, microsoft, openai and gemini are generic words covered by named items or customer stories; spacex, fcc and ags (the FCC's Starmind clearance and the state suit over Grok) were not read; photoshop, tidal and ai-generated are consumer-media stories; amodei and dario are interview stories; the Bedrock Trusted Access API is known only by title; chatgpt, instagram, mcp, indonesia, malaysia and singapore are covered or generic.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            },
+            {
+              "headline": "<strong>Gap:</strong> four days since the last entry, longer than the usual three-day cadence.",
+              "html": "<p><strong>Gap:</strong> four days since the last entry, longer than the usual three-day cadence.</p>",
+              "text": "Gap: four days since the last entry, longer than the usual three-day cadence.",
+              "status": null,
+              "status_html": null,
+              "updated": null,
+              "sources": [],
+              "due": null,
+              "due_label": null
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-11-22",
       "title": "AI web digest",
@@ -5648,6 +5977,97 @@
           ],
           "due": "2026-11-19",
           "due_label": "Claude Data on by default for Enterprise"
+        },
+        {
+          "headline": "<strong>Claude Code managed plugin marketplaces auto-update by default from 30 November.</strong>",
+          "html": "<p><strong>Claude Code managed plugin marketplaces auto-update by default from 30 November.</strong> Opt out with <code>&quot;autoUpdate&quot;: false</code>.</p>",
+          "text": "Claude Code managed plugin marketplaces auto-update by default from 30 November. Opt out with \"autoUpdate\": false . Verified against the Claude Code release · 2026-11-26",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://github.com/anthropics/claude-code/releases/tag/v2.1.331\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code release</a> · 2026-11-26</p>",
+          "updated": "2026-11-26",
+          "sources": [
+            "GitHub"
+          ],
+          "due": "2026-11-30",
+          "due_label": "from 30 Nov 2026"
+        },
+        {
+          "headline": "<strong>Character.AI chat-data sale: auction scheduled for 1 December; 42 state AGs oppose.</strong>",
+          "html": "<p><strong>Character.AI chat-data sale: auction scheduled for 1 December; 42 state AGs oppose.</strong></p>",
+          "text": "Character.AI chat-data sale: auction scheduled for 1 December; 42 state AGs oppose. Reported, TechCrunch · 2026-11-26",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · 2026-11-26</p>",
+          "updated": "2026-11-26",
+          "sources": [
+            "TechCrunch"
+          ],
+          "due": "2026-12-01",
+          "due_label": "auction date"
+        },
+        {
+          "headline": "<strong>ChatGPT Chat and Work merge with a single usage meter: small Pro group first, shared limits &quot;more broadly in December&quot;.</strong>",
+          "html": "<p><strong>ChatGPT Chat and Work merge with a single usage meter: small Pro group first, shared limits &quot;more broadly in December&quot;.</strong></p>",
+          "text": "ChatGPT Chat and Work merge with a single usage meter: small Pro group first, shared limits \"more broadly in December\". Reported, TechCrunch · 2026-11-26",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · 2026-11-26</p>",
+          "updated": "2026-11-26",
+          "sources": [
+            "TechCrunch"
+          ],
+          "due": "2026-12-31",
+          "due_label": "more broadly in December"
+        },
+        {
+          "headline": "<strong>Claude Opus 4.5 retirement: deprecated 23 November, API retirement 22 January 2027.</strong>",
+          "html": "<p><strong>Claude Opus 4.5 retirement: deprecated 23 November, API retirement 22 January 2027.</strong> Migrate to Claude Opus 5.5.</p>",
+          "text": "Claude Opus 4.5 retirement: deprecated 23 November, API retirement 22 January 2027. Migrate to Claude Opus 5.5. Verified against the Claude Platform release notes · 2026-11-26",
+          "status": "verified",
+          "status_html": "<p><strong>Verified</strong> against the <a href=\"https://platform.claude.com/docs/en/release-notes/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Platform release notes</a> · 2026-11-26</p>",
+          "updated": "2026-11-26",
+          "sources": [
+            "Anthropic"
+          ],
+          "due": "2027-01-22",
+          "due_label": "API retirement"
+        },
+        {
+          "headline": "<strong>S&amp;P review of Nvidia's AA rating: expected to finish within 90 days of 25 November.</strong>",
+          "html": "<p><strong>S&amp;P review of Nvidia's AA rating: expected to finish within 90 days of 25 November.</strong></p>",
+          "text": "S&P review of Nvidia's AA rating: expected to finish within 90 days of 25 November. Reported, TechCrunch · 2026-11-26",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/\" target=\"_blank\" rel=\"noopener noreferrer\">TechCrunch</a> · 2026-11-26</p>",
+          "updated": "2026-11-26",
+          "sources": [
+            "TechCrunch"
+          ],
+          "due": "2027-02-23",
+          "due_label": "within 90 days"
+        },
+        {
+          "headline": "<strong>GLM-5.4: weights promised, not released; reachable through a Z.ai Coding Plan.</strong>",
+          "html": "<p><strong>GLM-5.4: weights promised, not released; reachable through a Z.ai Coding Plan.</strong> Z.ai says it plans to open-source the weights after safety hardening, with no licence or date.</p>",
+          "text": "GLM-5.4: weights promised, not released; reachable through a Z.ai Coding Plan. Z.ai says it plans to open-source the weights after safety hardening, with no licence or date. Single source , Simon Willison · Z.ai's page could not be read · 2026-11-26",
+          "status": "single-source",
+          "status_html": "<p><strong>Single source</strong>, <a href=\"https://simonwillison.net/2026/Nov/23/glm-54/\" target=\"_blank\" rel=\"noopener noreferrer\">Simon Willison</a> · Z.ai's page could not be read · 2026-11-26</p>",
+          "updated": "2026-11-26",
+          "sources": [
+            "Simon Willison"
+          ],
+          "due": null,
+          "due_label": null
+        },
+        {
+          "headline": "<strong>OpenAI Private Inference: pilot with first enterprise customers.</strong>",
+          "html": "<p><strong>OpenAI Private Inference: pilot with first enterprise customers.</strong> Queries on isolated, verifiable hardware that OpenAI cannot access. No pricing or date.</p>",
+          "text": "OpenAI Private Inference: pilot with first enterprise customers. Queries on isolated, verifiable hardware that OpenAI cannot access. No pricing or date. Reported, The Decoder · 2026-11-26",
+          "status": "reported",
+          "status_html": "<p>Reported, <a href=\"https://the-decoder.com/openai-wants-companies-to-trust-it-with-sensitive-work-by-promising-not-to-look-at-their-data/\" target=\"_blank\" rel=\"noopener noreferrer\">The Decoder</a> · 2026-11-26</p>",
+          "updated": "2026-11-26",
+          "sources": [
+            "The Decoder"
+          ],
+          "due": null,
+          "due_label": null
         },
         {
           "headline": "<strong>Gemini API Tool Retrieval: preview since 19 November, Interactions API only.</strong>",
